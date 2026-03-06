@@ -1,0 +1,388 @@
+ERROR - 2025-12-02 12:12:40 --> mysqli_sql_exception: Duplicate key name 'program_code' in C:\xampp\htdocs\ITE311-ALEJADO\system\Database\MySQLi\Connection.php:327
+Stack trace:
+#0 C:\xampp\htdocs\ITE311-ALEJADO\system\Database\MySQLi\Connection.php(327): mysqli->query('CREATE TABLE `p...', 0)
+#1 C:\xampp\htdocs\ITE311-ALEJADO\system\Database\BaseConnection.php(729): CodeIgniter\Database\MySQLi\Connection->execute('CREATE TABLE `p...')
+#2 C:\xampp\htdocs\ITE311-ALEJADO\system\Database\BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery('CREATE TABLE `p...')
+#3 C:\xampp\htdocs\ITE311-ALEJADO\system\Database\Forge.php(570): CodeIgniter\Database\BaseConnection->query('CREATE TABLE `p...')
+#4 C:\xampp\htdocs\ITE311-ALEJADO\app\Database\Migrations\2025-12-02-120810_CreateProgramsTable.php(86): CodeIgniter\Database\Forge->createTable('programs')
+#5 C:\xampp\htdocs\ITE311-ALEJADO\system\Database\MigrationRunner.php(876): App\Database\Migrations\CreateProgramsTable->up()
+#6 C:\xampp\htdocs\ITE311-ALEJADO\system\Database\MigrationRunner.php(182): CodeIgniter\Database\MigrationRunner->migrate('up', Object(stdClass))
+#7 C:\xampp\htdocs\ITE311-ALEJADO\system\Commands\Database\Migrate.php(85): CodeIgniter\Database\MigrationRunner->latest(NULL)
+#8 C:\xampp\htdocs\ITE311-ALEJADO\system\CLI\Commands.php(74): CodeIgniter\Commands\Database\Migrate->run(Array)
+#9 C:\xampp\htdocs\ITE311-ALEJADO\system\CLI\BaseCommand.php(119): CodeIgniter\CLI\Commands->run('migrate', Array)
+#10 C:\xampp\htdocs\ITE311-ALEJADO\system\Commands\Database\MigrateRefresh.php(87): CodeIgniter\CLI\BaseCommand->call('migrate', Array)
+#11 C:\xampp\htdocs\ITE311-ALEJADO\system\CLI\Commands.php(74): CodeIgniter\Commands\Database\MigrateRefresh->run(Array)
+#12 C:\xampp\htdocs\ITE311-ALEJADO\system\CLI\Console.php(47): CodeIgniter\CLI\Commands->run('migrate:refresh', Array)
+#13 C:\xampp\htdocs\ITE311-ALEJADO\system\Boot.php(388): CodeIgniter\CLI\Console->run()
+#14 C:\xampp\htdocs\ITE311-ALEJADO\system\Boot.php(133): CodeIgniter\Boot::runCommand(Object(CodeIgniter\CLI\Console))
+#15 C:\xampp\htdocs\ITE311-ALEJADO\spark(87): CodeIgniter\Boot::bootSpark(Object(Config\Paths))
+#16 {main}
+ERROR - 2025-12-02 13:04:58 --> mysqli_sql_exception: Table 'program_curriculom' already exists in C:\xampp\htdocs\ITE311-ALEJADO\system\Database\MySQLi\Connection.php:327
+Stack trace:
+#0 C:\xampp\htdocs\ITE311-ALEJADO\system\Database\MySQLi\Connection.php(327): mysqli->query('CREATE TABLE `p...', 0)
+#1 C:\xampp\htdocs\ITE311-ALEJADO\system\Database\BaseConnection.php(729): CodeIgniter\Database\MySQLi\Connection->execute('CREATE TABLE `p...')
+#2 C:\xampp\htdocs\ITE311-ALEJADO\system\Database\BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery('CREATE TABLE `p...')
+#3 C:\xampp\htdocs\ITE311-ALEJADO\system\Database\Forge.php(570): CodeIgniter\Database\BaseConnection->query('CREATE TABLE `p...')
+#4 C:\xampp\htdocs\ITE311-ALEJADO\app\Database\Migrations\2025-12-02-121117_CreateProgramCurriculomTable.php(80): CodeIgniter\Database\Forge->createTable('program_curricu...')
+#5 C:\xampp\htdocs\ITE311-ALEJADO\system\Database\MigrationRunner.php(876): App\Database\Migrations\CreateProgramCurriculomTable->up()
+#6 C:\xampp\htdocs\ITE311-ALEJADO\system\Database\MigrationRunner.php(182): CodeIgniter\Database\MigrationRunner->migrate('up', Object(stdClass))
+#7 C:\xampp\htdocs\ITE311-ALEJADO\system\Commands\Database\Migrate.php(85): CodeIgniter\Database\MigrationRunner->latest(NULL)
+#8 C:\xampp\htdocs\ITE311-ALEJADO\system\CLI\Commands.php(74): CodeIgniter\Commands\Database\Migrate->run(Array)
+#9 C:\xampp\htdocs\ITE311-ALEJADO\system\CLI\BaseCommand.php(119): CodeIgniter\CLI\Commands->run('migrate', Array)
+#10 C:\xampp\htdocs\ITE311-ALEJADO\system\Commands\Database\MigrateRefresh.php(87): CodeIgniter\CLI\BaseCommand->call('migrate', Array)
+#11 C:\xampp\htdocs\ITE311-ALEJADO\system\CLI\Commands.php(74): CodeIgniter\Commands\Database\MigrateRefresh->run(Array)
+#12 C:\xampp\htdocs\ITE311-ALEJADO\system\CLI\Console.php(47): CodeIgniter\CLI\Commands->run('migrate:refresh', Array)
+#13 C:\xampp\htdocs\ITE311-ALEJADO\system\Boot.php(388): CodeIgniter\CLI\Console->run()
+#14 C:\xampp\htdocs\ITE311-ALEJADO\system\Boot.php(133): CodeIgniter\Boot::runCommand(Object(CodeIgniter\CLI\Console))
+#15 C:\xampp\htdocs\ITE311-ALEJADO\spark(87): CodeIgniter\Boot::bootSpark(Object(Config\Paths))
+#16 {main}
+ERROR - 2025-12-02 13:12:11 --> mysqli_sql_exception: Unknown column 'role' in 'where clause' in C:\xampp\htdocs\ITE311-ALEJADO\system\Database\MySQLi\Connection.php:327
+Stack trace:
+#0 C:\xampp\htdocs\ITE311-ALEJADO\system\Database\MySQLi\Connection.php(327): mysqli->query('SELECT COUNT(*)...', 0)
+#1 C:\xampp\htdocs\ITE311-ALEJADO\system\Database\BaseConnection.php(729): CodeIgniter\Database\MySQLi\Connection->execute('SELECT COUNT(*)...')
+#2 C:\xampp\htdocs\ITE311-ALEJADO\system\Database\BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT COUNT(*)...')
+#3 C:\xampp\htdocs\ITE311-ALEJADO\system\Database\BaseBuilder.php(1733): CodeIgniter\Database\BaseConnection->query('SELECT COUNT(*)...', Array, false)
+#4 C:\xampp\htdocs\ITE311-ALEJADO\system\Model.php(675): CodeIgniter\Database\BaseBuilder->countAllResults(false)
+#5 C:\xampp\htdocs\ITE311-ALEJADO\app\Controllers\Auth.php(395): CodeIgniter\Model->countAllResults(false)
+#6 C:\xampp\htdocs\ITE311-ALEJADO\system\CodeIgniter.php(933): App\Controllers\Auth->dashboard()
+#7 C:\xampp\htdocs\ITE311-ALEJADO\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Auth))
+#8 C:\xampp\htdocs\ITE311-ALEJADO\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\xampp\htdocs\ITE311-ALEJADO\system\Boot.php(363): CodeIgniter\CodeIgniter->run()
+#10 C:\xampp\htdocs\ITE311-ALEJADO\system\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#11 C:\xampp\htdocs\ITE311-ALEJADO\index.php(204): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#12 {main}
+CRITICAL - 2025-12-02 13:12:11 --> CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'role' in 'where clause'
+[Method: GET, Route: admin/dashboard]
+in SYSTEMPATH\Database\BaseConnection.php on line 684.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1733): CodeIgniter\Database\BaseConnection->query('SELECT COUNT(*) AS `numrows`
+FROM `users`
+WHERE `role` = :role:
+AND `users`.`deleted_at` IS NULL', [...], false)
+ 2 SYSTEMPATH\Model.php(675): CodeIgniter\Database\BaseBuilder->countAllResults(false)
+ 3 APPPATH\Controllers\Auth.php(395): CodeIgniter\Model->countAllResults(false)
+ 4 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Auth->dashboard()
+ 5 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Auth))
+ 6 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(204): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-12-02 13:12:11 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'role' in 'where clause'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 332.
+ 1 SYSTEMPATH\Database\BaseConnection.php(729): CodeIgniter\Database\MySQLi\Connection->execute('SELECT COUNT(*) AS `numrows`
+FROM `users`
+WHERE `role` = \'admin\'
+AND `users`.`deleted_at` IS NULL')
+ 2 SYSTEMPATH\Database\BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT COUNT(*) AS `numrows`
+FROM `users`
+WHERE `role` = \'admin\'
+AND `users`.`deleted_at` IS NULL')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(1733): CodeIgniter\Database\BaseConnection->query('SELECT COUNT(*) AS `numrows`
+FROM `users`
+WHERE `role` = :role:
+AND `users`.`deleted_at` IS NULL', [...], false)
+ 4 SYSTEMPATH\Model.php(675): CodeIgniter\Database\BaseBuilder->countAllResults(false)
+ 5 APPPATH\Controllers\Auth.php(395): CodeIgniter\Model->countAllResults(false)
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Auth->dashboard()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Auth))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(204): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-12-02 13:12:11 --> [Caused by] mysqli_sql_exception: Unknown column 'role' in 'where clause'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 327.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(327): mysqli->query('SELECT COUNT(*) AS `numrows`
+FROM `users`
+WHERE `role` = \'admin\'
+AND `users`.`deleted_at` IS NULL', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(729): CodeIgniter\Database\MySQLi\Connection->execute('SELECT COUNT(*) AS `numrows`
+FROM `users`
+WHERE `role` = \'admin\'
+AND `users`.`deleted_at` IS NULL')
+ 3 SYSTEMPATH\Database\BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT COUNT(*) AS `numrows`
+FROM `users`
+WHERE `role` = \'admin\'
+AND `users`.`deleted_at` IS NULL')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1733): CodeIgniter\Database\BaseConnection->query('SELECT COUNT(*) AS `numrows`
+FROM `users`
+WHERE `role` = :role:
+AND `users`.`deleted_at` IS NULL', [...], false)
+ 5 SYSTEMPATH\Model.php(675): CodeIgniter\Database\BaseBuilder->countAllResults(false)
+ 6 APPPATH\Controllers\Auth.php(395): CodeIgniter\Model->countAllResults(false)
+ 7 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Auth->dashboard()
+ 8 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Auth))
+ 9 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+12 FCPATH\index.php(204): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ERROR - 2025-12-02 13:14:38 --> mysqli_sql_exception: Unknown column 'users.year_level_id' in 'on clause' in C:\xampp\htdocs\ITE311-ALEJADO\system\Database\MySQLi\Connection.php:327
+Stack trace:
+#0 C:\xampp\htdocs\ITE311-ALEJADO\system\Database\MySQLi\Connection.php(327): mysqli->query('SELECT `users`....', 0)
+#1 C:\xampp\htdocs\ITE311-ALEJADO\system\Database\BaseConnection.php(729): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `users`....')
+#2 C:\xampp\htdocs\ITE311-ALEJADO\system\Database\BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `users`....')
+#3 C:\xampp\htdocs\ITE311-ALEJADO\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `users`....', Array, false)
+#4 C:\xampp\htdocs\ITE311-ALEJADO\system\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\ITE311-ALEJADO\system\BaseModel.php(677): CodeIgniter\Model->doFindAll(0, 0)
+#6 C:\xampp\htdocs\ITE311-ALEJADO\app\Controllers\User.php(511): CodeIgniter\BaseModel->findAll()
+#7 C:\xampp\htdocs\ITE311-ALEJADO\app\Controllers\User.php(477): App\Controllers\User->getUsersWithRoles()
+#8 C:\xampp\htdocs\ITE311-ALEJADO\app\Controllers\User.php(82): App\Controllers\User->displayUserManagement('1')
+#9 C:\xampp\htdocs\ITE311-ALEJADO\system\CodeIgniter.php(933): App\Controllers\User->manageUsers()
+#10 C:\xampp\htdocs\ITE311-ALEJADO\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\User))
+#11 C:\xampp\htdocs\ITE311-ALEJADO\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#12 C:\xampp\htdocs\ITE311-ALEJADO\system\Boot.php(363): CodeIgniter\CodeIgniter->run()
+#13 C:\xampp\htdocs\ITE311-ALEJADO\system\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#14 C:\xampp\htdocs\ITE311-ALEJADO\index.php(204): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#15 {main}
+CRITICAL - 2025-12-02 13:14:38 --> CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'users.year_level_id' in 'on clause'
+[Method: GET, Route: admin/manage_users]
+in SYSTEMPATH\Database\BaseConnection.php on line 684.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `users`.*, `roles`.`role_name`, `year_levels`.`year_level_name`
+FROM `users`
+JOIN `roles` ON `roles`.`id` = `users`.`role_id`
+LEFT JOIN `year_levels` ON `year_levels`.`id` = `users`.`year_level_id`
+WHERE `users`.`deleted_at` IS NULL
+ORDER BY `users`.`created_at` DESC', [], false)
+ 2 SYSTEMPATH\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+ 3 SYSTEMPATH\BaseModel.php(677): CodeIgniter\Model->doFindAll(0, 0)
+ 4 APPPATH\Controllers\User.php(511): CodeIgniter\BaseModel->findAll()
+ 5 APPPATH\Controllers\User.php(477): App\Controllers\User->getUsersWithRoles()
+ 6 APPPATH\Controllers\User.php(82): App\Controllers\User->displayUserManagement('1')
+ 7 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\User->manageUsers()
+ 8 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\User))
+ 9 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+12 FCPATH\index.php(204): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-12-02 13:14:38 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'users.year_level_id' in 'on clause'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 332.
+ 1 SYSTEMPATH\Database\BaseConnection.php(729): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `users`.*, `roles`.`role_name`, `year_levels`.`year_level_name`
+FROM `users`
+JOIN `roles` ON `roles`.`id` = `users`.`role_id`
+LEFT JOIN `year_levels` ON `year_levels`.`id` = `users`.`year_level_id`
+WHERE `users`.`deleted_at` IS NULL
+ORDER BY `users`.`created_at` DESC')
+ 2 SYSTEMPATH\Database\BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `users`.*, `roles`.`role_name`, `year_levels`.`year_level_name`
+FROM `users`
+JOIN `roles` ON `roles`.`id` = `users`.`role_id`
+LEFT JOIN `year_levels` ON `year_levels`.`id` = `users`.`year_level_id`
+WHERE `users`.`deleted_at` IS NULL
+ORDER BY `users`.`created_at` DESC')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `users`.*, `roles`.`role_name`, `year_levels`.`year_level_name`
+FROM `users`
+JOIN `roles` ON `roles`.`id` = `users`.`role_id`
+LEFT JOIN `year_levels` ON `year_levels`.`id` = `users`.`year_level_id`
+WHERE `users`.`deleted_at` IS NULL
+ORDER BY `users`.`created_at` DESC', [], false)
+ 4 SYSTEMPATH\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+ 5 SYSTEMPATH\BaseModel.php(677): CodeIgniter\Model->doFindAll(0, 0)
+ 6 APPPATH\Controllers\User.php(511): CodeIgniter\BaseModel->findAll()
+ 7 APPPATH\Controllers\User.php(477): App\Controllers\User->getUsersWithRoles()
+ 8 APPPATH\Controllers\User.php(82): App\Controllers\User->displayUserManagement('1')
+ 9 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\User->manageUsers()
+10 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\User))
+11 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+12 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+13 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+14 FCPATH\index.php(204): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-12-02 13:14:38 --> [Caused by] mysqli_sql_exception: Unknown column 'users.year_level_id' in 'on clause'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 327.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(327): mysqli->query('SELECT `users`.*, `roles`.`role_name`, `year_levels`.`year_level_name`
+FROM `users`
+JOIN `roles` ON `roles`.`id` = `users`.`role_id`
+LEFT JOIN `year_levels` ON `year_levels`.`id` = `users`.`year_level_id`
+WHERE `users`.`deleted_at` IS NULL
+ORDER BY `users`.`created_at` DESC', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(729): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `users`.*, `roles`.`role_name`, `year_levels`.`year_level_name`
+FROM `users`
+JOIN `roles` ON `roles`.`id` = `users`.`role_id`
+LEFT JOIN `year_levels` ON `year_levels`.`id` = `users`.`year_level_id`
+WHERE `users`.`deleted_at` IS NULL
+ORDER BY `users`.`created_at` DESC')
+ 3 SYSTEMPATH\Database\BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `users`.*, `roles`.`role_name`, `year_levels`.`year_level_name`
+FROM `users`
+JOIN `roles` ON `roles`.`id` = `users`.`role_id`
+LEFT JOIN `year_levels` ON `year_levels`.`id` = `users`.`year_level_id`
+WHERE `users`.`deleted_at` IS NULL
+ORDER BY `users`.`created_at` DESC')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `users`.*, `roles`.`role_name`, `year_levels`.`year_level_name`
+FROM `users`
+JOIN `roles` ON `roles`.`id` = `users`.`role_id`
+LEFT JOIN `year_levels` ON `year_levels`.`id` = `users`.`year_level_id`
+WHERE `users`.`deleted_at` IS NULL
+ORDER BY `users`.`created_at` DESC', [], false)
+ 5 SYSTEMPATH\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+ 6 SYSTEMPATH\BaseModel.php(677): CodeIgniter\Model->doFindAll(0, 0)
+ 7 APPPATH\Controllers\User.php(511): CodeIgniter\BaseModel->findAll()
+ 8 APPPATH\Controllers\User.php(477): App\Controllers\User->getUsersWithRoles()
+ 9 APPPATH\Controllers\User.php(82): App\Controllers\User->displayUserManagement('1')
+10 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\User->manageUsers()
+11 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\User))
+12 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+13 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+14 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+15 FCPATH\index.php(204): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-12-02 13:16:24 --> ErrorException: Undefined array key "role"
+[Method: GET, Route: admin/manage_users]
+in APPPATH\Views\admin\manage_users.php on line 37.
+ 1 APPPATH\Views\admin\manage_users.php(37): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "role"', 'C:\\xampp\\htdocs\\ITE311-ALEJADO\\app\\Views\\admin\\manage_users.php', 37)
+ 2 [internal function]: CodeIgniter\View\View->{closure}([...])
+ 3 APPPATH\Views\admin\manage_users.php(37): array_filter([...], Object(Closure))
+ 4 SYSTEMPATH\View\View.php(226): include('C:\\xampp\\htdocs\\ITE311-ALEJADO\\app\\Views\\admin\\manage_users.php')
+ 5 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 6 SYSTEMPATH\Common.php(1167): CodeIgniter\View\View->render('admin/manage_users', [], true)
+ 7 APPPATH\Controllers\User.php(498): view('admin/manage_users', [...])
+ 8 APPPATH\Controllers\User.php(82): App\Controllers\User->displayUserManagement('1')
+ 9 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\User->manageUsers()
+10 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\User))
+11 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+12 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+13 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+14 FCPATH\index.php(204): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-12-02 13:28:54 --> ErrorException: Undefined property: App\Controllers\Course::$roleModel
+[Method: GET, Route: admin/manage_courses]
+in APPPATH\Controllers\Course.php on line 1332.
+ 1 APPPATH\Controllers\Course.php(1332): CCRITICAL - 2025-12-02 13:27:13 --> CodeIgniter\View\Exceptions\ViewException: Invalid file: "admin/manage_courses_simple.php"
+[Method: GET, Route: admin/manage_courses]
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 39.
+ 1 SYSTEMPATH\View\View.php(214): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('admin/manage_courses_simple.php')
+ 2 SYSTEMPATH\Common.php(1167): CodeIgniter\View\View->render('admin/manage_courses_simple', [], true)
+ 3 APPPATH\Controllers\CourseManagement.php(195): view('admin/manage_courses_simple', [...])
+ 4 APPPATH\Controllers\CourseManagement.php(60): App\Controllers\CourseManagement->displayCourses()
+ 5 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\CourseManagement->index()
+ 6 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\CourseManagement))
+ 7 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH\index.php(204): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+odeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined property: App\\Controllers\\Course::$roleModel', 'C:\\xampp\\htdocs\\ITE311-ALEJADO\\app\\Controllers\\Course.php', 1332)
+ 2 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Course->manageCourses()
+ 3 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Course))
+ 4 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(204): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ERROR - 2025-12-02 13:55:19 --> mysqli_sql_exception: Unknown column 'courses.semester_id' in 'on clause' in C:\xampp\htdocs\ITE311-ALEJADO\system\Database\MySQLi\Connection.php:327
+Stack trace:
+#0 C:\xampp\htdocs\ITE311-ALEJADO\system\Database\MySQLi\Connection.php(327): mysqli->query('SELECT `courses...', 0)
+#1 C:\xampp\htdocs\ITE311-ALEJADO\system\Database\BaseConnection.php(729): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `courses...')
+#2 C:\xampp\htdocs\ITE311-ALEJADO\system\Database\BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `courses...')
+#3 C:\xampp\htdocs\ITE311-ALEJADO\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `courses...', Array, false)
+#4 C:\xampp\htdocs\ITE311-ALEJADO\system\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\ITE311-ALEJADO\system\BaseModel.php(677): CodeIgniter\Model->doFindAll(0, 0)
+#6 C:\xampp\htdocs\ITE311-ALEJADO\app\Models\CourseModel.php(102): CodeIgniter\BaseModel->findAll()
+#7 C:\xampp\htdocs\ITE311-ALEJADO\app\Controllers\Course.php(971): App\Models\CourseModel->getAllCoursesWithDetails()
+#8 C:\xampp\htdocs\ITE311-ALEJADO\system\CodeIgniter.php(933): App\Controllers\Course->manageCourses()
+#9 C:\xampp\htdocs\ITE311-ALEJADO\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Course))
+#10 C:\xampp\htdocs\ITE311-ALEJADO\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 C:\xampp\htdocs\ITE311-ALEJADO\system\Boot.php(363): CodeIgniter\CodeIgniter->run()
+#12 C:\xampp\htdocs\ITE311-ALEJADO\system\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#13 C:\xampp\htdocs\ITE311-ALEJADO\index.php(204): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#14 {main}
+CRITICAL - 2025-12-02 13:55:19 --> CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'courses.semester_id' in 'on clause'
+[Method: GET, Route: admin/manage_courses]
+in SYSTEMPATH\Database\BaseConnection.php on line 684.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `courses`.*, `departments`.`department_name`, `categories`.`category_name`, `year_levels`.`year_level_name`, `semesters`.`semester_name`
+FROM `courses`
+LEFT JOIN `departments` ON `departments`.`id` = `courses`.`department_id`
+LEFT JOIN `categories` ON `categories`.`id` = `courses`.`category_id`
+LEFT JOIN `year_levels` ON `year_levels`.`id` = `courses`.`year_level_id`
+LEFT JOIN `semesters` ON `semesters`.`id` = `courses`.`semester_id`
+WHERE `courses`.`is_active` = :courses.is_active:', [...], false)
+ 2 SYSTEMPATH\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+ 3 SYSTEMPATH\BaseModel.php(677): CodeIgniter\Model->doFindAll(0, 0)
+ 4 APPPATH\Models\CourseModel.php(102): CodeIgniter\BaseModel->findAll()
+ 5 APPPATH\Controllers\Course.php(971): App\Models\CourseModel->getAllCoursesWithDetails()
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Course->manageCourses()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Course))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(204): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-12-02 13:55:19 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'courses.semester_id' in 'on clause'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 332.
+ 1 SYSTEMPATH\Database\BaseConnection.php(729): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `courses`.*, `departments`.`department_name`, `categories`.`category_name`, `year_levels`.`year_level_name`, `semesters`.`semester_name`
+FROM `courses`
+LEFT JOIN `departments` ON `departments`.`id` = `courses`.`department_id`
+LEFT JOIN `categories` ON `categories`.`id` = `courses`.`category_id`
+LEFT JOIN `year_levels` ON `year_levels`.`id` = `courses`.`year_level_id`
+LEFT JOIN `semesters` ON `semesters`.`id` = `courses`.`semester_id`
+WHERE `courses`.`is_active` = 1')
+ 2 SYSTEMPATH\Database\BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `courses`.*, `departments`.`department_name`, `categories`.`category_name`, `year_levels`.`year_level_name`, `semesters`.`semester_name`
+FROM `courses`
+LEFT JOIN `departments` ON `departments`.`id` = `courses`.`department_id`
+LEFT JOIN `categories` ON `categories`.`id` = `courses`.`category_id`
+LEFT JOIN `year_levels` ON `year_levels`.`id` = `courses`.`year_level_id`
+LEFT JOIN `semesters` ON `semesters`.`id` = `courses`.`semester_id`
+WHERE `courses`.`is_active` = 1')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `courses`.*, `departments`.`department_name`, `categories`.`category_name`, `year_levels`.`year_level_name`, `semesters`.`semester_name`
+FROM `courses`
+LEFT JOIN `departments` ON `departments`.`id` = `courses`.`department_id`
+LEFT JOIN `categories` ON `categories`.`id` = `courses`.`category_id`
+LEFT JOIN `year_levels` ON `year_levels`.`id` = `courses`.`year_level_id`
+LEFT JOIN `semesters` ON `semesters`.`id` = `courses`.`semester_id`
+WHERE `courses`.`is_active` = :courses.is_active:', [...], false)
+ 4 SYSTEMPATH\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+ 5 SYSTEMPATH\BaseModel.php(677): CodeIgniter\Model->doFindAll(0, 0)
+ 6 APPPATH\Models\CourseModel.php(102): CodeIgniter\BaseModel->findAll()
+ 7 APPPATH\Controllers\Course.php(971): App\Models\CourseModel->getAllCoursesWithDetails()
+ 8 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Course->manageCourses()
+ 9 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Course))
+10 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+12 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+13 FCPATH\index.php(204): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-12-02 13:55:19 --> [Caused by] mysqli_sql_exception: Unknown column 'courses.semester_id' in 'on clause'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 327.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(327): mysqli->query('SELECT `courses`.*, `departments`.`department_name`, `categories`.`category_name`, `year_levels`.`year_level_name`, `semesters`.`semester_name`
+FROM `courses`
+LEFT JOIN `departments` ON `departments`.`id` = `courses`.`department_id`
+LEFT JOIN `categories` ON `categories`.`id` = `courses`.`category_id`
+LEFT JOIN `year_levels` ON `year_levels`.`id` = `courses`.`year_level_id`
+LEFT JOIN `semesters` ON `semesters`.`id` = `courses`.`semester_id`
+WHERE `courses`.`is_active` = 1', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(729): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `courses`.*, `departments`.`department_name`, `categories`.`category_name`, `year_levels`.`year_level_name`, `semesters`.`semester_name`
+FROM `courses`
+LEFT JOIN `departments` ON `departments`.`id` = `courses`.`department_id`
+LEFT JOIN `categories` ON `categories`.`id` = `courses`.`category_id`
+LEFT JOIN `year_levels` ON `year_levels`.`id` = `courses`.`year_level_id`
+LEFT JOIN `semesters` ON `semesters`.`id` = `courses`.`semester_id`
+WHERE `courses`.`is_active` = 1')
+ 3 SYSTEMPATH\Database\BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `courses`.*, `departments`.`department_name`, `categories`.`category_name`, `year_levels`.`year_level_name`, `semesters`.`semester_name`
+FROM `courses`
+LEFT JOIN `departments` ON `departments`.`id` = `courses`.`department_id`
+LEFT JOIN `categories` ON `categories`.`id` = `courses`.`category_id`
+LEFT JOIN `year_levels` ON `year_levels`.`id` = `courses`.`year_level_id`
+LEFT JOIN `semesters` ON `semesters`.`id` = `courses`.`semester_id`
+WHERE `courses`.`is_active` = 1')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `courses`.*, `departments`.`department_name`, `categories`.`category_name`, `year_levels`.`year_level_name`, `semesters`.`semester_name`
+FROM `courses`
+LEFT JOIN `departments` ON `departments`.`id` = `courses`.`department_id`
+LEFT JOIN `categories` ON `categories`.`id` = `courses`.`category_id`
+LEFT JOIN `year_levels` ON `year_levels`.`id` = `courses`.`year_level_id`
+LEFT JOIN `semesters` ON `semesters`.`id` = `courses`.`semester_id`
+WHERE `courses`.`is_active` = :courses.is_active:', [...], false)
+ 5 SYSTEMPATH\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+ 6 SYSTEMPATH\BaseModel.php(677): CodeIgniter\Model->doFindAll(0, 0)
+ 7 APPPATH\Models\CourseModel.php(102): CodeIgniter\BaseModel->findAll()
+ 8 APPPATH\Controllers\Course.php(971): App\Models\CourseModel->getAllCoursesWithDetails()
+ 9 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Course->manageCourses()
+10 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Course))
+11 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+12 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+13 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+14 FCPATH\index.php(204): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-12-02 14:01:39 --> CodeIgniter\View\Exceptions\ViewException: Invalid file: "templates/footer.php"
+[Method: GET, Route: admin/manage_courses]
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 39.
+ 1 SYSTEMPATH\View\View.php(214): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('templates/footer.php')
+ 2 SYSTEMPATH\View\View.php(475): CodeIgniter\View\View->render('templates/footer', null, true)
+ 3 APPPATH\Views\admin\manage_courses.php(560): CodeIgniter\View\View->include('templates/footer')
+ 4 SYSTEMPATH\View\View.php(226): include('C:\\xampp\\htdocs\\ITE311-ALEJADO\\app\\Views\\admin\\manage_courses.php')
+ 5 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 6 SYSTEMPATH\Common.php(1167): CodeIgniter\View\View->render('admin/manage_courses', [], true)
+ 7 APPPATH\Controllers\Course.php(983): view('admin/manage_courses', [...])
+ 8 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Course->manageCourses()
+ 9 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Course))
+10 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+12 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+13 FCPATH\index.php(204): CodeIgniter\Boot::bootWeb(Object(Config\Paths))

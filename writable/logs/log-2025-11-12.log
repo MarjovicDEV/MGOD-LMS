@@ -1,0 +1,610 @@
+ERROR - 2025-11-12 20:47:14 --> mysqli_sql_exception: Invalid JSON text in argument 1 to function json_contains: "Invalid value." at position 0. in C:\xampp\htdocs\ITE311-ALEJADO\system\Database\MySQLi\Connection.php:327
+Stack trace:
+#0 C:\xampp\htdocs\ITE311-ALEJADO\system\Database\MySQLi\Connection.php(327): mysqli->query('\r\n             ...', 0)
+#1 C:\xampp\htdocs\ITE311-ALEJADO\system\Database\BaseConnection.php(729): CodeIgniter\Database\MySQLi\Connection->execute('\r\n             ...')
+#2 C:\xampp\htdocs\ITE311-ALEJADO\system\Database\BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery('\r\n             ...')
+#3 C:\xampp\htdocs\ITE311-ALEJADO\app\Controllers\Auth.php(364): CodeIgniter\Database\BaseConnection->query('\r\n             ...', Array)
+#4 C:\xampp\htdocs\ITE311-ALEJADO\system\CodeIgniter.php(933): App\Controllers\Auth->dashboard()
+#5 C:\xampp\htdocs\ITE311-ALEJADO\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Auth))
+#6 C:\xampp\htdocs\ITE311-ALEJADO\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 C:\xampp\htdocs\ITE311-ALEJADO\system\Boot.php(363): CodeIgniter\CodeIgniter->run()
+#8 C:\xampp\htdocs\ITE311-ALEJADO\system\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#9 C:\xampp\htdocs\ITE311-ALEJADO\index.php(204): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#10 {main}
+ERROR - 2025-11-12 20:47:14 --> Teacher dashboard error: Invalid JSON text in argument 1 to function json_contains: "Invalid value." at position 0.
+ERROR - 2025-11-12 20:47:27 --> mysqli_sql_exception: Unknown column 'e.enrollment_status' in 'field list' in C:\xampp\htdocs\ITE311-ALEJADO\system\Database\MySQLi\Connection.php:327
+Stack trace:
+#0 C:\xampp\htdocs\ITE311-ALEJADO\system\Database\MySQLi\Connection.php(327): mysqli->query('SELECT `e`.`id`...', 0)
+#1 C:\xampp\htdocs\ITE311-ALEJADO\system\Database\BaseConnection.php(729): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `e`.`id`...')
+#2 C:\xampp\htdocs\ITE311-ALEJADO\system\Database\BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `e`.`id`...')
+#3 C:\xampp\htdocs\ITE311-ALEJADO\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `e`.`id`...', Array, false)
+#4 C:\xampp\htdocs\ITE311-ALEJADO\app\Models\EnrollmentModel.php(168): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\ITE311-ALEJADO\app\Controllers\Auth.php(417): App\Models\EnrollmentModel->getUserEnrollments('4')
+#6 C:\xampp\htdocs\ITE311-ALEJADO\system\CodeIgniter.php(933): App\Controllers\Auth->dashboard()
+#7 C:\xampp\htdocs\ITE311-ALEJADO\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Auth))
+#8 C:\xampp\htdocs\ITE311-ALEJADO\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\xampp\htdocs\ITE311-ALEJADO\system\Boot.php(363): CodeIgniter\CodeIgniter->run()
+#10 C:\xampp\htdocs\ITE311-ALEJADO\system\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#11 C:\xampp\htdocs\ITE311-ALEJADO\index.php(204): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#12 {main}
+ERROR - 2025-11-12 20:47:27 --> Failed to fetch user enrollments: Unknown column 'e.enrollment_status' in 'field list'
+ERROR - 2025-11-12 20:56:58 --> mysqli_sql_exception: Unknown column 'e.enrollment_status' in 'field list' in C:\xampp\htdocs\ITE311-ALEJADO\system\Database\MySQLi\Connection.php:327
+Stack trace:
+#0 C:\xampp\htdocs\ITE311-ALEJADO\system\Database\MySQLi\Connection.php(327): mysqli->query('SELECT `e`.`id`...', 0)
+#1 C:\xampp\htdocs\ITE311-ALEJADO\system\Database\BaseConnection.php(729): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `e`.`id`...')
+#2 C:\xampp\htdocs\ITE311-ALEJADO\system\Database\BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `e`.`id`...')
+#3 C:\xampp\htdocs\ITE311-ALEJADO\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `e`.`id`...', Array, false)
+#4 C:\xampp\htdocs\ITE311-ALEJADO\app\Models\EnrollmentModel.php(168): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\ITE311-ALEJADO\app\Controllers\Auth.php(417): App\Models\EnrollmentModel->getUserEnrollments('4')
+#6 C:\xampp\htdocs\ITE311-ALEJADO\system\CodeIgniter.php(933): App\Controllers\Auth->dashboard()
+#7 C:\xampp\htdocs\ITE311-ALEJADO\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Auth))
+#8 C:\xampp\htdocs\ITE311-ALEJADO\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\xampp\htdocs\ITE311-ALEJADO\system\Boot.php(363): CodeIgniter\CodeIgniter->run()
+#10 C:\xampp\htdocs\ITE311-ALEJADO\system\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#11 C:\xampp\htdocs\ITE311-ALEJADO\index.php(204): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#12 {main}
+ERROR - 2025-11-12 20:56:58 --> Failed to fetch user enrollments: Unknown column 'e.enrollment_status' in 'field list'
+ERROR - 2025-11-12 20:56:59 --> mysqli_sql_exception: Unknown column 'e.enrollment_status' in 'field list' in C:\xampp\htdocs\ITE311-ALEJADO\system\Database\MySQLi\Connection.php:327
+Stack trace:
+#0 C:\xampp\htdocs\ITE311-ALEJADO\system\Database\MySQLi\Connection.php(327): mysqli->query('SELECT `e`.`id`...', 0)
+#1 C:\xampp\htdocs\ITE311-ALEJADO\system\Database\BaseConnection.php(729): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `e`.`id`...')
+#2 C:\xampp\htdocs\ITE311-ALEJADO\system\Database\BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `e`.`id`...')
+#3 C:\xampp\htdocs\ITE311-ALEJADO\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `e`.`id`...', Array, false)
+#4 C:\xampp\htdocs\ITE311-ALEJADO\app\Models\EnrollmentModel.php(168): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\ITE311-ALEJADO\app\Controllers\Auth.php(417): App\Models\EnrollmentModel->getUserEnrollments('4')
+#6 C:\xampp\htdocs\ITE311-ALEJADO\system\CodeIgniter.php(933): App\Controllers\Auth->dashboard()
+#7 C:\xampp\htdocs\ITE311-ALEJADO\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Auth))
+#8 C:\xampp\htdocs\ITE311-ALEJADO\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\xampp\htdocs\ITE311-ALEJADO\system\Boot.php(363): CodeIgniter\CodeIgniter->run()
+#10 C:\xampp\htdocs\ITE311-ALEJADO\system\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#11 C:\xampp\htdocs\ITE311-ALEJADO\index.php(204): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#12 {main}
+ERROR - 2025-11-12 20:56:59 --> Failed to fetch user enrollments: Unknown column 'e.enrollment_status' in 'field list'
+ERROR - 2025-11-12 20:57:14 --> mysqli_sql_exception: Unknown column 'e.enrollment_status' in 'field list' in C:\xampp\htdocs\ITE311-ALEJADO\system\Database\MySQLi\Connection.php:327
+Stack trace:
+#0 C:\xampp\htdocs\ITE311-ALEJADO\system\Database\MySQLi\Connection.php(327): mysqli->query('SELECT `e`.`id`...', 0)
+#1 C:\xampp\htdocs\ITE311-ALEJADO\system\Database\BaseConnection.php(729): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `e`.`id`...')
+#2 C:\xampp\htdocs\ITE311-ALEJADO\system\Database\BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `e`.`id`...')
+#3 C:\xampp\htdocs\ITE311-ALEJADO\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `e`.`id`...', Array, false)
+#4 C:\xampp\htdocs\ITE311-ALEJADO\app\Models\EnrollmentModel.php(168): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\ITE311-ALEJADO\app\Controllers\Auth.php(417): App\Models\EnrollmentModel->getUserEnrollments('4')
+#6 C:\xampp\htdocs\ITE311-ALEJADO\system\CodeIgniter.php(933): App\Controllers\Auth->dashboard()
+#7 C:\xampp\htdocs\ITE311-ALEJADO\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Auth))
+#8 C:\xampp\htdocs\ITE311-ALEJADO\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\xampp\htdocs\ITE311-ALEJADO\system\Boot.php(363): CodeIgniter\CodeIgniter->run()
+#10 C:\xampp\htdocs\ITE311-ALEJADO\system\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#11 C:\xampp\htdocs\ITE311-ALEJADO\index.php(204): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#12 {main}
+ERROR - 2025-11-12 20:57:14 --> Failed to fetch user enrollments: Unknown column 'e.enrollment_status' in 'field list'
+ERROR - 2025-11-12 21:12:11 --> mysqli_sql_exception: Invalid JSON text in argument 1 to function json_contains: "Invalid value." at position 0. in C:\xampp\htdocs\ITE311-ALEJADO\system\Database\MySQLi\Connection.php:327
+Stack trace:
+#0 C:\xampp\htdocs\ITE311-ALEJADO\system\Database\MySQLi\Connection.php(327): mysqli->query('\r\n             ...', 0)
+#1 C:\xampp\htdocs\ITE311-ALEJADO\system\Database\BaseConnection.php(729): CodeIgniter\Database\MySQLi\Connection->execute('\r\n             ...')
+#2 C:\xampp\htdocs\ITE311-ALEJADO\system\Database\BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery('\r\n             ...')
+#3 C:\xampp\htdocs\ITE311-ALEJADO\app\Controllers\Auth.php(364): CodeIgniter\Database\BaseConnection->query('\r\n             ...', Array)
+#4 C:\xampp\htdocs\ITE311-ALEJADO\system\CodeIgniter.php(933): App\Controllers\Auth->dashboard()
+#5 C:\xampp\htdocs\ITE311-ALEJADO\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Auth))
+#6 C:\xampp\htdocs\ITE311-ALEJADO\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 C:\xampp\htdocs\ITE311-ALEJADO\system\Boot.php(363): CodeIgniter\CodeIgniter->run()
+#8 C:\xampp\htdocs\ITE311-ALEJADO\system\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#9 C:\xampp\htdocs\ITE311-ALEJADO\index.php(204): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#10 {main}
+ERROR - 2025-11-12 21:12:11 --> Teacher dashboard error: Invalid JSON text in argument 1 to function json_contains: "Invalid value." at position 0.
+ERROR - 2025-11-12 21:12:19 --> mysqli_sql_exception: Invalid JSON text in argument 1 to function json_contains: "Invalid value." at position 0. in C:\xampp\htdocs\ITE311-ALEJADO\system\Database\MySQLi\Connection.php:327
+Stack trace:
+#0 C:\xampp\htdocs\ITE311-ALEJADO\system\Database\MySQLi\Connection.php(327): mysqli->query('\r\n             ...', 0)
+#1 C:\xampp\htdocs\ITE311-ALEJADO\system\Database\BaseConnection.php(729): CodeIgniter\Database\MySQLi\Connection->execute('\r\n             ...')
+#2 C:\xampp\htdocs\ITE311-ALEJADO\system\Database\BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery('\r\n             ...')
+#3 C:\xampp\htdocs\ITE311-ALEJADO\app\Controllers\Auth.php(364): CodeIgniter\Database\BaseConnection->query('\r\n             ...', Array)
+#4 C:\xampp\htdocs\ITE311-ALEJADO\system\CodeIgniter.php(933): App\Controllers\Auth->dashboard()
+#5 C:\xampp\htdocs\ITE311-ALEJADO\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Auth))
+#6 C:\xampp\htdocs\ITE311-ALEJADO\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 C:\xampp\htdocs\ITE311-ALEJADO\system\Boot.php(363): CodeIgniter\CodeIgniter->run()
+#8 C:\xampp\htdocs\ITE311-ALEJADO\system\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#9 C:\xampp\htdocs\ITE311-ALEJADO\index.php(204): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#10 {main}
+ERROR - 2025-11-12 21:12:19 --> Teacher dashboard error: Invalid JSON text in argument 1 to function json_contains: "Invalid value." at position 0.
+ERROR - 2025-11-12 21:12:20 --> mysqli_sql_exception: Invalid JSON text in argument 1 to function json_contains: "Invalid value." at position 0. in C:\xampp\htdocs\ITE311-ALEJADO\system\Database\MySQLi\Connection.php:327
+Stack trace:
+#0 C:\xampp\htdocs\ITE311-ALEJADO\system\Database\MySQLi\Connection.php(327): mysqli->query('\r\n             ...', 0)
+#1 C:\xampp\htdocs\ITE311-ALEJADO\system\Database\BaseConnection.php(729): CodeIgniter\Database\MySQLi\Connection->execute('\r\n             ...')
+#2 C:\xampp\htdocs\ITE311-ALEJADO\system\Database\BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery('\r\n             ...')
+#3 C:\xampp\htdocs\ITE311-ALEJADO\app\Controllers\Auth.php(364): CodeIgniter\Database\BaseConnection->query('\r\n             ...', Array)
+#4 C:\xampp\htdocs\ITE311-ALEJADO\system\CodeIgniter.php(933): App\Controllers\Auth->dashboard()
+#5 C:\xampp\htdocs\ITE311-ALEJADO\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Auth))
+#6 C:\xampp\htdocs\ITE311-ALEJADO\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 C:\xampp\htdocs\ITE311-ALEJADO\system\Boot.php(363): CodeIgniter\CodeIgniter->run()
+#8 C:\xampp\htdocs\ITE311-ALEJADO\system\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#9 C:\xampp\htdocs\ITE311-ALEJADO\index.php(204): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#10 {main}
+ERROR - 2025-11-12 21:12:20 --> Teacher dashboard error: Invalid JSON text in argument 1 to function json_contains: "Invalid value." at position 0.
+ERROR - 2025-11-12 21:12:21 --> mysqli_sql_exception: Invalid JSON text in argument 1 to function json_contains: "Invalid value." at position 0. in C:\xampp\htdocs\ITE311-ALEJADO\system\Database\MySQLi\Connection.php:327
+Stack trace:
+#0 C:\xampp\htdocs\ITE311-ALEJADO\system\Database\MySQLi\Connection.php(327): mysqli->query('\r\n             ...', 0)
+#1 C:\xampp\htdocs\ITE311-ALEJADO\system\Database\BaseConnection.php(729): CodeIgniter\Database\MySQLi\Connection->execute('\r\n             ...')
+#2 C:\xampp\htdocs\ITE311-ALEJADO\system\Database\BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery('\r\n             ...')
+#3 C:\xampp\htdocs\ITE311-ALEJADO\app\Controllers\Auth.php(364): CodeIgniter\Database\BaseConnection->query('\r\n             ...', Array)
+#4 C:\xampp\htdocs\ITE311-ALEJADO\system\CodeIgniter.php(933): App\Controllers\Auth->dashboard()
+#5 C:\xampp\htdocs\ITE311-ALEJADO\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Auth))
+#6 C:\xampp\htdocs\ITE311-ALEJADO\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 C:\xampp\htdocs\ITE311-ALEJADO\system\Boot.php(363): CodeIgniter\CodeIgniter->run()
+#8 C:\xampp\htdocs\ITE311-ALEJADO\system\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#9 C:\xampp\htdocs\ITE311-ALEJADO\index.php(204): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#10 {main}
+ERROR - 2025-11-12 21:12:21 --> Teacher dashboard error: Invalid JSON text in argument 1 to function json_contains: "Invalid value." at position 0.
+ERROR - 2025-11-12 21:12:22 --> mysqli_sql_exception: Invalid JSON text in argument 1 to function json_contains: "Invalid value." at position 0. in C:\xampp\htdocs\ITE311-ALEJADO\system\Database\MySQLi\Connection.php:327
+Stack trace:
+#0 C:\xampp\htdocs\ITE311-ALEJADO\system\Database\MySQLi\Connection.php(327): mysqli->query('\r\n             ...', 0)
+#1 C:\xampp\htdocs\ITE311-ALEJADO\system\Database\BaseConnection.php(729): CodeIgniter\Database\MySQLi\Connection->execute('\r\n             ...')
+#2 C:\xampp\htdocs\ITE311-ALEJADO\system\Database\BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery('\r\n             ...')
+#3 C:\xampp\htdocs\ITE311-ALEJADO\app\Controllers\Auth.php(364): CodeIgniter\Database\BaseConnection->query('\r\n             ...', Array)
+#4 C:\xampp\htdocs\ITE311-ALEJADO\system\CodeIgniter.php(933): App\Controllers\Auth->dashboard()
+#5 C:\xampp\htdocs\ITE311-ALEJADO\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Auth))
+#6 C:\xampp\htdocs\ITE311-ALEJADO\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 C:\xampp\htdocs\ITE311-ALEJADO\system\Boot.php(363): CodeIgniter\CodeIgniter->run()
+#8 C:\xampp\htdocs\ITE311-ALEJADO\system\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#9 C:\xampp\htdocs\ITE311-ALEJADO\index.php(204): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#10 {main}
+ERROR - 2025-11-12 21:12:22 --> Teacher dashboard error: Invalid JSON text in argument 1 to function json_contains: "Invalid value." at position 0.
+ERROR - 2025-11-12 21:12:22 --> mysqli_sql_exception: Invalid JSON text in argument 1 to function json_contains: "Invalid value." at position 0. in C:\xampp\htdocs\ITE311-ALEJADO\system\Database\MySQLi\Connection.php:327
+Stack trace:
+#0 C:\xampp\htdocs\ITE311-ALEJADO\system\Database\MySQLi\Connection.php(327): mysqli->query('\r\n             ...', 0)
+#1 C:\xampp\htdocs\ITE311-ALEJADO\system\Database\BaseConnection.php(729): CodeIgniter\Database\MySQLi\Connection->execute('\r\n             ...')
+#2 C:\xampp\htdocs\ITE311-ALEJADO\system\Database\BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery('\r\n             ...')
+#3 C:\xampp\htdocs\ITE311-ALEJADO\app\Controllers\Auth.php(364): CodeIgniter\Database\BaseConnection->query('\r\n             ...', Array)
+#4 C:\xampp\htdocs\ITE311-ALEJADO\system\CodeIgniter.php(933): App\Controllers\Auth->dashboard()
+#5 C:\xampp\htdocs\ITE311-ALEJADO\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Auth))
+#6 C:\xampp\htdocs\ITE311-ALEJADO\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 C:\xampp\htdocs\ITE311-ALEJADO\system\Boot.php(363): CodeIgniter\CodeIgniter->run()
+#8 C:\xampp\htdocs\ITE311-ALEJADO\system\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#9 C:\xampp\htdocs\ITE311-ALEJADO\index.php(204): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#10 {main}
+ERROR - 2025-11-12 21:12:22 --> Teacher dashboard error: Invalid JSON text in argument 1 to function json_contains: "Invalid value." at position 0.
+CRITICAL - 2025-11-12 21:14:10 --> ErrorException: Undefined variable $availableCoursesCount
+[Method: GET, Route: student/courses]
+in APPPATH\Views\student\courses.php on line 72.
+ 1 APPPATH\Views\student\courses.php(72): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $availableCoursesCount', 'C:\\xampp\\htdocs\\ITE311-ALEJADO\\app\\Views\\student\\courses.php', 72)
+ 2 SYSTEMPATH\View\View.php(226): include('C:\\xampp\\htdocs\\ITE311-ALEJADO\\app\\Views\\student\\courses.php')
+ 3 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1167): CodeIgniter\View\View->render('student/courses', [], true)
+ 5 APPPATH\Controllers\Auth.php(1505): view('student/courses', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Auth->studentCourses()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Auth))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(204): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-11-12 21:14:16 --> ErrorException: Undefined variable $availableCoursesCount
+[Method: GET, Route: student/courses]
+in APPPATH\Views\student\courses.php on line 72.
+ 1 APPPATH\Views\student\courses.php(72): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $availableCoursesCount', 'C:\\xampp\\htdocs\\ITE311-ALEJADO\\app\\Views\\student\\courses.php', 72)
+ 2 SYSTEMPATH\View\View.php(226): include('C:\\xampp\\htdocs\\ITE311-ALEJADO\\app\\Views\\student\\courses.php')
+ 3 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1167): CodeIgniter\View\View->render('student/courses', [], true)
+ 5 APPPATH\Controllers\Auth.php(1505): view('student/courses', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Auth->studentCourses()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Auth))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(204): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-11-12 21:14:20 --> ErrorException: Undefined variable $availableCoursesCount
+[Method: GET, Route: student/courses]
+in APPPATH\Views\student\courses.php on line 72.
+ 1 APPPATH\Views\student\courses.php(72): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $availableCoursesCount', 'C:\\xampp\\htdocs\\ITE311-ALEJADO\\app\\Views\\student\\courses.php', 72)
+ 2 SYSTEMPATH\View\View.php(226): include('C:\\xampp\\htdocs\\ITE311-ALEJADO\\app\\Views\\student\\courses.php')
+ 3 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1167): CodeIgniter\View\View->render('student/courses', [], true)
+ 5 APPPATH\Controllers\Auth.php(1505): view('student/courses', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Auth->studentCourses()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Auth))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(204): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ERROR - 2025-11-12 21:16:56 --> mysqli_sql_exception: Invalid JSON text in argument 1 to function json_contains: "Invalid value." at position 0. in C:\xampp\htdocs\ITE311-ALEJADO\system\Database\MySQLi\Connection.php:327
+Stack trace:
+#0 C:\xampp\htdocs\ITE311-ALEJADO\system\Database\MySQLi\Connection.php(327): mysqli->query('\r\n             ...', 0)
+#1 C:\xampp\htdocs\ITE311-ALEJADO\system\Database\BaseConnection.php(729): CodeIgniter\Database\MySQLi\Connection->execute('\r\n             ...')
+#2 C:\xampp\htdocs\ITE311-ALEJADO\system\Database\BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery('\r\n             ...')
+#3 C:\xampp\htdocs\ITE311-ALEJADO\app\Controllers\Auth.php(364): CodeIgniter\Database\BaseConnection->query('\r\n             ...', Array)
+#4 C:\xampp\htdocs\ITE311-ALEJADO\system\CodeIgniter.php(933): App\Controllers\Auth->dashboard()
+#5 C:\xampp\htdocs\ITE311-ALEJADO\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Auth))
+#6 C:\xampp\htdocs\ITE311-ALEJADO\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 C:\xampp\htdocs\ITE311-ALEJADO\system\Boot.php(363): CodeIgniter\CodeIgniter->run()
+#8 C:\xampp\htdocs\ITE311-ALEJADO\system\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#9 C:\xampp\htdocs\ITE311-ALEJADO\index.php(204): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#10 {main}
+ERROR - 2025-11-12 21:16:56 --> Teacher dashboard error: Invalid JSON text in argument 1 to function json_contains: "Invalid value." at position 0.
+ERROR - 2025-11-12 21:16:59 --> mysqli_sql_exception: Invalid JSON text in argument 1 to function json_contains: "Invalid value." at position 0. in C:\xampp\htdocs\ITE311-ALEJADO\system\Database\MySQLi\Connection.php:327
+Stack trace:
+#0 C:\xampp\htdocs\ITE311-ALEJADO\system\Database\MySQLi\Connection.php(327): mysqli->query('\r\n             ...', 0)
+#1 C:\xampp\htdocs\ITE311-ALEJADO\system\Database\BaseConnection.php(729): CodeIgniter\Database\MySQLi\Connection->execute('\r\n             ...')
+#2 C:\xampp\htdocs\ITE311-ALEJADO\system\Database\BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery('\r\n             ...')
+#3 C:\xampp\htdocs\ITE311-ALEJADO\app\Controllers\Auth.php(364): CodeIgniter\Database\BaseConnection->query('\r\n             ...', Array)
+#4 C:\xampp\htdocs\ITE311-ALEJADO\system\CodeIgniter.php(933): App\Controllers\Auth->dashboard()
+#5 C:\xampp\htdocs\ITE311-ALEJADO\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Auth))
+#6 C:\xampp\htdocs\ITE311-ALEJADO\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 C:\xampp\htdocs\ITE311-ALEJADO\system\Boot.php(363): CodeIgniter\CodeIgniter->run()
+#8 C:\xampp\htdocs\ITE311-ALEJADO\system\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#9 C:\xampp\htdocs\ITE311-ALEJADO\index.php(204): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#10 {main}
+ERROR - 2025-11-12 21:16:59 --> Teacher dashboard error: Invalid JSON text in argument 1 to function json_contains: "Invalid value." at position 0.
+ERROR - 2025-11-12 21:35:13 --> mysqli_sql_exception: Invalid JSON text in argument 1 to function json_contains: "Invalid value." at position 0. in C:\xampp\htdocs\ITE311-ALEJADO\system\Database\MySQLi\Connection.php:327
+Stack trace:
+#0 C:\xampp\htdocs\ITE311-ALEJADO\system\Database\MySQLi\Connection.php(327): mysqli->query('\r\n             ...', 0)
+#1 C:\xampp\htdocs\ITE311-ALEJADO\system\Database\BaseConnection.php(729): CodeIgniter\Database\MySQLi\Connection->execute('\r\n             ...')
+#2 C:\xampp\htdocs\ITE311-ALEJADO\system\Database\BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery('\r\n             ...')
+#3 C:\xampp\htdocs\ITE311-ALEJADO\app\Controllers\Auth.php(367): CodeIgniter\Database\BaseConnection->query('\r\n             ...', Array)
+#4 C:\xampp\htdocs\ITE311-ALEJADO\system\CodeIgniter.php(933): App\Controllers\Auth->dashboard()
+#5 C:\xampp\htdocs\ITE311-ALEJADO\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Auth))
+#6 C:\xampp\htdocs\ITE311-ALEJADO\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 C:\xampp\htdocs\ITE311-ALEJADO\system\Boot.php(363): CodeIgniter\CodeIgniter->run()
+#8 C:\xampp\htdocs\ITE311-ALEJADO\system\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#9 C:\xampp\htdocs\ITE311-ALEJADO\index.php(204): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#10 {main}
+ERROR - 2025-11-12 21:35:13 --> Teacher dashboard error: Invalid JSON text in argument 1 to function json_contains: "Invalid value." at position 0.
+ERROR - 2025-11-12 21:36:40 --> mysqli_sql_exception: Invalid JSON text in argument 1 to function json_contains: "Invalid value." at position 0. in C:\xampp\htdocs\ITE311-ALEJADO\system\Database\MySQLi\Connection.php:327
+Stack trace:
+#0 C:\xampp\htdocs\ITE311-ALEJADO\system\Database\MySQLi\Connection.php(327): mysqli->query('\r\n             ...', 0)
+#1 C:\xampp\htdocs\ITE311-ALEJADO\system\Database\BaseConnection.php(729): CodeIgniter\Database\MySQLi\Connection->execute('\r\n             ...')
+#2 C:\xampp\htdocs\ITE311-ALEJADO\system\Database\BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery('\r\n             ...')
+#3 C:\xampp\htdocs\ITE311-ALEJADO\app\Controllers\Auth.php(367): CodeIgniter\Database\BaseConnection->query('\r\n             ...', Array)
+#4 C:\xampp\htdocs\ITE311-ALEJADO\system\CodeIgniter.php(933): App\Controllers\Auth->dashboard()
+#5 C:\xampp\htdocs\ITE311-ALEJADO\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Auth))
+#6 C:\xampp\htdocs\ITE311-ALEJADO\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 C:\xampp\htdocs\ITE311-ALEJADO\system\Boot.php(363): CodeIgniter\CodeIgniter->run()
+#8 C:\xampp\htdocs\ITE311-ALEJADO\system\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#9 C:\xampp\htdocs\ITE311-ALEJADO\index.php(204): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#10 {main}
+ERROR - 2025-11-12 21:36:40 --> Teacher dashboard error: Invalid JSON text in argument 1 to function json_contains: "Invalid value." at position 0.
+ERROR - 2025-11-12 21:36:42 --> mysqli_sql_exception: Invalid JSON text in argument 1 to function json_contains: "Invalid value." at position 0. in C:\xampp\htdocs\ITE311-ALEJADO\system\Database\MySQLi\Connection.php:327
+Stack trace:
+#0 C:\xampp\htdocs\ITE311-ALEJADO\system\Database\MySQLi\Connection.php(327): mysqli->query('\r\n             ...', 0)
+#1 C:\xampp\htdocs\ITE311-ALEJADO\system\Database\BaseConnection.php(729): CodeIgniter\Database\MySQLi\Connection->execute('\r\n             ...')
+#2 C:\xampp\htdocs\ITE311-ALEJADO\system\Database\BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery('\r\n             ...')
+#3 C:\xampp\htdocs\ITE311-ALEJADO\app\Controllers\Auth.php(367): CodeIgniter\Database\BaseConnection->query('\r\n             ...', Array)
+#4 C:\xampp\htdocs\ITE311-ALEJADO\system\CodeIgniter.php(933): App\Controllers\Auth->dashboard()
+#5 C:\xampp\htdocs\ITE311-ALEJADO\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Auth))
+#6 C:\xampp\htdocs\ITE311-ALEJADO\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 C:\xampp\htdocs\ITE311-ALEJADO\system\Boot.php(363): CodeIgniter\CodeIgniter->run()
+#8 C:\xampp\htdocs\ITE311-ALEJADO\system\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#9 C:\xampp\htdocs\ITE311-ALEJADO\index.php(204): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#10 {main}
+ERROR - 2025-11-12 21:36:42 --> Teacher dashboard error: Invalid JSON text in argument 1 to function json_contains: "Invalid value." at position 0.
+ERROR - 2025-11-12 21:37:45 --> mysqli_sql_exception: Invalid JSON text in argument 1 to function json_contains: "Invalid value." at position 0. in C:\xampp\htdocs\ITE311-ALEJADO\system\Database\MySQLi\Connection.php:327
+Stack trace:
+#0 C:\xampp\htdocs\ITE311-ALEJADO\system\Database\MySQLi\Connection.php(327): mysqli->query('\r\n             ...', 0)
+#1 C:\xampp\htdocs\ITE311-ALEJADO\system\Database\BaseConnection.php(729): CodeIgniter\Database\MySQLi\Connection->execute('\r\n             ...')
+#2 C:\xampp\htdocs\ITE311-ALEJADO\system\Database\BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery('\r\n             ...')
+#3 C:\xampp\htdocs\ITE311-ALEJADO\app\Controllers\Auth.php(367): CodeIgniter\Database\BaseConnection->query('\r\n             ...', Array)
+#4 C:\xampp\htdocs\ITE311-ALEJADO\system\CodeIgniter.php(933): App\Controllers\Auth->dashboard()
+#5 C:\xampp\htdocs\ITE311-ALEJADO\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Auth))
+#6 C:\xampp\htdocs\ITE311-ALEJADO\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 C:\xampp\htdocs\ITE311-ALEJADO\system\Boot.php(363): CodeIgniter\CodeIgniter->run()
+#8 C:\xampp\htdocs\ITE311-ALEJADO\system\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#9 C:\xampp\htdocs\ITE311-ALEJADO\index.php(204): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#10 {main}
+ERROR - 2025-11-12 21:37:45 --> Teacher dashboard error: Invalid JSON text in argument 1 to function json_contains: "Invalid value." at position 0.
+ERROR - 2025-11-12 21:37:47 --> mysqli_sql_exception: Invalid JSON text in argument 1 to function json_contains: "Invalid value." at position 0. in C:\xampp\htdocs\ITE311-ALEJADO\system\Database\MySQLi\Connection.php:327
+Stack trace:
+#0 C:\xampp\htdocs\ITE311-ALEJADO\system\Database\MySQLi\Connection.php(327): mysqli->query('\r\n             ...', 0)
+#1 C:\xampp\htdocs\ITE311-ALEJADO\system\Database\BaseConnection.php(729): CodeIgniter\Database\MySQLi\Connection->execute('\r\n             ...')
+#2 C:\xampp\htdocs\ITE311-ALEJADO\system\Database\BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery('\r\n             ...')
+#3 C:\xampp\htdocs\ITE311-ALEJADO\app\Controllers\Auth.php(367): CodeIgniter\Database\BaseConnection->query('\r\n             ...', Array)
+#4 C:\xampp\htdocs\ITE311-ALEJADO\system\CodeIgniter.php(933): App\Controllers\Auth->dashboard()
+#5 C:\xampp\htdocs\ITE311-ALEJADO\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Auth))
+#6 C:\xampp\htdocs\ITE311-ALEJADO\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 C:\xampp\htdocs\ITE311-ALEJADO\system\Boot.php(363): CodeIgniter\CodeIgniter->run()
+#8 C:\xampp\htdocs\ITE311-ALEJADO\system\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#9 C:\xampp\htdocs\ITE311-ALEJADO\index.php(204): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#10 {main}
+ERROR - 2025-11-12 21:37:47 --> Teacher dashboard error: Invalid JSON text in argument 1 to function json_contains: "Invalid value." at position 0.
+ERROR - 2025-11-12 21:39:27 --> mysqli_sql_exception: Invalid JSON text in argument 1 to function json_contains: "Invalid value." at position 0. in C:\xampp\htdocs\ITE311-ALEJADO\system\Database\MySQLi\Connection.php:327
+Stack trace:
+#0 C:\xampp\htdocs\ITE311-ALEJADO\system\Database\MySQLi\Connection.php(327): mysqli->query('\r\n             ...', 0)
+#1 C:\xampp\htdocs\ITE311-ALEJADO\system\Database\BaseConnection.php(729): CodeIgniter\Database\MySQLi\Connection->execute('\r\n             ...')
+#2 C:\xampp\htdocs\ITE311-ALEJADO\system\Database\BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery('\r\n             ...')
+#3 C:\xampp\htdocs\ITE311-ALEJADO\app\Controllers\Auth.php(370): CodeIgniter\Database\BaseConnection->query('\r\n             ...', Array)
+#4 C:\xampp\htdocs\ITE311-ALEJADO\system\CodeIgniter.php(933): App\Controllers\Auth->dashboard()
+#5 C:\xampp\htdocs\ITE311-ALEJADO\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Auth))
+#6 C:\xampp\htdocs\ITE311-ALEJADO\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 C:\xampp\htdocs\ITE311-ALEJADO\system\Boot.php(363): CodeIgniter\CodeIgniter->run()
+#8 C:\xampp\htdocs\ITE311-ALEJADO\system\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#9 C:\xampp\htdocs\ITE311-ALEJADO\index.php(204): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#10 {main}
+ERROR - 2025-11-12 21:39:27 --> Teacher dashboard error: Invalid JSON text in argument 1 to function json_contains: "Invalid value." at position 0.
+ERROR - 2025-11-12 21:39:28 --> mysqli_sql_exception: Invalid JSON text in argument 1 to function json_contains: "Invalid value." at position 0. in C:\xampp\htdocs\ITE311-ALEJADO\system\Database\MySQLi\Connection.php:327
+Stack trace:
+#0 C:\xampp\htdocs\ITE311-ALEJADO\system\Database\MySQLi\Connection.php(327): mysqli->query('\r\n             ...', 0)
+#1 C:\xampp\htdocs\ITE311-ALEJADO\system\Database\BaseConnection.php(729): CodeIgniter\Database\MySQLi\Connection->execute('\r\n             ...')
+#2 C:\xampp\htdocs\ITE311-ALEJADO\system\Database\BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery('\r\n             ...')
+#3 C:\xampp\htdocs\ITE311-ALEJADO\app\Controllers\Auth.php(370): CodeIgniter\Database\BaseConnection->query('\r\n             ...', Array)
+#4 C:\xampp\htdocs\ITE311-ALEJADO\system\CodeIgniter.php(933): App\Controllers\Auth->dashboard()
+#5 C:\xampp\htdocs\ITE311-ALEJADO\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Auth))
+#6 C:\xampp\htdocs\ITE311-ALEJADO\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 C:\xampp\htdocs\ITE311-ALEJADO\system\Boot.php(363): CodeIgniter\CodeIgniter->run()
+#8 C:\xampp\htdocs\ITE311-ALEJADO\system\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#9 C:\xampp\htdocs\ITE311-ALEJADO\index.php(204): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#10 {main}
+ERROR - 2025-11-12 21:39:28 --> Teacher dashboard error: Invalid JSON text in argument 1 to function json_contains: "Invalid value." at position 0.
+ERROR - 2025-11-12 21:39:28 --> mysqli_sql_exception: Invalid JSON text in argument 1 to function json_contains: "Invalid value." at position 0. in C:\xampp\htdocs\ITE311-ALEJADO\system\Database\MySQLi\Connection.php:327
+Stack trace:
+#0 C:\xampp\htdocs\ITE311-ALEJADO\system\Database\MySQLi\Connection.php(327): mysqli->query('\r\n             ...', 0)
+#1 C:\xampp\htdocs\ITE311-ALEJADO\system\Database\BaseConnection.php(729): CodeIgniter\Database\MySQLi\Connection->execute('\r\n             ...')
+#2 C:\xampp\htdocs\ITE311-ALEJADO\system\Database\BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery('\r\n             ...')
+#3 C:\xampp\htdocs\ITE311-ALEJADO\app\Controllers\Auth.php(370): CodeIgniter\Database\BaseConnection->query('\r\n             ...', Array)
+#4 C:\xampp\htdocs\ITE311-ALEJADO\system\CodeIgniter.php(933): App\Controllers\Auth->dashboard()
+#5 C:\xampp\htdocs\ITE311-ALEJADO\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Auth))
+#6 C:\xampp\htdocs\ITE311-ALEJADO\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 C:\xampp\htdocs\ITE311-ALEJADO\system\Boot.php(363): CodeIgniter\CodeIgniter->run()
+#8 C:\xampp\htdocs\ITE311-ALEJADO\system\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#9 C:\xampp\htdocs\ITE311-ALEJADO\index.php(204): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#10 {main}
+ERROR - 2025-11-12 21:39:28 --> Teacher dashboard error: Invalid JSON text in argument 1 to function json_contains: "Invalid value." at position 0.
+ERROR - 2025-11-12 21:39:29 --> mysqli_sql_exception: Invalid JSON text in argument 1 to function json_contains: "Invalid value." at position 0. in C:\xampp\htdocs\ITE311-ALEJADO\system\Database\MySQLi\Connection.php:327
+Stack trace:
+#0 C:\xampp\htdocs\ITE311-ALEJADO\system\Database\MySQLi\Connection.php(327): mysqli->query('\r\n             ...', 0)
+#1 C:\xampp\htdocs\ITE311-ALEJADO\system\Database\BaseConnection.php(729): CodeIgniter\Database\MySQLi\Connection->execute('\r\n             ...')
+#2 C:\xampp\htdocs\ITE311-ALEJADO\system\Database\BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery('\r\n             ...')
+#3 C:\xampp\htdocs\ITE311-ALEJADO\app\Controllers\Auth.php(370): CodeIgniter\Database\BaseConnection->query('\r\n             ...', Array)
+#4 C:\xampp\htdocs\ITE311-ALEJADO\system\CodeIgniter.php(933): App\Controllers\Auth->dashboard()
+#5 C:\xampp\htdocs\ITE311-ALEJADO\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Auth))
+#6 C:\xampp\htdocs\ITE311-ALEJADO\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 C:\xampp\htdocs\ITE311-ALEJADO\system\Boot.php(363): CodeIgniter\CodeIgniter->run()
+#8 C:\xampp\htdocs\ITE311-ALEJADO\system\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#9 C:\xampp\htdocs\ITE311-ALEJADO\index.php(204): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#10 {main}
+ERROR - 2025-11-12 21:39:29 --> Teacher dashboard error: Invalid JSON text in argument 1 to function json_contains: "Invalid value." at position 0.
+ERROR - 2025-11-12 21:39:30 --> mysqli_sql_exception: Invalid JSON text in argument 1 to function json_contains: "Invalid value." at position 0. in C:\xampp\htdocs\ITE311-ALEJADO\system\Database\MySQLi\Connection.php:327
+Stack trace:
+#0 C:\xampp\htdocs\ITE311-ALEJADO\system\Database\MySQLi\Connection.php(327): mysqli->query('\r\n             ...', 0)
+#1 C:\xampp\htdocs\ITE311-ALEJADO\system\Database\BaseConnection.php(729): CodeIgniter\Database\MySQLi\Connection->execute('\r\n             ...')
+#2 C:\xampp\htdocs\ITE311-ALEJADO\system\Database\BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery('\r\n             ...')
+#3 C:\xampp\htdocs\ITE311-ALEJADO\app\Controllers\Auth.php(370): CodeIgniter\Database\BaseConnection->query('\r\n             ...', Array)
+#4 C:\xampp\htdocs\ITE311-ALEJADO\system\CodeIgniter.php(933): App\Controllers\Auth->dashboard()
+#5 C:\xampp\htdocs\ITE311-ALEJADO\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Auth))
+#6 C:\xampp\htdocs\ITE311-ALEJADO\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 C:\xampp\htdocs\ITE311-ALEJADO\system\Boot.php(363): CodeIgniter\CodeIgniter->run()
+#8 C:\xampp\htdocs\ITE311-ALEJADO\system\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#9 C:\xampp\htdocs\ITE311-ALEJADO\index.php(204): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#10 {main}
+ERROR - 2025-11-12 21:39:30 --> Teacher dashboard error: Invalid JSON text in argument 1 to function json_contains: "Invalid value." at position 0.
+ERROR - 2025-11-12 21:39:30 --> mysqli_sql_exception: Invalid JSON text in argument 1 to function json_contains: "Invalid value." at position 0. in C:\xampp\htdocs\ITE311-ALEJADO\system\Database\MySQLi\Connection.php:327
+Stack trace:
+#0 C:\xampp\htdocs\ITE311-ALEJADO\system\Database\MySQLi\Connection.php(327): mysqli->query('\r\n             ...', 0)
+#1 C:\xampp\htdocs\ITE311-ALEJADO\system\Database\BaseConnection.php(729): CodeIgniter\Database\MySQLi\Connection->execute('\r\n             ...')
+#2 C:\xampp\htdocs\ITE311-ALEJADO\system\Database\BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery('\r\n             ...')
+#3 C:\xampp\htdocs\ITE311-ALEJADO\app\Controllers\Auth.php(370): CodeIgniter\Database\BaseConnection->query('\r\n             ...', Array)
+#4 C:\xampp\htdocs\ITE311-ALEJADO\system\CodeIgniter.php(933): App\Controllers\Auth->dashboard()
+#5 C:\xampp\htdocs\ITE311-ALEJADO\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Auth))
+#6 C:\xampp\htdocs\ITE311-ALEJADO\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 C:\xampp\htdocs\ITE311-ALEJADO\system\Boot.php(363): CodeIgniter\CodeIgniter->run()
+#8 C:\xampp\htdocs\ITE311-ALEJADO\system\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#9 C:\xampp\htdocs\ITE311-ALEJADO\index.php(204): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#10 {main}
+ERROR - 2025-11-12 21:39:30 --> Teacher dashboard error: Invalid JSON text in argument 1 to function json_contains: "Invalid value." at position 0.
+ERROR - 2025-11-12 21:39:30 --> mysqli_sql_exception: Invalid JSON text in argument 1 to function json_contains: "Invalid value." at position 0. in C:\xampp\htdocs\ITE311-ALEJADO\system\Database\MySQLi\Connection.php:327
+Stack trace:
+#0 C:\xampp\htdocs\ITE311-ALEJADO\system\Database\MySQLi\Connection.php(327): mysqli->query('\r\n             ...', 0)
+#1 C:\xampp\htdocs\ITE311-ALEJADO\system\Database\BaseConnection.php(729): CodeIgniter\Database\MySQLi\Connection->execute('\r\n             ...')
+#2 C:\xampp\htdocs\ITE311-ALEJADO\system\Database\BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery('\r\n             ...')
+#3 C:\xampp\htdocs\ITE311-ALEJADO\app\Controllers\Auth.php(370): CodeIgniter\Database\BaseConnection->query('\r\n             ...', Array)
+#4 C:\xampp\htdocs\ITE311-ALEJADO\system\CodeIgniter.php(933): App\Controllers\Auth->dashboard()
+#5 C:\xampp\htdocs\ITE311-ALEJADO\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Auth))
+#6 C:\xampp\htdocs\ITE311-ALEJADO\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 C:\xampp\htdocs\ITE311-ALEJADO\system\Boot.php(363): CodeIgniter\CodeIgniter->run()
+#8 C:\xampp\htdocs\ITE311-ALEJADO\system\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#9 C:\xampp\htdocs\ITE311-ALEJADO\index.php(204): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#10 {main}
+ERROR - 2025-11-12 21:39:30 --> Teacher dashboard error: Invalid JSON text in argument 1 to function json_contains: "Invalid value." at position 0.
+ERROR - 2025-11-12 21:49:47 --> mysqli_sql_exception: Unknown column 'enrollments.semester_duration_weeks' in 'field list' in C:\xampp\htdocs\ITE311-ALEJADO\system\Database\MySQLi\Connection.php:327
+Stack trace:
+#0 C:\xampp\htdocs\ITE311-ALEJADO\system\Database\MySQLi\Connection.php(327): mysqli->query('SELECT `users`....', 0)
+#1 C:\xampp\htdocs\ITE311-ALEJADO\system\Database\BaseConnection.php(729): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `users`....')
+#2 C:\xampp\htdocs\ITE311-ALEJADO\system\Database\BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `users`....')
+#3 C:\xampp\htdocs\ITE311-ALEJADO\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `users`....', Array, false)
+#4 C:\xampp\htdocs\ITE311-ALEJADO\app\Controllers\Auth.php(1325): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\ITE311-ALEJADO\system\CodeIgniter.php(933): App\Controllers\Auth->teacherCourses()
+#6 C:\xampp\htdocs\ITE311-ALEJADO\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Auth))
+#7 C:\xampp\htdocs\ITE311-ALEJADO\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\ITE311-ALEJADO\system\Boot.php(363): CodeIgniter\CodeIgniter->run()
+#9 C:\xampp\htdocs\ITE311-ALEJADO\system\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#10 C:\xampp\htdocs\ITE311-ALEJADO\index.php(204): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#11 {main}
+CRITICAL - 2025-11-12 21:49:47 --> CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'enrollments.semester_duration_weeks' in 'field list'
+[Method: GET, Route: teacher/courses]
+in SYSTEMPATH\Database\BaseConnection.php on line 684.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `users`.`id` as `user_id`, `users`.`name`, `users`.`email`, `enrollments`.`enrollment_date`, `enrollments`.`enrollment_status`, `enrollments`.`year_level_at_enrollment`, `enrollments`.`enrollment_type`, `enrollments`.`payment_status`, `enrollments`.`semester`, `enrollments`.`academic_year`, `enrollments`.`semester_duration_weeks`, `enrollments`.`semester_end_date`
+FROM `enrollments`
+JOIN `users` ON `enrollments`.`user_id` = `users`.`id`
+WHERE `enrollments`.`course_id` = :enrollments.course_id:
+AND `users`.`role` = :users.role:
+ORDER BY `users`.`name` ASC', [...], false)
+ 2 APPPATH\Controllers\Auth.php(1325): CodeIgniter\Database\BaseBuilder->get()
+ 3 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Auth->teacherCourses()
+ 4 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Auth))
+ 5 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 8 FCPATH\index.php(204): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-11-12 21:49:47 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'enrollments.semester_duration_weeks' in 'field list'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 332.
+ 1 SYSTEMPATH\Database\BaseConnection.php(729): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `users`.`id` as `user_id`, `users`.`name`, `users`.`email`, `enrollments`.`enrollment_date`, `enrollments`.`enrollment_status`, `enrollments`.`year_level_at_enrollment`, `enrollments`.`enrollment_type`, `enrollments`.`payment_status`, `enrollments`.`semester`, `enrollments`.`academic_year`, `enrollments`.`semester_duration_weeks`, `enrollments`.`semester_end_date`
+FROM `enrollments`
+JOIN `users` ON `enrollments`.`user_id` = `users`.`id`
+WHERE `enrollments`.`course_id` = \'1\'
+AND `users`.`role` = \'student\'
+ORDER BY `users`.`name` ASC')
+ 2 SYSTEMPATH\Database\BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `users`.`id` as `user_id`, `users`.`name`, `users`.`email`, `enrollments`.`enrollment_date`, `enrollments`.`enrollment_status`, `enrollments`.`year_level_at_enrollment`, `enrollments`.`enrollment_type`, `enrollments`.`payment_status`, `enrollments`.`semester`, `enrollments`.`academic_year`, `enrollments`.`semester_duration_weeks`, `enrollments`.`semester_end_date`
+FROM `enrollments`
+JOIN `users` ON `enrollments`.`user_id` = `users`.`id`
+WHERE `enrollments`.`course_id` = \'1\'
+AND `users`.`role` = \'student\'
+ORDER BY `users`.`name` ASC')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `users`.`id` as `user_id`, `users`.`name`, `users`.`email`, `enrollments`.`enrollment_date`, `enrollments`.`enrollment_status`, `enrollments`.`year_level_at_enrollment`, `enrollments`.`enrollment_type`, `enrollments`.`payment_status`, `enrollments`.`semester`, `enrollments`.`academic_year`, `enrollments`.`semester_duration_weeks`, `enrollments`.`semester_end_date`
+FROM `enrollments`
+JOIN `users` ON `enrollments`.`user_id` = `users`.`id`
+WHERE `enrollments`.`course_id` = :enrollments.course_id:
+AND `users`.`role` = :users.role:
+ORDER BY `users`.`name` ASC', [...], false)
+ 4 APPPATH\Controllers\Auth.php(1325): CodeIgniter\Database\BaseBuilder->get()
+ 5 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Auth->teacherCourses()
+ 6 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Auth))
+ 7 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH\index.php(204): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-11-12 21:49:47 --> [Caused by] mysqli_sql_exception: Unknown column 'enrollments.semester_duration_weeks' in 'field list'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 327.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(327): mysqli->query('SELECT `users`.`id` as `user_id`, `users`.`name`, `users`.`email`, `enrollments`.`enrollment_date`, `enrollments`.`enrollment_status`, `enrollments`.`year_level_at_enrollment`, `enrollments`.`enrollment_type`, `enrollments`.`payment_status`, `enrollments`.`semester`, `enrollments`.`academic_year`, `enrollments`.`semester_duration_weeks`, `enrollments`.`semester_end_date`
+FROM `enrollments`
+JOIN `users` ON `enrollments`.`user_id` = `users`.`id`
+WHERE `enrollments`.`course_id` = \'1\'
+AND `users`.`role` = \'student\'
+ORDER BY `users`.`name` ASC', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(729): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `users`.`id` as `user_id`, `users`.`name`, `users`.`email`, `enrollments`.`enrollment_date`, `enrollments`.`enrollment_status`, `enrollments`.`year_level_at_enrollment`, `enrollments`.`enrollment_type`, `enrollments`.`payment_status`, `enrollments`.`semester`, `enrollments`.`academic_year`, `enrollments`.`semester_duration_weeks`, `enrollments`.`semester_end_date`
+FROM `enrollments`
+JOIN `users` ON `enrollments`.`user_id` = `users`.`id`
+WHERE `enrollments`.`course_id` = \'1\'
+AND `users`.`role` = \'student\'
+ORDER BY `users`.`name` ASC')
+ 3 SYSTEMPATH\Database\BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `users`.`id` as `user_id`, `users`.`name`, `users`.`email`, `enrollments`.`enrollment_date`, `enrollments`.`enrollment_status`, `enrollments`.`year_level_at_enrollment`, `enrollments`.`enrollment_type`, `enrollments`.`payment_status`, `enrollments`.`semester`, `enrollments`.`academic_year`, `enrollments`.`semester_duration_weeks`, `enrollments`.`semester_end_date`
+FROM `enrollments`
+JOIN `users` ON `enrollments`.`user_id` = `users`.`id`
+WHERE `enrollments`.`course_id` = \'1\'
+AND `users`.`role` = \'student\'
+ORDER BY `users`.`name` ASC')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `users`.`id` as `user_id`, `users`.`name`, `users`.`email`, `enrollments`.`enrollment_date`, `enrollments`.`enrollment_status`, `enrollments`.`year_level_at_enrollment`, `enrollments`.`enrollment_type`, `enrollments`.`payment_status`, `enrollments`.`semester`, `enrollments`.`academic_year`, `enrollments`.`semester_duration_weeks`, `enrollments`.`semester_end_date`
+FROM `enrollments`
+JOIN `users` ON `enrollments`.`user_id` = `users`.`id`
+WHERE `enrollments`.`course_id` = :enrollments.course_id:
+AND `users`.`role` = :users.role:
+ORDER BY `users`.`name` ASC', [...], false)
+ 5 APPPATH\Controllers\Auth.php(1325): CodeIgniter\Database\BaseBuilder->get()
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Auth->teacherCourses()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Auth))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(204): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ERROR - 2025-11-12 21:50:24 --> mysqli_sql_exception: Unknown column 'enrollments.semester_duration_weeks' in 'field list' in C:\xampp\htdocs\ITE311-ALEJADO\system\Database\MySQLi\Connection.php:327
+Stack trace:
+#0 C:\xampp\htdocs\ITE311-ALEJADO\system\Database\MySQLi\Connection.php(327): mysqli->query('SELECT `users`....', 0)
+#1 C:\xampp\htdocs\ITE311-ALEJADO\system\Database\BaseConnection.php(729): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `users`....')
+#2 C:\xampp\htdocs\ITE311-ALEJADO\system\Database\BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `users`....')
+#3 C:\xampp\htdocs\ITE311-ALEJADO\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `users`....', Array, false)
+#4 C:\xampp\htdocs\ITE311-ALEJADO\app\Controllers\Auth.php(1325): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\ITE311-ALEJADO\system\CodeIgniter.php(933): App\Controllers\Auth->teacherCourses()
+#6 C:\xampp\htdocs\ITE311-ALEJADO\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Auth))
+#7 C:\xampp\htdocs\ITE311-ALEJADO\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\ITE311-ALEJADO\system\Boot.php(363): CodeIgniter\CodeIgniter->run()
+#9 C:\xampp\htdocs\ITE311-ALEJADO\system\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#10 C:\xampp\htdocs\ITE311-ALEJADO\index.php(204): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#11 {main}
+CRITICAL - 2025-11-12 21:50:24 --> CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'enrollments.semester_duration_weeks' in 'field list'
+[Method: GET, Route: teacher/courses]
+in SYSTEMPATH\Database\BaseConnection.php on line 684.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `users`.`id` as `user_id`, `users`.`name`, `users`.`email`, `enrollments`.`enrollment_date`, `enrollments`.`enrollment_status`, `enrollments`.`year_level_at_enrollment`, `enrollments`.`enrollment_type`, `enrollments`.`payment_status`, `enrollments`.`semester`, `enrollments`.`academic_year`, `enrollments`.`semester_duration_weeks`, `enrollments`.`semester_end_date`
+FROM `enrollments`
+JOIN `users` ON `enrollments`.`user_id` = `users`.`id`
+WHERE `enrollments`.`course_id` = :enrollments.course_id:
+AND `users`.`role` = :users.role:
+ORDER BY `users`.`name` ASC', [...], false)
+ 2 APPPATH\Controllers\Auth.php(1325): CodeIgniter\Database\BaseBuilder->get()
+ 3 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Auth->teacherCourses()
+ 4 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Auth))
+ 5 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 8 FCPATH\index.php(204): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-11-12 21:50:24 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'enrollments.semester_duration_weeks' in 'field list'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 332.
+ 1 SYSTEMPATH\Database\BaseConnection.php(729): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `users`.`id` as `user_id`, `users`.`name`, `users`.`email`, `enrollments`.`enrollment_date`, `enrollments`.`enrollment_status`, `enrollments`.`year_level_at_enrollment`, `enrollments`.`enrollment_type`, `enrollments`.`payment_status`, `enrollments`.`semester`, `enrollments`.`academic_year`, `enrollments`.`semester_duration_weeks`, `enrollments`.`semester_end_date`
+FROM `enrollments`
+JOIN `users` ON `enrollments`.`user_id` = `users`.`id`
+WHERE `enrollments`.`course_id` = \'1\'
+AND `users`.`role` = \'student\'
+ORDER BY `users`.`name` ASC')
+ 2 SYSTEMPATH\Database\BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `users`.`id` as `user_id`, `users`.`name`, `users`.`email`, `enrollments`.`enrollment_date`, `enrollments`.`enrollment_status`, `enrollments`.`year_level_at_enrollment`, `enrollments`.`enrollment_type`, `enrollments`.`payment_status`, `enrollments`.`semester`, `enrollments`.`academic_year`, `enrollments`.`semester_duration_weeks`, `enrollments`.`semester_end_date`
+FROM `enrollments`
+JOIN `users` ON `enrollments`.`user_id` = `users`.`id`
+WHERE `enrollments`.`course_id` = \'1\'
+AND `users`.`role` = \'student\'
+ORDER BY `users`.`name` ASC')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `users`.`id` as `user_id`, `users`.`name`, `users`.`email`, `enrollments`.`enrollment_date`, `enrollments`.`enrollment_status`, `enrollments`.`year_level_at_enrollment`, `enrollments`.`enrollment_type`, `enrollments`.`payment_status`, `enrollments`.`semester`, `enrollments`.`academic_year`, `enrollments`.`semester_duration_weeks`, `enrollments`.`semester_end_date`
+FROM `enrollments`
+JOIN `users` ON `enrollments`.`user_id` = `users`.`id`
+WHERE `enrollments`.`course_id` = :enrollments.course_id:
+AND `users`.`role` = :users.role:
+ORDER BY `users`.`name` ASC', [...], false)
+ 4 APPPATH\Controllers\Auth.php(1325): CodeIgniter\Database\BaseBuilder->get()
+ 5 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Auth->teacherCourses()
+ 6 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Auth))
+ 7 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH\index.php(204): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-11-12 21:50:24 --> [Caused by] mysqli_sql_exception: Unknown column 'enrollments.semester_duration_weeks' in 'field list'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 327.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(327): mysqli->query('SELECT `users`.`id` as `user_id`, `users`.`name`, `users`.`email`, `enrollments`.`enrollment_date`, `enrollments`.`enrollment_status`, `enrollments`.`year_level_at_enrollment`, `enrollments`.`enrollment_type`, `enrollments`.`payment_status`, `enrollments`.`semester`, `enrollments`.`academic_year`, `enrollments`.`semester_duration_weeks`, `enrollments`.`semester_end_date`
+FROM `enrollments`
+JOIN `users` ON `enrollments`.`user_id` = `users`.`id`
+WHERE `enrollments`.`course_id` = \'1\'
+AND `users`.`role` = \'student\'
+ORDER BY `users`.`name` ASC', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(729): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `users`.`id` as `user_id`, `users`.`name`, `users`.`email`, `enrollments`.`enrollment_date`, `enrollments`.`enrollment_status`, `enrollments`.`year_level_at_enrollment`, `enrollments`.`enrollment_type`, `enrollments`.`payment_status`, `enrollments`.`semester`, `enrollments`.`academic_year`, `enrollments`.`semester_duration_weeks`, `enrollments`.`semester_end_date`
+FROM `enrollments`
+JOIN `users` ON `enrollments`.`user_id` = `users`.`id`
+WHERE `enrollments`.`course_id` = \'1\'
+AND `users`.`role` = \'student\'
+ORDER BY `users`.`name` ASC')
+ 3 SYSTEMPATH\Database\BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `users`.`id` as `user_id`, `users`.`name`, `users`.`email`, `enrollments`.`enrollment_date`, `enrollments`.`enrollment_status`, `enrollments`.`year_level_at_enrollment`, `enrollments`.`enrollment_type`, `enrollments`.`payment_status`, `enrollments`.`semester`, `enrollments`.`academic_year`, `enrollments`.`semester_duration_weeks`, `enrollments`.`semester_end_date`
+FROM `enrollments`
+JOIN `users` ON `enrollments`.`user_id` = `users`.`id`
+WHERE `enrollments`.`course_id` = \'1\'
+AND `users`.`role` = \'student\'
+ORDER BY `users`.`name` ASC')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `users`.`id` as `user_id`, `users`.`name`, `users`.`email`, `enrollments`.`enrollment_date`, `enrollments`.`enrollment_status`, `enrollments`.`year_level_at_enrollment`, `enrollments`.`enrollment_type`, `enrollments`.`payment_status`, `enrollments`.`semester`, `enrollments`.`academic_year`, `enrollments`.`semester_duration_weeks`, `enrollments`.`semester_end_date`
+FROM `enrollments`
+JOIN `users` ON `enrollments`.`user_id` = `users`.`id`
+WHERE `enrollments`.`course_id` = :enrollments.course_id:
+AND `users`.`role` = :users.role:
+ORDER BY `users`.`name` ASC', [...], false)
+ 5 APPPATH\Controllers\Auth.php(1325): CodeIgniter\Database\BaseBuilder->get()
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Auth->teacherCourses()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Auth))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(204): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ERROR - 2025-11-12 22:19:02 --> mysqli_sql_exception: Duplicate entry 'virginia.alejado@student.lms.com' for key 'users.email' in C:\xampp\htdocs\ITE311-ALEJADO\system\Database\MySQLi\Connection.php:327
+Stack trace:
+#0 C:\xampp\htdocs\ITE311-ALEJADO\system\Database\MySQLi\Connection.php(327): mysqli->query('INSERT INTO `us...', 0)
+#1 C:\xampp\htdocs\ITE311-ALEJADO\system\Database\BaseConnection.php(729): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `us...')
+#2 C:\xampp\htdocs\ITE311-ALEJADO\system\Database\BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `us...')
+#3 C:\xampp\htdocs\ITE311-ALEJADO\system\Database\BaseBuilder.php(2345): CodeIgniter\Database\BaseConnection->query('INSERT INTO `us...', Array, false)
+#4 C:\xampp\htdocs\ITE311-ALEJADO\app\Database\Seeds\UserSeeder.php(86): CodeIgniter\Database\BaseBuilder->insert(Array)
+#5 C:\xampp\htdocs\ITE311-ALEJADO\system\Database\Seeder.php(149): App\Database\Seeds\UserSeeder->run()
+#6 C:\xampp\htdocs\ITE311-ALEJADO\system\Commands\Database\Seed.php(79): CodeIgniter\Database\Seeder->call('App\\Database\\Se...')
+#7 C:\xampp\htdocs\ITE311-ALEJADO\system\CLI\Commands.php(74): CodeIgniter\Commands\Database\Seed->run(Array)
+#8 C:\xampp\htdocs\ITE311-ALEJADO\system\CLI\Console.php(47): CodeIgniter\CLI\Commands->run('db:seed', Array)
+#9 C:\xampp\htdocs\ITE311-ALEJADO\system\Boot.php(388): CodeIgniter\CLI\Console->run()
+#10 C:\xampp\htdocs\ITE311-ALEJADO\system\Boot.php(133): CodeIgniter\Boot::runCommand(Object(CodeIgniter\CLI\Console))
+#11 C:\xampp\htdocs\ITE311-ALEJADO\spark(87): CodeIgniter\Boot::bootSpark(Object(Config\Paths))
+#12 {main}
+ERROR - 2025-11-12 22:19:18 --> mysqli_sql_exception: Duplicate entry 'marjovic_alejado@lms.com' for key 'users.email' in C:\xampp\htdocs\ITE311-ALEJADO\system\Database\MySQLi\Connection.php:327
+Stack trace:
+#0 C:\xampp\htdocs\ITE311-ALEJADO\system\Database\MySQLi\Connection.php(327): mysqli->query('INSERT INTO `us...', 0)
+#1 C:\xampp\htdocs\ITE311-ALEJADO\system\Database\BaseConnection.php(729): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `us...')
+#2 C:\xampp\htdocs\ITE311-ALEJADO\system\Database\BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `us...')
+#3 C:\xampp\htdocs\ITE311-ALEJADO\system\Database\BaseBuilder.php(2345): CodeIgniter\Database\BaseConnection->query('INSERT INTO `us...', Array, false)
+#4 C:\xampp\htdocs\ITE311-ALEJADO\app\Database\Seeds\UserSeeder.php(12): CodeIgniter\Database\BaseBuilder->insert(Array)
+#5 C:\xampp\htdocs\ITE311-ALEJADO\system\Database\Seeder.php(149): App\Database\Seeds\UserSeeder->run()
+#6 C:\xampp\htdocs\ITE311-ALEJADO\system\Commands\Database\Seed.php(79): CodeIgniter\Database\Seeder->call('App\\Database\\Se...')
+#7 C:\xampp\htdocs\ITE311-ALEJADO\system\CLI\Commands.php(74): CodeIgniter\Commands\Database\Seed->run(Array)
+#8 C:\xampp\htdocs\ITE311-ALEJADO\system\CLI\Console.php(47): CodeIgniter\CLI\Commands->run('db:seed', Array)
+#9 C:\xampp\htdocs\ITE311-ALEJADO\system\Boot.php(388): CodeIgniter\CLI\Console->run()
+#10 C:\xampp\htdocs\ITE311-ALEJADO\system\Boot.php(133): CodeIgniter\Boot::runCommand(Object(CodeIgniter\CLI\Console))
+#11 C:\xampp\htdocs\ITE311-ALEJADO\spark(87): CodeIgniter\Boot::bootSpark(Object(Config\Paths))
+#12 {main}

@@ -1,0 +1,1418 @@
+ERROR - 2025-12-13 12:40:30 --> Student materials browser error: Invalid file: "templates/footer.php"
+ERROR - 2025-12-13 12:40:30 --> Stack trace: #0 C:\xampp\htdocs\ITE311-ALEJADO\system\View\View.php(214): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('templates/foote...')
+#1 C:\xampp\htdocs\ITE311-ALEJADO\system\Common.php(1167): CodeIgniter\View\View->render('templates/foote...', Array, true)
+#2 C:\xampp\htdocs\ITE311-ALEJADO\app\Views\student\materials.php(303): view('templates/foote...')
+#3 C:\xampp\htdocs\ITE311-ALEJADO\system\View\View.php(226): include('C:\\xampp\\htdocs...')
+#4 C:\xampp\htdocs\ITE311-ALEJADO\system\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#5 C:\xampp\htdocs\ITE311-ALEJADO\system\Common.php(1167): CodeIgniter\View\View->render('student/materia...', Array, true)
+#6 C:\xampp\htdocs\ITE311-ALEJADO\app\Controllers\Auth.php(1209): view('student/materia...', Array)
+#7 C:\xampp\htdocs\ITE311-ALEJADO\system\CodeIgniter.php(933): App\Controllers\Auth->studentMaterials()
+#8 C:\xampp\htdocs\ITE311-ALEJADO\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Auth))
+#9 C:\xampp\htdocs\ITE311-ALEJADO\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\xampp\htdocs\ITE311-ALEJADO\system\Boot.php(363): CodeIgniter\CodeIgniter->run()
+#11 C:\xampp\htdocs\ITE311-ALEJADO\system\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#12 C:\xampp\htdocs\ITE311-ALEJADO\index.php(204): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#13 {main}
+ERROR - 2025-12-13 12:41:33 --> Student materials browser error: Invalid file: "templates/footer.php"
+ERROR - 2025-12-13 12:41:33 --> Stack trace: #0 C:\xampp\htdocs\ITE311-ALEJADO\system\View\View.php(214): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('templates/foote...')
+#1 C:\xampp\htdocs\ITE311-ALEJADO\system\Common.php(1167): CodeIgniter\View\View->render('templates/foote...', Array, true)
+#2 C:\xampp\htdocs\ITE311-ALEJADO\app\Views\student\materials.php(303): view('templates/foote...')
+#3 C:\xampp\htdocs\ITE311-ALEJADO\system\View\View.php(226): include('C:\\xampp\\htdocs...')
+#4 C:\xampp\htdocs\ITE311-ALEJADO\system\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#5 C:\xampp\htdocs\ITE311-ALEJADO\system\Common.php(1167): CodeIgniter\View\View->render('student/materia...', Array, true)
+#6 C:\xampp\htdocs\ITE311-ALEJADO\app\Controllers\Auth.php(1209): view('student/materia...', Array)
+#7 C:\xampp\htdocs\ITE311-ALEJADO\system\CodeIgniter.php(933): App\Controllers\Auth->studentMaterials()
+#8 C:\xampp\htdocs\ITE311-ALEJADO\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Auth))
+#9 C:\xampp\htdocs\ITE311-ALEJADO\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\xampp\htdocs\ITE311-ALEJADO\system\Boot.php(363): CodeIgniter\CodeIgniter->run()
+#11 C:\xampp\htdocs\ITE311-ALEJADO\system\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#12 C:\xampp\htdocs\ITE311-ALEJADO\index.php(204): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#13 {main}
+ERROR - 2025-12-13 13:10:40 --> mysqli_sql_exception: Table 'lms_alejado.notifications' doesn't exist in C:\xampp\htdocs\ITE311-ALEJADO\system\Database\MySQLi\Connection.php:327
+Stack trace:
+#0 C:\xampp\htdocs\ITE311-ALEJADO\system\Database\MySQLi\Connection.php(327): mysqli->query('SELECT COUNT(*)...', 0)
+#1 C:\xampp\htdocs\ITE311-ALEJADO\system\Database\BaseConnection.php(729): CodeIgniter\Database\MySQLi\Connection->execute('SELECT COUNT(*)...')
+#2 C:\xampp\htdocs\ITE311-ALEJADO\system\Database\BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT COUNT(*)...')
+#3 C:\xampp\htdocs\ITE311-ALEJADO\system\Database\BaseBuilder.php(1733): CodeIgniter\Database\BaseConnection->query('SELECT COUNT(*)...', Array, false)
+#4 C:\xampp\htdocs\ITE311-ALEJADO\system\Model.php(675): CodeIgniter\Database\BaseBuilder->countAllResults(true)
+#5 C:\xampp\htdocs\ITE311-ALEJADO\app\Models\NotificationModel.php(61): CodeIgniter\Model->countAllResults()
+#6 C:\xampp\htdocs\ITE311-ALEJADO\app\Controllers\BaseController.php(64): App\Models\NotificationModel->getUnreadCount('3')
+#7 C:\xampp\htdocs\ITE311-ALEJADO\system\CodeIgniter.php(904): App\Controllers\BaseController->initController(Object(CodeIgniter\HTTP\IncomingRequest), Object(CodeIgniter\HTTP\Response), Object(CodeIgniter\Log\Logger))
+#8 C:\xampp\htdocs\ITE311-ALEJADO\system\CodeIgniter.php(498): CodeIgniter\CodeIgniter->createController()
+#9 C:\xampp\htdocs\ITE311-ALEJADO\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\xampp\htdocs\ITE311-ALEJADO\system\Boot.php(363): CodeIgniter\CodeIgniter->run()
+#11 C:\xampp\htdocs\ITE311-ALEJADO\system\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#12 C:\xampp\htdocs\ITE311-ALEJADO\index.php(204): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#13 {main}
+CRITICAL - 2025-12-13 13:10:40 --> CodeIgniter\Database\Exceptions\DatabaseException: Table 'lms_alejado.notifications' doesn't exist
+[Method: GET, Route: notifications]
+in SYSTEMPATH\Database\BaseConnection.php on line 684.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1733): CodeIgniter\Database\BaseConnection->query('SELECT COUNT(*) AS `numrows`
+FROM `notifications`
+WHERE `user_id` = :user_id:
+AND `is_read` = :is_read:
+AND `is_hidden` = :is_hidden:', [...], false)
+ 2 SYSTEMPATH\Model.php(675): CodeIgniter\Database\BaseBuilder->countAllResults(true)
+ 3 APPPATH\Models\NotificationModel.php(61): CodeIgniter\Model->countAllResults()
+ 4 APPPATH\Controllers\BaseController.php(64): App\Models\NotificationModel->getUnreadCount('3')
+ 5 SYSTEMPATH\CodeIgniter.php(904): App\Controllers\BaseController->initController(Object(CodeIgniter\HTTP\IncomingRequest), Object(CodeIgniter\HTTP\Response), Object(CodeIgniter\Log\Logger))
+ 6 SYSTEMPATH\CodeIgniter.php(498): CodeIgniter\CodeIgniter->createController()
+ 7 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH\index.php(204): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-12-13 13:10:40 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Table 'lms_alejado.notifications' doesn't exist
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 332.
+ 1 SYSTEMPATH\Database\BaseConnection.php(729): CodeIgniter\Database\MySQLi\Connection->execute('SELECT COUNT(*) AS `numrows`
+FROM `notifications`
+WHERE `user_id` = \'3\'
+AND `is_read` = 0
+AND `is_hidden` = 0')
+ 2 SYSTEMPATH\Database\BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT COUNT(*) AS `numrows`
+FROM `notifications`
+WHERE `user_id` = \'3\'
+AND `is_read` = 0
+AND `is_hidden` = 0')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(1733): CodeIgniter\Database\BaseConnection->query('SELECT COUNT(*) AS `numrows`
+FROM `notifications`
+WHERE `user_id` = :user_id:
+AND `is_read` = :is_read:
+AND `is_hidden` = :is_hidden:', [...], false)
+ 4 SYSTEMPATH\Model.php(675): CodeIgniter\Database\BaseBuilder->countAllResults(true)
+ 5 APPPATH\Models\NotificationModel.php(61): CodeIgniter\Model->countAllResults()
+ 6 APPPATH\Controllers\BaseController.php(64): App\Models\NotificationModel->getUnreadCount('3')
+ 7 SYSTEMPATH\CodeIgniter.php(904): App\Controllers\BaseController->initController(Object(CodeIgniter\HTTP\IncomingRequest), Object(CodeIgniter\HTTP\Response), Object(CodeIgniter\Log\Logger))
+ 8 SYSTEMPATH\CodeIgniter.php(498): CodeIgniter\CodeIgniter->createController()
+ 9 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+12 FCPATH\index.php(204): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-12-13 13:10:40 --> [Caused by] mysqli_sql_exception: Table 'lms_alejado.notifications' doesn't exist
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 327.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(327): mysqli->query('SELECT COUNT(*) AS `numrows`
+FROM `notifications`
+WHERE `user_id` = \'3\'
+AND `is_read` = 0
+AND `is_hidden` = 0', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(729): CodeIgniter\Database\MySQLi\Connection->execute('SELECT COUNT(*) AS `numrows`
+FROM `notifications`
+WHERE `user_id` = \'3\'
+AND `is_read` = 0
+AND `is_hidden` = 0')
+ 3 SYSTEMPATH\Database\BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT COUNT(*) AS `numrows`
+FROM `notifications`
+WHERE `user_id` = \'3\'
+AND `is_read` = 0
+AND `is_hidden` = 0')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1733): CodeIgniter\Database\BaseConnection->query('SELECT COUNT(*) AS `numrows`
+FROM `notifications`
+WHERE `user_id` = :user_id:
+AND `is_read` = :is_read:
+AND `is_hidden` = :is_hidden:', [...], false)
+ 5 SYSTEMPATH\Model.php(675): CodeIgniter\Database\BaseBuilder->countAllResults(true)
+ 6 APPPATH\Models\NotificationModel.php(61): CodeIgniter\Model->countAllResults()
+ 7 APPPATH\Controllers\BaseController.php(64): App\Models\NotificationModel->getUnreadCount('3')
+ 8 SYSTEMPATH\CodeIgniter.php(904): App\Controllers\BaseController->initController(Object(CodeIgniter\HTTP\IncomingRequest), Object(CodeIgniter\HTTP\Response), Object(CodeIgniter\Log\Logger))
+ 9 SYSTEMPATH\CodeIgniter.php(498): CodeIgniter\CodeIgniter->createController()
+10 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+12 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+13 FCPATH\index.php(204): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ERROR - 2025-12-13 13:10:44 --> mysqli_sql_exception: Table 'lms_alejado.notifications' doesn't exist in C:\xampp\htdocs\ITE311-ALEJADO\system\Database\MySQLi\Connection.php:327
+Stack trace:
+#0 C:\xampp\htdocs\ITE311-ALEJADO\system\Database\MySQLi\Connection.php(327): mysqli->query('SELECT COUNT(*)...', 0)
+#1 C:\xampp\htdocs\ITE311-ALEJADO\system\Database\BaseConnection.php(729): CodeIgniter\Database\MySQLi\Connection->execute('SELECT COUNT(*)...')
+#2 C:\xampp\htdocs\ITE311-ALEJADO\system\Database\BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT COUNT(*)...')
+#3 C:\xampp\htdocs\ITE311-ALEJADO\system\Database\BaseBuilder.php(1733): CodeIgniter\Database\BaseConnection->query('SELECT COUNT(*)...', Array, false)
+#4 C:\xampp\htdocs\ITE311-ALEJADO\system\Model.php(675): CodeIgniter\Database\BaseBuilder->countAllResults(true)
+#5 C:\xampp\htdocs\ITE311-ALEJADO\app\Models\NotificationModel.php(61): CodeIgniter\Model->countAllResults()
+#6 C:\xampp\htdocs\ITE311-ALEJADO\app\Controllers\BaseController.php(64): App\Models\NotificationModel->getUnreadCount('2')
+#7 C:\xampp\htdocs\ITE311-ALEJADO\system\CodeIgniter.php(904): App\Controllers\BaseController->initController(Object(CodeIgniter\HTTP\IncomingRequest), Object(CodeIgniter\HTTP\Response), Object(CodeIgniter\Log\Logger))
+#8 C:\xampp\htdocs\ITE311-ALEJADO\system\CodeIgniter.php(498): CodeIgniter\CodeIgniter->createController()
+#9 C:\xampp\htdocs\ITE311-ALEJADO\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\xampp\htdocs\ITE311-ALEJADO\system\Boot.php(363): CodeIgniter\CodeIgniter->run()
+#11 C:\xampp\htdocs\ITE311-ALEJADO\system\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#12 C:\xampp\htdocs\ITE311-ALEJADO\index.php(204): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#13 {main}
+CRITICAL - 2025-12-13 13:10:44 --> CodeIgniter\Database\Exceptions\DatabaseException: Table 'lms_alejado.notifications' doesn't exist
+[Method: GET, Route: notifications]
+in SYSTEMPATH\Database\BaseConnection.php on line 684.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1733): CodeIgniter\Database\BaseConnection->query('SELECT COUNT(*) AS `numrows`
+FROM `notifications`
+WHERE `user_id` = :user_id:
+AND `is_read` = :is_read:
+AND `is_hidden` = :is_hidden:', [...], false)
+ 2 SYSTEMPATH\Model.php(675): CodeIgniter\Database\BaseBuilder->countAllResults(true)
+ 3 APPPATH\Models\NotificationModel.php(61): CodeIgniter\Model->countAllResults()
+ 4 APPPATH\Controllers\BaseController.php(64): App\Models\NotificationModel->getUnreadCount('2')
+ 5 SYSTEMPATH\CodeIgniter.php(904): App\Controllers\BaseController->initController(Object(CodeIgniter\HTTP\IncomingRequest), Object(CodeIgniter\HTTP\Response), Object(CodeIgniter\Log\Logger))
+ 6 SYSTEMPATH\CodeIgniter.php(498): CodeIgniter\CodeIgniter->createController()
+ 7 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH\index.php(204): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-12-13 13:10:44 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Table 'lms_alejado.notifications' doesn't exist
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 332.
+ 1 SYSTEMPATH\Database\BaseConnection.php(729): CodeIgniter\Database\MySQLi\Connection->execute('SELECT COUNT(*) AS `numrows`
+FROM `notifications`
+WHERE `user_id` = \'2\'
+AND `is_read` = 0
+AND `is_hidden` = 0')
+ 2 SYSTEMPATH\Database\BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT COUNT(*) AS `numrows`
+FROM `notifications`
+WHERE `user_id` = \'2\'
+AND `is_read` = 0
+AND `is_hidden` = 0')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(1733): CodeIgniter\Database\BaseConnection->query('SELECT COUNT(*) AS `numrows`
+FROM `notifications`
+WHERE `user_id` = :user_id:
+AND `is_read` = :is_read:
+AND `is_hidden` = :is_hidden:', [...], false)
+ 4 SYSTEMPATH\Model.php(675): CodeIgniter\Database\BaseBuilder->countAllResults(true)
+ 5 APPPATH\Models\NotificationModel.php(61): CodeIgniter\Model->countAllResults()
+ 6 APPPATH\Controllers\BaseController.php(64): App\Models\NotificationModel->getUnreadCount('2')
+ 7 SYSTEMPATH\CodeIgniter.php(904): App\Controllers\BaseController->initController(Object(CodeIgniter\HTTP\IncomingRequest), Object(CodeIgniter\HTTP\Response), Object(CodeIgniter\Log\Logger))
+ 8 SYSTEMPATH\CodeIgniter.php(498): CodeIgniter\CodeIgniter->createController()
+ 9 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+12 FCPATH\index.php(204): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-12-13 13:10:44 --> [Caused by] mysqli_sql_exception: Table 'lms_alejado.notifications' doesn't exist
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 327.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(327): mysqli->query('SELECT COUNT(*) AS `numrows`
+FROM `notifications`
+WHERE `user_id` = \'2\'
+AND `is_read` = 0
+AND `is_hidden` = 0', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(729): CodeIgniter\Database\MySQLi\Connection->execute('SELECT COUNT(*) AS `numrows`
+FROM `notifications`
+WHERE `user_id` = \'2\'
+AND `is_read` = 0
+AND `is_hidden` = 0')
+ 3 SYSTEMPATH\Database\BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT COUNT(*) AS `numrows`
+FROM `notifications`
+WHERE `user_id` = \'2\'
+AND `is_read` = 0
+AND `is_hidden` = 0')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1733): CodeIgniter\Database\BaseConnection->query('SELECT COUNT(*) AS `numrows`
+FROM `notifications`
+WHERE `user_id` = :user_id:
+AND `is_read` = :is_read:
+AND `is_hidden` = :is_hidden:', [...], false)
+ 5 SYSTEMPATH\Model.php(675): CodeIgniter\Database\BaseBuilder->countAllResults(true)
+ 6 APPPATH\Models\NotificationModel.php(61): CodeIgniter\Model->countAllResults()
+ 7 APPPATH\Controllers\BaseController.php(64): App\Models\NotificationModel->getUnreadCount('2')
+ 8 SYSTEMPATH\CodeIgniter.php(904): App\Controllers\BaseController->initController(Object(CodeIgniter\HTTP\IncomingRequest), Object(CodeIgniter\HTTP\Response), Object(CodeIgniter\Log\Logger))
+ 9 SYSTEMPATH\CodeIgniter.php(498): CodeIgniter\CodeIgniter->createController()
+10 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+12 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+13 FCPATH\index.php(204): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ERROR - 2025-12-13 13:10:54 --> mysqli_sql_exception: Table 'lms_alejado.notifications' doesn't exist in C:\xampp\htdocs\ITE311-ALEJADO\system\Database\MySQLi\Connection.php:327
+Stack trace:
+#0 C:\xampp\htdocs\ITE311-ALEJADO\system\Database\MySQLi\Connection.php(327): mysqli->query('SELECT COUNT(*)...', 0)
+#1 C:\xampp\htdocs\ITE311-ALEJADO\system\Database\BaseConnection.php(729): CodeIgniter\Database\MySQLi\Connection->execute('SELECT COUNT(*)...')
+#2 C:\xampp\htdocs\ITE311-ALEJADO\system\Database\BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT COUNT(*)...')
+#3 C:\xampp\htdocs\ITE311-ALEJADO\system\Database\BaseBuilder.php(1733): CodeIgniter\Database\BaseConnection->query('SELECT COUNT(*)...', Array, false)
+#4 C:\xampp\htdocs\ITE311-ALEJADO\system\Model.php(675): CodeIgniter\Database\BaseBuilder->countAllResults(true)
+#5 C:\xampp\htdocs\ITE311-ALEJADO\app\Models\NotificationModel.php(61): CodeIgniter\Model->countAllResults()
+#6 C:\xampp\htdocs\ITE311-ALEJADO\app\Controllers\BaseController.php(64): App\Models\NotificationModel->getUnreadCount('2')
+#7 C:\xampp\htdocs\ITE311-ALEJADO\system\CodeIgniter.php(904): App\Controllers\BaseController->initController(Object(CodeIgniter\HTTP\IncomingRequest), Object(CodeIgniter\HTTP\Response), Object(CodeIgniter\Log\Logger))
+#8 C:\xampp\htdocs\ITE311-ALEJADO\system\CodeIgniter.php(498): CodeIgniter\CodeIgniter->createController()
+#9 C:\xampp\htdocs\ITE311-ALEJADO\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\xampp\htdocs\ITE311-ALEJADO\system\Boot.php(363): CodeIgniter\CodeIgniter->run()
+#11 C:\xampp\htdocs\ITE311-ALEJADO\system\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#12 C:\xampp\htdocs\ITE311-ALEJADO\index.php(204): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#13 {main}
+CRITICAL - 2025-12-13 13:10:54 --> CodeIgniter\Database\Exceptions\DatabaseException: Table 'lms_alejado.notifications' doesn't exist
+[Method: GET, Route: logout]
+in SYSTEMPATH\Database\BaseConnection.php on line 684.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1733): CodeIgniter\Database\BaseConnection->query('SELECT COUNT(*) AS `numrows`
+FROM `notifications`
+WHERE `user_id` = :user_id:
+AND `is_read` = :is_read:
+AND `is_hidden` = :is_hidden:', [...], false)
+ 2 SYSTEMPATH\Model.php(675): CodeIgniter\Database\BaseBuilder->countAllResults(true)
+ 3 APPPATH\Models\NotificationModel.php(61): CodeIgniter\Model->countAllResults()
+ 4 APPPATH\Controllers\BaseController.php(64): App\Models\NotificationModel->getUnreadCount('2')
+ 5 SYSTEMPATH\CodeIgniter.php(904): App\Controllers\BaseController->initController(Object(CodeIgniter\HTTP\IncomingRequest), Object(CodeIgniter\HTTP\Response), Object(CodeIgniter\Log\Logger))
+ 6 SYSTEMPATH\CodeIgniter.php(498): CodeIgniter\CodeIgniter->createController()
+ 7 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH\index.php(204): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-12-13 13:10:54 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Table 'lms_alejado.notifications' doesn't exist
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 332.
+ 1 SYSTEMPATH\Database\BaseConnection.php(729): CodeIgniter\Database\MySQLi\Connection->execute('SELECT COUNT(*) AS `numrows`
+FROM `notifications`
+WHERE `user_id` = \'2\'
+AND `is_read` = 0
+AND `is_hidden` = 0')
+ 2 SYSTEMPATH\Database\BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT COUNT(*) AS `numrows`
+FROM `notifications`
+WHERE `user_id` = \'2\'
+AND `is_read` = 0
+AND `is_hidden` = 0')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(1733): CodeIgniter\Database\BaseConnection->query('SELECT COUNT(*) AS `numrows`
+FROM `notifications`
+WHERE `user_id` = :user_id:
+AND `is_read` = :is_read:
+AND `is_hidden` = :is_hidden:', [...], false)
+ 4 SYSTEMPATH\Model.php(675): CodeIgniter\Database\BaseBuilder->countAllResults(true)
+ 5 APPPATH\Models\NotificationModel.php(61): CodeIgniter\Model->countAllResults()
+ 6 APPPATH\Controllers\BaseController.php(64): App\Models\NotificationModel->getUnreadCount('2')
+ 7 SYSTEMPATH\CodeIgniter.php(904): App\Controllers\BaseController->initController(Object(CodeIgniter\HTTP\IncomingRequest), Object(CodeIgniter\HTTP\Response), Object(CodeIgniter\Log\Logger))
+ 8 SYSTEMPATH\CodeIgniter.php(498): CodeIgniter\CodeIgniter->createController()
+ 9 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+12 FCPATH\index.php(204): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-12-13 13:10:54 --> [Caused by] mysqli_sql_exception: Table 'lms_alejado.notifications' doesn't exist
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 327.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(327): mysqli->query('SELECT COUNT(*) AS `numrows`
+FROM `notifications`
+WHERE `user_id` = \'2\'
+AND `is_read` = 0
+AND `is_hidden` = 0', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(729): CodeIgniter\Database\MySQLi\Connection->execute('SELECT COUNT(*) AS `numrows`
+FROM `notifications`
+WHERE `user_id` = \'2\'
+AND `is_read` = 0
+AND `is_hidden` = 0')
+ 3 SYSTEMPATH\Database\BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT COUNT(*) AS `numrows`
+FROM `notifications`
+WHERE `user_id` = \'2\'
+AND `is_read` = 0
+AND `is_hidden` = 0')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1733): CodeIgniter\Database\BaseConnection->query('SELECT COUNT(*) AS `numrows`
+FROM `notifications`
+WHERE `user_id` = :user_id:
+AND `is_read` = :is_read:
+AND `is_hidden` = :is_hidden:', [...], false)
+ 5 SYSTEMPATH\Model.php(675): CodeIgniter\Database\BaseBuilder->countAllResults(true)
+ 6 APPPATH\Models\NotificationModel.php(61): CodeIgniter\Model->countAllResults()
+ 7 APPPATH\Controllers\BaseController.php(64): App\Models\NotificationModel->getUnreadCount('2')
+ 8 SYSTEMPATH\CodeIgniter.php(904): App\Controllers\BaseController->initController(Object(CodeIgniter\HTTP\IncomingRequest), Object(CodeIgniter\HTTP\Response), Object(CodeIgniter\Log\Logger))
+ 9 SYSTEMPATH\CodeIgniter.php(498): CodeIgniter\CodeIgniter->createController()
+10 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+12 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+13 FCPATH\index.php(204): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ERROR - 2025-12-13 13:11:03 --> mysqli_sql_exception: Table 'lms_alejado.notifications' doesn't exist in C:\xampp\htdocs\ITE311-ALEJADO\system\Database\MySQLi\Connection.php:327
+Stack trace:
+#0 C:\xampp\htdocs\ITE311-ALEJADO\system\Database\MySQLi\Connection.php(327): mysqli->query('SELECT COUNT(*)...', 0)
+#1 C:\xampp\htdocs\ITE311-ALEJADO\system\Database\BaseConnection.php(729): CodeIgniter\Database\MySQLi\Connection->execute('SELECT COUNT(*)...')
+#2 C:\xampp\htdocs\ITE311-ALEJADO\system\Database\BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT COUNT(*)...')
+#3 C:\xampp\htdocs\ITE311-ALEJADO\system\Database\BaseBuilder.php(1733): CodeIgniter\Database\BaseConnection->query('SELECT COUNT(*)...', Array, false)
+#4 C:\xampp\htdocs\ITE311-ALEJADO\system\Model.php(675): CodeIgniter\Database\BaseBuilder->countAllResults(true)
+#5 C:\xampp\htdocs\ITE311-ALEJADO\app\Models\NotificationModel.php(61): CodeIgniter\Model->countAllResults()
+#6 C:\xampp\htdocs\ITE311-ALEJADO\app\Controllers\BaseController.php(64): App\Models\NotificationModel->getUnreadCount('3')
+#7 C:\xampp\htdocs\ITE311-ALEJADO\system\CodeIgniter.php(904): App\Controllers\BaseController->initController(Object(CodeIgniter\HTTP\IncomingRequest), Object(CodeIgniter\HTTP\Response), Object(CodeIgniter\Log\Logger))
+#8 C:\xampp\htdocs\ITE311-ALEJADO\system\CodeIgniter.php(498): CodeIgniter\CodeIgniter->createController()
+#9 C:\xampp\htdocs\ITE311-ALEJADO\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\xampp\htdocs\ITE311-ALEJADO\system\Boot.php(363): CodeIgniter\CodeIgniter->run()
+#11 C:\xampp\htdocs\ITE311-ALEJADO\system\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#12 C:\xampp\htdocs\ITE311-ALEJADO\index.php(204): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#13 {main}
+CRITICAL - 2025-12-13 13:11:03 --> CodeIgniter\Database\Exceptions\DatabaseException: Table 'lms_alejado.notifications' doesn't exist
+[Method: GET, Route: logout]
+in SYSTEMPATH\Database\BaseConnection.php on line 684.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1733): CodeIgniter\Database\BaseConnection->query('SELECT COUNT(*) AS `numrows`
+FROM `notifications`
+WHERE `user_id` = :user_id:
+AND `is_read` = :is_read:
+AND `is_hidden` = :is_hidden:', [...], false)
+ 2 SYSTEMPATH\Model.php(675): CodeIgniter\Database\BaseBuilder->countAllResults(true)
+ 3 APPPATH\Models\NotificationModel.php(61): CodeIgniter\Model->countAllResults()
+ 4 APPPATH\Controllers\BaseController.php(64): App\Models\NotificationModel->getUnreadCount('3')
+ 5 SYSTEMPATH\CodeIgniter.php(904): App\Controllers\BaseController->initController(Object(CodeIgniter\HTTP\IncomingRequest), Object(CodeIgniter\HTTP\Response), Object(CodeIgniter\Log\Logger))
+ 6 SYSTEMPATH\CodeIgniter.php(498): CodeIgniter\CodeIgniter->createController()
+ 7 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH\index.php(204): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-12-13 13:11:03 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Table 'lms_alejado.notifications' doesn't exist
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 332.
+ 1 SYSTEMPATH\Database\BaseConnection.php(729): CodeIgniter\Database\MySQLi\Connection->execute('SELECT COUNT(*) AS `numrows`
+FROM `notifications`
+WHERE `user_id` = \'3\'
+AND `is_read` = 0
+AND `is_hidden` = 0')
+ 2 SYSTEMPATH\Database\BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT COUNT(*) AS `numrows`
+FROM `notifications`
+WHERE `user_id` = \'3\'
+AND `is_read` = 0
+AND `is_hidden` = 0')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(1733): CodeIgniter\Database\BaseConnection->query('SELECT COUNT(*) AS `numrows`
+FROM `notifications`
+WHERE `user_id` = :user_id:
+AND `is_read` = :is_read:
+AND `is_hidden` = :is_hidden:', [...], false)
+ 4 SYSTEMPATH\Model.php(675): CodeIgniter\Database\BaseBuilder->countAllResults(true)
+ 5 APPPATH\Models\NotificationModel.php(61): CodeIgniter\Model->countAllResults()
+ 6 APPPATH\Controllers\BaseController.php(64): App\Models\NotificationModel->getUnreadCount('3')
+ 7 SYSTEMPATH\CodeIgniter.php(904): App\Controllers\BaseController->initController(Object(CodeIgniter\HTTP\IncomingRequest), Object(CodeIgniter\HTTP\Response), Object(CodeIgniter\Log\Logger))
+ 8 SYSTEMPATH\CodeIgniter.php(498): CodeIgniter\CodeIgniter->createController()
+ 9 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+12 FCPATH\index.php(204): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-12-13 13:11:03 --> [Caused by] mysqli_sql_exception: Table 'lms_alejado.notifications' doesn't exist
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 327.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(327): mysqli->query('SELECT COUNT(*) AS `numrows`
+FROM `notifications`
+WHERE `user_id` = \'3\'
+AND `is_read` = 0
+AND `is_hidden` = 0', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(729): CodeIgniter\Database\MySQLi\Connection->execute('SELECT COUNT(*) AS `numrows`
+FROM `notifications`
+WHERE `user_id` = \'3\'
+AND `is_read` = 0
+AND `is_hidden` = 0')
+ 3 SYSTEMPATH\Database\BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT COUNT(*) AS `numrows`
+FROM `notifications`
+WHERE `user_id` = \'3\'
+AND `is_read` = 0
+AND `is_hidden` = 0')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1733): CodeIgniter\Database\BaseConnection->query('SELECT COUNT(*) AS `numrows`
+FROM `notifications`
+WHERE `user_id` = :user_id:
+AND `is_read` = :is_read:
+AND `is_hidden` = :is_hidden:', [...], false)
+ 5 SYSTEMPATH\Model.php(675): CodeIgniter\Database\BaseBuilder->countAllResults(true)
+ 6 APPPATH\Models\NotificationModel.php(61): CodeIgniter\Model->countAllResults()
+ 7 APPPATH\Controllers\BaseController.php(64): App\Models\NotificationModel->getUnreadCount('3')
+ 8 SYSTEMPATH\CodeIgniter.php(904): App\Controllers\BaseController->initController(Object(CodeIgniter\HTTP\IncomingRequest), Object(CodeIgniter\HTTP\Response), Object(CodeIgniter\Log\Logger))
+ 9 SYSTEMPATH\CodeIgniter.php(498): CodeIgniter\CodeIgniter->createController()
+10 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+12 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+13 FCPATH\index.php(204): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-12-13 13:12:33 --> ErrorException: Undefined array key "role"
+[Method: GET, Route: admin/manage_users]
+in APPPATH\Controllers\User.php on line 481.
+ 1 APPPATH\Controllers\User.php(481): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "role"', 'C:\\xampp\\htdocs\\ITE311-ALEJADO\\app\\Controllers\\User.php', 481)
+ 2 APPPATH\Controllers\User.php(82): App\Controllers\User->deleteUser('2', '1')
+ 3 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\User->manageUsers()
+ 4 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\User))
+ 5 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 8 FCPATH\index.php(204): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ERROR - 2025-12-13 13:18:37 --> mysqli_sql_exception: Unknown column 'academic_year' in 'field list' in C:\xampp\htdocs\ITE311-ALEJADO\system\Database\MySQLi\Connection.php:327
+Stack trace:
+#0 C:\xampp\htdocs\ITE311-ALEJADO\system\Database\MySQLi\Connection.php(327): mysqli->query('INSERT INTO `co...', 0)
+#1 C:\xampp\htdocs\ITE311-ALEJADO\system\Database\BaseConnection.php(729): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `co...')
+#2 C:\xampp\htdocs\ITE311-ALEJADO\system\Database\BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `co...')
+#3 C:\xampp\htdocs\ITE311-ALEJADO\system\Database\BaseBuilder.php(2345): CodeIgniter\Database\BaseConnection->query('INSERT INTO `co...', Array, false)
+#4 C:\xampp\htdocs\ITE311-ALEJADO\app\Database\Seeds\CourseSeeder.php(91): CodeIgniter\Database\BaseBuilder->insert(Array)
+#5 C:\xampp\htdocs\ITE311-ALEJADO\system\Database\Seeder.php(149): App\Database\Seeds\CourseSeeder->run()
+#6 C:\xampp\htdocs\ITE311-ALEJADO\system\Commands\Database\Seed.php(79): CodeIgniter\Database\Seeder->call('App\\Database\\Se...')
+#7 C:\xampp\htdocs\ITE311-ALEJADO\system\CLI\Commands.php(74): CodeIgniter\Commands\Database\Seed->run(Array)
+#8 C:\xampp\htdocs\ITE311-ALEJADO\system\CLI\Console.php(47): CodeIgniter\CLI\Commands->run('db:seed', Array)
+#9 C:\xampp\htdocs\ITE311-ALEJADO\system\Boot.php(388): CodeIgniter\CLI\Console->run()
+#10 C:\xampp\htdocs\ITE311-ALEJADO\system\Boot.php(133): CodeIgniter\Boot::runCommand(Object(CodeIgniter\CLI\Console))
+#11 C:\xampp\htdocs\ITE311-ALEJADO\spark(87): CodeIgniter\Boot::bootSpark(Object(Config\Paths))
+#12 {main}
+ERROR - 2025-12-13 13:18:53 --> mysqli_sql_exception: Unknown column 'academic_year' in 'field list' in C:\xampp\htdocs\ITE311-ALEJADO\system\Database\MySQLi\Connection.php:327
+Stack trace:
+#0 C:\xampp\htdocs\ITE311-ALEJADO\system\Database\MySQLi\Connection.php(327): mysqli->query('INSERT INTO `co...', 0)
+#1 C:\xampp\htdocs\ITE311-ALEJADO\system\Database\BaseConnection.php(729): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `co...')
+#2 C:\xampp\htdocs\ITE311-ALEJADO\system\Database\BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `co...')
+#3 C:\xampp\htdocs\ITE311-ALEJADO\system\Database\BaseBuilder.php(2345): CodeIgniter\Database\BaseConnection->query('INSERT INTO `co...', Array, false)
+#4 C:\xampp\htdocs\ITE311-ALEJADO\app\Database\Seeds\CourseSeeder.php(91): CodeIgniter\Database\BaseBuilder->insert(Array)
+#5 C:\xampp\htdocs\ITE311-ALEJADO\system\Database\Seeder.php(149): App\Database\Seeds\CourseSeeder->run()
+#6 C:\xampp\htdocs\ITE311-ALEJADO\system\Commands\Database\Seed.php(79): CodeIgniter\Database\Seeder->call('App\\Database\\Se...')
+#7 C:\xampp\htdocs\ITE311-ALEJADO\system\CLI\Commands.php(74): CodeIgniter\Commands\Database\Seed->run(Array)
+#8 C:\xampp\htdocs\ITE311-ALEJADO\system\CLI\Console.php(47): CodeIgniter\CLI\Commands->run('db:seed', Array)
+#9 C:\xampp\htdocs\ITE311-ALEJADO\system\Boot.php(388): CodeIgniter\CLI\Console->run()
+#10 C:\xampp\htdocs\ITE311-ALEJADO\system\Boot.php(133): CodeIgniter\Boot::runCommand(Object(CodeIgniter\CLI\Console))
+#11 C:\xampp\htdocs\ITE311-ALEJADO\spark(87): CodeIgniter\Boot::bootSpark(Object(Config\Paths))
+#12 {main}
+ERROR - 2025-12-13 13:19:46 --> mysqli_sql_exception: Unknown column 'category' in 'field list' in C:\xampp\htdocs\ITE311-ALEJADO\system\Database\MySQLi\Connection.php:327
+Stack trace:
+#0 C:\xampp\htdocs\ITE311-ALEJADO\system\Database\MySQLi\Connection.php(327): mysqli->query('INSERT INTO `co...', 0)
+#1 C:\xampp\htdocs\ITE311-ALEJADO\system\Database\BaseConnection.php(729): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `co...')
+#2 C:\xampp\htdocs\ITE311-ALEJADO\system\Database\BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `co...')
+#3 C:\xampp\htdocs\ITE311-ALEJADO\system\Database\BaseBuilder.php(2345): CodeIgniter\Database\BaseConnection->query('INSERT INTO `co...', Array, false)
+#4 C:\xampp\htdocs\ITE311-ALEJADO\app\Database\Seeds\CourseSeeder.php(86): CodeIgniter\Database\BaseBuilder->insert(Array)
+#5 C:\xampp\htdocs\ITE311-ALEJADO\system\Database\Seeder.php(149): App\Database\Seeds\CourseSeeder->run()
+#6 C:\xampp\htdocs\ITE311-ALEJADO\system\Commands\Database\Seed.php(79): CodeIgniter\Database\Seeder->call('App\\Database\\Se...')
+#7 C:\xampp\htdocs\ITE311-ALEJADO\system\CLI\Commands.php(74): CodeIgniter\Commands\Database\Seed->run(Array)
+#8 C:\xampp\htdocs\ITE311-ALEJADO\system\CLI\Console.php(47): CodeIgniter\CLI\Commands->run('db:seed', Array)
+#9 C:\xampp\htdocs\ITE311-ALEJADO\system\Boot.php(388): CodeIgniter\CLI\Console->run()
+#10 C:\xampp\htdocs\ITE311-ALEJADO\system\Boot.php(133): CodeIgniter\Boot::runCommand(Object(CodeIgniter\CLI\Console))
+#11 C:\xampp\htdocs\ITE311-ALEJADO\spark(87): CodeIgniter\Boot::bootSpark(Object(Config\Paths))
+#12 {main}
+ERROR - 2025-12-13 13:21:12 --> mysqli_sql_exception: Unknown column 'duration_weeks' in 'field list' in C:\xampp\htdocs\ITE311-ALEJADO\system\Database\MySQLi\Connection.php:327
+Stack trace:
+#0 C:\xampp\htdocs\ITE311-ALEJADO\system\Database\MySQLi\Connection.php(327): mysqli->query('INSERT INTO `co...', 0)
+#1 C:\xampp\htdocs\ITE311-ALEJADO\system\Database\BaseConnection.php(729): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `co...')
+#2 C:\xampp\htdocs\ITE311-ALEJADO\system\Database\BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `co...')
+#3 C:\xampp\htdocs\ITE311-ALEJADO\system\Database\BaseBuilder.php(2345): CodeIgniter\Database\BaseConnection->query('INSERT INTO `co...', Array, false)
+#4 C:\xampp\htdocs\ITE311-ALEJADO\app\Database\Seeds\CourseSeeder.php(88): CodeIgniter\Database\BaseBuilder->insert(Array)
+#5 C:\xampp\htdocs\ITE311-ALEJADO\system\Database\Seeder.php(149): App\Database\Seeds\CourseSeeder->run()
+#6 C:\xampp\htdocs\ITE311-ALEJADO\system\Commands\Database\Seed.php(79): CodeIgniter\Database\Seeder->call('App\\Database\\Se...')
+#7 C:\xampp\htdocs\ITE311-ALEJADO\system\CLI\Commands.php(74): CodeIgniter\Commands\Database\Seed->run(Array)
+#8 C:\xampp\htdocs\ITE311-ALEJADO\system\CLI\Console.php(47): CodeIgniter\CLI\Commands->run('db:seed', Array)
+#9 C:\xampp\htdocs\ITE311-ALEJADO\system\Boot.php(388): CodeIgniter\CLI\Console->run()
+#10 C:\xampp\htdocs\ITE311-ALEJADO\system\Boot.php(133): CodeIgniter\Boot::runCommand(Object(CodeIgniter\CLI\Console))
+#11 C:\xampp\htdocs\ITE311-ALEJADO\spark(87): CodeIgniter\Boot::bootSpark(Object(Config\Paths))
+#12 {main}
+ERROR - 2025-12-13 14:38:13 --> [DEBUG] managePrograms - Method: GET
+ERROR - 2025-12-13 14:38:16 --> [DEBUG] managePrograms - Method: POST
+ERROR - 2025-12-13 14:38:24 --> [DEBUG] managePrograms - Method: POST
+ERROR - 2025-12-13 14:38:52 --> [DEBUG] managePrograms - Method: GET
+ERROR - 2025-12-13 14:38:54 --> [DEBUG] managePrograms - Method: GET
+ERROR - 2025-12-13 14:49:21 --> Department update failed: Failed to update department.
+ERROR - 2025-12-13 15:03:29 --> Student materials browser error: Invalid file: "templates/footer.php"
+ERROR - 2025-12-13 15:03:29 --> Stack trace: #0 C:\xampp\htdocs\ITE311-ALEJADO\system\View\View.php(214): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('templates/foote...')
+#1 C:\xampp\htdocs\ITE311-ALEJADO\system\Common.php(1167): CodeIgniter\View\View->render('templates/foote...', Array, true)
+#2 C:\xampp\htdocs\ITE311-ALEJADO\app\Views\student\materials.php(303): view('templates/foote...')
+#3 C:\xampp\htdocs\ITE311-ALEJADO\system\View\View.php(226): include('C:\\xampp\\htdocs...')
+#4 C:\xampp\htdocs\ITE311-ALEJADO\system\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#5 C:\xampp\htdocs\ITE311-ALEJADO\system\Common.php(1167): CodeIgniter\View\View->render('student/materia...', Array, true)
+#6 C:\xampp\htdocs\ITE311-ALEJADO\app\Controllers\Auth.php(1209): view('student/materia...', Array)
+#7 C:\xampp\htdocs\ITE311-ALEJADO\system\CodeIgniter.php(933): App\Controllers\Auth->studentMaterials()
+#8 C:\xampp\htdocs\ITE311-ALEJADO\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Auth))
+#9 C:\xampp\htdocs\ITE311-ALEJADO\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\xampp\htdocs\ITE311-ALEJADO\system\Boot.php(363): CodeIgniter\CodeIgniter->run()
+#11 C:\xampp\htdocs\ITE311-ALEJADO\system\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#12 C:\xampp\htdocs\ITE311-ALEJADO\index.php(204): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#13 {main}
+ERROR - 2025-12-13 15:24:10 --> mysqli_sql_exception: Table 'lms_alejado.grades' doesn't exist in C:\xampp\htdocs\ITE311-ALEJADO\system\Database\MySQLi\Connection.php:327
+Stack trace:
+#0 C:\xampp\htdocs\ITE311-ALEJADO\system\Database\MySQLi\Connection.php(327): mysqli->query('SELECT COUNT(*)...', 0)
+#1 C:\xampp\htdocs\ITE311-ALEJADO\system\Database\BaseConnection.php(729): CodeIgniter\Database\MySQLi\Connection->execute('SELECT COUNT(*)...')
+#2 C:\xampp\htdocs\ITE311-ALEJADO\system\Database\BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT COUNT(*)...')
+#3 C:\xampp\htdocs\ITE311-ALEJADO\system\Database\BaseBuilder.php(1733): CodeIgniter\Database\BaseConnection->query('SELECT COUNT(*)...', Array, false)
+#4 C:\xampp\htdocs\ITE311-ALEJADO\app\Controllers\Enrollment.php(479): CodeIgniter\Database\BaseBuilder->countAllResults()
+#5 C:\xampp\htdocs\ITE311-ALEJADO\app\Controllers\Enrollment.php(118): App\Controllers\Enrollment->deleteEnrollment()
+#6 C:\xampp\htdocs\ITE311-ALEJADO\system\CodeIgniter.php(933): App\Controllers\Enrollment->manageEnrollments()
+#7 C:\xampp\htdocs\ITE311-ALEJADO\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Enrollment))
+#8 C:\xampp\htdocs\ITE311-ALEJADO\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\xampp\htdocs\ITE311-ALEJADO\system\Boot.php(363): CodeIgniter\CodeIgniter->run()
+#10 C:\xampp\htdocs\ITE311-ALEJADO\system\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#11 C:\xampp\htdocs\ITE311-ALEJADO\index.php(204): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#12 {main}
+CRITICAL - 2025-12-13 15:24:10 --> CodeIgniter\Database\Exceptions\DatabaseException: Table 'lms_alejado.grades' doesn't exist
+[Method: POST, Route: admin/manage_enrollments]
+in SYSTEMPATH\Database\BaseConnection.php on line 684.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1733): CodeIgniter\Database\BaseConnection->query('SELECT COUNT(*) AS `numrows`
+FROM `grades`
+WHERE `enrollment_id` = :enrollment_id:', [...], false)
+ 2 APPPATH\Controllers\Enrollment.php(479): CodeIgniter\Database\BaseBuilder->countAllResults()
+ 3 APPPATH\Controllers\Enrollment.php(118): App\Controllers\Enrollment->deleteEnrollment()
+ 4 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Enrollment->manageEnrollments()
+ 5 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Enrollment))
+ 6 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(204): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-12-13 15:24:10 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Table 'lms_alejado.grades' doesn't exist
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 332.
+ 1 SYSTEMPATH\Database\BaseConnection.php(729): CodeIgniter\Database\MySQLi\Connection->execute('SELECT COUNT(*) AS `numrows`
+FROM `grades`
+WHERE `enrollment_id` = \'2\'')
+ 2 SYSTEMPATH\Database\BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT COUNT(*) AS `numrows`
+FROM `grades`
+WHERE `enrollment_id` = \'2\'')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(1733): CodeIgniter\Database\BaseConnection->query('SELECT COUNT(*) AS `numrows`
+FROM `grades`
+WHERE `enrollment_id` = :enrollment_id:', [...], false)
+ 4 APPPATH\Controllers\Enrollment.php(479): CodeIgniter\Database\BaseBuilder->countAllResults()
+ 5 APPPATH\Controllers\Enrollment.php(118): App\Controllers\Enrollment->deleteEnrollment()
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Enrollment->manageEnrollments()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Enrollment))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(204): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-12-13 15:24:10 --> [Caused by] mysqli_sql_exception: Table 'lms_alejado.grades' doesn't exist
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 327.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(327): mysqli->query('SELECT COUNT(*) AS `numrows`
+FROM `grades`
+WHERE `enrollment_id` = \'2\'', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(729): CodeIgniter\Database\MySQLi\Connection->execute('SELECT COUNT(*) AS `numrows`
+FROM `grades`
+WHERE `enrollment_id` = \'2\'')
+ 3 SYSTEMPATH\Database\BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT COUNT(*) AS `numrows`
+FROM `grades`
+WHERE `enrollment_id` = \'2\'')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1733): CodeIgniter\Database\BaseConnection->query('SELECT COUNT(*) AS `numrows`
+FROM `grades`
+WHERE `enrollment_id` = :enrollment_id:', [...], false)
+ 5 APPPATH\Controllers\Enrollment.php(479): CodeIgniter\Database\BaseBuilder->countAllResults()
+ 6 APPPATH\Controllers\Enrollment.php(118): App\Controllers\Enrollment->deleteEnrollment()
+ 7 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Enrollment->manageEnrollments()
+ 8 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Enrollment))
+ 9 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+12 FCPATH\index.php(204): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ERROR - 2025-12-13 15:29:55 --> Enrollment error: Failed to create enrollment record
+ERROR - 2025-12-13 15:35:55 --> Enrollment error: Failed to create enrollment record
+ERROR - 2025-12-13 16:14:41 --> Student materials browser error: Invalid file: "templates/footer.php"
+ERROR - 2025-12-13 16:14:41 --> Stack trace: #0 C:\xampp\htdocs\ITE311-ALEJADO\system\View\View.php(214): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('templates/foote...')
+#1 C:\xampp\htdocs\ITE311-ALEJADO\system\Common.php(1167): CodeIgniter\View\View->render('templates/foote...', Array, true)
+#2 C:\xampp\htdocs\ITE311-ALEJADO\app\Views\student\materials.php(303): view('templates/foote...')
+#3 C:\xampp\htdocs\ITE311-ALEJADO\system\View\View.php(226): include('C:\\xampp\\htdocs...')
+#4 C:\xampp\htdocs\ITE311-ALEJADO\system\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#5 C:\xampp\htdocs\ITE311-ALEJADO\system\Common.php(1167): CodeIgniter\View\View->render('student/materia...', Array, true)
+#6 C:\xampp\htdocs\ITE311-ALEJADO\app\Controllers\Auth.php(1197): view('student/materia...', Array)
+#7 C:\xampp\htdocs\ITE311-ALEJADO\system\CodeIgniter.php(933): App\Controllers\Auth->studentMaterials()
+#8 C:\xampp\htdocs\ITE311-ALEJADO\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Auth))
+#9 C:\xampp\htdocs\ITE311-ALEJADO\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\xampp\htdocs\ITE311-ALEJADO\system\Boot.php(363): CodeIgniter\CodeIgniter->run()
+#11 C:\xampp\htdocs\ITE311-ALEJADO\system\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#12 C:\xampp\htdocs\ITE311-ALEJADO\index.php(204): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#13 {main}
+ERROR - 2025-12-13 16:45:55 --> mysqli_sql_exception: Unknown column 's.score' in 'field list' in C:\xampp\htdocs\ITE311-ALEJADO\system\Database\MySQLi\Connection.php:327
+Stack trace:
+#0 C:\xampp\htdocs\ITE311-ALEJADO\system\Database\MySQLi\Connection.php(327): mysqli->query('SELECT `a`.*, `...', 0)
+#1 C:\xampp\htdocs\ITE311-ALEJADO\system\Database\BaseConnection.php(729): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `a`.*, `...')
+#2 C:\xampp\htdocs\ITE311-ALEJADO\system\Database\BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `a`.*, `...')
+#3 C:\xampp\htdocs\ITE311-ALEJADO\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `a`.*, `...', Array, false)
+#4 C:\xampp\htdocs\ITE311-ALEJADO\app\Controllers\Submission.php(56): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\ITE311-ALEJADO\system\CodeIgniter.php(933): App\Controllers\Submission->studentAssignments()
+#6 C:\xampp\htdocs\ITE311-ALEJADO\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Submission))
+#7 C:\xampp\htdocs\ITE311-ALEJADO\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\ITE311-ALEJADO\system\Boot.php(363): CodeIgniter\CodeIgniter->run()
+#9 C:\xampp\htdocs\ITE311-ALEJADO\system\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#10 C:\xampp\htdocs\ITE311-ALEJADO\index.php(204): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#11 {main}
+CRITICAL - 2025-12-13 16:45:55 --> CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 's.score' in 'field list'
+[Method: GET, Route: student/assignments]
+in SYSTEMPATH\Database\BaseConnection.php on line 684.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `a`.*, `c`.`course_code`, `c`.`title` as `course_title`, `co`.`section`, `at`.`type_name`, `gp`.`period_name`, `s`.`id` as `submission_id`, `s`.`status` as `submission_status`, `s`.`score`, `s`.`submitted_at`, `s`.`is_late`, `e`.`id` as `enrollment_id`
+FROM `assignments` `a`
+JOIN `course_offerings` `co` ON `co`.`id` = `a`.`course_offering_id`
+JOIN `courses` `c` ON `c`.`id` = `co`.`course_id`
+JOIN `enrollments` `e` ON `e`.`course_offering_id` = `co`.`id`
+LEFT JOIN `assignment_types` `at` ON `at`.`id` = `a`.`assignment_type_id`
+LEFT JOIN `grading_periods` `gp` ON `gp`.`id` = `a`.`grading_period_id`
+LEFT JOIN `submissions` `s` ON `s`.`assignment_id` = `a`.`id` AND `s`.`enrollment_id` = `e`.`id`
+WHERE `e`.`student_id` = :e.student_id:
+AND `e`.`enrollment_status` = :e.enrollment_status:
+AND `a`.`is_active` = :a.is_active:
+AND `a`.`is_published` = :a.is_published:
+ORDER BY `a`.`due_date` ASC', [...], false)
+ 2 APPPATH\Controllers\Submission.php(56): CodeIgniter\Database\BaseBuilder->get()
+ 3 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Submission->studentAssignments()
+ 4 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Submission))
+ 5 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 8 FCPATH\index.php(204): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-12-13 16:45:55 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 's.score' in 'field list'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 332.
+ 1 SYSTEMPATH\Database\BaseConnection.php(729): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `a`.*, `c`.`course_code`, `c`.`title` as `course_title`, `co`.`section`, `at`.`type_name`, `gp`.`period_name`, `s`.`id` as `submission_id`, `s`.`status` as `submission_status`, `s`.`score`, `s`.`submitted_at`, `s`.`is_late`, `e`.`id` as `enrollment_id`
+FROM `assignments` `a`
+JOIN `course_offerings` `co` ON `co`.`id` = `a`.`course_offering_id`
+JOIN `courses` `c` ON `c`.`id` = `co`.`course_id`
+JOIN `enrollments` `e` ON `e`.`course_offering_id` = `co`.`id`
+LEFT JOIN `assignment_types` `at` ON `at`.`id` = `a`.`assignment_type_id`
+LEFT JOIN `grading_periods` `gp` ON `gp`.`id` = `a`.`grading_period_id`
+LEFT JOIN `submissions` `s` ON `s`.`assignment_id` = `a`.`id` AND `s`.`enrollment_id` = `e`.`id`
+WHERE `e`.`student_id` = \'2\'
+AND `e`.`enrollment_status` = \'enrolled\'
+AND `a`.`is_active` = 1
+AND `a`.`is_published` = 1
+ORDER BY `a`.`due_date` ASC')
+ 2 SYSTEMPATH\Database\BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `a`.*, `c`.`course_code`, `c`.`title` as `course_title`, `co`.`section`, `at`.`type_name`, `gp`.`period_name`, `s`.`id` as `submission_id`, `s`.`status` as `submission_status`, `s`.`score`, `s`.`submitted_at`, `s`.`is_late`, `e`.`id` as `enrollment_id`
+FROM `assignments` `a`
+JOIN `course_offerings` `co` ON `co`.`id` = `a`.`course_offering_id`
+JOIN `courses` `c` ON `c`.`id` = `co`.`course_id`
+JOIN `enrollments` `e` ON `e`.`course_offering_id` = `co`.`id`
+LEFT JOIN `assignment_types` `at` ON `at`.`id` = `a`.`assignment_type_id`
+LEFT JOIN `grading_periods` `gp` ON `gp`.`id` = `a`.`grading_period_id`
+LEFT JOIN `submissions` `s` ON `s`.`assignment_id` = `a`.`id` AND `s`.`enrollment_id` = `e`.`id`
+WHERE `e`.`student_id` = \'2\'
+AND `e`.`enrollment_status` = \'enrolled\'
+AND `a`.`is_active` = 1
+AND `a`.`is_published` = 1
+ORDER BY `a`.`due_date` ASC')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `a`.*, `c`.`course_code`, `c`.`title` as `course_title`, `co`.`section`, `at`.`type_name`, `gp`.`period_name`, `s`.`id` as `submission_id`, `s`.`status` as `submission_status`, `s`.`score`, `s`.`submitted_at`, `s`.`is_late`, `e`.`id` as `enrollment_id`
+FROM `assignments` `a`
+JOIN `course_offerings` `co` ON `co`.`id` = `a`.`course_offering_id`
+JOIN `courses` `c` ON `c`.`id` = `co`.`course_id`
+JOIN `enrollments` `e` ON `e`.`course_offering_id` = `co`.`id`
+LEFT JOIN `assignment_types` `at` ON `at`.`id` = `a`.`assignment_type_id`
+LEFT JOIN `grading_periods` `gp` ON `gp`.`id` = `a`.`grading_period_id`
+LEFT JOIN `submissions` `s` ON `s`.`assignment_id` = `a`.`id` AND `s`.`enrollment_id` = `e`.`id`
+WHERE `e`.`student_id` = :e.student_id:
+AND `e`.`enrollment_status` = :e.enrollment_status:
+AND `a`.`is_active` = :a.is_active:
+AND `a`.`is_published` = :a.is_published:
+ORDER BY `a`.`due_date` ASC', [...], false)
+ 4 APPPATH\Controllers\Submission.php(56): CodeIgniter\Database\BaseBuilder->get()
+ 5 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Submission->studentAssignments()
+ 6 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Submission))
+ 7 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH\index.php(204): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-12-13 16:45:55 --> [Caused by] mysqli_sql_exception: Unknown column 's.score' in 'field list'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 327.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(327): mysqli->query('SELECT `a`.*, `c`.`course_code`, `c`.`title` as `course_title`, `co`.`section`, `at`.`type_name`, `gp`.`period_name`, `s`.`id` as `submission_id`, `s`.`status` as `submission_status`, `s`.`score`, `s`.`submitted_at`, `s`.`is_late`, `e`.`id` as `enrollment_id`
+FROM `assignments` `a`
+JOIN `course_offerings` `co` ON `co`.`id` = `a`.`course_offering_id`
+JOIN `courses` `c` ON `c`.`id` = `co`.`course_id`
+JOIN `enrollments` `e` ON `e`.`course_offering_id` = `co`.`id`
+LEFT JOIN `assignment_types` `at` ON `at`.`id` = `a`.`assignment_type_id`
+LEFT JOIN `grading_periods` `gp` ON `gp`.`id` = `a`.`grading_period_id`
+LEFT JOIN `submissions` `s` ON `s`.`assignment_id` = `a`.`id` AND `s`.`enrollment_id` = `e`.`id`
+WHERE `e`.`student_id` = \'2\'
+AND `e`.`enrollment_status` = \'enrolled\'
+AND `a`.`is_active` = 1
+AND `a`.`is_published` = 1
+ORDER BY `a`.`due_date` ASC', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(729): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `a`.*, `c`.`course_code`, `c`.`title` as `course_title`, `co`.`section`, `at`.`type_name`, `gp`.`period_name`, `s`.`id` as `submission_id`, `s`.`status` as `submission_status`, `s`.`score`, `s`.`submitted_at`, `s`.`is_late`, `e`.`id` as `enrollment_id`
+FROM `assignments` `a`
+JOIN `course_offerings` `co` ON `co`.`id` = `a`.`course_offering_id`
+JOIN `courses` `c` ON `c`.`id` = `co`.`course_id`
+JOIN `enrollments` `e` ON `e`.`course_offering_id` = `co`.`id`
+LEFT JOIN `assignment_types` `at` ON `at`.`id` = `a`.`assignment_type_id`
+LEFT JOIN `grading_periods` `gp` ON `gp`.`id` = `a`.`grading_period_id`
+LEFT JOIN `submissions` `s` ON `s`.`assignment_id` = `a`.`id` AND `s`.`enrollment_id` = `e`.`id`
+WHERE `e`.`student_id` = \'2\'
+AND `e`.`enrollment_status` = \'enrolled\'
+AND `a`.`is_active` = 1
+AND `a`.`is_published` = 1
+ORDER BY `a`.`due_date` ASC')
+ 3 SYSTEMPATH\Database\BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `a`.*, `c`.`course_code`, `c`.`title` as `course_title`, `co`.`section`, `at`.`type_name`, `gp`.`period_name`, `s`.`id` as `submission_id`, `s`.`status` as `submission_status`, `s`.`score`, `s`.`submitted_at`, `s`.`is_late`, `e`.`id` as `enrollment_id`
+FROM `assignments` `a`
+JOIN `course_offerings` `co` ON `co`.`id` = `a`.`course_offering_id`
+JOIN `courses` `c` ON `c`.`id` = `co`.`course_id`
+JOIN `enrollments` `e` ON `e`.`course_offering_id` = `co`.`id`
+LEFT JOIN `assignment_types` `at` ON `at`.`id` = `a`.`assignment_type_id`
+LEFT JOIN `grading_periods` `gp` ON `gp`.`id` = `a`.`grading_period_id`
+LEFT JOIN `submissions` `s` ON `s`.`assignment_id` = `a`.`id` AND `s`.`enrollment_id` = `e`.`id`
+WHERE `e`.`student_id` = \'2\'
+AND `e`.`enrollment_status` = \'enrolled\'
+AND `a`.`is_active` = 1
+AND `a`.`is_published` = 1
+ORDER BY `a`.`due_date` ASC')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `a`.*, `c`.`course_code`, `c`.`title` as `course_title`, `co`.`section`, `at`.`type_name`, `gp`.`period_name`, `s`.`id` as `submission_id`, `s`.`status` as `submission_status`, `s`.`score`, `s`.`submitted_at`, `s`.`is_late`, `e`.`id` as `enrollment_id`
+FROM `assignments` `a`
+JOIN `course_offerings` `co` ON `co`.`id` = `a`.`course_offering_id`
+JOIN `courses` `c` ON `c`.`id` = `co`.`course_id`
+JOIN `enrollments` `e` ON `e`.`course_offering_id` = `co`.`id`
+LEFT JOIN `assignment_types` `at` ON `at`.`id` = `a`.`assignment_type_id`
+LEFT JOIN `grading_periods` `gp` ON `gp`.`id` = `a`.`grading_period_id`
+LEFT JOIN `submissions` `s` ON `s`.`assignment_id` = `a`.`id` AND `s`.`enrollment_id` = `e`.`id`
+WHERE `e`.`student_id` = :e.student_id:
+AND `e`.`enrollment_status` = :e.enrollment_status:
+AND `a`.`is_active` = :a.is_active:
+AND `a`.`is_published` = :a.is_published:
+ORDER BY `a`.`due_date` ASC', [...], false)
+ 5 APPPATH\Controllers\Submission.php(56): CodeIgniter\Database\BaseBuilder->get()
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Submission->studentAssignments()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Submission))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(204): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-12-13 16:47:49 --> CodeIgniter\Exceptions\BadMethodCallException: Call to undefined method App\Models\CourseInstructorModel::getInstructorCourses
+[Method: GET, Route: teacher/assignments]
+in SYSTEMPATH\Model.php on line 927.
+ 1 APPPATH\Controllers\Assignment.php(78): CodeIgniter\Model->__call('getInstructorCourses', [...])
+ 2 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Assignment->teacherAssignments()
+ 3 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Assignment))
+ 4 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(204): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-12-13 17:19:43 --> ErrorException: Undefined array key "course_offering_id"
+[Method: GET, Route: teacher/submissions]
+in APPPATH\Controllers\Assignment.php on line 302.
+ 1 APPPATH\Controllers\Assignment.php(302): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "course_offering_id"', 'C:\\xampp\\htdocs\\ITE311-ALEJADO\\app\\Controllers\\Assignment.php', 302)
+ 2 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Assignment->viewSubmissions()
+ 3 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Assignment))
+ 4 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(204): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ERROR - 2025-12-13 17:25:42 --> mysqli_sql_exception: Unknown column 'student_id' in 'where clause' in C:\xampp\htdocs\ITE311-ALEJADO\system\Database\MySQLi\Connection.php:327
+Stack trace:
+#0 C:\xampp\htdocs\ITE311-ALEJADO\system\Database\MySQLi\Connection.php(327): mysqli->query('SELECT *\nFROM `...', 0)
+#1 C:\xampp\htdocs\ITE311-ALEJADO\system\Database\BaseConnection.php(729): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *\nFROM `...')
+#2 C:\xampp\htdocs\ITE311-ALEJADO\system\Database\BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *\nFROM `...')
+#3 C:\xampp\htdocs\ITE311-ALEJADO\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 C:\xampp\htdocs\ITE311-ALEJADO\system\Model.php(330): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\ITE311-ALEJADO\system\BaseModel.php(715): CodeIgniter\Model->doFirst()
+#6 C:\xampp\htdocs\ITE311-ALEJADO\app\Controllers\Auth.php(669): CodeIgniter\BaseModel->first()
+#7 C:\xampp\htdocs\ITE311-ALEJADO\system\CodeIgniter.php(933): App\Controllers\Auth->dashboard()
+#8 C:\xampp\htdocs\ITE311-ALEJADO\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Auth))
+#9 C:\xampp\htdocs\ITE311-ALEJADO\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\xampp\htdocs\ITE311-ALEJADO\system\Boot.php(363): CodeIgniter\CodeIgniter->run()
+#11 C:\xampp\htdocs\ITE311-ALEJADO\system\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#12 C:\xampp\htdocs\ITE311-ALEJADO\index.php(204): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#13 {main}
+ERROR - 2025-12-13 17:25:42 --> Student dashboard error: Unknown column 'student_id' in 'where clause'
+CRITICAL - 2025-12-13 17:25:50 --> ErrorException: Undefined array key "course_offering_id"
+[Method: GET, Route: teacher/submissions]
+in APPPATH\Controllers\Assignment.php on line 302.
+ 1 APPPATH\Controllers\Assignment.php(302): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "course_offering_id"', 'C:\\xampp\\htdocs\\ITE311-ALEJADO\\app\\Controllers\\Assignment.php', 302)
+ 2 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Assignment->viewSubmissions()
+ 3 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Assignment))
+ 4 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(204): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ERROR - 2025-12-13 17:27:54 --> mysqli_sql_exception: Unknown column 'u.name' in 'field list' in C:\xampp\htdocs\ITE311-ALEJADO\system\Database\MySQLi\Connection.php:327
+Stack trace:
+#0 C:\xampp\htdocs\ITE311-ALEJADO\system\Database\MySQLi\Connection.php(327): mysqli->query('SELECT `s`.*, `...', 0)
+#1 C:\xampp\htdocs\ITE311-ALEJADO\system\Database\BaseConnection.php(729): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `s`.*, `...')
+#2 C:\xampp\htdocs\ITE311-ALEJADO\system\Database\BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `s`.*, `...')
+#3 C:\xampp\htdocs\ITE311-ALEJADO\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `s`.*, `...', Array, false)
+#4 C:\xampp\htdocs\ITE311-ALEJADO\app\Controllers\Assignment.php(322): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\ITE311-ALEJADO\system\CodeIgniter.php(933): App\Controllers\Assignment->viewSubmissions()
+#6 C:\xampp\htdocs\ITE311-ALEJADO\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Assignment))
+#7 C:\xampp\htdocs\ITE311-ALEJADO\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\ITE311-ALEJADO\system\Boot.php(363): CodeIgniter\CodeIgniter->run()
+#9 C:\xampp\htdocs\ITE311-ALEJADO\system\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#10 C:\xampp\htdocs\ITE311-ALEJADO\index.php(204): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#11 {main}
+CRITICAL - 2025-12-13 17:27:54 --> CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'u.name' in 'field list'
+[Method: GET, Route: teacher/submissions]
+in SYSTEMPATH\Database\BaseConnection.php on line 684.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `s`.*, `u`.`name` as `student_name`, `u`.`user_code` as `student_code`, `e`.`id` as `enrollment_id`
+FROM `submissions` `s`
+JOIN `enrollments` `e` ON `e`.`id` = `s`.`enrollment_id`
+JOIN `users` `u` ON `u`.`id` = `e`.`student_id`
+WHERE `s`.`assignment_id` = :s.assignment_id:
+ORDER BY `s`.`submitted_at` DESC', [...], false)
+ 2 APPPATH\Controllers\Assignment.php(322): CodeIgniter\Database\BaseBuilder->get()
+ 3 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Assignment->viewSubmissions()
+ 4 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Assignment))
+ 5 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 8 FCPATH\index.php(204): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-12-13 17:27:54 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'u.name' in 'field list'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 332.
+ 1 SYSTEMPATH\Database\BaseConnection.php(729): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `s`.*, `u`.`name` as `student_name`, `u`.`user_code` as `student_code`, `e`.`id` as `enrollment_id`
+FROM `submissions` `s`
+JOIN `enrollments` `e` ON `e`.`id` = `s`.`enrollment_id`
+JOIN `users` `u` ON `u`.`id` = `e`.`student_id`
+WHERE `s`.`assignment_id` = \'2\'
+ORDER BY `s`.`submitted_at` DESC')
+ 2 SYSTEMPATH\Database\BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `s`.*, `u`.`name` as `student_name`, `u`.`user_code` as `student_code`, `e`.`id` as `enrollment_id`
+FROM `submissions` `s`
+JOIN `enrollments` `e` ON `e`.`id` = `s`.`enrollment_id`
+JOIN `users` `u` ON `u`.`id` = `e`.`student_id`
+WHERE `s`.`assignment_id` = \'2\'
+ORDER BY `s`.`submitted_at` DESC')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `s`.*, `u`.`name` as `student_name`, `u`.`user_code` as `student_code`, `e`.`id` as `enrollment_id`
+FROM `submissions` `s`
+JOIN `enrollments` `e` ON `e`.`id` = `s`.`enrollment_id`
+JOIN `users` `u` ON `u`.`id` = `e`.`student_id`
+WHERE `s`.`assignment_id` = :s.assignment_id:
+ORDER BY `s`.`submitted_at` DESC', [...], false)
+ 4 APPPATH\Controllers\Assignment.php(322): CodeIgniter\Database\BaseBuilder->get()
+ 5 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Assignment->viewSubmissions()
+ 6 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Assignment))
+ 7 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH\index.php(204): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-12-13 17:27:54 --> [Caused by] mysqli_sql_exception: Unknown column 'u.name' in 'field list'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 327.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(327): mysqli->query('SELECT `s`.*, `u`.`name` as `student_name`, `u`.`user_code` as `student_code`, `e`.`id` as `enrollment_id`
+FROM `submissions` `s`
+JOIN `enrollments` `e` ON `e`.`id` = `s`.`enrollment_id`
+JOIN `users` `u` ON `u`.`id` = `e`.`student_id`
+WHERE `s`.`assignment_id` = \'2\'
+ORDER BY `s`.`submitted_at` DESC', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(729): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `s`.*, `u`.`name` as `student_name`, `u`.`user_code` as `student_code`, `e`.`id` as `enrollment_id`
+FROM `submissions` `s`
+JOIN `enrollments` `e` ON `e`.`id` = `s`.`enrollment_id`
+JOIN `users` `u` ON `u`.`id` = `e`.`student_id`
+WHERE `s`.`assignment_id` = \'2\'
+ORDER BY `s`.`submitted_at` DESC')
+ 3 SYSTEMPATH\Database\BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `s`.*, `u`.`name` as `student_name`, `u`.`user_code` as `student_code`, `e`.`id` as `enrollment_id`
+FROM `submissions` `s`
+JOIN `enrollments` `e` ON `e`.`id` = `s`.`enrollment_id`
+JOIN `users` `u` ON `u`.`id` = `e`.`student_id`
+WHERE `s`.`assignment_id` = \'2\'
+ORDER BY `s`.`submitted_at` DESC')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `s`.*, `u`.`name` as `student_name`, `u`.`user_code` as `student_code`, `e`.`id` as `enrollment_id`
+FROM `submissions` `s`
+JOIN `enrollments` `e` ON `e`.`id` = `s`.`enrollment_id`
+JOIN `users` `u` ON `u`.`id` = `e`.`student_id`
+WHERE `s`.`assignment_id` = :s.assignment_id:
+ORDER BY `s`.`submitted_at` DESC', [...], false)
+ 5 APPPATH\Controllers\Assignment.php(322): CodeIgniter\Database\BaseBuilder->get()
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Assignment->viewSubmissions()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Assignment))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(204): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-12-13 17:31:25 --> ErrorException: Undefined array key "course_offering_id"
+[Method: GET, Route: teacher/submissions]
+in APPPATH\Controllers\Assignment.php on line 309.
+ 1 APPPATH\Controllers\Assignment.php(309): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "course_offering_id"', 'C:\\xampp\\htdocs\\ITE311-ALEJADO\\app\\Controllers\\Assignment.php', 309)
+ 2 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Assignment->viewSubmissions()
+ 3 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Assignment))
+ 4 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(204): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ERROR - 2025-12-13 17:35:17 --> mysqli_sql_exception: Unknown column 'student_id' in 'where clause' in C:\xampp\htdocs\ITE311-ALEJADO\system\Database\MySQLi\Connection.php:327
+Stack trace:
+#0 C:\xampp\htdocs\ITE311-ALEJADO\system\Database\MySQLi\Connection.php(327): mysqli->query('SELECT *\nFROM `...', 0)
+#1 C:\xampp\htdocs\ITE311-ALEJADO\system\Database\BaseConnection.php(729): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *\nFROM `...')
+#2 C:\xampp\htdocs\ITE311-ALEJADO\system\Database\BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *\nFROM `...')
+#3 C:\xampp\htdocs\ITE311-ALEJADO\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 C:\xampp\htdocs\ITE311-ALEJADO\system\Model.php(330): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\ITE311-ALEJADO\system\BaseModel.php(715): CodeIgniter\Model->doFirst()
+#6 C:\xampp\htdocs\ITE311-ALEJADO\app\Controllers\Auth.php(669): CodeIgniter\BaseModel->first()
+#7 C:\xampp\htdocs\ITE311-ALEJADO\system\CodeIgniter.php(933): App\Controllers\Auth->dashboard()
+#8 C:\xampp\htdocs\ITE311-ALEJADO\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Auth))
+#9 C:\xampp\htdocs\ITE311-ALEJADO\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\xampp\htdocs\ITE311-ALEJADO\system\Boot.php(363): CodeIgniter\CodeIgniter->run()
+#11 C:\xampp\htdocs\ITE311-ALEJADO\system\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#12 C:\xampp\htdocs\ITE311-ALEJADO\index.php(204): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#13 {main}
+ERROR - 2025-12-13 17:35:17 --> Student dashboard error: Unknown column 'student_id' in 'where clause'
+ERROR - 2025-12-13 17:35:18 --> mysqli_sql_exception: Unknown column 'student_id' in 'where clause' in C:\xampp\htdocs\ITE311-ALEJADO\system\Database\MySQLi\Connection.php:327
+Stack trace:
+#0 C:\xampp\htdocs\ITE311-ALEJADO\system\Database\MySQLi\Connection.php(327): mysqli->query('SELECT *\nFROM `...', 0)
+#1 C:\xampp\htdocs\ITE311-ALEJADO\system\Database\BaseConnection.php(729): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *\nFROM `...')
+#2 C:\xampp\htdocs\ITE311-ALEJADO\system\Database\BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *\nFROM `...')
+#3 C:\xampp\htdocs\ITE311-ALEJADO\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 C:\xampp\htdocs\ITE311-ALEJADO\system\Model.php(330): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\ITE311-ALEJADO\system\BaseModel.php(715): CodeIgniter\Model->doFirst()
+#6 C:\xampp\htdocs\ITE311-ALEJADO\app\Controllers\Auth.php(669): CodeIgniter\BaseModel->first()
+#7 C:\xampp\htdocs\ITE311-ALEJADO\system\CodeIgniter.php(933): App\Controllers\Auth->dashboard()
+#8 C:\xampp\htdocs\ITE311-ALEJADO\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Auth))
+#9 C:\xampp\htdocs\ITE311-ALEJADO\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\xampp\htdocs\ITE311-ALEJADO\system\Boot.php(363): CodeIgniter\CodeIgniter->run()
+#11 C:\xampp\htdocs\ITE311-ALEJADO\system\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#12 C:\xampp\htdocs\ITE311-ALEJADO\index.php(204): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#13 {main}
+ERROR - 2025-12-13 17:35:18 --> Student dashboard error: Unknown column 'student_id' in 'where clause'
+CRITICAL - 2025-12-13 17:41:59 --> ErrorException: Undefined property: App\Controllers\Submission::$studentModel
+[Method: GET, Route: student/assignments]
+in APPPATH\Controllers\Submission.php on line 37.
+ 1 APPPATH\Controllers\Submission.php(37): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined property: App\\Controllers\\Submission::$studentModel', 'C:\\xampp\\htdocs\\ITE311-ALEJADO\\app\\Controllers\\Submission.php', 37)
+ 2 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Submission->studentAssignments()
+ 3 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Submission))
+ 4 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(204): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-12-13 17:45:50 --> CodeIgniter\View\Exceptions\ViewException: Invalid file: "templates/footer.php"
+[Method: GET, Route: student/assignment/2]
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 39.
+ 1 SYSTEMPATH\View\View.php(214): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('templates/footer.php')
+ 2 SYSTEMPATH\View\View.php(475): CodeIgniter\View\View->render('templates/footer', null, true)
+ 3 APPPATH\Views\student\assignment_detail.php(268): CodeIgniter\View\View->include('templates/footer')
+ 4 SYSTEMPATH\View\View.php(226): include('C:\\xampp\\htdocs\\ITE311-ALEJADO\\app\\Views\\student\\assignment_detail.php')
+ 5 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 6 SYSTEMPATH\Common.php(1167): CodeIgniter\View\View->render('student/assignment_detail', [], true)
+ 7 APPPATH\Controllers\Submission.php(162): view('student/assignment_detail', [...])
+ 8 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Submission->viewAssignment('2')
+ 9 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Submission))
+10 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+12 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+13 FCPATH\index.php(204): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ERROR - 2025-12-13 17:47:47 --> mysqli_sql_exception: Unknown column 's.name' in 'field list' in C:\xampp\htdocs\ITE311-ALEJADO\system\Database\MySQLi\Connection.php:327
+Stack trace:
+#0 C:\xampp\htdocs\ITE311-ALEJADO\system\Database\MySQLi\Connection.php(327): mysqli->query('SELECT `submiss...', 0)
+#1 C:\xampp\htdocs\ITE311-ALEJADO\system\Database\BaseConnection.php(729): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `submiss...')
+#2 C:\xampp\htdocs\ITE311-ALEJADO\system\Database\BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `submiss...')
+#3 C:\xampp\htdocs\ITE311-ALEJADO\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `submiss...', Array, false)
+#4 C:\xampp\htdocs\ITE311-ALEJADO\system\Model.php(210): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\ITE311-ALEJADO\system\BaseModel.php(611): CodeIgniter\Model->doFind(true, '1')
+#6 C:\xampp\htdocs\ITE311-ALEJADO\app\Models\SubmissionModel.php(98): CodeIgniter\BaseModel->find('1')
+#7 C:\xampp\htdocs\ITE311-ALEJADO\app\Controllers\Assignment.php(388): App\Models\SubmissionModel->getSubmissionWithDetails('1')
+#8 C:\xampp\htdocs\ITE311-ALEJADO\system\CodeIgniter.php(933): App\Controllers\Assignment->gradeSubmission()
+#9 C:\xampp\htdocs\ITE311-ALEJADO\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Assignment))
+#10 C:\xampp\htdocs\ITE311-ALEJADO\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 C:\xampp\htdocs\ITE311-ALEJADO\system\Boot.php(363): CodeIgniter\CodeIgniter->run()
+#12 C:\xampp\htdocs\ITE311-ALEJADO\system\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#13 C:\xampp\htdocs\ITE311-ALEJADO\index.php(204): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#14 {main}
+CRITICAL - 2025-12-13 17:47:47 --> CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 's.name' in 'field list'
+[Method: POST, Route: teacher/grade_submission]
+in SYSTEMPATH\Database\BaseConnection.php on line 684.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `submissions`.*, `a`.`title` as `assignment_title`, `a`.`max_score`, `a`.`due_date`, `s`.`name` as `student_name`, `s`.`user_code` as `student_code`, `g`.`name` as `grader_name`, `c`.`course_code`, `c`.`title` as `course_title`
+FROM `submissions`
+JOIN `assignments` `a` ON `a`.`id` = `submissions`.`assignment_id`
+JOIN `users` `s` ON `s`.`id` = `submissions`.`student_id`
+LEFT JOIN `users` `g` ON `g`.`id` = `submissions`.`graded_by`
+JOIN `course_offerings` `co` ON `co`.`id` = `a`.`course_offering_id`
+JOIN `courses` `c` ON `c`.`id` = `co`.`course_id`
+WHERE `submissions`.`id` = :submissions.id:', [...], false)
+ 2 SYSTEMPATH\Model.php(210): CodeIgniter\Database\BaseBuilder->get()
+ 3 SYSTEMPATH\BaseModel.php(611): CodeIgniter\Model->doFind(true, '1')
+ 4 APPPATH\Models\SubmissionModel.php(98): CodeIgniter\BaseModel->find('1')
+ 5 APPPATH\Controllers\Assignment.php(388): App\Models\SubmissionModel->getSubmissionWithDetails('1')
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Assignment->gradeSubmission()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Assignment))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(204): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-12-13 17:47:47 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 's.name' in 'field list'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 332.
+ 1 SYSTEMPATH\Database\BaseConnection.php(729): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `submissions`.*, `a`.`title` as `assignment_title`, `a`.`max_score`, `a`.`due_date`, `s`.`name` as `student_name`, `s`.`user_code` as `student_code`, `g`.`name` as `grader_name`, `c`.`course_code`, `c`.`title` as `course_title`
+FROM `submissions`
+JOIN `assignments` `a` ON `a`.`id` = `submissions`.`assignment_id`
+JOIN `users` `s` ON `s`.`id` = `submissions`.`student_id`
+LEFT JOIN `users` `g` ON `g`.`id` = `submissions`.`graded_by`
+JOIN `course_offerings` `co` ON `co`.`id` = `a`.`course_offering_id`
+JOIN `courses` `c` ON `c`.`id` = `co`.`course_id`
+WHERE `submissions`.`id` = \'1\'')
+ 2 SYSTEMPATH\Database\BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `submissions`.*, `a`.`title` as `assignment_title`, `a`.`max_score`, `a`.`due_date`, `s`.`name` as `student_name`, `s`.`user_code` as `student_code`, `g`.`name` as `grader_name`, `c`.`course_code`, `c`.`title` as `course_title`
+FROM `submissions`
+JOIN `assignments` `a` ON `a`.`id` = `submissions`.`assignment_id`
+JOIN `users` `s` ON `s`.`id` = `submissions`.`student_id`
+LEFT JOIN `users` `g` ON `g`.`id` = `submissions`.`graded_by`
+JOIN `course_offerings` `co` ON `co`.`id` = `a`.`course_offering_id`
+JOIN `courses` `c` ON `c`.`id` = `co`.`course_id`
+WHERE `submissions`.`id` = \'1\'')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `submissions`.*, `a`.`title` as `assignment_title`, `a`.`max_score`, `a`.`due_date`, `s`.`name` as `student_name`, `s`.`user_code` as `student_code`, `g`.`name` as `grader_name`, `c`.`course_code`, `c`.`title` as `course_title`
+FROM `submissions`
+JOIN `assignments` `a` ON `a`.`id` = `submissions`.`assignment_id`
+JOIN `users` `s` ON `s`.`id` = `submissions`.`student_id`
+LEFT JOIN `users` `g` ON `g`.`id` = `submissions`.`graded_by`
+JOIN `course_offerings` `co` ON `co`.`id` = `a`.`course_offering_id`
+JOIN `courses` `c` ON `c`.`id` = `co`.`course_id`
+WHERE `submissions`.`id` = :submissions.id:', [...], false)
+ 4 SYSTEMPATH\Model.php(210): CodeIgniter\Database\BaseBuilder->get()
+ 5 SYSTEMPATH\BaseModel.php(611): CodeIgniter\Model->doFind(true, '1')
+ 6 APPPATH\Models\SubmissionModel.php(98): CodeIgniter\BaseModel->find('1')
+ 7 APPPATH\Controllers\Assignment.php(388): App\Models\SubmissionModel->getSubmissionWithDetails('1')
+ 8 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Assignment->gradeSubmission()
+ 9 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Assignment))
+10 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+12 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+13 FCPATH\index.php(204): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-12-13 17:47:47 --> [Caused by] mysqli_sql_exception: Unknown column 's.name' in 'field list'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 327.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(327): mysqli->query('SELECT `submissions`.*, `a`.`title` as `assignment_title`, `a`.`max_score`, `a`.`due_date`, `s`.`name` as `student_name`, `s`.`user_code` as `student_code`, `g`.`name` as `grader_name`, `c`.`course_code`, `c`.`title` as `course_title`
+FROM `submissions`
+JOIN `assignments` `a` ON `a`.`id` = `submissions`.`assignment_id`
+JOIN `users` `s` ON `s`.`id` = `submissions`.`student_id`
+LEFT JOIN `users` `g` ON `g`.`id` = `submissions`.`graded_by`
+JOIN `course_offerings` `co` ON `co`.`id` = `a`.`course_offering_id`
+JOIN `courses` `c` ON `c`.`id` = `co`.`course_id`
+WHERE `submissions`.`id` = \'1\'', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(729): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `submissions`.*, `a`.`title` as `assignment_title`, `a`.`max_score`, `a`.`due_date`, `s`.`name` as `student_name`, `s`.`user_code` as `student_code`, `g`.`name` as `grader_name`, `c`.`course_code`, `c`.`title` as `course_title`
+FROM `submissions`
+JOIN `assignments` `a` ON `a`.`id` = `submissions`.`assignment_id`
+JOIN `users` `s` ON `s`.`id` = `submissions`.`student_id`
+LEFT JOIN `users` `g` ON `g`.`id` = `submissions`.`graded_by`
+JOIN `course_offerings` `co` ON `co`.`id` = `a`.`course_offering_id`
+JOIN `courses` `c` ON `c`.`id` = `co`.`course_id`
+WHERE `submissions`.`id` = \'1\'')
+ 3 SYSTEMPATH\Database\BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `submissions`.*, `a`.`title` as `assignment_title`, `a`.`max_score`, `a`.`due_date`, `s`.`name` as `student_name`, `s`.`user_code` as `student_code`, `g`.`name` as `grader_name`, `c`.`course_code`, `c`.`title` as `course_title`
+FROM `submissions`
+JOIN `assignments` `a` ON `a`.`id` = `submissions`.`assignment_id`
+JOIN `users` `s` ON `s`.`id` = `submissions`.`student_id`
+LEFT JOIN `users` `g` ON `g`.`id` = `submissions`.`graded_by`
+JOIN `course_offerings` `co` ON `co`.`id` = `a`.`course_offering_id`
+JOIN `courses` `c` ON `c`.`id` = `co`.`course_id`
+WHERE `submissions`.`id` = \'1\'')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `submissions`.*, `a`.`title` as `assignment_title`, `a`.`max_score`, `a`.`due_date`, `s`.`name` as `student_name`, `s`.`user_code` as `student_code`, `g`.`name` as `grader_name`, `c`.`course_code`, `c`.`title` as `course_title`
+FROM `submissions`
+JOIN `assignments` `a` ON `a`.`id` = `submissions`.`assignment_id`
+JOIN `users` `s` ON `s`.`id` = `submissions`.`student_id`
+LEFT JOIN `users` `g` ON `g`.`id` = `submissions`.`graded_by`
+JOIN `course_offerings` `co` ON `co`.`id` = `a`.`course_offering_id`
+JOIN `courses` `c` ON `c`.`id` = `co`.`course_id`
+WHERE `submissions`.`id` = :submissions.id:', [...], false)
+ 5 SYSTEMPATH\Model.php(210): CodeIgniter\Database\BaseBuilder->get()
+ 6 SYSTEMPATH\BaseModel.php(611): CodeIgniter\Model->doFind(true, '1')
+ 7 APPPATH\Models\SubmissionModel.php(98): CodeIgniter\BaseModel->find('1')
+ 8 APPPATH\Controllers\Assignment.php(388): App\Models\SubmissionModel->getSubmissionWithDetails('1')
+ 9 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Assignment->gradeSubmission()
+10 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Assignment))
+11 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+12 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+13 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+14 FCPATH\index.php(204): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ERROR - 2025-12-13 18:03:55 --> mysqli_sql_exception: Unknown column 's.name' in 'field list' in C:\xampp\htdocs\ITE311-ALEJADO\system\Database\MySQLi\Connection.php:327
+Stack trace:
+#0 C:\xampp\htdocs\ITE311-ALEJADO\system\Database\MySQLi\Connection.php(327): mysqli->query('SELECT `submiss...', 0)
+#1 C:\xampp\htdocs\ITE311-ALEJADO\system\Database\BaseConnection.php(729): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `submiss...')
+#2 C:\xampp\htdocs\ITE311-ALEJADO\system\Database\BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `submiss...')
+#3 C:\xampp\htdocs\ITE311-ALEJADO\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `submiss...', Array, false)
+#4 C:\xampp\htdocs\ITE311-ALEJADO\system\Model.php(210): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\ITE311-ALEJADO\system\BaseModel.php(611): CodeIgniter\Model->doFind(true, '3')
+#6 C:\xampp\htdocs\ITE311-ALEJADO\app\Models\SubmissionModel.php(98): CodeIgniter\BaseModel->find('3')
+#7 C:\xampp\htdocs\ITE311-ALEJADO\app\Controllers\Submission.php(380): App\Models\SubmissionModel->getSubmissionWithDetails('3')
+#8 C:\xampp\htdocs\ITE311-ALEJADO\system\CodeIgniter.php(933): App\Controllers\Submission->downloadSubmission('3')
+#9 C:\xampp\htdocs\ITE311-ALEJADO\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Submission))
+#10 C:\xampp\htdocs\ITE311-ALEJADO\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 C:\xampp\htdocs\ITE311-ALEJADO\system\Boot.php(363): CodeIgniter\CodeIgniter->run()
+#12 C:\xampp\htdocs\ITE311-ALEJADO\system\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#13 C:\xampp\htdocs\ITE311-ALEJADO\index.php(204): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#14 {main}
+CRITICAL - 2025-12-13 18:03:55 --> CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 's.name' in 'field list'
+[Method: GET, Route: submission/download/3]
+in SYSTEMPATH\Database\BaseConnection.php on line 684.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `submissions`.*, `a`.`title` as `assignment_title`, `a`.`max_score`, `a`.`due_date`, `s`.`name` as `student_name`, `s`.`user_code` as `student_code`, `g`.`name` as `grader_name`, `c`.`course_code`, `c`.`title` as `course_title`
+FROM `submissions`
+JOIN `assignments` `a` ON `a`.`id` = `submissions`.`assignment_id`
+JOIN `users` `s` ON `s`.`id` = `submissions`.`student_id`
+LEFT JOIN `users` `g` ON `g`.`id` = `submissions`.`graded_by`
+JOIN `course_offerings` `co` ON `co`.`id` = `a`.`course_offering_id`
+JOIN `courses` `c` ON `c`.`id` = `co`.`course_id`
+WHERE `submissions`.`id` = :submissions.id:', [...], false)
+ 2 SYSTEMPATH\Model.php(210): CodeIgniter\Database\BaseBuilder->get()
+ 3 SYSTEMPATH\BaseModel.php(611): CodeIgniter\Model->doFind(true, '3')
+ 4 APPPATH\Models\SubmissionModel.php(98): CodeIgniter\BaseModel->find('3')
+ 5 APPPATH\Controllers\Submission.php(380): App\Models\SubmissionModel->getSubmissionWithDetails('3')
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Submission->downloadSubmission('3')
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Submission))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(204): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-12-13 18:03:55 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 's.name' in 'field list'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 332.
+ 1 SYSTEMPATH\Database\BaseConnection.php(729): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `submissions`.*, `a`.`title` as `assignment_title`, `a`.`max_score`, `a`.`due_date`, `s`.`name` as `student_name`, `s`.`user_code` as `student_code`, `g`.`name` as `grader_name`, `c`.`course_code`, `c`.`title` as `course_title`
+FROM `submissions`
+JOIN `assignments` `a` ON `a`.`id` = `submissions`.`assignment_id`
+JOIN `users` `s` ON `s`.`id` = `submissions`.`student_id`
+LEFT JOIN `users` `g` ON `g`.`id` = `submissions`.`graded_by`
+JOIN `course_offerings` `co` ON `co`.`id` = `a`.`course_offering_id`
+JOIN `courses` `c` ON `c`.`id` = `co`.`course_id`
+WHERE `submissions`.`id` = \'3\'')
+ 2 SYSTEMPATH\Database\BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `submissions`.*, `a`.`title` as `assignment_title`, `a`.`max_score`, `a`.`due_date`, `s`.`name` as `student_name`, `s`.`user_code` as `student_code`, `g`.`name` as `grader_name`, `c`.`course_code`, `c`.`title` as `course_title`
+FROM `submissions`
+JOIN `assignments` `a` ON `a`.`id` = `submissions`.`assignment_id`
+JOIN `users` `s` ON `s`.`id` = `submissions`.`student_id`
+LEFT JOIN `users` `g` ON `g`.`id` = `submissions`.`graded_by`
+JOIN `course_offerings` `co` ON `co`.`id` = `a`.`course_offering_id`
+JOIN `courses` `c` ON `c`.`id` = `co`.`course_id`
+WHERE `submissions`.`id` = \'3\'')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `submissions`.*, `a`.`title` as `assignment_title`, `a`.`max_score`, `a`.`due_date`, `s`.`name` as `student_name`, `s`.`user_code` as `student_code`, `g`.`name` as `grader_name`, `c`.`course_code`, `c`.`title` as `course_title`
+FROM `submissions`
+JOIN `assignments` `a` ON `a`.`id` = `submissions`.`assignment_id`
+JOIN `users` `s` ON `s`.`id` = `submissions`.`student_id`
+LEFT JOIN `users` `g` ON `g`.`id` = `submissions`.`graded_by`
+JOIN `course_offerings` `co` ON `co`.`id` = `a`.`course_offering_id`
+JOIN `courses` `c` ON `c`.`id` = `co`.`course_id`
+WHERE `submissions`.`id` = :submissions.id:', [...], false)
+ 4 SYSTEMPATH\Model.php(210): CodeIgniter\Database\BaseBuilder->get()
+ 5 SYSTEMPATH\BaseModel.php(611): CodeIgniter\Model->doFind(true, '3')
+ 6 APPPATH\Models\SubmissionModel.php(98): CodeIgniter\BaseModel->find('3')
+ 7 APPPATH\Controllers\Submission.php(380): App\Models\SubmissionModel->getSubmissionWithDetails('3')
+ 8 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Submission->downloadSubmission('3')
+ 9 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Submission))
+10 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+12 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+13 FCPATH\index.php(204): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-12-13 18:03:55 --> [Caused by] mysqli_sql_exception: Unknown column 's.name' in 'field list'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 327.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(327): mysqli->query('SELECT `submissions`.*, `a`.`title` as `assignment_title`, `a`.`max_score`, `a`.`due_date`, `s`.`name` as `student_name`, `s`.`user_code` as `student_code`, `g`.`name` as `grader_name`, `c`.`course_code`, `c`.`title` as `course_title`
+FROM `submissions`
+JOIN `assignments` `a` ON `a`.`id` = `submissions`.`assignment_id`
+JOIN `users` `s` ON `s`.`id` = `submissions`.`student_id`
+LEFT JOIN `users` `g` ON `g`.`id` = `submissions`.`graded_by`
+JOIN `course_offerings` `co` ON `co`.`id` = `a`.`course_offering_id`
+JOIN `courses` `c` ON `c`.`id` = `co`.`course_id`
+WHERE `submissions`.`id` = \'3\'', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(729): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `submissions`.*, `a`.`title` as `assignment_title`, `a`.`max_score`, `a`.`due_date`, `s`.`name` as `student_name`, `s`.`user_code` as `student_code`, `g`.`name` as `grader_name`, `c`.`course_code`, `c`.`title` as `course_title`
+FROM `submissions`
+JOIN `assignments` `a` ON `a`.`id` = `submissions`.`assignment_id`
+JOIN `users` `s` ON `s`.`id` = `submissions`.`student_id`
+LEFT JOIN `users` `g` ON `g`.`id` = `submissions`.`graded_by`
+JOIN `course_offerings` `co` ON `co`.`id` = `a`.`course_offering_id`
+JOIN `courses` `c` ON `c`.`id` = `co`.`course_id`
+WHERE `submissions`.`id` = \'3\'')
+ 3 SYSTEMPATH\Database\BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `submissions`.*, `a`.`title` as `assignment_title`, `a`.`max_score`, `a`.`due_date`, `s`.`name` as `student_name`, `s`.`user_code` as `student_code`, `g`.`name` as `grader_name`, `c`.`course_code`, `c`.`title` as `course_title`
+FROM `submissions`
+JOIN `assignments` `a` ON `a`.`id` = `submissions`.`assignment_id`
+JOIN `users` `s` ON `s`.`id` = `submissions`.`student_id`
+LEFT JOIN `users` `g` ON `g`.`id` = `submissions`.`graded_by`
+JOIN `course_offerings` `co` ON `co`.`id` = `a`.`course_offering_id`
+JOIN `courses` `c` ON `c`.`id` = `co`.`course_id`
+WHERE `submissions`.`id` = \'3\'')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `submissions`.*, `a`.`title` as `assignment_title`, `a`.`max_score`, `a`.`due_date`, `s`.`name` as `student_name`, `s`.`user_code` as `student_code`, `g`.`name` as `grader_name`, `c`.`course_code`, `c`.`title` as `course_title`
+FROM `submissions`
+JOIN `assignments` `a` ON `a`.`id` = `submissions`.`assignment_id`
+JOIN `users` `s` ON `s`.`id` = `submissions`.`student_id`
+LEFT JOIN `users` `g` ON `g`.`id` = `submissions`.`graded_by`
+JOIN `course_offerings` `co` ON `co`.`id` = `a`.`course_offering_id`
+JOIN `courses` `c` ON `c`.`id` = `co`.`course_id`
+WHERE `submissions`.`id` = :submissions.id:', [...], false)
+ 5 SYSTEMPATH\Model.php(210): CodeIgniter\Database\BaseBuilder->get()
+ 6 SYSTEMPATH\BaseModel.php(611): CodeIgniter\Model->doFind(true, '3')
+ 7 APPPATH\Models\SubmissionModel.php(98): CodeIgniter\BaseModel->find('3')
+ 8 APPPATH\Controllers\Submission.php(380): App\Models\SubmissionModel->getSubmissionWithDetails('3')
+ 9 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Submission->downloadSubmission('3')
+10 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Submission))
+11 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+12 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+13 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+14 FCPATH\index.php(204): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ERROR - 2025-12-13 18:05:22 --> mysqli_sql_exception: Unknown column 's.name' in 'field list' in C:\xampp\htdocs\ITE311-ALEJADO\system\Database\MySQLi\Connection.php:327
+Stack trace:
+#0 C:\xampp\htdocs\ITE311-ALEJADO\system\Database\MySQLi\Connection.php(327): mysqli->query('SELECT `submiss...', 0)
+#1 C:\xampp\htdocs\ITE311-ALEJADO\system\Database\BaseConnection.php(729): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `submiss...')
+#2 C:\xampp\htdocs\ITE311-ALEJADO\system\Database\BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `submiss...')
+#3 C:\xampp\htdocs\ITE311-ALEJADO\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `submiss...', Array, false)
+#4 C:\xampp\htdocs\ITE311-ALEJADO\system\Model.php(210): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\ITE311-ALEJADO\system\BaseModel.php(611): CodeIgniter\Model->doFind(true, '3')
+#6 C:\xampp\htdocs\ITE311-ALEJADO\app\Models\SubmissionModel.php(98): CodeIgniter\BaseModel->find('3')
+#7 C:\xampp\htdocs\ITE311-ALEJADO\app\Controllers\Submission.php(383): App\Models\SubmissionModel->getSubmissionWithDetails('3')
+#8 C:\xampp\htdocs\ITE311-ALEJADO\system\CodeIgniter.php(933): App\Controllers\Submission->downloadSubmission('3')
+#9 C:\xampp\htdocs\ITE311-ALEJADO\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Submission))
+#10 C:\xampp\htdocs\ITE311-ALEJADO\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 C:\xampp\htdocs\ITE311-ALEJADO\system\Boot.php(363): CodeIgniter\CodeIgniter->run()
+#12 C:\xampp\htdocs\ITE311-ALEJADO\system\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#13 C:\xampp\htdocs\ITE311-ALEJADO\index.php(204): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#14 {main}
+CRITICAL - 2025-12-13 18:05:22 --> CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 's.name' in 'field list'
+[Method: GET, Route: submission/download/3]
+in SYSTEMPATH\Database\BaseConnection.php on line 684.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `submissions`.*, `a`.`title` as `assignment_title`, `a`.`max_score`, `a`.`due_date`, `s`.`name` as `student_name`, `s`.`user_code` as `student_code`, `g`.`name` as `grader_name`, `c`.`course_code`, `c`.`title` as `course_title`
+FROM `submissions`
+JOIN `assignments` `a` ON `a`.`id` = `submissions`.`assignment_id`
+JOIN `users` `s` ON `s`.`id` = `submissions`.`student_id`
+LEFT JOIN `users` `g` ON `g`.`id` = `submissions`.`graded_by`
+JOIN `course_offerings` `co` ON `co`.`id` = `a`.`course_offering_id`
+JOIN `courses` `c` ON `c`.`id` = `co`.`course_id`
+WHERE `submissions`.`id` = :submissions.id:', [...], false)
+ 2 SYSTEMPATH\Model.php(210): CodeIgniter\Database\BaseBuilder->get()
+ 3 SYSTEMPATH\BaseModel.php(611): CodeIgniter\Model->doFind(true, '3')
+ 4 APPPATH\Models\SubmissionModel.php(98): CodeIgniter\BaseModel->find('3')
+ 5 APPPATH\Controllers\Submission.php(383): App\Models\SubmissionModel->getSubmissionWithDetails('3')
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Submission->downloadSubmission('3')
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Submission))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(204): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-12-13 18:05:22 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 's.name' in 'field list'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 332.
+ 1 SYSTEMPATH\Database\BaseConnection.php(729): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `submissions`.*, `a`.`title` as `assignment_title`, `a`.`max_score`, `a`.`due_date`, `s`.`name` as `student_name`, `s`.`user_code` as `student_code`, `g`.`name` as `grader_name`, `c`.`course_code`, `c`.`title` as `course_title`
+FROM `submissions`
+JOIN `assignments` `a` ON `a`.`id` = `submissions`.`assignment_id`
+JOIN `users` `s` ON `s`.`id` = `submissions`.`student_id`
+LEFT JOIN `users` `g` ON `g`.`id` = `submissions`.`graded_by`
+JOIN `course_offerings` `co` ON `co`.`id` = `a`.`course_offering_id`
+JOIN `courses` `c` ON `c`.`id` = `co`.`course_id`
+WHERE `submissions`.`id` = \'3\'')
+ 2 SYSTEMPATH\Database\BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `submissions`.*, `a`.`title` as `assignment_title`, `a`.`max_score`, `a`.`due_date`, `s`.`name` as `student_name`, `s`.`user_code` as `student_code`, `g`.`name` as `grader_name`, `c`.`course_code`, `c`.`title` as `course_title`
+FROM `submissions`
+JOIN `assignments` `a` ON `a`.`id` = `submissions`.`assignment_id`
+JOIN `users` `s` ON `s`.`id` = `submissions`.`student_id`
+LEFT JOIN `users` `g` ON `g`.`id` = `submissions`.`graded_by`
+JOIN `course_offerings` `co` ON `co`.`id` = `a`.`course_offering_id`
+JOIN `courses` `c` ON `c`.`id` = `co`.`course_id`
+WHERE `submissions`.`id` = \'3\'')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `submissions`.*, `a`.`title` as `assignment_title`, `a`.`max_score`, `a`.`due_date`, `s`.`name` as `student_name`, `s`.`user_code` as `student_code`, `g`.`name` as `grader_name`, `c`.`course_code`, `c`.`title` as `course_title`
+FROM `submissions`
+JOIN `assignments` `a` ON `a`.`id` = `submissions`.`assignment_id`
+JOIN `users` `s` ON `s`.`id` = `submissions`.`student_id`
+LEFT JOIN `users` `g` ON `g`.`id` = `submissions`.`graded_by`
+JOIN `course_offerings` `co` ON `co`.`id` = `a`.`course_offering_id`
+JOIN `courses` `c` ON `c`.`id` = `co`.`course_id`
+WHERE `submissions`.`id` = :submissions.id:', [...], false)
+ 4 SYSTEMPATH\Model.php(210): CodeIgniter\Database\BaseBuilder->get()
+ 5 SYSTEMPATH\BaseModel.php(611): CodeIgniter\Model->doFind(true, '3')
+ 6 APPPATH\Models\SubmissionModel.php(98): CodeIgniter\BaseModel->find('3')
+ 7 APPPATH\Controllers\Submission.php(383): App\Models\SubmissionModel->getSubmissionWithDetails('3')
+ 8 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Submission->downloadSubmission('3')
+ 9 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Submission))
+10 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+12 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+13 FCPATH\index.php(204): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-12-13 18:05:22 --> [Caused by] mysqli_sql_exception: Unknown column 's.name' in 'field list'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 327.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(327): mysqli->query('SELECT `submissions`.*, `a`.`title` as `assignment_title`, `a`.`max_score`, `a`.`due_date`, `s`.`name` as `student_name`, `s`.`user_code` as `student_code`, `g`.`name` as `grader_name`, `c`.`course_code`, `c`.`title` as `course_title`
+FROM `submissions`
+JOIN `assignments` `a` ON `a`.`id` = `submissions`.`assignment_id`
+JOIN `users` `s` ON `s`.`id` = `submissions`.`student_id`
+LEFT JOIN `users` `g` ON `g`.`id` = `submissions`.`graded_by`
+JOIN `course_offerings` `co` ON `co`.`id` = `a`.`course_offering_id`
+JOIN `courses` `c` ON `c`.`id` = `co`.`course_id`
+WHERE `submissions`.`id` = \'3\'', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(729): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `submissions`.*, `a`.`title` as `assignment_title`, `a`.`max_score`, `a`.`due_date`, `s`.`name` as `student_name`, `s`.`user_code` as `student_code`, `g`.`name` as `grader_name`, `c`.`course_code`, `c`.`title` as `course_title`
+FROM `submissions`
+JOIN `assignments` `a` ON `a`.`id` = `submissions`.`assignment_id`
+JOIN `users` `s` ON `s`.`id` = `submissions`.`student_id`
+LEFT JOIN `users` `g` ON `g`.`id` = `submissions`.`graded_by`
+JOIN `course_offerings` `co` ON `co`.`id` = `a`.`course_offering_id`
+JOIN `courses` `c` ON `c`.`id` = `co`.`course_id`
+WHERE `submissions`.`id` = \'3\'')
+ 3 SYSTEMPATH\Database\BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `submissions`.*, `a`.`title` as `assignment_title`, `a`.`max_score`, `a`.`due_date`, `s`.`name` as `student_name`, `s`.`user_code` as `student_code`, `g`.`name` as `grader_name`, `c`.`course_code`, `c`.`title` as `course_title`
+FROM `submissions`
+JOIN `assignments` `a` ON `a`.`id` = `submissions`.`assignment_id`
+JOIN `users` `s` ON `s`.`id` = `submissions`.`student_id`
+LEFT JOIN `users` `g` ON `g`.`id` = `submissions`.`graded_by`
+JOIN `course_offerings` `co` ON `co`.`id` = `a`.`course_offering_id`
+JOIN `courses` `c` ON `c`.`id` = `co`.`course_id`
+WHERE `submissions`.`id` = \'3\'')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `submissions`.*, `a`.`title` as `assignment_title`, `a`.`max_score`, `a`.`due_date`, `s`.`name` as `student_name`, `s`.`user_code` as `student_code`, `g`.`name` as `grader_name`, `c`.`course_code`, `c`.`title` as `course_title`
+FROM `submissions`
+JOIN `assignments` `a` ON `a`.`id` = `submissions`.`assignment_id`
+JOIN `users` `s` ON `s`.`id` = `submissions`.`student_id`
+LEFT JOIN `users` `g` ON `g`.`id` = `submissions`.`graded_by`
+JOIN `course_offerings` `co` ON `co`.`id` = `a`.`course_offering_id`
+JOIN `courses` `c` ON `c`.`id` = `co`.`course_id`
+WHERE `submissions`.`id` = :submissions.id:', [...], false)
+ 5 SYSTEMPATH\Model.php(210): CodeIgniter\Database\BaseBuilder->get()
+ 6 SYSTEMPATH\BaseModel.php(611): CodeIgniter\Model->doFind(true, '3')
+ 7 APPPATH\Models\SubmissionModel.php(98): CodeIgniter\BaseModel->find('3')
+ 8 APPPATH\Controllers\Submission.php(383): App\Models\SubmissionModel->getSubmissionWithDetails('3')
+ 9 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Submission->downloadSubmission('3')
+10 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Submission))
+11 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+12 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+13 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+14 FCPATH\index.php(204): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-12-13 18:09:25 --> CodeIgniter\View\Exceptions\ViewException: Invalid file: "templates/footer.php"
+[Method: GET, Route: admin/manage_assignments]
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 39.
+ 1 SYSTEMPATH\View\View.php(214): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('templates/footer.php')
+ 2 SYSTEMPATH\View\View.php(475): CodeIgniter\View\View->render('templates/footer', null, true)
+ 3 APPPATH\Views\admin\manage_assignments.php(144): CodeIgniter\View\View->include('templates/footer')
+ 4 SYSTEMPATH\View\View.php(226): include('C:\\xampp\\htdocs\\ITE311-ALEJADO\\app\\Views\\admin\\manage_assignments.php')
+ 5 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 6 SYSTEMPATH\Common.php(1167): CodeIgniter\View\View->render('admin/manage_assignments', [], true)
+ 7 APPPATH\Controllers\Assignment.php(495): view('admin/manage_assignments', [...])
+ 8 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Assignment->manageAssignments()
+ 9 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Assignment))
+10 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+12 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+13 FCPATH\index.php(204): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-12-13 18:10:28 --> CodeIgniter\View\Exceptions\ViewException: Invalid file: "templates/footer.php"
+[Method: GET, Route: admin/edit_assignment/1]
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 39.
+ 1 SYSTEMPATH\View\View.php(214): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('templates/footer.php')
+ 2 SYSTEMPATH\View\View.php(475): CodeIgniter\View\View->render('templates/footer', null, true)
+ 3 APPPATH\Views\admin\edit_assignment.php(213): CodeIgniter\View\View->include('templates/footer')
+ 4 SYSTEMPATH\View\View.php(226): include('C:\\xampp\\htdocs\\ITE311-ALEJADO\\app\\Views\\admin\\edit_assignment.php')
+ 5 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 6 SYSTEMPATH\Common.php(1167): CodeIgniter\View\View->render('admin/edit_assignment', [], true)
+ 7 APPPATH\Controllers\Assignment.php(660): view('admin/edit_assignment', [...])
+ 8 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Assignment->adminEditAssignment('1')
+ 9 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Assignment))
+10 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+12 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+13 FCPATH\index.php(204): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-12-13 19:08:50 --> ErrorException: Undefined array key "course_code"
+[Method: POST, Route: student/submit_assignment]
+in APPPATH\Controllers\Submission.php on line 394.
+ 1 APPPATH\Controllers\Submission.php(394): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "course_code"', 'C:\\xampp\\htdocs\\ITE311-ALEJADO\\app\\Controllers\\Submission.php', 394)
+ 2 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Submission->submit()
+ 3 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Submission))
+ 4 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(204): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ERROR - 2025-12-13 19:28:12 --> mysqli_sql_exception: Unknown column 'user_id' in 'where clause' in C:\xampp\htdocs\ITE311-ALEJADO\system\Database\MySQLi\Connection.php:327
+Stack trace:
+#0 C:\xampp\htdocs\ITE311-ALEJADO\system\Database\MySQLi\Connection.php(327): mysqli->query('SELECT COUNT(*)...', 0)
+#1 C:\xampp\htdocs\ITE311-ALEJADO\system\Database\BaseConnection.php(729): CodeIgniter\Database\MySQLi\Connection->execute('SELECT COUNT(*)...')
+#2 C:\xampp\htdocs\ITE311-ALEJADO\system\Database\BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT COUNT(*)...')
+#3 C:\xampp\htdocs\ITE311-ALEJADO\system\Database\BaseBuilder.php(1733): CodeIgniter\Database\BaseConnection->query('SELECT COUNT(*)...', Array, false)
+#4 C:\xampp\htdocs\ITE311-ALEJADO\app\Controllers\Material.php(77): CodeIgniter\Database\BaseBuilder->countAllResults()
+#5 C:\xampp\htdocs\ITE311-ALEJADO\system\CodeIgniter.php(933): App\Controllers\Material->upload(2)
+#6 C:\xampp\htdocs\ITE311-ALEJADO\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Material))
+#7 C:\xampp\htdocs\ITE311-ALEJADO\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\ITE311-ALEJADO\system\Boot.php(363): CodeIgniter\CodeIgniter->run()
+#9 C:\xampp\htdocs\ITE311-ALEJADO\system\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#10 C:\xampp\htdocs\ITE311-ALEJADO\index.php(204): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#11 {main}
+CRITICAL - 2025-12-13 19:28:12 --> CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'user_id' in 'where clause'
+[Method: GET, Route: teacher/course/2/upload]
+in SYSTEMPATH\Database\BaseConnection.php on line 684.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1733): CodeIgniter\Database\BaseConnection->query('SELECT COUNT(*) AS `numrows`
+FROM `course_instructors`
+WHERE `course_offering_id` = :course_offering_id:
+AND `user_id` = :user_id:', [...], false)
+ 2 APPPATH\Controllers\Material.php(77): CodeIgniter\Database\BaseBuilder->countAllResults()
+ 3 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Material->upload(2)
+ 4 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Material))
+ 5 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 8 FCPATH\index.php(204): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-12-13 19:28:12 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'user_id' in 'where clause'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 332.
+ 1 SYSTEMPATH\Database\BaseConnection.php(729): CodeIgniter\Database\MySQLi\Connection->execute('SELECT COUNT(*) AS `numrows`
+FROM `course_instructors`
+WHERE `course_offering_id` = 2
+AND `user_id` = \'3\'')
+ 2 SYSTEMPATH\Database\BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT COUNT(*) AS `numrows`
+FROM `course_instructors`
+WHERE `course_offering_id` = 2
+AND `user_id` = \'3\'')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(1733): CodeIgniter\Database\BaseConnection->query('SELECT COUNT(*) AS `numrows`
+FROM `course_instructors`
+WHERE `course_offering_id` = :course_offering_id:
+AND `user_id` = :user_id:', [...], false)
+ 4 APPPATH\Controllers\Material.php(77): CodeIgniter\Database\BaseBuilder->countAllResults()
+ 5 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Material->upload(2)
+ 6 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Material))
+ 7 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH\index.php(204): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-12-13 19:28:12 --> [Caused by] mysqli_sql_exception: Unknown column 'user_id' in 'where clause'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 327.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(327): mysqli->query('SELECT COUNT(*) AS `numrows`
+FROM `course_instructors`
+WHERE `course_offering_id` = 2
+AND `user_id` = \'3\'', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(729): CodeIgniter\Database\MySQLi\Connection->execute('SELECT COUNT(*) AS `numrows`
+FROM `course_instructors`
+WHERE `course_offering_id` = 2
+AND `user_id` = \'3\'')
+ 3 SYSTEMPATH\Database\BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT COUNT(*) AS `numrows`
+FROM `course_instructors`
+WHERE `course_offering_id` = 2
+AND `user_id` = \'3\'')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1733): CodeIgniter\Database\BaseConnection->query('SELECT COUNT(*) AS `numrows`
+FROM `course_instructors`
+WHERE `course_offering_id` = :course_offering_id:
+AND `user_id` = :user_id:', [...], false)
+ 5 APPPATH\Controllers\Material.php(77): CodeIgniter\Database\BaseBuilder->countAllResults()
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Material->upload(2)
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Material))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(204): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-12-13 19:34:10 --> CodeIgniter\Exceptions\BadMethodCallException: Call to undefined method App\Models\MaterialModel::getMaterialsByCourseOffering
+[Method: GET, Route: teacher/course/2/upload]
+in SYSTEMPATH\Model.php on line 927.
+ 1 APPPATH\Controllers\Material.php(203): CodeIgniter\Model->__call('getMaterialsByCourseOffering', [...])
+ 2 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Material->upload(2)
+ 3 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Material))
+ 4 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(204): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-12-13 19:35:46 --> ErrorException: Undefined variable $course_id
+[Method: GET, Route: teacher/course/2/upload]
+in APPPATH\Views\material\upload.php on line 94.
+ 1 APPPATH\Views\material\upload.php(94): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $course_id', 'C:\\xampp\\htdocs\\ITE311-ALEJADO\\app\\Views\\material\\upload.php', 94)
+ 2 SYSTEMPATH\View\View.php(226): include('C:\\xampp\\htdocs\\ITE311-ALEJADO\\app\\Views\\material\\upload.php')
+ 3 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1167): CodeIgniter\View\View->render('material/upload', [], true)
+ 5 APPPATH\Controllers\Material.php(218): view('material/upload', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Material->upload(2)
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Material))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(204): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ERROR - 2025-12-13 19:38:44 --> Failed to create material upload notifications: Call to undefined method App\Models\EnrollmentModel::getEnrolledStudents
+ERROR - 2025-12-13 19:39:25 --> Failed to create material upload notifications: Call to undefined method App\Models\EnrollmentModel::getEnrolledStudents

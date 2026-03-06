@@ -1,0 +1,19 @@
+ERROR - 2025-11-25 15:01:39 --> mysqli_sql_exception: Can't DROP 'departments_head_user_id_foreign'; check that column/key exists in C:\xampp\htdocs\ITE311-ALEJADO\system\Database\MySQLi\Connection.php:327
+Stack trace:
+#0 C:\xampp\htdocs\ITE311-ALEJADO\system\Database\MySQLi\Connection.php(327): mysqli->query('ALTER TABLE `de...', 0)
+#1 C:\xampp\htdocs\ITE311-ALEJADO\system\Database\BaseConnection.php(729): CodeIgniter\Database\MySQLi\Connection->execute('ALTER TABLE `de...')
+#2 C:\xampp\htdocs\ITE311-ALEJADO\system\Database\BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery('ALTER TABLE `de...')
+#3 C:\xampp\htdocs\ITE311-ALEJADO\system\Database\Forge.php(539): CodeIgniter\Database\BaseConnection->query('ALTER TABLE `de...')
+#4 C:\xampp\htdocs\ITE311-ALEJADO\app\Database\Migrations\2025-08-19-130550_AddHeadUserIdToDepartments.php(27): CodeIgniter\Database\Forge->dropForeignKey('departments', 'departments_hea...')
+#5 C:\xampp\htdocs\ITE311-ALEJADO\system\Database\MigrationRunner.php(876): App\Database\Migrations\AddHeadUserIdToDepartments->down()
+#6 C:\xampp\htdocs\ITE311-ALEJADO\system\Database\MigrationRunner.php(289): CodeIgniter\Database\MigrationRunner->migrate('down', Object(stdClass))
+#7 C:\xampp\htdocs\ITE311-ALEJADO\system\Commands\Database\MigrateRollback.php(101): CodeIgniter\Database\MigrationRunner->regress(0)
+#8 C:\xampp\htdocs\ITE311-ALEJADO\system\CLI\Commands.php(74): CodeIgniter\Commands\Database\MigrateRollback->run(Array)
+#9 C:\xampp\htdocs\ITE311-ALEJADO\system\CLI\BaseCommand.php(119): CodeIgniter\CLI\Commands->run('migrate:rollbac...', Array)
+#10 C:\xampp\htdocs\ITE311-ALEJADO\system\Commands\Database\MigrateRefresh.php(86): CodeIgniter\CLI\BaseCommand->call('migrate:rollbac...', Array)
+#11 C:\xampp\htdocs\ITE311-ALEJADO\system\CLI\Commands.php(74): CodeIgniter\Commands\Database\MigrateRefresh->run(Array)
+#12 C:\xampp\htdocs\ITE311-ALEJADO\system\CLI\Console.php(47): CodeIgniter\CLI\Commands->run('migrate:refresh', Array)
+#13 C:\xampp\htdocs\ITE311-ALEJADO\system\Boot.php(388): CodeIgniter\CLI\Console->run()
+#14 C:\xampp\htdocs\ITE311-ALEJADO\system\Boot.php(133): CodeIgniter\Boot::runCommand(Object(CodeIgniter\CLI\Console))
+#15 C:\xampp\htdocs\ITE311-ALEJADO\spark(87): CodeIgniter\Boot::bootSpark(Object(Config\Paths))
+#16 {main}

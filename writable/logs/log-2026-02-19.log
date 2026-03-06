@@ -1,0 +1,77 @@
+ERROR - 2026-02-19 12:23:04 --> mysqli_sql_exception: Unknown column 'max_students' in 'field list' in C:\xampp\htdocs\ITE311-ALEJADO\system\Database\MySQLi\Connection.php:327
+Stack trace:
+#0 C:\xampp\htdocs\ITE311-ALEJADO\system\Database\MySQLi\Connection.php(327): mysqli->query('INSERT INTO `co...', 0)
+#1 C:\xampp\htdocs\ITE311-ALEJADO\system\Database\BaseConnection.php(729): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `co...')
+#2 C:\xampp\htdocs\ITE311-ALEJADO\system\Database\BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `co...')
+#3 C:\xampp\htdocs\ITE311-ALEJADO\system\Database\BaseBuilder.php(2345): CodeIgniter\Database\BaseConnection->query('INSERT INTO `co...', Array, false)
+#4 C:\xampp\htdocs\ITE311-ALEJADO\app\Database\Seeds\CourseSeeder.php(87): CodeIgniter\Database\BaseBuilder->insert(Array)
+#5 C:\xampp\htdocs\ITE311-ALEJADO\system\Database\Seeder.php(149): App\Database\Seeds\CourseSeeder->run()
+#6 C:\xampp\htdocs\ITE311-ALEJADO\app\Database\Seeds\MainSeeder.php(49): CodeIgniter\Database\Seeder->call('App\\Database\\Se...')
+#7 C:\xampp\htdocs\ITE311-ALEJADO\system\Database\Seeder.php(149): App\Database\Seeds\MainSeeder->run()
+#8 C:\xampp\htdocs\ITE311-ALEJADO\system\Commands\Database\Seed.php(79): CodeIgniter\Database\Seeder->call('App\\Database\\Se...')
+#9 C:\xampp\htdocs\ITE311-ALEJADO\system\CLI\Commands.php(74): CodeIgniter\Commands\Database\Seed->run(Array)
+#10 C:\xampp\htdocs\ITE311-ALEJADO\system\CLI\Console.php(47): CodeIgniter\CLI\Commands->run('db:seed', Array)
+#11 C:\xampp\htdocs\ITE311-ALEJADO\system\Boot.php(388): CodeIgniter\CLI\Console->run()
+#12 C:\xampp\htdocs\ITE311-ALEJADO\system\Boot.php(133): CodeIgniter\Boot::runCommand(Object(CodeIgniter\CLI\Console))
+#13 C:\xampp\htdocs\ITE311-ALEJADO\spark(87): CodeIgniter\Boot::bootSpark(Object(Config\Paths))
+#14 {main}
+ERROR - 2026-02-19 12:25:01 --> Email: Unable to send email using SMTP. Your server might not be configured to send mail using this method.
+ERROR - 2026-02-19 12:25:01 --> 220 smtp.gmail.com ESMTP 41be03b00d2f7-c6e52fe2e75sm15233652a12.10 - gsmtp
+
+hello: 250-smtp.gmail.com at your service, [2001:4456:cca:8a00:751b:ef59:8f67:3b3a]
+250-SIZE 35882577
+250-8BITMIME
+250-STARTTLS
+250-ENHANCEDSTATUSCODES
+250-PIPELINING
+250-CHUNKING
+250 SMTPUTF8
+
+starttls: 220 2.0.0 Ready to start TLS
+
+hello: 250-smtp.gmail.com at your service, [2001:4456:cca:8a00:751b:ef59:8f67:3b3a]
+250-SIZE 35882577
+250-8BITMIME
+250-AUTH LOGIN PLAIN XOAUTH2 PLAIN-CLIENTTOKEN OAUTHBEARER XOAUTH
+250-ENHANCEDSTATUSCODES
+250-PIPELINING
+250-CHUNKING
+250 SMTPUTF8
+
+Failed to authenticate password. Error: 535-5.7.8 Username and Password not accepted. For more information, go to
+535 5.7.8  https://support.google.com/mail/?p=BadCredentials 41be03b00d2f7-c6e52fe2e75sm15233652a12.10 - gsmtp
+
+ERROR - 2026-02-19 12:25:01 --> Failed to send OTP email to: marjovicalejado1232@gmail.com. Error: 220 smtp.gmail.com ESMTP 41be03b00d2f7-c6e52fe2e75sm15233652a12.10 - gsmtp
+<br><pre>hello: 250-smtp.gmail.com at your service, [2001:4456:cca:8a00:751b:ef59:8f67:3b3a]
+250-SIZE 35882577
+250-8BITMIME
+250-STARTTLS
+250-ENHANCEDSTATUSCODES
+250-PIPELINING
+250-CHUNKING
+250 SMTPUTF8
+</pre><pre>starttls: 220 2.0.0 Ready to start TLS
+</pre><pre>hello: 250-smtp.gmail.com at your service, [2001:4456:cca:8a00:751b:ef59:8f67:3b3a]
+250-SIZE 35882577
+250-8BITMIME
+250-AUTH LOGIN PLAIN XOAUTH2 PLAIN-CLIENTTOKEN OAUTHBEARER XOAUTH
+250-ENHANCEDSTATUSCODES
+250-PIPELINING
+250-CHUNKING
+250 SMTPUTF8
+</pre>Failed to authenticate password. Error: 535-5.7.8 Username and Password not accepted. For more information, go to
+535 5.7.8  https://support.google.com/mail/?p=BadCredentials 41be03b00d2f7-c6e52fe2e75sm15233652a12.10 - gsmtp
+<br>Unable to send email using SMTP. Your server might not be configured to send mail using this method.<br><pre>Date: Thu, 19 Feb 2026 12:24:58 +0000
+To: marjovicalejado1232@gmail.com
+Subject: =?UTF-8?Q?Your=20Login=20OTP=20Code=20-=20MGOD=20LMS?=
+From: &quot;MGOD LMS&quot; &lt;marjovicalejado123@gmail.com&gt;
+Return-Path: &lt;marjovicalejado123@gmail.com&gt;
+Reply-To: &lt;marjovicalejado123@gmail.com&gt;
+User-Agent: CodeIgniter
+X-Sender: marjovicalejado123@gmail.com
+X-Mailer: CodeIgniter
+X-Priority: 3 (Normal)
+Message-ID: &lt;6997011a1433e5.14004055@gmail.com&gt;
+Mime-Version: 1.0
+
+</pre>

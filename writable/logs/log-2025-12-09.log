@@ -1,0 +1,792 @@
+ERROR - 2025-12-09 13:05:03 --> mysqli_sql_exception: Table 'lms_alejado.student_programs' doesn't exist in C:\xampp\htdocs\ITE311-ALEJADO\system\Database\MySQLi\Connection.php:327
+Stack trace:
+#0 C:\xampp\htdocs\ITE311-ALEJADO\system\Database\MySQLi\Connection.php(327): mysqli->query('SELECT `program...', 0)
+#1 C:\xampp\htdocs\ITE311-ALEJADO\system\Database\BaseConnection.php(729): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `program...')
+#2 C:\xampp\htdocs\ITE311-ALEJADO\system\Database\BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `program...')
+#3 C:\xampp\htdocs\ITE311-ALEJADO\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `program...', Array, false)
+#4 C:\xampp\htdocs\ITE311-ALEJADO\system\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\ITE311-ALEJADO\system\BaseModel.php(677): CodeIgniter\Model->doFindAll(0, 0)
+#6 C:\xampp\htdocs\ITE311-ALEJADO\app\Controllers\Program.php(68): CodeIgniter\BaseModel->findAll()
+#7 C:\xampp\htdocs\ITE311-ALEJADO\system\CodeIgniter.php(933): App\Controllers\Program->managePrograms()
+#8 C:\xampp\htdocs\ITE311-ALEJADO\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Program))
+#9 C:\xampp\htdocs\ITE311-ALEJADO\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\xampp\htdocs\ITE311-ALEJADO\system\Boot.php(363): CodeIgniter\CodeIgniter->run()
+#11 C:\xampp\htdocs\ITE311-ALEJADO\system\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#12 C:\xampp\htdocs\ITE311-ALEJADO\index.php(204): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#13 {main}
+CRITICAL - 2025-12-09 13:05:03 --> CodeIgniter\Database\Exceptions\DatabaseException: Table 'lms_alejado.student_programs' doesn't exist
+[Method: GET, Route: admin/manage_programs]
+in SYSTEMPATH\Database\BaseConnection.php on line 684.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `programs`.*, `departments`.`department_name`, `departments`.`code` as `department_code`, (SELECT COUNT(*) FROM program_curriculoms WHERE program_id = programs.id) as course_count, (SELECT COUNT(DISTINCT student_id) FROM student_programs WHERE program_id = programs.id AND is_active = 1) as student_count
+FROM `programs`
+LEFT JOIN `departments` ON `departments`.`id` = `programs`.`department_id`
+ORDER BY `programs`.`program_name` ASC', [], false)
+ 2 SYSTEMPATH\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+ 3 SYSTEMPATH\BaseModel.php(677): CodeIgniter\Model->doFindAll(0, 0)
+ 4 APPPATH\Controllers\Program.php(68): CodeIgniter\BaseModel->findAll()
+ 5 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Program->managePrograms()
+ 6 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Program))
+ 7 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH\index.php(204): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-12-09 13:05:03 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Table 'lms_alejado.student_programs' doesn't exist
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 332.
+ 1 SYSTEMPATH\Database\BaseConnection.php(729): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `programs`.*, `departments`.`department_name`, `departments`.`code` as `department_code`, (SELECT COUNT(*) FROM program_curriculoms WHERE program_id = programs.id) as course_count, (SELECT COUNT(DISTINCT student_id) FROM student_programs WHERE program_id = programs.id AND is_active = 1) as student_count
+FROM `programs`
+LEFT JOIN `departments` ON `departments`.`id` = `programs`.`department_id`
+ORDER BY `programs`.`program_name` ASC')
+ 2 SYSTEMPATH\Database\BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `programs`.*, `departments`.`department_name`, `departments`.`code` as `department_code`, (SELECT COUNT(*) FROM program_curriculoms WHERE program_id = programs.id) as course_count, (SELECT COUNT(DISTINCT student_id) FROM student_programs WHERE program_id = programs.id AND is_active = 1) as student_count
+FROM `programs`
+LEFT JOIN `departments` ON `departments`.`id` = `programs`.`department_id`
+ORDER BY `programs`.`program_name` ASC')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `programs`.*, `departments`.`department_name`, `departments`.`code` as `department_code`, (SELECT COUNT(*) FROM program_curriculoms WHERE program_id = programs.id) as course_count, (SELECT COUNT(DISTINCT student_id) FROM student_programs WHERE program_id = programs.id AND is_active = 1) as student_count
+FROM `programs`
+LEFT JOIN `departments` ON `departments`.`id` = `programs`.`department_id`
+ORDER BY `programs`.`program_name` ASC', [], false)
+ 4 SYSTEMPATH\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+ 5 SYSTEMPATH\BaseModel.php(677): CodeIgniter\Model->doFindAll(0, 0)
+ 6 APPPATH\Controllers\Program.php(68): CodeIgniter\BaseModel->findAll()
+ 7 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Program->managePrograms()
+ 8 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Program))
+ 9 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+12 FCPATH\index.php(204): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-12-09 13:05:03 --> [Caused by] mysqli_sql_exception: Table 'lms_alejado.student_programs' doesn't exist
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 327.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(327): mysqli->query('SELECT `programs`.*, `departments`.`department_name`, `departments`.`code` as `department_code`, (SELECT COUNT(*) FROM program_curriculoms WHERE program_id = programs.id) as course_count, (SELECT COUNT(DISTINCT student_id) FROM student_programs WHERE program_id = programs.id AND is_active = 1) as student_count
+FROM `programs`
+LEFT JOIN `departments` ON `departments`.`id` = `programs`.`department_id`
+ORDER BY `programs`.`program_name` ASC', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(729): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `programs`.*, `departments`.`department_name`, `departments`.`code` as `department_code`, (SELECT COUNT(*) FROM program_curriculoms WHERE program_id = programs.id) as course_count, (SELECT COUNT(DISTINCT student_id) FROM student_programs WHERE program_id = programs.id AND is_active = 1) as student_count
+FROM `programs`
+LEFT JOIN `departments` ON `departments`.`id` = `programs`.`department_id`
+ORDER BY `programs`.`program_name` ASC')
+ 3 SYSTEMPATH\Database\BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `programs`.*, `departments`.`department_name`, `departments`.`code` as `department_code`, (SELECT COUNT(*) FROM program_curriculoms WHERE program_id = programs.id) as course_count, (SELECT COUNT(DISTINCT student_id) FROM student_programs WHERE program_id = programs.id AND is_active = 1) as student_count
+FROM `programs`
+LEFT JOIN `departments` ON `departments`.`id` = `programs`.`department_id`
+ORDER BY `programs`.`program_name` ASC')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `programs`.*, `departments`.`department_name`, `departments`.`code` as `department_code`, (SELECT COUNT(*) FROM program_curriculoms WHERE program_id = programs.id) as course_count, (SELECT COUNT(DISTINCT student_id) FROM student_programs WHERE program_id = programs.id AND is_active = 1) as student_count
+FROM `programs`
+LEFT JOIN `departments` ON `departments`.`id` = `programs`.`department_id`
+ORDER BY `programs`.`program_name` ASC', [], false)
+ 5 SYSTEMPATH\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+ 6 SYSTEMPATH\BaseModel.php(677): CodeIgniter\Model->doFindAll(0, 0)
+ 7 APPPATH\Controllers\Program.php(68): CodeIgniter\BaseModel->findAll()
+ 8 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Program->managePrograms()
+ 9 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Program))
+10 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+12 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+13 FCPATH\index.php(204): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ERROR - 2025-12-09 13:05:17 --> mysqli_sql_exception: Table 'lms_alejado.student_programs' doesn't exist in C:\xampp\htdocs\ITE311-ALEJADO\system\Database\MySQLi\Connection.php:327
+Stack trace:
+#0 C:\xampp\htdocs\ITE311-ALEJADO\system\Database\MySQLi\Connection.php(327): mysqli->query('SELECT `program...', 0)
+#1 C:\xampp\htdocs\ITE311-ALEJADO\system\Database\BaseConnection.php(729): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `program...')
+#2 C:\xampp\htdocs\ITE311-ALEJADO\system\Database\BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `program...')
+#3 C:\xampp\htdocs\ITE311-ALEJADO\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `program...', Array, false)
+#4 C:\xampp\htdocs\ITE311-ALEJADO\system\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\ITE311-ALEJADO\system\BaseModel.php(677): CodeIgniter\Model->doFindAll(0, 0)
+#6 C:\xampp\htdocs\ITE311-ALEJADO\app\Controllers\Program.php(68): CodeIgniter\BaseModel->findAll()
+#7 C:\xampp\htdocs\ITE311-ALEJADO\system\CodeIgniter.php(933): App\Controllers\Program->managePrograms()
+#8 C:\xampp\htdocs\ITE311-ALEJADO\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Program))
+#9 C:\xampp\htdocs\ITE311-ALEJADO\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\xampp\htdocs\ITE311-ALEJADO\system\Boot.php(363): CodeIgniter\CodeIgniter->run()
+#11 C:\xampp\htdocs\ITE311-ALEJADO\system\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#12 C:\xampp\htdocs\ITE311-ALEJADO\index.php(204): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#13 {main}
+CRITICAL - 2025-12-09 13:05:17 --> CodeIgniter\Database\Exceptions\DatabaseException: Table 'lms_alejado.student_programs' doesn't exist
+[Method: GET, Route: admin/manage_programs]
+in SYSTEMPATH\Database\BaseConnection.php on line 684.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `programs`.*, `departments`.`department_name`, `departments`.`code` as `department_code`, (SELECT COUNT(*) FROM program_curriculoms WHERE program_id = programs.id) as course_count, (SELECT COUNT(DISTINCT student_id) FROM student_programs WHERE program_id = programs.id AND is_active = 1) as student_count
+FROM `programs`
+LEFT JOIN `departments` ON `departments`.`id` = `programs`.`department_id`
+ORDER BY `programs`.`program_name` ASC', [], false)
+ 2 SYSTEMPATH\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+ 3 SYSTEMPATH\BaseModel.php(677): CodeIgniter\Model->doFindAll(0, 0)
+ 4 APPPATH\Controllers\Program.php(68): CodeIgniter\BaseModel->findAll()
+ 5 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Program->managePrograms()
+ 6 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Program))
+ 7 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH\index.php(204): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-12-09 13:05:17 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Table 'lms_alejado.student_programs' doesn't exist
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 332.
+ 1 SYSTEMPATH\Database\BaseConnection.php(729): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `programs`.*, `departments`.`department_name`, `departments`.`code` as `department_code`, (SELECT COUNT(*) FROM program_curriculoms WHERE program_id = programs.id) as course_count, (SELECT COUNT(DISTINCT student_id) FROM student_programs WHERE program_id = programs.id AND is_active = 1) as student_count
+FROM `programs`
+LEFT JOIN `departments` ON `departments`.`id` = `programs`.`department_id`
+ORDER BY `programs`.`program_name` ASC')
+ 2 SYSTEMPATH\Database\BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `programs`.*, `departments`.`department_name`, `departments`.`code` as `department_code`, (SELECT COUNT(*) FROM program_curriculoms WHERE program_id = programs.id) as course_count, (SELECT COUNT(DISTINCT student_id) FROM student_programs WHERE program_id = programs.id AND is_active = 1) as student_count
+FROM `programs`
+LEFT JOIN `departments` ON `departments`.`id` = `programs`.`department_id`
+ORDER BY `programs`.`program_name` ASC')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `programs`.*, `departments`.`department_name`, `departments`.`code` as `department_code`, (SELECT COUNT(*) FROM program_curriculoms WHERE program_id = programs.id) as course_count, (SELECT COUNT(DISTINCT student_id) FROM student_programs WHERE program_id = programs.id AND is_active = 1) as student_count
+FROM `programs`
+LEFT JOIN `departments` ON `departments`.`id` = `programs`.`department_id`
+ORDER BY `programs`.`program_name` ASC', [], false)
+ 4 SYSTEMPATH\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+ 5 SYSTEMPATH\BaseModel.php(677): CodeIgniter\Model->doFindAll(0, 0)
+ 6 APPPATH\Controllers\Program.php(68): CodeIgniter\BaseModel->findAll()
+ 7 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Program->managePrograms()
+ 8 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Program))
+ 9 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+12 FCPATH\index.php(204): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-12-09 13:05:17 --> [Caused by] mysqli_sql_exception: Table 'lms_alejado.student_programs' doesn't exist
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 327.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(327): mysqli->query('SELECT `programs`.*, `departments`.`department_name`, `departments`.`code` as `department_code`, (SELECT COUNT(*) FROM program_curriculoms WHERE program_id = programs.id) as course_count, (SELECT COUNT(DISTINCT student_id) FROM student_programs WHERE program_id = programs.id AND is_active = 1) as student_count
+FROM `programs`
+LEFT JOIN `departments` ON `departments`.`id` = `programs`.`department_id`
+ORDER BY `programs`.`program_name` ASC', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(729): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `programs`.*, `departments`.`department_name`, `departments`.`code` as `department_code`, (SELECT COUNT(*) FROM program_curriculoms WHERE program_id = programs.id) as course_count, (SELECT COUNT(DISTINCT student_id) FROM student_programs WHERE program_id = programs.id AND is_active = 1) as student_count
+FROM `programs`
+LEFT JOIN `departments` ON `departments`.`id` = `programs`.`department_id`
+ORDER BY `programs`.`program_name` ASC')
+ 3 SYSTEMPATH\Database\BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `programs`.*, `departments`.`department_name`, `departments`.`code` as `department_code`, (SELECT COUNT(*) FROM program_curriculoms WHERE program_id = programs.id) as course_count, (SELECT COUNT(DISTINCT student_id) FROM student_programs WHERE program_id = programs.id AND is_active = 1) as student_count
+FROM `programs`
+LEFT JOIN `departments` ON `departments`.`id` = `programs`.`department_id`
+ORDER BY `programs`.`program_name` ASC')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `programs`.*, `departments`.`department_name`, `departments`.`code` as `department_code`, (SELECT COUNT(*) FROM program_curriculoms WHERE program_id = programs.id) as course_count, (SELECT COUNT(DISTINCT student_id) FROM student_programs WHERE program_id = programs.id AND is_active = 1) as student_count
+FROM `programs`
+LEFT JOIN `departments` ON `departments`.`id` = `programs`.`department_id`
+ORDER BY `programs`.`program_name` ASC', [], false)
+ 5 SYSTEMPATH\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+ 6 SYSTEMPATH\BaseModel.php(677): CodeIgniter\Model->doFindAll(0, 0)
+ 7 APPPATH\Controllers\Program.php(68): CodeIgniter\BaseModel->findAll()
+ 8 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Program->managePrograms()
+ 9 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Program))
+10 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+12 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+13 FCPATH\index.php(204): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ERROR - 2025-12-09 13:07:10 --> mysqli_sql_exception: Table 'lms_alejado.student_programs' doesn't exist in C:\xampp\htdocs\ITE311-ALEJADO\system\Database\MySQLi\Connection.php:327
+Stack trace:
+#0 C:\xampp\htdocs\ITE311-ALEJADO\system\Database\MySQLi\Connection.php(327): mysqli->query('SELECT `program...', 0)
+#1 C:\xampp\htdocs\ITE311-ALEJADO\system\Database\BaseConnection.php(729): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `program...')
+#2 C:\xampp\htdocs\ITE311-ALEJADO\system\Database\BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `program...')
+#3 C:\xampp\htdocs\ITE311-ALEJADO\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `program...', Array, false)
+#4 C:\xampp\htdocs\ITE311-ALEJADO\system\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\ITE311-ALEJADO\system\BaseModel.php(677): CodeIgniter\Model->doFindAll(0, 0)
+#6 C:\xampp\htdocs\ITE311-ALEJADO\app\Controllers\Program.php(68): CodeIgniter\BaseModel->findAll()
+#7 C:\xampp\htdocs\ITE311-ALEJADO\system\CodeIgniter.php(933): App\Controllers\Program->managePrograms()
+#8 C:\xampp\htdocs\ITE311-ALEJADO\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Program))
+#9 C:\xampp\htdocs\ITE311-ALEJADO\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\xampp\htdocs\ITE311-ALEJADO\system\Boot.php(363): CodeIgniter\CodeIgniter->run()
+#11 C:\xampp\htdocs\ITE311-ALEJADO\system\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#12 C:\xampp\htdocs\ITE311-ALEJADO\index.php(204): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#13 {main}
+CRITICAL - 2025-12-09 13:07:10 --> CodeIgniter\Database\Exceptions\DatabaseException: Table 'lms_alejado.student_programs' doesn't exist
+[Method: GET, Route: admin/manage_programs]
+in SYSTEMPATH\Database\BaseConnection.php on line 684.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `programs`.*, `departments`.`department_name`, `departments`.`code` as `department_code`, (SELECT COUNT(*) FROM program_curriculoms WHERE program_id = programs.id) as course_count, (SELECT COUNT(DISTINCT student_id) FROM student_programs WHERE program_id = programs.id AND is_active = 1) as student_count
+FROM `programs`
+LEFT JOIN `departments` ON `departments`.`id` = `programs`.`department_id`
+ORDER BY `programs`.`program_name` ASC', [], false)
+ 2 SYSTEMPATH\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+ 3 SYSTEMPATH\BaseModel.php(677): CodeIgniter\Model->doFindAll(0, 0)
+ 4 APPPATH\Controllers\Program.php(68): CodeIgniter\BaseModel->findAll()
+ 5 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Program->managePrograms()
+ 6 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Program))
+ 7 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH\index.php(204): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-12-09 13:07:10 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Table 'lms_alejado.student_programs' doesn't exist
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 332.
+ 1 SYSTEMPATH\Database\BaseConnection.php(729): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `programs`.*, `departments`.`department_name`, `departments`.`code` as `department_code`, (SELECT COUNT(*) FROM program_curriculoms WHERE program_id = programs.id) as course_count, (SELECT COUNT(DISTINCT student_id) FROM student_programs WHERE program_id = programs.id AND is_active = 1) as student_count
+FROM `programs`
+LEFT JOIN `departments` ON `departments`.`id` = `programs`.`department_id`
+ORDER BY `programs`.`program_name` ASC')
+ 2 SYSTEMPATH\Database\BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `programs`.*, `departments`.`department_name`, `departments`.`code` as `department_code`, (SELECT COUNT(*) FROM program_curriculoms WHERE program_id = programs.id) as course_count, (SELECT COUNT(DISTINCT student_id) FROM student_programs WHERE program_id = programs.id AND is_active = 1) as student_count
+FROM `programs`
+LEFT JOIN `departments` ON `departments`.`id` = `programs`.`department_id`
+ORDER BY `programs`.`program_name` ASC')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `programs`.*, `departments`.`department_name`, `departments`.`code` as `department_code`, (SELECT COUNT(*) FROM program_curriculoms WHERE program_id = programs.id) as course_count, (SELECT COUNT(DISTINCT student_id) FROM student_programs WHERE program_id = programs.id AND is_active = 1) as student_count
+FROM `programs`
+LEFT JOIN `departments` ON `departments`.`id` = `programs`.`department_id`
+ORDER BY `programs`.`program_name` ASC', [], false)
+ 4 SYSTEMPATH\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+ 5 SYSTEMPATH\BaseModel.php(677): CodeIgniter\Model->doFindAll(0, 0)
+ 6 APPPATH\Controllers\Program.php(68): CodeIgniter\BaseModel->findAll()
+ 7 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Program->managePrograms()
+ 8 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Program))
+ 9 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+12 FCPATH\index.php(204): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-12-09 13:07:10 --> [Caused by] mysqli_sql_exception: Table 'lms_alejado.student_programs' doesn't exist
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 327.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(327): mysqli->query('SELECT `programs`.*, `departments`.`department_name`, `departments`.`code` as `department_code`, (SELECT COUNT(*) FROM program_curriculoms WHERE program_id = programs.id) as course_count, (SELECT COUNT(DISTINCT student_id) FROM student_programs WHERE program_id = programs.id AND is_active = 1) as student_count
+FROM `programs`
+LEFT JOIN `departments` ON `departments`.`id` = `programs`.`department_id`
+ORDER BY `programs`.`program_name` ASC', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(729): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `programs`.*, `departments`.`department_name`, `departments`.`code` as `department_code`, (SELECT COUNT(*) FROM program_curriculoms WHERE program_id = programs.id) as course_count, (SELECT COUNT(DISTINCT student_id) FROM student_programs WHERE program_id = programs.id AND is_active = 1) as student_count
+FROM `programs`
+LEFT JOIN `departments` ON `departments`.`id` = `programs`.`department_id`
+ORDER BY `programs`.`program_name` ASC')
+ 3 SYSTEMPATH\Database\BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `programs`.*, `departments`.`department_name`, `departments`.`code` as `department_code`, (SELECT COUNT(*) FROM program_curriculoms WHERE program_id = programs.id) as course_count, (SELECT COUNT(DISTINCT student_id) FROM student_programs WHERE program_id = programs.id AND is_active = 1) as student_count
+FROM `programs`
+LEFT JOIN `departments` ON `departments`.`id` = `programs`.`department_id`
+ORDER BY `programs`.`program_name` ASC')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `programs`.*, `departments`.`department_name`, `departments`.`code` as `department_code`, (SELECT COUNT(*) FROM program_curriculoms WHERE program_id = programs.id) as course_count, (SELECT COUNT(DISTINCT student_id) FROM student_programs WHERE program_id = programs.id AND is_active = 1) as student_count
+FROM `programs`
+LEFT JOIN `departments` ON `departments`.`id` = `programs`.`department_id`
+ORDER BY `programs`.`program_name` ASC', [], false)
+ 5 SYSTEMPATH\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+ 6 SYSTEMPATH\BaseModel.php(677): CodeIgniter\Model->doFindAll(0, 0)
+ 7 APPPATH\Controllers\Program.php(68): CodeIgniter\BaseModel->findAll()
+ 8 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Program->managePrograms()
+ 9 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Program))
+10 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+12 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+13 FCPATH\index.php(204): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ERROR - 2025-12-09 13:08:29 --> mysqli_sql_exception: Unknown column 'departments.code' in 'field list' in C:\xampp\htdocs\ITE311-ALEJADO\system\Database\MySQLi\Connection.php:327
+Stack trace:
+#0 C:\xampp\htdocs\ITE311-ALEJADO\system\Database\MySQLi\Connection.php(327): mysqli->query('SELECT `program...', 0)
+#1 C:\xampp\htdocs\ITE311-ALEJADO\system\Database\BaseConnection.php(729): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `program...')
+#2 C:\xampp\htdocs\ITE311-ALEJADO\system\Database\BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `program...')
+#3 C:\xampp\htdocs\ITE311-ALEJADO\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `program...', Array, false)
+#4 C:\xampp\htdocs\ITE311-ALEJADO\system\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\ITE311-ALEJADO\system\BaseModel.php(677): CodeIgniter\Model->doFindAll(0, 0)
+#6 C:\xampp\htdocs\ITE311-ALEJADO\app\Controllers\Program.php(68): CodeIgniter\BaseModel->findAll()
+#7 C:\xampp\htdocs\ITE311-ALEJADO\system\CodeIgniter.php(933): App\Controllers\Program->managePrograms()
+#8 C:\xampp\htdocs\ITE311-ALEJADO\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Program))
+#9 C:\xampp\htdocs\ITE311-ALEJADO\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\xampp\htdocs\ITE311-ALEJADO\system\Boot.php(363): CodeIgniter\CodeIgniter->run()
+#11 C:\xampp\htdocs\ITE311-ALEJADO\system\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#12 C:\xampp\htdocs\ITE311-ALEJADO\index.php(204): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#13 {main}
+CRITICAL - 2025-12-09 13:08:29 --> CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'departments.code' in 'field list'
+[Method: GET, Route: admin/manage_programs]
+in SYSTEMPATH\Database\BaseConnection.php on line 684.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `programs`.*, `departments`.`department_name`, `departments`.`code` as `department_code`, (SELECT COUNT(*) FROM program_curriculoms WHERE program_id = programs.id) as course_count, (SELECT COUNT(DISTINCT student_id) FROM students WHERE program_id = programs.id AND is_active = 1) as student_count
+FROM `programs`
+LEFT JOIN `departments` ON `departments`.`id` = `programs`.`department_id`
+ORDER BY `programs`.`program_name` ASC', [], false)
+ 2 SYSTEMPATH\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+ 3 SYSTEMPATH\BaseModel.php(677): CodeIgniter\Model->doFindAll(0, 0)
+ 4 APPPATH\Controllers\Program.php(68): CodeIgniter\BaseModel->findAll()
+ 5 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Program->managePrograms()
+ 6 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Program))
+ 7 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH\index.php(204): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-12-09 13:08:29 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'departments.code' in 'field list'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 332.
+ 1 SYSTEMPATH\Database\BaseConnection.php(729): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `programs`.*, `departments`.`department_name`, `departments`.`code` as `department_code`, (SELECT COUNT(*) FROM program_curriculoms WHERE program_id = programs.id) as course_count, (SELECT COUNT(DISTINCT student_id) FROM students WHERE program_id = programs.id AND is_active = 1) as student_count
+FROM `programs`
+LEFT JOIN `departments` ON `departments`.`id` = `programs`.`department_id`
+ORDER BY `programs`.`program_name` ASC')
+ 2 SYSTEMPATH\Database\BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `programs`.*, `departments`.`department_name`, `departments`.`code` as `department_code`, (SELECT COUNT(*) FROM program_curriculoms WHERE program_id = programs.id) as course_count, (SELECT COUNT(DISTINCT student_id) FROM students WHERE program_id = programs.id AND is_active = 1) as student_count
+FROM `programs`
+LEFT JOIN `departments` ON `departments`.`id` = `programs`.`department_id`
+ORDER BY `programs`.`program_name` ASC')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `programs`.*, `departments`.`department_name`, `departments`.`code` as `department_code`, (SELECT COUNT(*) FROM program_curriculoms WHERE program_id = programs.id) as course_count, (SELECT COUNT(DISTINCT student_id) FROM students WHERE program_id = programs.id AND is_active = 1) as student_count
+FROM `programs`
+LEFT JOIN `departments` ON `departments`.`id` = `programs`.`department_id`
+ORDER BY `programs`.`program_name` ASC', [], false)
+ 4 SYSTEMPATH\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+ 5 SYSTEMPATH\BaseModel.php(677): CodeIgniter\Model->doFindAll(0, 0)
+ 6 APPPATH\Controllers\Program.php(68): CodeIgniter\BaseModel->findAll()
+ 7 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Program->managePrograms()
+ 8 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Program))
+ 9 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+12 FCPATH\index.php(204): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-12-09 13:08:29 --> [Caused by] mysqli_sql_exception: Unknown column 'departments.code' in 'field list'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 327.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(327): mysqli->query('SELECT `programs`.*, `departments`.`department_name`, `departments`.`code` as `department_code`, (SELECT COUNT(*) FROM program_curriculoms WHERE program_id = programs.id) as course_count, (SELECT COUNT(DISTINCT student_id) FROM students WHERE program_id = programs.id AND is_active = 1) as student_count
+FROM `programs`
+LEFT JOIN `departments` ON `departments`.`id` = `programs`.`department_id`
+ORDER BY `programs`.`program_name` ASC', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(729): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `programs`.*, `departments`.`department_name`, `departments`.`code` as `department_code`, (SELECT COUNT(*) FROM program_curriculoms WHERE program_id = programs.id) as course_count, (SELECT COUNT(DISTINCT student_id) FROM students WHERE program_id = programs.id AND is_active = 1) as student_count
+FROM `programs`
+LEFT JOIN `departments` ON `departments`.`id` = `programs`.`department_id`
+ORDER BY `programs`.`program_name` ASC')
+ 3 SYSTEMPATH\Database\BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `programs`.*, `departments`.`department_name`, `departments`.`code` as `department_code`, (SELECT COUNT(*) FROM program_curriculoms WHERE program_id = programs.id) as course_count, (SELECT COUNT(DISTINCT student_id) FROM students WHERE program_id = programs.id AND is_active = 1) as student_count
+FROM `programs`
+LEFT JOIN `departments` ON `departments`.`id` = `programs`.`department_id`
+ORDER BY `programs`.`program_name` ASC')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `programs`.*, `departments`.`department_name`, `departments`.`code` as `department_code`, (SELECT COUNT(*) FROM program_curriculoms WHERE program_id = programs.id) as course_count, (SELECT COUNT(DISTINCT student_id) FROM students WHERE program_id = programs.id AND is_active = 1) as student_count
+FROM `programs`
+LEFT JOIN `departments` ON `departments`.`id` = `programs`.`department_id`
+ORDER BY `programs`.`program_name` ASC', [], false)
+ 5 SYSTEMPATH\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+ 6 SYSTEMPATH\BaseModel.php(677): CodeIgniter\Model->doFindAll(0, 0)
+ 7 APPPATH\Controllers\Program.php(68): CodeIgniter\BaseModel->findAll()
+ 8 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Program->managePrograms()
+ 9 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Program))
+10 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+12 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+13 FCPATH\index.php(204): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ERROR - 2025-12-09 13:13:04 --> mysqli_sql_exception: Unknown column 'student_id' in 'field list' in C:\xampp\htdocs\ITE311-ALEJADO\system\Database\MySQLi\Connection.php:327
+Stack trace:
+#0 C:\xampp\htdocs\ITE311-ALEJADO\system\Database\MySQLi\Connection.php(327): mysqli->query('SELECT `program...', 0)
+#1 C:\xampp\htdocs\ITE311-ALEJADO\system\Database\BaseConnection.php(729): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `program...')
+#2 C:\xampp\htdocs\ITE311-ALEJADO\system\Database\BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `program...')
+#3 C:\xampp\htdocs\ITE311-ALEJADO\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `program...', Array, false)
+#4 C:\xampp\htdocs\ITE311-ALEJADO\system\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\ITE311-ALEJADO\system\BaseModel.php(677): CodeIgniter\Model->doFindAll(0, 0)
+#6 C:\xampp\htdocs\ITE311-ALEJADO\app\Controllers\Program.php(66): CodeIgniter\BaseModel->findAll()
+#7 C:\xampp\htdocs\ITE311-ALEJADO\system\CodeIgniter.php(933): App\Controllers\Program->managePrograms()
+#8 C:\xampp\htdocs\ITE311-ALEJADO\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Program))
+#9 C:\xampp\htdocs\ITE311-ALEJADO\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\xampp\htdocs\ITE311-ALEJADO\system\Boot.php(363): CodeIgniter\CodeIgniter->run()
+#11 C:\xampp\htdocs\ITE311-ALEJADO\system\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#12 C:\xampp\htdocs\ITE311-ALEJADO\index.php(204): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#13 {main}
+CRITICAL - 2025-12-09 13:13:04 --> CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'student_id' in 'field list'
+[Method: GET, Route: admin/manage_programs]
+in SYSTEMPATH\Database\BaseConnection.php on line 684.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `programs`.*, `departments`.`department_name`, `departments`.`department_code`, (SELECT COUNT(*) FROM program_curriculoms WHERE program_id = programs.id) as course_count, (SELECT COUNT(DISTINCT student_id) FROM students WHERE program_id = programs.id AND is_active = 1) as student_count
+FROM `programs`
+LEFT JOIN `departments` ON `departments`.`id` = `programs`.`department_id`
+ORDER BY `programs`.`program_name` ASC', [], false)
+ 2 SYSTEMPATH\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+ 3 SYSTEMPATH\BaseModel.php(677): CodeIgniter\Model->doFindAll(0, 0)
+ 4 APPPATH\Controllers\Program.php(66): CodeIgniter\BaseModel->findAll()
+ 5 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Program->managePrograms()
+ 6 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Program))
+ 7 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH\index.php(204): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-12-09 13:13:04 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'student_id' in 'field list'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 332.
+ 1 SYSTEMPATH\Database\BaseConnection.php(729): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `programs`.*, `departments`.`department_name`, `departments`.`department_code`, (SELECT COUNT(*) FROM program_curriculoms WHERE program_id = programs.id) as course_count, (SELECT COUNT(DISTINCT student_id) FROM students WHERE program_id = programs.id AND is_active = 1) as student_count
+FROM `programs`
+LEFT JOIN `departments` ON `departments`.`id` = `programs`.`department_id`
+ORDER BY `programs`.`program_name` ASC')
+ 2 SYSTEMPATH\Database\BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `programs`.*, `departments`.`department_name`, `departments`.`department_code`, (SELECT COUNT(*) FROM program_curriculoms WHERE program_id = programs.id) as course_count, (SELECT COUNT(DISTINCT student_id) FROM students WHERE program_id = programs.id AND is_active = 1) as student_count
+FROM `programs`
+LEFT JOIN `departments` ON `departments`.`id` = `programs`.`department_id`
+ORDER BY `programs`.`program_name` ASC')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `programs`.*, `departments`.`department_name`, `departments`.`department_code`, (SELECT COUNT(*) FROM program_curriculoms WHERE program_id = programs.id) as course_count, (SELECT COUNT(DISTINCT student_id) FROM students WHERE program_id = programs.id AND is_active = 1) as student_count
+FROM `programs`
+LEFT JOIN `departments` ON `departments`.`id` = `programs`.`department_id`
+ORDER BY `programs`.`program_name` ASC', [], false)
+ 4 SYSTEMPATH\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+ 5 SYSTEMPATH\BaseModel.php(677): CodeIgniter\Model->doFindAll(0, 0)
+ 6 APPPATH\Controllers\Program.php(66): CodeIgniter\BaseModel->findAll()
+ 7 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Program->managePrograms()
+ 8 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Program))
+ 9 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+12 FCPATH\index.php(204): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-12-09 13:13:04 --> [Caused by] mysqli_sql_exception: Unknown column 'student_id' in 'field list'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 327.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(327): mysqli->query('SELECT `programs`.*, `departments`.`department_name`, `departments`.`department_code`, (SELECT COUNT(*) FROM program_curriculoms WHERE program_id = programs.id) as course_count, (SELECT COUNT(DISTINCT student_id) FROM students WHERE program_id = programs.id AND is_active = 1) as student_count
+FROM `programs`
+LEFT JOIN `departments` ON `departments`.`id` = `programs`.`department_id`
+ORDER BY `programs`.`program_name` ASC', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(729): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `programs`.*, `departments`.`department_name`, `departments`.`department_code`, (SELECT COUNT(*) FROM program_curriculoms WHERE program_id = programs.id) as course_count, (SELECT COUNT(DISTINCT student_id) FROM students WHERE program_id = programs.id AND is_active = 1) as student_count
+FROM `programs`
+LEFT JOIN `departments` ON `departments`.`id` = `programs`.`department_id`
+ORDER BY `programs`.`program_name` ASC')
+ 3 SYSTEMPATH\Database\BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `programs`.*, `departments`.`department_name`, `departments`.`department_code`, (SELECT COUNT(*) FROM program_curriculoms WHERE program_id = programs.id) as course_count, (SELECT COUNT(DISTINCT student_id) FROM students WHERE program_id = programs.id AND is_active = 1) as student_count
+FROM `programs`
+LEFT JOIN `departments` ON `departments`.`id` = `programs`.`department_id`
+ORDER BY `programs`.`program_name` ASC')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `programs`.*, `departments`.`department_name`, `departments`.`department_code`, (SELECT COUNT(*) FROM program_curriculoms WHERE program_id = programs.id) as course_count, (SELECT COUNT(DISTINCT student_id) FROM students WHERE program_id = programs.id AND is_active = 1) as student_count
+FROM `programs`
+LEFT JOIN `departments` ON `departments`.`id` = `programs`.`department_id`
+ORDER BY `programs`.`program_name` ASC', [], false)
+ 5 SYSTEMPATH\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+ 6 SYSTEMPATH\BaseModel.php(677): CodeIgniter\Model->doFindAll(0, 0)
+ 7 APPPATH\Controllers\Program.php(66): CodeIgniter\BaseModel->findAll()
+ 8 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Program->managePrograms()
+ 9 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Program))
+10 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+12 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+13 FCPATH\index.php(204): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ERROR - 2025-12-09 13:17:32 --> mysqli_sql_exception: Column 'is_active' in where clause is ambiguous in C:\xampp\htdocs\ITE311-ALEJADO\system\Database\MySQLi\Connection.php:327
+Stack trace:
+#0 C:\xampp\htdocs\ITE311-ALEJADO\system\Database\MySQLi\Connection.php(327): mysqli->query('SELECT `program...', 0)
+#1 C:\xampp\htdocs\ITE311-ALEJADO\system\Database\BaseConnection.php(729): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `program...')
+#2 C:\xampp\htdocs\ITE311-ALEJADO\system\Database\BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `program...')
+#3 C:\xampp\htdocs\ITE311-ALEJADO\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `program...', Array, false)
+#4 C:\xampp\htdocs\ITE311-ALEJADO\system\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\ITE311-ALEJADO\system\BaseModel.php(677): CodeIgniter\Model->doFindAll(0, 0)
+#6 C:\xampp\htdocs\ITE311-ALEJADO\app\Controllers\Program.php(66): CodeIgniter\BaseModel->findAll()
+#7 C:\xampp\htdocs\ITE311-ALEJADO\system\CodeIgniter.php(933): App\Controllers\Program->managePrograms()
+#8 C:\xampp\htdocs\ITE311-ALEJADO\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Program))
+#9 C:\xampp\htdocs\ITE311-ALEJADO\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\xampp\htdocs\ITE311-ALEJADO\system\Boot.php(363): CodeIgniter\CodeIgniter->run()
+#11 C:\xampp\htdocs\ITE311-ALEJADO\system\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#12 C:\xampp\htdocs\ITE311-ALEJADO\index.php(204): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#13 {main}
+CRITICAL - 2025-12-09 13:17:32 --> CodeIgniter\Database\Exceptions\DatabaseException: Column 'is_active' in where clause is ambiguous
+[Method: GET, Route: admin/manage_programs]
+in SYSTEMPATH\Database\BaseConnection.php on line 684.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `programs`.*, `departments`.`department_name`, `departments`.`department_code`, (SELECT COUNT(*) FROM program_curriculoms WHERE program_id = programs.id) as course_count, (SELECT COUNT(DISTINCT id) FROM students WHERE program_id = programs.id AND is_active = 1) as student_count
+FROM `programs`
+LEFT JOIN `departments` ON `departments`.`id` = `programs`.`department_id`
+ORDER BY `programs`.`program_name` ASC', [], false)
+ 2 SYSTEMPATH\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+ 3 SYSTEMPATH\BaseModel.php(677): CodeIgniter\Model->doFindAll(0, 0)
+ 4 APPPATH\Controllers\Program.php(66): CodeIgniter\BaseModel->findAll()
+ 5 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Program->managePrograms()
+ 6 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Program))
+ 7 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH\index.php(204): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-12-09 13:17:32 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Column 'is_active' in where clause is ambiguous
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 332.
+ 1 SYSTEMPATH\Database\BaseConnection.php(729): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `programs`.*, `departments`.`department_name`, `departments`.`department_code`, (SELECT COUNT(*) FROM program_curriculoms WHERE program_id = programs.id) as course_count, (SELECT COUNT(DISTINCT id) FROM students WHERE program_id = programs.id AND is_active = 1) as student_count
+FROM `programs`
+LEFT JOIN `departments` ON `departments`.`id` = `programs`.`department_id`
+ORDER BY `programs`.`program_name` ASC')
+ 2 SYSTEMPATH\Database\BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `programs`.*, `departments`.`department_name`, `departments`.`department_code`, (SELECT COUNT(*) FROM program_curriculoms WHERE program_id = programs.id) as course_count, (SELECT COUNT(DISTINCT id) FROM students WHERE program_id = programs.id AND is_active = 1) as student_count
+FROM `programs`
+LEFT JOIN `departments` ON `departments`.`id` = `programs`.`department_id`
+ORDER BY `programs`.`program_name` ASC')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `programs`.*, `departments`.`department_name`, `departments`.`department_code`, (SELECT COUNT(*) FROM program_curriculoms WHERE program_id = programs.id) as course_count, (SELECT COUNT(DISTINCT id) FROM students WHERE program_id = programs.id AND is_active = 1) as student_count
+FROM `programs`
+LEFT JOIN `departments` ON `departments`.`id` = `programs`.`department_id`
+ORDER BY `programs`.`program_name` ASC', [], false)
+ 4 SYSTEMPATH\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+ 5 SYSTEMPATH\BaseModel.php(677): CodeIgniter\Model->doFindAll(0, 0)
+ 6 APPPATH\Controllers\Program.php(66): CodeIgniter\BaseModel->findAll()
+ 7 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Program->managePrograms()
+ 8 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Program))
+ 9 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+12 FCPATH\index.php(204): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-12-09 13:17:32 --> [Caused by] mysqli_sql_exception: Column 'is_active' in where clause is ambiguous
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 327.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(327): mysqli->query('SELECT `programs`.*, `departments`.`department_name`, `departments`.`department_code`, (SELECT COUNT(*) FROM program_curriculoms WHERE program_id = programs.id) as course_count, (SELECT COUNT(DISTINCT id) FROM students WHERE program_id = programs.id AND is_active = 1) as student_count
+FROM `programs`
+LEFT JOIN `departments` ON `departments`.`id` = `programs`.`department_id`
+ORDER BY `programs`.`program_name` ASC', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(729): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `programs`.*, `departments`.`department_name`, `departments`.`department_code`, (SELECT COUNT(*) FROM program_curriculoms WHERE program_id = programs.id) as course_count, (SELECT COUNT(DISTINCT id) FROM students WHERE program_id = programs.id AND is_active = 1) as student_count
+FROM `programs`
+LEFT JOIN `departments` ON `departments`.`id` = `programs`.`department_id`
+ORDER BY `programs`.`program_name` ASC')
+ 3 SYSTEMPATH\Database\BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `programs`.*, `departments`.`department_name`, `departments`.`department_code`, (SELECT COUNT(*) FROM program_curriculoms WHERE program_id = programs.id) as course_count, (SELECT COUNT(DISTINCT id) FROM students WHERE program_id = programs.id AND is_active = 1) as student_count
+FROM `programs`
+LEFT JOIN `departments` ON `departments`.`id` = `programs`.`department_id`
+ORDER BY `programs`.`program_name` ASC')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `programs`.*, `departments`.`department_name`, `departments`.`department_code`, (SELECT COUNT(*) FROM program_curriculoms WHERE program_id = programs.id) as course_count, (SELECT COUNT(DISTINCT id) FROM students WHERE program_id = programs.id AND is_active = 1) as student_count
+FROM `programs`
+LEFT JOIN `departments` ON `departments`.`id` = `programs`.`department_id`
+ORDER BY `programs`.`program_name` ASC', [], false)
+ 5 SYSTEMPATH\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+ 6 SYSTEMPATH\BaseModel.php(677): CodeIgniter\Model->doFindAll(0, 0)
+ 7 APPPATH\Controllers\Program.php(66): CodeIgniter\BaseModel->findAll()
+ 8 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Program->managePrograms()
+ 9 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Program))
+10 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+12 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+13 FCPATH\index.php(204): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ERROR - 2025-12-09 13:21:21 --> mysqli_sql_exception: Unknown column 'students.is_active' in 'where clause' in C:\xampp\htdocs\ITE311-ALEJADO\system\Database\MySQLi\Connection.php:327
+Stack trace:
+#0 C:\xampp\htdocs\ITE311-ALEJADO\system\Database\MySQLi\Connection.php(327): mysqli->query('SELECT `program...', 0)
+#1 C:\xampp\htdocs\ITE311-ALEJADO\system\Database\BaseConnection.php(729): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `program...')
+#2 C:\xampp\htdocs\ITE311-ALEJADO\system\Database\BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `program...')
+#3 C:\xampp\htdocs\ITE311-ALEJADO\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `program...', Array, false)
+#4 C:\xampp\htdocs\ITE311-ALEJADO\system\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\ITE311-ALEJADO\system\BaseModel.php(677): CodeIgniter\Model->doFindAll(0, 0)
+#6 C:\xampp\htdocs\ITE311-ALEJADO\app\Controllers\Program.php(65): CodeIgniter\BaseModel->findAll()
+#7 C:\xampp\htdocs\ITE311-ALEJADO\system\CodeIgniter.php(933): App\Controllers\Program->managePrograms()
+#8 C:\xampp\htdocs\ITE311-ALEJADO\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Program))
+#9 C:\xampp\htdocs\ITE311-ALEJADO\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\xampp\htdocs\ITE311-ALEJADO\system\Boot.php(363): CodeIgniter\CodeIgniter->run()
+#11 C:\xampp\htdocs\ITE311-ALEJADO\system\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#12 C:\xampp\htdocs\ITE311-ALEJADO\index.php(204): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#13 {main}
+CRITICAL - 2025-12-09 13:21:21 --> CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'students.is_active' in 'where clause'
+[Method: GET, Route: admin/manage_programs]
+in SYSTEMPATH\Database\BaseConnection.php on line 684.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `programs`.*, `departments`.`department_name`, `departments`.`department_code`, (SELECT COUNT(*) FROM program_curriculoms WHERE program_id = programs.id) as course_count, (SELECT COUNT(DISTINCT id) FROM students WHERE program_id = programs.id AND students.is_active = 1) as student_count
+FROM `programs`
+LEFT JOIN `departments` ON `departments`.`id` = `programs`.`department_id`
+ORDER BY `programs`.`program_name` ASC', [], false)
+ 2 SYSTEMPATH\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+ 3 SYSTEMPATH\BaseModel.php(677): CodeIgniter\Model->doFindAll(0, 0)
+ 4 APPPATH\Controllers\Program.php(65): CodeIgniter\BaseModel->findAll()
+ 5 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Program->managePrograms()
+ 6 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Program))
+ 7 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH\index.php(204): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-12-09 13:21:21 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'students.is_active' in 'where clause'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 332.
+ 1 SYSTEMPATH\Database\BaseConnection.php(729): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `programs`.*, `departments`.`department_name`, `departments`.`department_code`, (SELECT COUNT(*) FROM program_curriculoms WHERE program_id = programs.id) as course_count, (SELECT COUNT(DISTINCT id) FROM students WHERE program_id = programs.id AND students.is_active = 1) as student_count
+FROM `programs`
+LEFT JOIN `departments` ON `departments`.`id` = `programs`.`department_id`
+ORDER BY `programs`.`program_name` ASC')
+ 2 SYSTEMPATH\Database\BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `programs`.*, `departments`.`department_name`, `departments`.`department_code`, (SELECT COUNT(*) FROM program_curriculoms WHERE program_id = programs.id) as course_count, (SELECT COUNT(DISTINCT id) FROM students WHERE program_id = programs.id AND students.is_active = 1) as student_count
+FROM `programs`
+LEFT JOIN `departments` ON `departments`.`id` = `programs`.`department_id`
+ORDER BY `programs`.`program_name` ASC')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `programs`.*, `departments`.`department_name`, `departments`.`department_code`, (SELECT COUNT(*) FROM program_curriculoms WHERE program_id = programs.id) as course_count, (SELECT COUNT(DISTINCT id) FROM students WHERE program_id = programs.id AND students.is_active = 1) as student_count
+FROM `programs`
+LEFT JOIN `departments` ON `departments`.`id` = `programs`.`department_id`
+ORDER BY `programs`.`program_name` ASC', [], false)
+ 4 SYSTEMPATH\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+ 5 SYSTEMPATH\BaseModel.php(677): CodeIgniter\Model->doFindAll(0, 0)
+ 6 APPPATH\Controllers\Program.php(65): CodeIgniter\BaseModel->findAll()
+ 7 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Program->managePrograms()
+ 8 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Program))
+ 9 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+12 FCPATH\index.php(204): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-12-09 13:21:21 --> [Caused by] mysqli_sql_exception: Unknown column 'students.is_active' in 'where clause'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 327.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(327): mysqli->query('SELECT `programs`.*, `departments`.`department_name`, `departments`.`department_code`, (SELECT COUNT(*) FROM program_curriculoms WHERE program_id = programs.id) as course_count, (SELECT COUNT(DISTINCT id) FROM students WHERE program_id = programs.id AND students.is_active = 1) as student_count
+FROM `programs`
+LEFT JOIN `departments` ON `departments`.`id` = `programs`.`department_id`
+ORDER BY `programs`.`program_name` ASC', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(729): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `programs`.*, `departments`.`department_name`, `departments`.`department_code`, (SELECT COUNT(*) FROM program_curriculoms WHERE program_id = programs.id) as course_count, (SELECT COUNT(DISTINCT id) FROM students WHERE program_id = programs.id AND students.is_active = 1) as student_count
+FROM `programs`
+LEFT JOIN `departments` ON `departments`.`id` = `programs`.`department_id`
+ORDER BY `programs`.`program_name` ASC')
+ 3 SYSTEMPATH\Database\BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `programs`.*, `departments`.`department_name`, `departments`.`department_code`, (SELECT COUNT(*) FROM program_curriculoms WHERE program_id = programs.id) as course_count, (SELECT COUNT(DISTINCT id) FROM students WHERE program_id = programs.id AND students.is_active = 1) as student_count
+FROM `programs`
+LEFT JOIN `departments` ON `departments`.`id` = `programs`.`department_id`
+ORDER BY `programs`.`program_name` ASC')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `programs`.*, `departments`.`department_name`, `departments`.`department_code`, (SELECT COUNT(*) FROM program_curriculoms WHERE program_id = programs.id) as course_count, (SELECT COUNT(DISTINCT id) FROM students WHERE program_id = programs.id AND students.is_active = 1) as student_count
+FROM `programs`
+LEFT JOIN `departments` ON `departments`.`id` = `programs`.`department_id`
+ORDER BY `programs`.`program_name` ASC', [], false)
+ 5 SYSTEMPATH\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+ 6 SYSTEMPATH\BaseModel.php(677): CodeIgniter\Model->doFindAll(0, 0)
+ 7 APPPATH\Controllers\Program.php(65): CodeIgniter\BaseModel->findAll()
+ 8 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Program->managePrograms()
+ 9 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Program))
+10 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+12 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+13 FCPATH\index.php(204): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ERROR - 2025-12-09 14:00:15 --> mysqli_sql_exception: Table 'lms_alejado.notifications' doesn't exist in C:\xampp\htdocs\ITE311-ALEJADO\system\Database\MySQLi\Connection.php:327
+Stack trace:
+#0 C:\xampp\htdocs\ITE311-ALEJADO\system\Database\MySQLi\Connection.php(327): mysqli->query('SELECT COUNT(*)...', 0)
+#1 C:\xampp\htdocs\ITE311-ALEJADO\system\Database\BaseConnection.php(729): CodeIgniter\Database\MySQLi\Connection->execute('SELECT COUNT(*)...')
+#2 C:\xampp\htdocs\ITE311-ALEJADO\system\Database\BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT COUNT(*)...')
+#3 C:\xampp\htdocs\ITE311-ALEJADO\system\Database\BaseBuilder.php(1733): CodeIgniter\Database\BaseConnection->query('SELECT COUNT(*)...', Array, false)
+#4 C:\xampp\htdocs\ITE311-ALEJADO\system\Model.php(675): CodeIgniter\Database\BaseBuilder->countAllResults(true)
+#5 C:\xampp\htdocs\ITE311-ALEJADO\app\Models\NotificationModel.php(65): CodeIgniter\Model->countAllResults()
+#6 C:\xampp\htdocs\ITE311-ALEJADO\app\Controllers\BaseController.php(64): App\Models\NotificationModel->getUnreadCount('1')
+#7 C:\xampp\htdocs\ITE311-ALEJADO\system\CodeIgniter.php(904): App\Controllers\BaseController->initController(Object(CodeIgniter\HTTP\IncomingRequest), Object(CodeIgniter\HTTP\Response), Object(CodeIgniter\Log\Logger))
+#8 C:\xampp\htdocs\ITE311-ALEJADO\system\CodeIgniter.php(498): CodeIgniter\CodeIgniter->createController()
+#9 C:\xampp\htdocs\ITE311-ALEJADO\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\xampp\htdocs\ITE311-ALEJADO\system\Boot.php(363): CodeIgniter\CodeIgniter->run()
+#11 C:\xampp\htdocs\ITE311-ALEJADO\system\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#12 C:\xampp\htdocs\ITE311-ALEJADO\index.php(204): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#13 {main}
+CRITICAL - 2025-12-09 14:00:15 --> CodeIgniter\Database\Exceptions\DatabaseException: Table 'lms_alejado.notifications' doesn't exist
+[Method: GET, Route: notifications]
+in SYSTEMPATH\Database\BaseConnection.php on line 684.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1733): CodeIgniter\Database\BaseConnection->query('SELECT COUNT(*) AS `numrows`
+FROM `notifications`
+WHERE `user_id` = :user_id:
+AND `is_read` = :is_read:
+AND `is_hidden` = :is_hidden:', [...], false)
+ 2 SYSTEMPATH\Model.php(675): CodeIgniter\Database\BaseBuilder->countAllResults(true)
+ 3 APPPATH\Models\NotificationModel.php(65): CodeIgniter\Model->countAllResults()
+ 4 APPPATH\Controllers\BaseController.php(64): App\Models\NotificationModel->getUnreadCount('1')
+ 5 SYSTEMPATH\CodeIgniter.php(904): App\Controllers\BaseController->initController(Object(CodeIgniter\HTTP\IncomingRequest), Object(CodeIgniter\HTTP\Response), Object(CodeIgniter\Log\Logger))
+ 6 SYSTEMPATH\CodeIgniter.php(498): CodeIgniter\CodeIgniter->createController()
+ 7 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH\index.php(204): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-12-09 14:00:15 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Table 'lms_alejado.notifications' doesn't exist
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 332.
+ 1 SYSTEMPATH\Database\BaseConnection.php(729): CodeIgniter\Database\MySQLi\Connection->execute('SELECT COUNT(*) AS `numrows`
+FROM `notifications`
+WHERE `user_id` = \'1\'
+AND `is_read` = 0
+AND `is_hidden` = 0')
+ 2 SYSTEMPATH\Database\BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT COUNT(*) AS `numrows`
+FROM `notifications`
+WHERE `user_id` = \'1\'
+AND `is_read` = 0
+AND `is_hidden` = 0')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(1733): CodeIgniter\Database\BaseConnection->query('SELECT COUNT(*) AS `numrows`
+FROM `notifications`
+WHERE `user_id` = :user_id:
+AND `is_read` = :is_read:
+AND `is_hidden` = :is_hidden:', [...], false)
+ 4 SYSTEMPATH\Model.php(675): CodeIgniter\Database\BaseBuilder->countAllResults(true)
+ 5 APPPATH\Models\NotificationModel.php(65): CodeIgniter\Model->countAllResults()
+ 6 APPPATH\Controllers\BaseController.php(64): App\Models\NotificationModel->getUnreadCount('1')
+ 7 SYSTEMPATH\CodeIgniter.php(904): App\Controllers\BaseController->initController(Object(CodeIgniter\HTTP\IncomingRequest), Object(CodeIgniter\HTTP\Response), Object(CodeIgniter\Log\Logger))
+ 8 SYSTEMPATH\CodeIgniter.php(498): CodeIgniter\CodeIgniter->createController()
+ 9 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+12 FCPATH\index.php(204): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-12-09 14:00:15 --> [Caused by] mysqli_sql_exception: Table 'lms_alejado.notifications' doesn't exist
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 327.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(327): mysqli->query('SELECT COUNT(*) AS `numrows`
+FROM `notifications`
+WHERE `user_id` = \'1\'
+AND `is_read` = 0
+AND `is_hidden` = 0', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(729): CodeIgniter\Database\MySQLi\Connection->execute('SELECT COUNT(*) AS `numrows`
+FROM `notifications`
+WHERE `user_id` = \'1\'
+AND `is_read` = 0
+AND `is_hidden` = 0')
+ 3 SYSTEMPATH\Database\BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT COUNT(*) AS `numrows`
+FROM `notifications`
+WHERE `user_id` = \'1\'
+AND `is_read` = 0
+AND `is_hidden` = 0')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1733): CodeIgniter\Database\BaseConnection->query('SELECT COUNT(*) AS `numrows`
+FROM `notifications`
+WHERE `user_id` = :user_id:
+AND `is_read` = :is_read:
+AND `is_hidden` = :is_hidden:', [...], false)
+ 5 SYSTEMPATH\Model.php(675): CodeIgniter\Database\BaseBuilder->countAllResults(true)
+ 6 APPPATH\Models\NotificationModel.php(65): CodeIgniter\Model->countAllResults()
+ 7 APPPATH\Controllers\BaseController.php(64): App\Models\NotificationModel->getUnreadCount('1')
+ 8 SYSTEMPATH\CodeIgniter.php(904): App\Controllers\BaseController->initController(Object(CodeIgniter\HTTP\IncomingRequest), Object(CodeIgniter\HTTP\Response), Object(CodeIgniter\Log\Logger))
+ 9 SYSTEMPATH\CodeIgniter.php(498): CodeIgniter\CodeIgniter->createController()
+10 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+12 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+13 FCPATH\index.php(204): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-12-09 14:03:17 --> Error: Class "App\Models\ProgramCurriculomModel" not found
+[Method: GET, Route: admin/manage_programs]
+in APPPATH\Controllers\Program.php on line 28.
+ 1 SYSTEMPATH\CodeIgniter.php(903): App\Controllers\Program->__construct()
+ 2 SYSTEMPATH\CodeIgniter.php(498): CodeIgniter\CodeIgniter->createController()
+ 3 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH\index.php(204): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-12-09 14:04:34 --> Error: Class "App\Models\ProgramCurriculomModel" not found
+[Method: GET, Route: admin/manage_programs]
+in APPPATH\Controllers\Program.php on line 28.
+ 1 SYSTEMPATH\CodeIgniter.php(903): App\Controllers\Program->__construct()
+ 2 SYSTEMPATH\CodeIgniter.php(498): CodeIgniter\CodeIgniter->createController()
+ 3 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH\index.php(204): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ERROR - 2025-12-09 14:06:58 --> mysqli_sql_exception: Unknown column 'year_levels.level_name' in 'field list' in C:\xampp\htdocs\ITE311-ALEJADO\system\Database\MySQLi\Connection.php:327
+Stack trace:
+#0 C:\xampp\htdocs\ITE311-ALEJADO\system\Database\MySQLi\Connection.php(327): mysqli->query('SELECT `program...', 0)
+#1 C:\xampp\htdocs\ITE311-ALEJADO\system\Database\BaseConnection.php(729): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `program...')
+#2 C:\xampp\htdocs\ITE311-ALEJADO\system\Database\BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `program...')
+#3 C:\xampp\htdocs\ITE311-ALEJADO\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `program...', Array, false)
+#4 C:\xampp\htdocs\ITE311-ALEJADO\system\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\ITE311-ALEJADO\system\BaseModel.php(677): CodeIgniter\Model->doFindAll(0, 0)
+#6 C:\xampp\htdocs\ITE311-ALEJADO\app\Controllers\Program.php(501): CodeIgniter\BaseModel->findAll()
+#7 C:\xampp\htdocs\ITE311-ALEJADO\app\Controllers\Program.php(457): App\Controllers\Program->getCurriculumList(NULL)
+#8 C:\xampp\htdocs\ITE311-ALEJADO\system\CodeIgniter.php(933): App\Controllers\Program->manageCurriculum()
+#9 C:\xampp\htdocs\ITE311-ALEJADO\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Program))
+#10 C:\xampp\htdocs\ITE311-ALEJADO\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 C:\xampp\htdocs\ITE311-ALEJADO\system\Boot.php(363): CodeIgniter\CodeIgniter->run()
+#12 C:\xampp\htdocs\ITE311-ALEJADO\system\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#13 C:\xampp\htdocs\ITE311-ALEJADO\index.php(204): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#14 {main}
+CRITICAL - 2025-12-09 14:06:58 --> CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'year_levels.level_name' in 'field list'
+[Method: GET, Route: admin/manage_curriculum]
+in SYSTEMPATH\Database\BaseConnection.php on line 684.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `program_curriculums`.*, `programs`.`program_code`, `programs`.`program_name`, `courses`.`course_code`, `courses`.`title` as `course_title`, `courses`.`credits` as `course_credits`, `year_levels`.`level_name` as `year_level_name`, `semesters`.`semester_name`
+FROM `program_curriculums`
+JOIN `programs` ON `programs`.`id` = `program_curriculums`.`program_id`
+JOIN `courses` ON `courses`.`id` = `program_curriculums`.`course_id`
+JOIN `year_levels` ON `year_levels`.`id` = `program_curriculums`.`year_level_id`
+JOIN `semesters` ON `semesters`.`id` = `program_curriculums`.`semester_id`
+ORDER BY `programs`.`program_name` ASC, `year_levels`.`id` ASC, `semesters`.`id` ASC, `courses`.`course_code` ASC', [], false)
+ 2 SYSTEMPATH\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+ 3 SYSTEMPATH\BaseModel.php(677): CodeIgniter\Model->doFindAll(0, 0)
+ 4 APPPATH\Controllers\Program.php(501): CodeIgniter\BaseModel->findAll()
+ 5 APPPATH\Controllers\Program.php(457): App\Controllers\Program->getCurriculumList(null)
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Program->manageCurriculum()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Program))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(204): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-12-09 14:06:58 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'year_levels.level_name' in 'field list'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 332.
+ 1 SYSTEMPATH\Database\BaseConnection.php(729): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `program_curriculums`.*, `programs`.`program_code`, `programs`.`program_name`, `courses`.`course_code`, `courses`.`title` as `course_title`, `courses`.`credits` as `course_credits`, `year_levels`.`level_name` as `year_level_name`, `semesters`.`semester_name`
+FROM `program_curriculums`
+JOIN `programs` ON `programs`.`id` = `program_curriculums`.`program_id`
+JOIN `courses` ON `courses`.`id` = `program_curriculums`.`course_id`
+JOIN `year_levels` ON `year_levels`.`id` = `program_curriculums`.`year_level_id`
+JOIN `semesters` ON `semesters`.`id` = `program_curriculums`.`semester_id`
+ORDER BY `programs`.`program_name` ASC, `year_levels`.`id` ASC, `semesters`.`id` ASC, `courses`.`course_code` ASC')
+ 2 SYSTEMPATH\Database\BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `program_curriculums`.*, `programs`.`program_code`, `programs`.`program_name`, `courses`.`course_code`, `courses`.`title` as `course_title`, `courses`.`credits` as `course_credits`, `year_levels`.`level_name` as `year_level_name`, `semesters`.`semester_name`
+FROM `program_curriculums`
+JOIN `programs` ON `programs`.`id` = `program_curriculums`.`program_id`
+JOIN `courses` ON `courses`.`id` = `program_curriculums`.`course_id`
+JOIN `year_levels` ON `year_levels`.`id` = `program_curriculums`.`year_level_id`
+JOIN `semesters` ON `semesters`.`id` = `program_curriculums`.`semester_id`
+ORDER BY `programs`.`program_name` ASC, `year_levels`.`id` ASC, `semesters`.`id` ASC, `courses`.`course_code` ASC')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `program_curriculums`.*, `programs`.`program_code`, `programs`.`program_name`, `courses`.`course_code`, `courses`.`title` as `course_title`, `courses`.`credits` as `course_credits`, `year_levels`.`level_name` as `year_level_name`, `semesters`.`semester_name`
+FROM `program_curriculums`
+JOIN `programs` ON `programs`.`id` = `program_curriculums`.`program_id`
+JOIN `courses` ON `courses`.`id` = `program_curriculums`.`course_id`
+JOIN `year_levels` ON `year_levels`.`id` = `program_curriculums`.`year_level_id`
+JOIN `semesters` ON `semesters`.`id` = `program_curriculums`.`semester_id`
+ORDER BY `programs`.`program_name` ASC, `year_levels`.`id` ASC, `semesters`.`id` ASC, `courses`.`course_code` ASC', [], false)
+ 4 SYSTEMPATH\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+ 5 SYSTEMPATH\BaseModel.php(677): CodeIgniter\Model->doFindAll(0, 0)
+ 6 APPPATH\Controllers\Program.php(501): CodeIgniter\BaseModel->findAll()
+ 7 APPPATH\Controllers\Program.php(457): App\Controllers\Program->getCurriculumList(null)
+ 8 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Program->manageCurriculum()
+ 9 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Program))
+10 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+12 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+13 FCPATH\index.php(204): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-12-09 14:06:58 --> [Caused by] mysqli_sql_exception: Unknown column 'year_levels.level_name' in 'field list'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 327.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(327): mysqli->query('SELECT `program_curriculums`.*, `programs`.`program_code`, `programs`.`program_name`, `courses`.`course_code`, `courses`.`title` as `course_title`, `courses`.`credits` as `course_credits`, `year_levels`.`level_name` as `year_level_name`, `semesters`.`semester_name`
+FROM `program_curriculums`
+JOIN `programs` ON `programs`.`id` = `program_curriculums`.`program_id`
+JOIN `courses` ON `courses`.`id` = `program_curriculums`.`course_id`
+JOIN `year_levels` ON `year_levels`.`id` = `program_curriculums`.`year_level_id`
+JOIN `semesters` ON `semesters`.`id` = `program_curriculums`.`semester_id`
+ORDER BY `programs`.`program_name` ASC, `year_levels`.`id` ASC, `semesters`.`id` ASC, `courses`.`course_code` ASC', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(729): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `program_curriculums`.*, `programs`.`program_code`, `programs`.`program_name`, `courses`.`course_code`, `courses`.`title` as `course_title`, `courses`.`credits` as `course_credits`, `year_levels`.`level_name` as `year_level_name`, `semesters`.`semester_name`
+FROM `program_curriculums`
+JOIN `programs` ON `programs`.`id` = `program_curriculums`.`program_id`
+JOIN `courses` ON `courses`.`id` = `program_curriculums`.`course_id`
+JOIN `year_levels` ON `year_levels`.`id` = `program_curriculums`.`year_level_id`
+JOIN `semesters` ON `semesters`.`id` = `program_curriculums`.`semester_id`
+ORDER BY `programs`.`program_name` ASC, `year_levels`.`id` ASC, `semesters`.`id` ASC, `courses`.`course_code` ASC')
+ 3 SYSTEMPATH\Database\BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `program_curriculums`.*, `programs`.`program_code`, `programs`.`program_name`, `courses`.`course_code`, `courses`.`title` as `course_title`, `courses`.`credits` as `course_credits`, `year_levels`.`level_name` as `year_level_name`, `semesters`.`semester_name`
+FROM `program_curriculums`
+JOIN `programs` ON `programs`.`id` = `program_curriculums`.`program_id`
+JOIN `courses` ON `courses`.`id` = `program_curriculums`.`course_id`
+JOIN `year_levels` ON `year_levels`.`id` = `program_curriculums`.`year_level_id`
+JOIN `semesters` ON `semesters`.`id` = `program_curriculums`.`semester_id`
+ORDER BY `programs`.`program_name` ASC, `year_levels`.`id` ASC, `semesters`.`id` ASC, `courses`.`course_code` ASC')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `program_curriculums`.*, `programs`.`program_code`, `programs`.`program_name`, `courses`.`course_code`, `courses`.`title` as `course_title`, `courses`.`credits` as `course_credits`, `year_levels`.`level_name` as `year_level_name`, `semesters`.`semester_name`
+FROM `program_curriculums`
+JOIN `programs` ON `programs`.`id` = `program_curriculums`.`program_id`
+JOIN `courses` ON `courses`.`id` = `program_curriculums`.`course_id`
+JOIN `year_levels` ON `year_levels`.`id` = `program_curriculums`.`year_level_id`
+JOIN `semesters` ON `semesters`.`id` = `program_curriculums`.`semester_id`
+ORDER BY `programs`.`program_name` ASC, `year_levels`.`id` ASC, `semesters`.`id` ASC, `courses`.`course_code` ASC', [], false)
+ 5 SYSTEMPATH\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+ 6 SYSTEMPATH\BaseModel.php(677): CodeIgniter\Model->doFindAll(0, 0)
+ 7 APPPATH\Controllers\Program.php(501): CodeIgniter\BaseModel->findAll()
+ 8 APPPATH\Controllers\Program.php(457): App\Controllers\Program->getCurriculumList(null)
+ 9 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Program->manageCurriculum()
+10 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Program))
+11 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+12 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+13 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+14 FCPATH\index.php(204): CodeIgniter\Boot::bootWeb(Object(Config\Paths))

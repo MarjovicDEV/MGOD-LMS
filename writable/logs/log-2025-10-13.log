@@ -1,0 +1,636 @@
+CRITICAL - 2025-10-13 15:35:05 --> ErrorException: Undefined array key "user_role"
+[Method: GET, Route: dashboard]
+in APPPATH\Views\auth\dashboard.php on line 206.
+ 1 APPPATH\Views\auth\dashboard.php(206): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "user_role"', 'C:\\xampp\\htdocs\\ITE311-ALEJADO\\app\\Views\\auth\\dashboard.php', 206)
+ 2 SYSTEMPATH\View\View.php(226): include('C:\\xampp\\htdocs\\ITE311-ALEJADO\\app\\Views\\auth\\dashboard.php')
+ 3 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1167): CodeIgniter\View\View->render('auth/dashboard', [], true)
+ 5 APPPATH\Controllers\Auth.php(992): view('auth/dashboard', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Auth->dashboard()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Auth))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-10-13 15:35:10 --> ErrorException: Undefined array key "user_role"
+[Method: GET, Route: dashboard]
+in APPPATH\Views\auth\dashboard.php on line 206.
+ 1 APPPATH\Views\auth\dashboard.php(206): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "user_role"', 'C:\\xampp\\htdocs\\ITE311-ALEJADO\\app\\Views\\auth\\dashboard.php', 206)
+ 2 SYSTEMPATH\View\View.php(226): include('C:\\xampp\\htdocs\\ITE311-ALEJADO\\app\\Views\\auth\\dashboard.php')
+ 3 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1167): CodeIgniter\View\View->render('auth/dashboard', [], true)
+ 5 APPPATH\Controllers\Auth.php(992): view('auth/dashboard', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Auth->dashboard()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Auth))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-10-13 15:48:19 --> CodeIgniter\View\Exceptions\ViewException: Invalid file: "auth/admin/manage_users.php"
+[Method: GET, Route: dashboard]
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 39.
+ 1 SYSTEMPATH\View\View.php(214): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('auth/admin/manage_users.php')
+ 2 SYSTEMPATH\Common.php(1167): CodeIgniter\View\View->render('auth/admin/manage_users', [], true)
+ 3 APPPATH\Controllers\Auth.php(274): view('auth/admin/manage_users', [...])
+ 4 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Auth->dashboard()
+ 5 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Auth))
+ 6 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-10-13 15:48:24 --> CodeIgniter\View\Exceptions\ViewException: Invalid file: "auth/admin/manage_courses.php"
+[Method: GET, Route: dashboard]
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 39.
+ 1 SYSTEMPATH\View\View.php(214): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('auth/admin/manage_courses.php')
+ 2 SYSTEMPATH\Common.php(1167): CodeIgniter\View\View->render('auth/admin/manage_courses', [], true)
+ 3 APPPATH\Controllers\Auth.php(577): view('auth/admin/manage_courses', [...])
+ 4 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Auth->dashboard()
+ 5 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Auth))
+ 6 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-10-13 15:48:46 --> CodeIgniter\View\Exceptions\ViewException: Invalid file: "auth/admin/manage_courses.php"
+[Method: GET, Route: dashboard]
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 39.
+ 1 SYSTEMPATH\View\View.php(214): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('auth/admin/manage_courses.php')
+ 2 SYSTEMPATH\Common.php(1167): CodeIgniter\View\View->render('auth/admin/manage_courses', [], true)
+ 3 APPPATH\Controllers\Auth.php(577): view('auth/admin/manage_courses', [...])
+ 4 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Auth->dashboard()
+ 5 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Auth))
+ 6 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-10-13 15:48:50 --> CodeIgniter\View\Exceptions\ViewException: Invalid file: "auth/admin/manage_users.php"
+[Method: GET, Route: dashboard]
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 39.
+ 1 SYSTEMPATH\View\View.php(214): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('auth/admin/manage_users.php')
+ 2 SYSTEMPATH\Common.php(1167): CodeIgniter\View\View->render('auth/admin/manage_users', [], true)
+ 3 APPPATH\Controllers\Auth.php(274): view('auth/admin/manage_users', [...])
+ 4 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Auth->dashboard()
+ 5 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Auth))
+ 6 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-10-13 16:09:06 --> CodeIgniter\View\Exceptions\ViewException: Invalid file: "auth/admin/manage_users.php"
+[Method: GET, Route: admin/manage_users]
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 39.
+ 1 SYSTEMPATH\View\View.php(214): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('auth/admin/manage_users.php')
+ 2 SYSTEMPATH\Common.php(1167): CodeIgniter\View\View->render('auth/admin/manage_users', [], true)
+ 3 APPPATH\Controllers\Auth.php(1113): view('auth/admin/manage_users', [...])
+ 4 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Auth->manageUsers()
+ 5 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Auth))
+ 6 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-10-13 16:09:22 --> CodeIgniter\View\Exceptions\ViewException: Invalid file: "auth/admin/manage_users.php"
+[Method: GET, Route: admin/manage_users]
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 39.
+ 1 SYSTEMPATH\View\View.php(214): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('auth/admin/manage_users.php')
+ 2 SYSTEMPATH\Common.php(1167): CodeIgniter\View\View->render('auth/admin/manage_users', [], true)
+ 3 APPPATH\Controllers\Auth.php(1113): view('auth/admin/manage_users', [...])
+ 4 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Auth->manageUsers()
+ 5 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Auth))
+ 6 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-10-13 16:09:24 --> CodeIgniter\View\Exceptions\ViewException: Invalid file: "auth/admin/manage_courses.php"
+[Method: GET, Route: admin/manage_courses]
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 39.
+ 1 SYSTEMPATH\View\View.php(214): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('auth/admin/manage_courses.php')
+ 2 SYSTEMPATH\Common.php(1167): CodeIgniter\View\View->render('auth/admin/manage_courses', [], true)
+ 3 APPPATH\Controllers\Auth.php(1176): view('auth/admin/manage_courses', [...])
+ 4 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Auth->manageCourses()
+ 5 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Auth))
+ 6 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-10-13 16:09:30 --> CodeIgniter\View\Exceptions\ViewException: Invalid file: "auth/admin/manage_users.php"
+[Method: GET, Route: admin/manage_users]
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 39.
+ 1 SYSTEMPATH\View\View.php(214): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('auth/admin/manage_users.php')
+ 2 SYSTEMPATH\Common.php(1167): CodeIgniter\View\View->render('auth/admin/manage_users', [], true)
+ 3 APPPATH\Controllers\Auth.php(1113): view('auth/admin/manage_users', [...])
+ 4 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Auth->manageUsers()
+ 5 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Auth))
+ 6 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-10-13 16:09:35 --> CodeIgniter\View\Exceptions\ViewException: Invalid file: "auth/admin/manage_courses.php"
+[Method: GET, Route: admin/manage_courses]
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 39.
+ 1 SYSTEMPATH\View\View.php(214): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('auth/admin/manage_courses.php')
+ 2 SYSTEMPATH\Common.php(1167): CodeIgniter\View\View->render('auth/admin/manage_courses', [], true)
+ 3 APPPATH\Controllers\Auth.php(1176): view('auth/admin/manage_courses', [...])
+ 4 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Auth->manageCourses()
+ 5 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Auth))
+ 6 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-10-13 16:19:18 --> CodeIgniter\View\Exceptions\ViewException: Invalid file: "auth/admin/manage_users.php"
+[Method: GET, Route: admin/manage_users]
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 39.
+ 1 SYSTEMPATH\View\View.php(214): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('auth/admin/manage_users.php')
+ 2 SYSTEMPATH\Common.php(1167): CodeIgniter\View\View->render('auth/admin/manage_users', [], true)
+ 3 APPPATH\Controllers\Auth.php(425): view('auth/admin/manage_users', [...])
+ 4 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Auth->manageUsers()
+ 5 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Auth))
+ 6 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-10-13 16:19:21 --> CodeIgniter\View\Exceptions\ViewException: Invalid file: "auth/admin/manage_courses.php"
+[Method: GET, Route: admin/manage_courses]
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 39.
+ 1 SYSTEMPATH\View\View.php(214): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('auth/admin/manage_courses.php')
+ 2 SYSTEMPATH\Common.php(1167): CodeIgniter\View\View->render('auth/admin/manage_courses', [], true)
+ 3 APPPATH\Controllers\Auth.php(488): view('auth/admin/manage_courses', [...])
+ 4 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Auth->manageCourses()
+ 5 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Auth))
+ 6 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-10-13 16:19:39 --> CodeIgniter\View\Exceptions\ViewException: Invalid file: "auth/admin/manage_users.php"
+[Method: GET, Route: admin/manage_users]
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 39.
+ 1 SYSTEMPATH\View\View.php(214): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('auth/admin/manage_users.php')
+ 2 SYSTEMPATH\Common.php(1167): CodeIgniter\View\View->render('auth/admin/manage_users', [], true)
+ 3 APPPATH\Controllers\Auth.php(425): view('auth/admin/manage_users', [...])
+ 4 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Auth->manageUsers()
+ 5 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Auth))
+ 6 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-10-13 16:19:41 --> CodeIgniter\View\Exceptions\ViewException: Invalid file: "auth/admin/manage_courses.php"
+[Method: GET, Route: admin/manage_courses]
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 39.
+ 1 SYSTEMPATH\View\View.php(214): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('auth/admin/manage_courses.php')
+ 2 SYSTEMPATH\Common.php(1167): CodeIgniter\View\View->render('auth/admin/manage_courses', [], true)
+ 3 APPPATH\Controllers\Auth.php(488): view('auth/admin/manage_courses', [...])
+ 4 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Auth->manageCourses()
+ 5 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Auth))
+ 6 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-10-13 16:20:42 --> CodeIgniter\View\Exceptions\ViewException: Invalid file: "auth/admin/manage_courses.php"
+[Method: GET, Route: admin/manage_courses]
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 39.
+ 1 SYSTEMPATH\View\View.php(214): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('auth/admin/manage_courses.php')
+ 2 SYSTEMPATH\Common.php(1167): CodeIgniter\View\View->render('auth/admin/manage_courses', [], true)
+ 3 APPPATH\Controllers\Auth.php(488): view('auth/admin/manage_courses', [...])
+ 4 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Auth->manageCourses()
+ 5 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Auth))
+ 6 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-10-13 16:20:44 --> CodeIgniter\View\Exceptions\ViewException: Invalid file: "auth/admin/manage_users.php"
+[Method: GET, Route: admin/manage_users]
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 39.
+ 1 SYSTEMPATH\View\View.php(214): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('auth/admin/manage_users.php')
+ 2 SYSTEMPATH\Common.php(1167): CodeIgniter\View\View->render('auth/admin/manage_users', [], true)
+ 3 APPPATH\Controllers\Auth.php(425): view('auth/admin/manage_users', [...])
+ 4 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Auth->manageUsers()
+ 5 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Auth))
+ 6 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-10-13 16:20:46 --> CodeIgniter\View\Exceptions\ViewException: Invalid file: "auth/admin/manage_courses.php"
+[Method: GET, Route: admin/manage_courses]
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 39.
+ 1 SYSTEMPATH\View\View.php(214): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('auth/admin/manage_courses.php')
+ 2 SYSTEMPATH\Common.php(1167): CodeIgniter\View\View->render('auth/admin/manage_courses', [], true)
+ 3 APPPATH\Controllers\Auth.php(488): view('auth/admin/manage_courses', [...])
+ 4 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Auth->manageCourses()
+ 5 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Auth))
+ 6 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ERROR - 2025-10-13 17:00:23 --> mysqli_sql_exception: Column 'instructor_id' cannot be null in C:\xampp\htdocs\ITE311-ALEJADO\system\Database\MySQLi\Connection.php:327
+Stack trace:
+#0 C:\xampp\htdocs\ITE311-ALEJADO\system\Database\MySQLi\Connection.php(327): mysqli->query('INSERT INTO `co...', 0)
+#1 C:\xampp\htdocs\ITE311-ALEJADO\system\Database\BaseConnection.php(729): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `co...')
+#2 C:\xampp\htdocs\ITE311-ALEJADO\system\Database\BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `co...')
+#3 C:\xampp\htdocs\ITE311-ALEJADO\system\Database\BaseBuilder.php(2345): CodeIgniter\Database\BaseConnection->query('INSERT INTO `co...', Array, false)
+#4 C:\xampp\htdocs\ITE311-ALEJADO\app\Controllers\Auth.php(874): CodeIgniter\Database\BaseBuilder->insert(Array)
+#5 C:\xampp\htdocs\ITE311-ALEJADO\app\Controllers\Auth.php(458): App\Controllers\Auth->handleCreateCourse()
+#6 C:\xampp\htdocs\ITE311-ALEJADO\system\CodeIgniter.php(933): App\Controllers\Auth->manageCourses()
+#7 C:\xampp\htdocs\ITE311-ALEJADO\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Auth))
+#8 C:\xampp\htdocs\ITE311-ALEJADO\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\xampp\htdocs\ITE311-ALEJADO\system\Boot.php(363): CodeIgniter\CodeIgniter->run()
+#10 C:\xampp\htdocs\ITE311-ALEJADO\system\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#11 C:\xampp\htdocs\ITE311-ALEJADO\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#12 {main}
+CRITICAL - 2025-10-13 17:00:23 --> CodeIgniter\Database\Exceptions\DatabaseException: Column 'instructor_id' cannot be null
+[Method: POST, Route: admin/manage_courses]
+in SYSTEMPATH\Database\BaseConnection.php on line 684.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(2345): CodeIgniter\Database\BaseConnection->query('INSERT INTO `courses` (`title`, `course_code`, `instructor_id`, `category`, `credits`, `duration_weeks`, `max_students`, `start_date`, `end_date`, `status`, `description`, `created_at`, `updated_at`) VALUES (:title:, :course_code:, :instructor_id:, :category:, :credits:, :duration_weeks:, :max_students:, :start_date:, :end_date:, :status:, :description:, :created_at:, :updated_at:)', [...], false)
+ 2 APPPATH\Controllers\Auth.php(874): CodeIgniter\Database\BaseBuilder->insert([...])
+ 3 APPPATH\Controllers\Auth.php(458): App\Controllers\Auth->handleCreateCourse()
+ 4 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Auth->manageCourses()
+ 5 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Auth))
+ 6 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-10-13 17:00:23 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Column 'instructor_id' cannot be null
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 332.
+ 1 SYSTEMPATH\Database\BaseConnection.php(729): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `courses` (`title`, `course_code`, `instructor_id`, `category`, `credits`, `duration_weeks`, `max_students`, `start_date`, `end_date`, `status`, `description`, `created_at`, `updated_at`) VALUES (\'sad\', \'SAD123\', NULL, \'sad\', \'3\', \'16\', \'30\', \'2025-10-07\', \'2025-10-14\', \'draft\', \'sadako\', \'2025-10-13 17:00:23\', \'2025-10-13 17:00:23\')')
+ 2 SYSTEMPATH\Database\BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `courses` (`title`, `course_code`, `instructor_id`, `category`, `credits`, `duration_weeks`, `max_students`, `start_date`, `end_date`, `status`, `description`, `created_at`, `updated_at`) VALUES (\'sad\', \'SAD123\', NULL, \'sad\', \'3\', \'16\', \'30\', \'2025-10-07\', \'2025-10-14\', \'draft\', \'sadako\', \'2025-10-13 17:00:23\', \'2025-10-13 17:00:23\')')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(2345): CodeIgniter\Database\BaseConnection->query('INSERT INTO `courses` (`title`, `course_code`, `instructor_id`, `category`, `credits`, `duration_weeks`, `max_students`, `start_date`, `end_date`, `status`, `description`, `created_at`, `updated_at`) VALUES (:title:, :course_code:, :instructor_id:, :category:, :credits:, :duration_weeks:, :max_students:, :start_date:, :end_date:, :status:, :description:, :created_at:, :updated_at:)', [...], false)
+ 4 APPPATH\Controllers\Auth.php(874): CodeIgniter\Database\BaseBuilder->insert([...])
+ 5 APPPATH\Controllers\Auth.php(458): App\Controllers\Auth->handleCreateCourse()
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Auth->manageCourses()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Auth))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-10-13 17:00:23 --> [Caused by] mysqli_sql_exception: Column 'instructor_id' cannot be null
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 327.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(327): mysqli->query('INSERT INTO `courses` (`title`, `course_code`, `instructor_id`, `category`, `credits`, `duration_weeks`, `max_students`, `start_date`, `end_date`, `status`, `description`, `created_at`, `updated_at`) VALUES (\'sad\', \'SAD123\', NULL, \'sad\', \'3\', \'16\', \'30\', \'2025-10-07\', \'2025-10-14\', \'draft\', \'sadako\', \'2025-10-13 17:00:23\', \'2025-10-13 17:00:23\')', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(729): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `courses` (`title`, `course_code`, `instructor_id`, `category`, `credits`, `duration_weeks`, `max_students`, `start_date`, `end_date`, `status`, `description`, `created_at`, `updated_at`) VALUES (\'sad\', \'SAD123\', NULL, \'sad\', \'3\', \'16\', \'30\', \'2025-10-07\', \'2025-10-14\', \'draft\', \'sadako\', \'2025-10-13 17:00:23\', \'2025-10-13 17:00:23\')')
+ 3 SYSTEMPATH\Database\BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `courses` (`title`, `course_code`, `instructor_id`, `category`, `credits`, `duration_weeks`, `max_students`, `start_date`, `end_date`, `status`, `description`, `created_at`, `updated_at`) VALUES (\'sad\', \'SAD123\', NULL, \'sad\', \'3\', \'16\', \'30\', \'2025-10-07\', \'2025-10-14\', \'draft\', \'sadako\', \'2025-10-13 17:00:23\', \'2025-10-13 17:00:23\')')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(2345): CodeIgniter\Database\BaseConnection->query('INSERT INTO `courses` (`title`, `course_code`, `instructor_id`, `category`, `credits`, `duration_weeks`, `max_students`, `start_date`, `end_date`, `status`, `description`, `created_at`, `updated_at`) VALUES (:title:, :course_code:, :instructor_id:, :category:, :credits:, :duration_weeks:, :max_students:, :start_date:, :end_date:, :status:, :description:, :created_at:, :updated_at:)', [...], false)
+ 5 APPPATH\Controllers\Auth.php(874): CodeIgniter\Database\BaseBuilder->insert([...])
+ 6 APPPATH\Controllers\Auth.php(458): App\Controllers\Auth->handleCreateCourse()
+ 7 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Auth->manageCourses()
+ 8 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Auth))
+ 9 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+12 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ERROR - 2025-10-13 17:00:59 --> mysqli_sql_exception: Column 'instructor_id' cannot be null in C:\xampp\htdocs\ITE311-ALEJADO\system\Database\MySQLi\Connection.php:327
+Stack trace:
+#0 C:\xampp\htdocs\ITE311-ALEJADO\system\Database\MySQLi\Connection.php(327): mysqli->query('INSERT INTO `co...', 0)
+#1 C:\xampp\htdocs\ITE311-ALEJADO\system\Database\BaseConnection.php(729): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `co...')
+#2 C:\xampp\htdocs\ITE311-ALEJADO\system\Database\BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `co...')
+#3 C:\xampp\htdocs\ITE311-ALEJADO\system\Database\BaseBuilder.php(2345): CodeIgniter\Database\BaseConnection->query('INSERT INTO `co...', Array, false)
+#4 C:\xampp\htdocs\ITE311-ALEJADO\app\Controllers\Auth.php(874): CodeIgniter\Database\BaseBuilder->insert(Array)
+#5 C:\xampp\htdocs\ITE311-ALEJADO\app\Controllers\Auth.php(458): App\Controllers\Auth->handleCreateCourse()
+#6 C:\xampp\htdocs\ITE311-ALEJADO\system\CodeIgniter.php(933): App\Controllers\Auth->manageCourses()
+#7 C:\xampp\htdocs\ITE311-ALEJADO\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Auth))
+#8 C:\xampp\htdocs\ITE311-ALEJADO\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\xampp\htdocs\ITE311-ALEJADO\system\Boot.php(363): CodeIgniter\CodeIgniter->run()
+#10 C:\xampp\htdocs\ITE311-ALEJADO\system\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#11 C:\xampp\htdocs\ITE311-ALEJADO\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#12 {main}
+CRITICAL - 2025-10-13 17:00:59 --> CodeIgniter\Database\Exceptions\DatabaseException: Column 'instructor_id' cannot be null
+[Method: POST, Route: admin/manage_courses]
+in SYSTEMPATH\Database\BaseConnection.php on line 684.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(2345): CodeIgniter\Database\BaseConnection->query('INSERT INTO `courses` (`title`, `course_code`, `instructor_id`, `category`, `credits`, `duration_weeks`, `max_students`, `start_date`, `end_date`, `status`, `description`, `created_at`, `updated_at`) VALUES (:title:, :course_code:, :instructor_id:, :category:, :credits:, :duration_weeks:, :max_students:, :start_date:, :end_date:, :status:, :description:, :created_at:, :updated_at:)', [...], false)
+ 2 APPPATH\Controllers\Auth.php(874): CodeIgniter\Database\BaseBuilder->insert([...])
+ 3 APPPATH\Controllers\Auth.php(458): App\Controllers\Auth->handleCreateCourse()
+ 4 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Auth->manageCourses()
+ 5 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Auth))
+ 6 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-10-13 17:00:59 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Column 'instructor_id' cannot be null
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 332.
+ 1 SYSTEMPATH\Database\BaseConnection.php(729): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `courses` (`title`, `course_code`, `instructor_id`, `category`, `credits`, `duration_weeks`, `max_students`, `start_date`, `end_date`, `status`, `description`, `created_at`, `updated_at`) VALUES (\'sad\', \'SAD123\', NULL, \'sad\', \'3\', \'16\', \'30\', \'2025-10-07\', \'2025-10-14\', \'active\', \'sadakoi\', \'2025-10-13 17:00:59\', \'2025-10-13 17:00:59\')')
+ 2 SYSTEMPATH\Database\BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `courses` (`title`, `course_code`, `instructor_id`, `category`, `credits`, `duration_weeks`, `max_students`, `start_date`, `end_date`, `status`, `description`, `created_at`, `updated_at`) VALUES (\'sad\', \'SAD123\', NULL, \'sad\', \'3\', \'16\', \'30\', \'2025-10-07\', \'2025-10-14\', \'active\', \'sadakoi\', \'2025-10-13 17:00:59\', \'2025-10-13 17:00:59\')')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(2345): CodeIgniter\Database\BaseConnection->query('INSERT INTO `courses` (`title`, `course_code`, `instructor_id`, `category`, `credits`, `duration_weeks`, `max_students`, `start_date`, `end_date`, `status`, `description`, `created_at`, `updated_at`) VALUES (:title:, :course_code:, :instructor_id:, :category:, :credits:, :duration_weeks:, :max_students:, :start_date:, :end_date:, :status:, :description:, :created_at:, :updated_at:)', [...], false)
+ 4 APPPATH\Controllers\Auth.php(874): CodeIgniter\Database\BaseBuilder->insert([...])
+ 5 APPPATH\Controllers\Auth.php(458): App\Controllers\Auth->handleCreateCourse()
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Auth->manageCourses()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Auth))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-10-13 17:00:59 --> [Caused by] mysqli_sql_exception: Column 'instructor_id' cannot be null
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 327.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(327): mysqli->query('INSERT INTO `courses` (`title`, `course_code`, `instructor_id`, `category`, `credits`, `duration_weeks`, `max_students`, `start_date`, `end_date`, `status`, `description`, `created_at`, `updated_at`) VALUES (\'sad\', \'SAD123\', NULL, \'sad\', \'3\', \'16\', \'30\', \'2025-10-07\', \'2025-10-14\', \'active\', \'sadakoi\', \'2025-10-13 17:00:59\', \'2025-10-13 17:00:59\')', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(729): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `courses` (`title`, `course_code`, `instructor_id`, `category`, `credits`, `duration_weeks`, `max_students`, `start_date`, `end_date`, `status`, `description`, `created_at`, `updated_at`) VALUES (\'sad\', \'SAD123\', NULL, \'sad\', \'3\', \'16\', \'30\', \'2025-10-07\', \'2025-10-14\', \'active\', \'sadakoi\', \'2025-10-13 17:00:59\', \'2025-10-13 17:00:59\')')
+ 3 SYSTEMPATH\Database\BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `courses` (`title`, `course_code`, `instructor_id`, `category`, `credits`, `duration_weeks`, `max_students`, `start_date`, `end_date`, `status`, `description`, `created_at`, `updated_at`) VALUES (\'sad\', \'SAD123\', NULL, \'sad\', \'3\', \'16\', \'30\', \'2025-10-07\', \'2025-10-14\', \'active\', \'sadakoi\', \'2025-10-13 17:00:59\', \'2025-10-13 17:00:59\')')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(2345): CodeIgniter\Database\BaseConnection->query('INSERT INTO `courses` (`title`, `course_code`, `instructor_id`, `category`, `credits`, `duration_weeks`, `max_students`, `start_date`, `end_date`, `status`, `description`, `created_at`, `updated_at`) VALUES (:title:, :course_code:, :instructor_id:, :category:, :credits:, :duration_weeks:, :max_students:, :start_date:, :end_date:, :status:, :description:, :created_at:, :updated_at:)', [...], false)
+ 5 APPPATH\Controllers\Auth.php(874): CodeIgniter\Database\BaseBuilder->insert([...])
+ 6 APPPATH\Controllers\Auth.php(458): App\Controllers\Auth->handleCreateCourse()
+ 7 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Auth->manageCourses()
+ 8 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Auth))
+ 9 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+12 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-10-13 17:05:47 --> ErrorException: Undefined array key "user_role"
+[Method: GET, Route: admin/dashboard]
+in APPPATH\Views\auth\dashboard.php on line 206.
+ 1 APPPATH\Views\auth\dashboard.php(206): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "user_role"', 'C:\\xampp\\htdocs\\ITE311-ALEJADO\\app\\Views\\auth\\dashboard.php', 206)
+ 2 SYSTEMPATH\View\View.php(226): include('C:\\xampp\\htdocs\\ITE311-ALEJADO\\app\\Views\\auth\\dashboard.php')
+ 3 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1167): CodeIgniter\View\View->render('auth/dashboard', [], true)
+ 5 APPPATH\Controllers\Auth.php(319): view('auth/dashboard', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Auth->dashboard()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Auth))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-10-13 17:05:50 --> ErrorException: Undefined array key "user_role"
+[Method: GET, Route: admin/dashboard]
+in APPPATH\Views\auth\dashboard.php on line 206.
+ 1 APPPATH\Views\auth\dashboard.php(206): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "user_role"', 'C:\\xampp\\htdocs\\ITE311-ALEJADO\\app\\Views\\auth\\dashboard.php', 206)
+ 2 SYSTEMPATH\View\View.php(226): include('C:\\xampp\\htdocs\\ITE311-ALEJADO\\app\\Views\\auth\\dashboard.php')
+ 3 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1167): CodeIgniter\View\View->render('auth/dashboard', [], true)
+ 5 APPPATH\Controllers\Auth.php(319): view('auth/dashboard', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Auth->dashboard()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Auth))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-10-13 17:05:54 --> ErrorException: Undefined array key "user_role"
+[Method: GET, Route: admin/dashboard]
+in APPPATH\Views\auth\dashboard.php on line 206.
+ 1 APPPATH\Views\auth\dashboard.php(206): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "user_role"', 'C:\\xampp\\htdocs\\ITE311-ALEJADO\\app\\Views\\auth\\dashboard.php', 206)
+ 2 SYSTEMPATH\View\View.php(226): include('C:\\xampp\\htdocs\\ITE311-ALEJADO\\app\\Views\\auth\\dashboard.php')
+ 3 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1167): CodeIgniter\View\View->render('auth/dashboard', [], true)
+ 5 APPPATH\Controllers\Auth.php(319): view('auth/dashboard', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Auth->dashboard()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Auth))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-10-13 17:05:57 --> ErrorException: Undefined array key "user_role"
+[Method: GET, Route: admin/dashboard]
+in APPPATH\Views\auth\dashboard.php on line 206.
+ 1 APPPATH\Views\auth\dashboard.php(206): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "user_role"', 'C:\\xampp\\htdocs\\ITE311-ALEJADO\\app\\Views\\auth\\dashboard.php', 206)
+ 2 SYSTEMPATH\View\View.php(226): include('C:\\xampp\\htdocs\\ITE311-ALEJADO\\app\\Views\\auth\\dashboard.php')
+ 3 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1167): CodeIgniter\View\View->render('auth/dashboard', [], true)
+ 5 APPPATH\Controllers\Auth.php(319): view('auth/dashboard', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Auth->dashboard()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Auth))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-10-13 17:08:15 --> ErrorException: Undefined array key "user_role"
+[Method: GET, Route: admin/dashboard]
+in APPPATH\Views\auth\dashboard.php on line 206.
+ 1 APPPATH\Views\auth\dashboard.php(206): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "user_role"', 'C:\\xampp\\htdocs\\ITE311-ALEJADO\\app\\Views\\auth\\dashboard.php', 206)
+ 2 SYSTEMPATH\View\View.php(226): include('C:\\xampp\\htdocs\\ITE311-ALEJADO\\app\\Views\\auth\\dashboard.php')
+ 3 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1167): CodeIgniter\View\View->render('auth/dashboard', [], true)
+ 5 APPPATH\Controllers\Auth.php(319): view('auth/dashboard', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Auth->dashboard()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Auth))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-10-13 17:11:18 --> ErrorException: Undefined array key "user_role"
+[Method: GET, Route: admin/dashboard]
+in APPPATH\Views\auth\dashboard.php on line 206.
+ 1 APPPATH\Views\auth\dashboard.php(206): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "user_role"', 'C:\\xampp\\htdocs\\ITE311-ALEJADO\\app\\Views\\auth\\dashboard.php', 206)
+ 2 SYSTEMPATH\View\View.php(226): include('C:\\xampp\\htdocs\\ITE311-ALEJADO\\app\\Views\\auth\\dashboard.php')
+ 3 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1167): CodeIgniter\View\View->render('auth/dashboard', [], true)
+ 5 APPPATH\Controllers\Auth.php(319): view('auth/dashboard', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Auth->dashboard()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Auth))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-10-13 17:11:20 --> ErrorException: Undefined array key "user_role"
+[Method: GET, Route: admin/dashboard]
+in APPPATH\Views\auth\dashboard.php on line 206.
+ 1 APPPATH\Views\auth\dashboard.php(206): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "user_role"', 'C:\\xampp\\htdocs\\ITE311-ALEJADO\\app\\Views\\auth\\dashboard.php', 206)
+ 2 SYSTEMPATH\View\View.php(226): include('C:\\xampp\\htdocs\\ITE311-ALEJADO\\app\\Views\\auth\\dashboard.php')
+ 3 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1167): CodeIgniter\View\View->render('auth/dashboard', [], true)
+ 5 APPPATH\Controllers\Auth.php(319): view('auth/dashboard', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Auth->dashboard()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Auth))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-10-13 17:11:23 --> ErrorException: Undefined array key "user_role"
+[Method: GET, Route: admin/dashboard]
+in APPPATH\Views\auth\dashboard.php on line 206.
+ 1 APPPATH\Views\auth\dashboard.php(206): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "user_role"', 'C:\\xampp\\htdocs\\ITE311-ALEJADO\\app\\Views\\auth\\dashboard.php', 206)
+ 2 SYSTEMPATH\View\View.php(226): include('C:\\xampp\\htdocs\\ITE311-ALEJADO\\app\\Views\\auth\\dashboard.php')
+ 3 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1167): CodeIgniter\View\View->render('auth/dashboard', [], true)
+ 5 APPPATH\Controllers\Auth.php(319): view('auth/dashboard', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Auth->dashboard()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Auth))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-10-13 17:19:43 --> ErrorException: Undefined array key "user_role"
+[Method: GET, Route: admin/dashboard]
+in APPPATH\Views\auth\dashboard.php on line 260.
+ 1 APPPATH\Views\auth\dashboard.php(260): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "user_role"', 'C:\\xampp\\htdocs\\ITE311-ALEJADO\\app\\Views\\auth\\dashboard.php', 260)
+ 2 SYSTEMPATH\View\View.php(226): include('C:\\xampp\\htdocs\\ITE311-ALEJADO\\app\\Views\\auth\\dashboard.php')
+ 3 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1167): CodeIgniter\View\View->render('auth/dashboard', [], true)
+ 5 APPPATH\Controllers\Auth.php(326): view('auth/dashboard', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Auth->dashboard()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Auth))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-10-13 17:19:48 --> ErrorException: Undefined array key "user_role"
+[Method: GET, Route: admin/dashboard]
+in APPPATH\Views\auth\dashboard.php on line 260.
+ 1 APPPATH\Views\auth\dashboard.php(260): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "user_role"', 'C:\\xampp\\htdocs\\ITE311-ALEJADO\\app\\Views\\auth\\dashboard.php', 260)
+ 2 SYSTEMPATH\View\View.php(226): include('C:\\xampp\\htdocs\\ITE311-ALEJADO\\app\\Views\\auth\\dashboard.php')
+ 3 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1167): CodeIgniter\View\View->render('auth/dashboard', [], true)
+ 5 APPPATH\Controllers\Auth.php(326): view('auth/dashboard', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Auth->dashboard()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Auth))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-10-13 17:19:54 --> ErrorException: Undefined array key "user_role"
+[Method: GET, Route: admin/dashboard]
+in APPPATH\Views\auth\dashboard.php on line 260.
+ 1 APPPATH\Views\auth\dashboard.php(260): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "user_role"', 'C:\\xampp\\htdocs\\ITE311-ALEJADO\\app\\Views\\auth\\dashboard.php', 260)
+ 2 SYSTEMPATH\View\View.php(226): include('C:\\xampp\\htdocs\\ITE311-ALEJADO\\app\\Views\\auth\\dashboard.php')
+ 3 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1167): CodeIgniter\View\View->render('auth/dashboard', [], true)
+ 5 APPPATH\Controllers\Auth.php(326): view('auth/dashboard', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Auth->dashboard()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Auth))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-10-13 17:19:56 --> ErrorException: Undefined array key "user_role"
+[Method: GET, Route: admin/dashboard]
+in APPPATH\Views\auth\dashboard.php on line 260.
+ 1 APPPATH\Views\auth\dashboard.php(260): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "user_role"', 'C:\\xampp\\htdocs\\ITE311-ALEJADO\\app\\Views\\auth\\dashboard.php', 260)
+ 2 SYSTEMPATH\View\View.php(226): include('C:\\xampp\\htdocs\\ITE311-ALEJADO\\app\\Views\\auth\\dashboard.php')
+ 3 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1167): CodeIgniter\View\View->render('auth/dashboard', [], true)
+ 5 APPPATH\Controllers\Auth.php(326): view('auth/dashboard', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Auth->dashboard()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Auth))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-10-13 17:19:57 --> ErrorException: Undefined array key "user_role"
+[Method: GET, Route: admin/dashboard]
+in APPPATH\Views\auth\dashboard.php on line 260.
+ 1 APPPATH\Views\auth\dashboard.php(260): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "user_role"', 'C:\\xampp\\htdocs\\ITE311-ALEJADO\\app\\Views\\auth\\dashboard.php', 260)
+ 2 SYSTEMPATH\View\View.php(226): include('C:\\xampp\\htdocs\\ITE311-ALEJADO\\app\\Views\\auth\\dashboard.php')
+ 3 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1167): CodeIgniter\View\View->render('auth/dashboard', [], true)
+ 5 APPPATH\Controllers\Auth.php(326): view('auth/dashboard', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Auth->dashboard()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Auth))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-10-13 17:19:57 --> ErrorException: Undefined array key "user_role"
+[Method: GET, Route: admin/dashboard]
+in APPPATH\Views\auth\dashboard.php on line 260.
+ 1 APPPATH\Views\auth\dashboard.php(260): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "user_role"', 'C:\\xampp\\htdocs\\ITE311-ALEJADO\\app\\Views\\auth\\dashboard.php', 260)
+ 2 SYSTEMPATH\View\View.php(226): include('C:\\xampp\\htdocs\\ITE311-ALEJADO\\app\\Views\\auth\\dashboard.php')
+ 3 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1167): CodeIgniter\View\View->render('auth/dashboard', [], true)
+ 5 APPPATH\Controllers\Auth.php(326): view('auth/dashboard', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Auth->dashboard()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Auth))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-10-13 17:19:57 --> ErrorException: Undefined array key "user_role"
+[Method: GET, Route: admin/dashboard]
+in APPPATH\Views\auth\dashboard.php on line 260.
+ 1 APPPATH\Views\auth\dashboard.php(260): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "user_role"', 'C:\\xampp\\htdocs\\ITE311-ALEJADO\\app\\Views\\auth\\dashboard.php', 260)
+ 2 SYSTEMPATH\View\View.php(226): include('C:\\xampp\\htdocs\\ITE311-ALEJADO\\app\\Views\\auth\\dashboard.php')
+ 3 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1167): CodeIgniter\View\View->render('auth/dashboard', [], true)
+ 5 APPPATH\Controllers\Auth.php(326): view('auth/dashboard', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Auth->dashboard()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Auth))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-10-13 17:20:08 --> ErrorException: Undefined array key "user_role"
+[Method: GET, Route: admin/dashboard]
+in APPPATH\Views\auth\dashboard.php on line 260.
+ 1 APPPATH\Views\auth\dashboard.php(260): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "user_role"', 'C:\\xampp\\htdocs\\ITE311-ALEJADO\\app\\Views\\auth\\dashboard.php', 260)
+ 2 SYSTEMPATH\View\View.php(226): include('C:\\xampp\\htdocs\\ITE311-ALEJADO\\app\\Views\\auth\\dashboard.php')
+ 3 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1167): CodeIgniter\View\View->render('auth/dashboard', [], true)
+ 5 APPPATH\Controllers\Auth.php(326): view('auth/dashboard', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Auth->dashboard()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Auth))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-10-13 17:20:30 --> ErrorException: Undefined array key "user_role"
+[Method: GET, Route: admin/dashboard]
+in APPPATH\Views\auth\dashboard.php on line 260.
+ 1 APPPATH\Views\auth\dashboard.php(260): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "user_role"', 'C:\\xampp\\htdocs\\ITE311-ALEJADO\\app\\Views\\auth\\dashboard.php', 260)
+ 2 SYSTEMPATH\View\View.php(226): include('C:\\xampp\\htdocs\\ITE311-ALEJADO\\app\\Views\\auth\\dashboard.php')
+ 3 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1167): CodeIgniter\View\View->render('auth/dashboard', [], true)
+ 5 APPPATH\Controllers\Auth.php(326): view('auth/dashboard', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Auth->dashboard()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Auth))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-10-13 17:25:36 --> ErrorException: Undefined array key "user_role"
+[Method: GET, Route: admin/dashboard]
+in APPPATH\Views\auth\dashboard.php on line 260.
+ 1 APPPATH\Views\auth\dashboard.php(260): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "user_role"', 'C:\\xampp\\htdocs\\ITE311-ALEJADO\\app\\Views\\auth\\dashboard.php', 260)
+ 2 SYSTEMPATH\View\View.php(226): include('C:\\xampp\\htdocs\\ITE311-ALEJADO\\app\\Views\\auth\\dashboard.php')
+ 3 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1167): CodeIgniter\View\View->render('auth/dashboard', [], true)
+ 5 APPPATH\Controllers\Auth.php(326): view('auth/dashboard', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Auth->dashboard()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Auth))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-10-13 17:25:36 --> ErrorException: Undefined array key "user_role"
+[Method: GET, Route: admin/dashboard]
+in APPPATH\Views\auth\dashboard.php on line 260.
+ 1 APPPATH\Views\auth\dashboard.php(260): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "user_role"', 'C:\\xampp\\htdocs\\ITE311-ALEJADO\\app\\Views\\auth\\dashboard.php', 260)
+ 2 SYSTEMPATH\View\View.php(226): include('C:\\xampp\\htdocs\\ITE311-ALEJADO\\app\\Views\\auth\\dashboard.php')
+ 3 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1167): CodeIgniter\View\View->render('auth/dashboard', [], true)
+ 5 APPPATH\Controllers\Auth.php(326): view('auth/dashboard', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Auth->dashboard()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Auth))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-10-13 17:26:09 --> ErrorException: Undefined array key "user_role"
+[Method: GET, Route: admin/dashboard]
+in APPPATH\Views\auth\dashboard.php on line 260.
+ 1 APPPATH\Views\auth\dashboard.php(260): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "user_role"', 'C:\\xampp\\htdocs\\ITE311-ALEJADO\\app\\Views\\auth\\dashboard.php', 260)
+ 2 SYSTEMPATH\View\View.php(226): include('C:\\xampp\\htdocs\\ITE311-ALEJADO\\app\\Views\\auth\\dashboard.php')
+ 3 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1167): CodeIgniter\View\View->render('auth/dashboard', [], true)
+ 5 APPPATH\Controllers\Auth.php(326): view('auth/dashboard', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Auth->dashboard()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Auth))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-10-13 17:26:50 --> ErrorException: Undefined array key "user_role"
+[Method: GET, Route: admin/dashboard]
+in APPPATH\Views\auth\dashboard.php on line 260.
+ 1 APPPATH\Views\auth\dashboard.php(260): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "user_role"', 'C:\\xampp\\htdocs\\ITE311-ALEJADO\\app\\Views\\auth\\dashboard.php', 260)
+ 2 SYSTEMPATH\View\View.php(226): include('C:\\xampp\\htdocs\\ITE311-ALEJADO\\app\\Views\\auth\\dashboard.php')
+ 3 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1167): CodeIgniter\View\View->render('auth/dashboard', [], true)
+ 5 APPPATH\Controllers\Auth.php(326): view('auth/dashboard', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Auth->dashboard()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Auth))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-10-13 17:27:10 --> ErrorException: Undefined array key "user_role"
+[Method: GET, Route: admin/dashboard]
+in APPPATH\Views\auth\dashboard.php on line 260.
+ 1 APPPATH\Views\auth\dashboard.php(260): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "user_role"', 'C:\\xampp\\htdocs\\ITE311-ALEJADO\\app\\Views\\auth\\dashboard.php', 260)
+ 2 SYSTEMPATH\View\View.php(226): include('C:\\xampp\\htdocs\\ITE311-ALEJADO\\app\\Views\\auth\\dashboard.php')
+ 3 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1167): CodeIgniter\View\View->render('auth/dashboard', [], true)
+ 5 APPPATH\Controllers\Auth.php(326): view('auth/dashboard', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Auth->dashboard()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Auth))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
