@@ -1,21 +1,136 @@
 <?= $this->include('templates/header') ?>
 
+<style>
+    .lms-admin-view {
+        --brand-primary: #2563eb;
+        --brand-soft: #eef4ff;
+        --page-bg: #f8fafc;
+        --surface: #ffffff;
+        --surface-soft: #f8fbff;
+        --text-main: #0f172a;
+        --text-soft: #475569;
+        --border-soft: #dbe4ef;
+        --hover-soft: #f4f7fb;
+        background-color: var(--page-bg);
+        color: var(--text-main);
+    }
+
+    .lms-admin-view .card {
+        border: 1px solid var(--border-soft) !important;
+        border-radius: 12px;
+        background-color: var(--surface) !important;
+        box-shadow: 0 1px 2px rgba(15, 23, 42, 0.04) !important;
+    }
+
+    .lms-admin-view .admin-hero {
+        background-color: var(--surface-soft) !important;
+        color: var(--text-main) !important;
+        border: 1px solid var(--border-soft);
+    }
+
+    .lms-admin-view .admin-hero .opacity-75 {
+        opacity: 1 !important;
+        color: var(--text-soft) !important;
+    }
+
+    .lms-admin-view .admin-stats .card,
+    .lms-admin-view .card.text-white {
+        background-color: var(--surface) !important;
+        color: var(--text-main) !important;
+        border: 1px solid var(--border-soft) !important;
+    }
+
+    .lms-admin-view .admin-stats .display-4 {
+        display: none;
+    }
+
+    .lms-admin-view .admin-stats .display-5 {
+        font-size: 2rem;
+        margin-bottom: 0.35rem;
+    }
+
+    .lms-admin-view .card-header.bg-success,
+    .lms-admin-view .card-header.bg-warning,
+    .lms-admin-view .card-header.bg-primary,
+    .lms-admin-view .card-header.bg-info {
+        background-color: var(--surface-soft) !important;
+        color: var(--text-main) !important;
+        border-bottom: 1px solid var(--border-soft) !important;
+    }
+
+    .lms-admin-view .btn-success,
+    .lms-admin-view .btn-warning,
+    .lms-admin-view .btn-primary {
+        background-color: var(--brand-primary) !important;
+        border-color: var(--brand-primary) !important;
+        color: #ffffff !important;
+    }
+
+    .lms-admin-view .btn-light,
+    .lms-admin-view .btn-secondary,
+    .lms-admin-view .btn-outline-secondary {
+        background-color: #ffffff !important;
+        border-color: var(--border-soft) !important;
+        color: var(--text-main) !important;
+    }
+
+    .lms-admin-view .table thead th {
+        background-color: var(--surface-soft) !important;
+        color: var(--text-main) !important;
+        border-bottom: 1px solid var(--border-soft) !important;
+        font-size: 0.82rem;
+    }
+
+    .lms-admin-view .table tbody td {
+        font-size: 0.84rem;
+        color: var(--text-main);
+    }
+
+    .lms-admin-view .table-hover > tbody > tr:hover > * {
+        background-color: var(--hover-soft) !important;
+    }
+
+    .lms-admin-view .form-control,
+    .lms-admin-view .form-select,
+    .lms-admin-view .input-group-text {
+        border-color: var(--border-soft);
+        font-size: 0.86rem;
+    }
+
+    .lms-admin-view .form-control:focus,
+    .lms-admin-view .form-select:focus {
+        border-color: #93c5fd;
+        box-shadow: 0 0 0 0.2rem rgba(37, 99, 235, 0.12);
+    }
+
+    .lms-admin-view .badge.bg-warning {
+        color: var(--text-main) !important;
+        background-color: #fef3c7 !important;
+    }
+
+    .lms-admin-view .text-muted,
+    .lms-admin-view small,
+    .lms-admin-view .form-text {
+        color: var(--text-soft) !important;
+    }
+</style>
+
 <!-- Manage Assignment Types View - Admin only functionality for assignment type management -->
-<div class="bg-light min-vh-100">
+<div class="lms-admin-view min-vh-100">
     <div class="container py-4">
         <!-- Header Section -->
         <div class="row mb-4">
             <div class="col-12">
                 <div class="card border-0 shadow-sm rounded-3">
-                    <div class="card-body bg-primary text-white p-4 rounded-3">
+                    <div class="card-body bg-primary text-white p-4 rounded-3 admin-hero">
                         <div class="d-flex justify-content-between align-items-center">
                             <div>
-                                <h2 class="mb-2 fw-bold">📝 Manage Assignment Types</h2>
+                                <h2 class="mb-2 fw-bold">Manage Assignment Types</h2>
                                 <p class="mb-0 opacity-75">Create, edit, and manage assignment types in the system</p>
                             </div>
                             <div>
                                 <a href="<?= base_url('admin/dashboard') ?>" class="btn btn-light btn-sm">
-                                    ← Back to Dashboard
+                                    Back to Dashboard
                                 </a>
                             </div>
                         </div>
@@ -25,10 +140,10 @@
         </div>
 
         <!-- Assignment Type Statistics Cards -->
-        <div class="row mb-4">
+        <div class="row mb-4 admin-stats">
             <div class="col-md-3 mb-3">
                 <div class="card border-0 shadow-sm text-white bg-primary text-center p-4 rounded-3 h-100">
-                    <div class="display-4 mb-2">📝</div>
+                    <div class="display-4 mb-2">TYP</div>
                     <div class="display-5 fw-bold"><?= count($assignmentTypes) ?></div>
                     <div class="fw-semibold">Total Types</div>
                     <small class="opacity-75">In the system</small>
@@ -36,7 +151,7 @@
             </div>
             <div class="col-md-3 mb-3">
                 <div class="card border-0 shadow-sm text-white bg-success text-center p-4 rounded-3 h-100">
-                    <div class="display-4 mb-2">✅</div>
+                    <div class="display-4 mb-2">ACT</div>
                     <div class="display-5 fw-bold"><?= count(array_filter($assignmentTypes, fn($t) => $t['is_active'] == 1)) ?></div>
                     <div class="fw-semibold">Active</div>
                     <small class="opacity-75">Currently active</small>
@@ -44,7 +159,7 @@
             </div>
             <div class="col-md-3 mb-3">
                 <div class="card border-0 shadow-sm text-white bg-warning text-center p-4 rounded-3 h-100">
-                    <div class="display-4 mb-2">❌</div>
+                    <div class="display-4 mb-2">INA</div>
                     <div class="display-5 fw-bold"><?= count(array_filter($assignmentTypes, fn($t) => $t['is_active'] == 0)) ?></div>
                     <div class="fw-semibold">Inactive</div>
                     <small class="opacity-75">Deactivated</small>
@@ -52,7 +167,7 @@
             </div>
             <div class="col-md-3 mb-3">
                 <div class="card border-0 shadow-sm text-white bg-info text-center p-4 rounded-3 h-100">
-                    <div class="display-4 mb-2">⚖️</div>
+                    <div class="display-4 mb-2">WGT</div>
                     <div class="display-5 fw-bold"><?= count(array_filter($assignmentTypes, fn($t) => !empty($t['default_weight']))) ?></div>
                     <div class="fw-semibold">With Weights</div>
                     <small class="opacity-75">Have default weights</small>
@@ -93,9 +208,9 @@
                 <div class="card border-0 shadow-sm rounded-3">
                     <div class="card-header bg-white border-0 pb-0">
                         <div class="d-flex justify-content-between align-items-center">
-                            <h5 class="mb-0 fw-bold text-dark">⚡ Assignment Type Management</h5>
+                            <h5 class="mb-0 fw-bold text-dark">Assignment Type Management</h5>
                             <a href="<?= base_url('admin/manage_assignment_types?action=create') ?>" class="btn btn-success">
-                                ➕ Create New Type
+                                Create New Type
                             </a>
                         </div>
                     </div>
@@ -109,7 +224,7 @@
             <div class="col-12">
                 <div class="card border-0 shadow-sm rounded-3 border-success">
                     <div class="card-header bg-success text-white border-0">
-                        <h5 class="mb-0">➕ Create New Assignment Type</h5>
+                        <h5 class="mb-0">Create New Assignment Type</h5>
                     </div>
                     <div class="card-body">
                         <form method="post" action="<?= base_url('admin/manage_assignment_types?action=create') ?>">
@@ -160,10 +275,10 @@
                             </div>
                             <div class="d-flex gap-2">
                                 <button type="submit" class="btn btn-success">
-                                    ✅ Create Assignment Type
+                                    Create Assignment Type
                                 </button>
                                 <a href="<?= base_url('admin/manage_assignment_types') ?>" class="btn btn-outline-secondary">
-                                    ❌ Cancel
+                                    Cancel
                                 </a>
                             </div>
                         </form>
@@ -179,7 +294,7 @@
             <div class="col-12">
                 <div class="card border-0 shadow-sm rounded-3 border-warning">
                     <div class="card-header bg-warning text-white border-0">
-                        <h5 class="mb-0">✏️ Edit Assignment Type: <?= esc($editAssignmentType['type_name']) ?></h5>
+                        <h5 class="mb-0">Edit Assignment Type: <?= esc($editAssignmentType['type_name']) ?></h5>
                     </div>
                     <div class="card-body">
                         <form method="post" action="<?= base_url('admin/manage_assignment_types?action=edit&id=' . $editAssignmentType['id']) ?>">
@@ -227,10 +342,10 @@
                             </div>
                             <div class="d-flex gap-2">
                                 <button type="submit" class="btn btn-warning">
-                                    💾 Update Assignment Type
+                                    Update Assignment Type
                                 </button>
                                 <a href="<?= base_url('admin/manage_assignment_types') ?>" class="btn btn-outline-secondary">
-                                    ❌ Cancel
+                                    Cancel
                                 </a>
                             </div>
                         </form>
@@ -247,7 +362,7 @@
                     <div class="card-header bg-white border-0 pb-3">
                         <div class="d-flex justify-content-between align-items-center">
                             <div>
-                                <h5 class="mb-0 fw-bold text-dark">📋 All Assignment Types</h5>
+                                <h5 class="mb-0 fw-bold text-dark">All Assignment Types</h5>
                                 <small class="text-muted">Manage all assignment types in the system</small>
                             </div>
                             <div class="text-muted small">
@@ -310,11 +425,11 @@
                                             <td class="text-center">
                                                 <?php if ($isInactive): ?>
                                                     <span class="badge bg-danger rounded-pill px-3 py-2">
-                                                        ❌ Inactive
+                                                        Inactive
                                                     </span>
                                                 <?php else: ?>
                                                     <span class="badge bg-success rounded-pill px-3 py-2">
-                                                        ✅ Active
+                                                        Active
                                                     </span>
                                                 <?php endif; ?>
                                             </td>
@@ -324,20 +439,19 @@
                                                     <a href="<?= base_url('admin/manage_assignment_types?action=edit&id=' . $type['id']) ?>" 
                                                        class="btn btn-outline-warning" 
                                                        title="Edit Assignment Type">
-                                                        ✏️
+                                                        <i class="fas fa-pen"></i>
                                                     </a>
                                                     
                                                     <!-- Toggle Status Button -->
                                                     <?php 
                                                     $toggleText = $isInactive ? 'Activate' : 'Deactivate';
-                                                    $toggleIcon = $isInactive ? '✅' : '❌';
                                                     $toggleClass = $isInactive ? 'btn-outline-success' : 'btn-outline-warning';
                                                     ?>
                                                     <a href="<?= base_url('admin/manage_assignment_types?action=toggle_status&id=' . $type['id']) ?>" 
                                                        class="btn <?= $toggleClass ?>" 
                                                        onclick="return confirm('Are you sure you want to <?= strtolower($toggleText) ?> this assignment type?')"
                                                        title="<?= $toggleText ?> Assignment Type">
-                                                        <?= $toggleIcon ?>
+                                                        <i class="fas fa-power-off"></i>
                                                     </a>
                                                     
                                                     <!-- Delete Button -->
@@ -345,7 +459,7 @@
                                                        class="btn btn-outline-danger" 
                                                        onclick="return confirm('Are you sure you want to delete this assignment type?\n\nType: <?= esc($type['type_name']) ?>\n\nThis action cannot be undone!')"
                                                        title="Delete Assignment Type">
-                                                        🗑️
+                                                        <i class="fas fa-trash"></i>
                                                     </a>
                                                 </div>
                                             </td>
@@ -355,7 +469,7 @@
                                         <tr>
                                             <td colspan="7" class="text-center py-5 text-muted">
                                                 <div class="mb-3">
-                                                    <span style="font-size: 3rem; opacity: 0.3;">📝</span>
+                                                    <i class="fas fa-layer-group" style="font-size: 2rem; opacity: 0.35;"></i>
                                                 </div>
                                                 <p class="mb-0">No assignment types found in the system.</p>
                                                 <p class="small">Click "Create New Type" to add your first assignment type.</p>

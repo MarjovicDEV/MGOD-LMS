@@ -8,7 +8,7 @@
             <div class="col-12">
                 <div class="d-flex align-items-center">
                     <a href="<?= base_url('admin/manage_assignments') ?>" class="btn btn-outline-secondary me-3">
-                        ← Back to Assignments
+                        Back to Assignments
                     </a>
                     <h3 class="mb-0"><i class="fas fa-plus-circle me-2"></i>Create New Assignment</h3>
                 </div>
@@ -151,13 +151,13 @@
                         </div>
                     </div>
 
-                    <div class="d-flex justify-content-between">
-                        <a href="<?= base_url('admin/manage_assignments') ?>" class="btn btn-secondary">
-                            Cancel
-                        </a>
+                    <div class="d-flex justify-content-end gap-2">
                         <button type="submit" class="btn btn-primary">
                             <i class="fas fa-save me-2"></i>Create Assignment
                         </button>
+                        <a href="<?= base_url('admin/manage_assignments') ?>" class="btn btn-secondary">
+                            Cancel
+                        </a>
                     </div>
                 </form>
             </div>

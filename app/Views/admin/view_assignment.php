@@ -8,7 +8,7 @@
             <div class="col-12">
                 <div class="d-flex align-items-center">
                     <a href="<?= base_url('admin/manage_assignments') ?>" class="btn btn-outline-secondary me-3">
-                        ← Back to Assignments
+                        Back to Assignments
                     </a>
                     <h3 class="mb-0"><i class="fas fa-eye me-2"></i>View Assignment Details</h3>
                 </div>

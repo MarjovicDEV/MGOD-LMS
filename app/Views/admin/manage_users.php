@@ -1,20 +1,126 @@
 <?= $this->include('templates/header') ?>
 
+<style>
+    .lms-admin-view {
+        --brand-primary: #2563eb;
+        --brand-soft: #eef4ff;
+        --page-bg: #f8fafc;
+        --surface: #ffffff;
+        --surface-soft: #f8fbff;
+        --text-main: #0f172a;
+        --text-soft: #475569;
+        --border-soft: #dbe4ef;
+        background-color: var(--page-bg);
+        color: var(--text-main);
+
+    }
+
+    .lms-admin-view .card {
+        border: 1px solid var(--border-soft) !important;
+        border-radius: 12px;
+        background-color: var(--surface) !important;
+        box-shadow: 0 1px 2px rgba(15, 23, 42, 0.04) !important;
+    }
+
+    .lms-admin-view .admin-hero {
+        background-color: var(--surface-soft) !important;
+        color: var(--text-main) !important;
+        border: 1px solid var(--border-soft);
+    }
+
+    .lms-admin-view .admin-hero .opacity-75 {
+        opacity: 1 !important;
+        color: var(--text-soft) !important;
+    }
+
+    .lms-admin-view .admin-stats .card,
+    .lms-admin-view .card.text-white {
+        background-color: var(--surface) !important;
+        color: var(--text-main) !important;
+        border: 1px solid var(--border-soft) !important;
+    }
+
+    .lms-admin-view .admin-stats .display-4 {
+        display: none;
+    }
+
+    .lms-admin-view .admin-stats .display-5 {
+        font-size: 2rem;
+        margin-bottom: 0.35rem;
+    }
+
+    .lms-admin-view .card-header.bg-success,
+    .lms-admin-view .card-header.bg-warning,
+    .lms-admin-view .card-header.bg-primary,
+    .lms-admin-view .card-header.bg-info {
+        background-color: var(--surface-soft) !important;
+        color: var(--text-main) !important;
+        border-bottom: 1px solid var(--border-soft) !important;
+    }
+
+    .lms-admin-view .btn-success,
+    .lms-admin-view .btn-warning,
+    .lms-admin-view .btn-primary {
+        background-color: var(--brand-primary) !important;
+        border-color: var(--brand-primary) !important;
+        color: #ffffff !important;
+    }
+
+    .lms-admin-view .btn-light,
+    .lms-admin-view .btn-secondary,
+    .lms-admin-view .btn-outline-secondary {
+        background-color: #ffffff !important;
+        border-color: var(--border-soft) !important;
+        color: var(--text-main) !important;
+    }
+
+    .lms-admin-view .table thead th {
+        background-color: var(--surface-soft) !important;
+        color: var(--text-main) !important;
+        border-bottom: 1px solid var(--border-soft) !important;
+        font-size: 0.82rem;
+    }
+
+    .lms-admin-view .table tbody td {
+        font-size: 0.84rem;
+        color: var(--text-main);
+    }
+
+    .lms-admin-view .form-control,
+    .lms-admin-view .form-select,
+    .lms-admin-view .input-group-text {
+        border-color: var(--border-soft);
+        font-size: 0.86rem;
+    }
+
+    .lms-admin-view .form-control:focus,
+    .lms-admin-view .form-select:focus {
+        border-color: #93c5fd;
+        box-shadow: 0 0 0 0.2rem rgba(37, 99, 235, 0.12);
+    }
+
+    .lms-admin-view .text-muted,
+    .lms-admin-view small,
+    .lms-admin-view .form-text {
+        color: var(--text-soft) !important;
+    }
+</style>
+
 <!-- Manage Users View - Admin only functionality for user management -->
-<div class="bg-light min-vh-100">
+<div class="lms-admin-view min-vh-100">
     <div class="container py-4">
           <!-- Header Section -->
         <div class="row mb-4">
             <div class="col-12">
                 <div class="card border-0 shadow-sm rounded-3">
-                    <div class="card-body bg-primary text-white p-4 rounded-3">
+                    <div class="card-body bg-primary text-white p-4 rounded-3 admin-hero">
                         <div class="d-flex justify-content-between align-items-center">
                             <div>
-                                <h2 class="mb-2 fw-bold">👥 Manage Users</h2>
+                                <h2 class="mb-2 fw-bold">Manage Users</h2>
                                 <p class="mb-0 opacity-75">Create, edit, and manage user accounts in the system</p>
                             </div>                            <div>
                                 <a href="<?= base_url('admin/dashboard') ?>" class="btn btn-light btn-sm">
-                                    ← Back to Dashboard
+                                    Back to Dashboard
                                 </a>
                             </div>
                         </div>
@@ -22,10 +128,10 @@
                 </div>
             </div>
         </div><!-- User Statistics Cards - Moved to top with new order -->
-        <div class="row mb-4">
+        <div class="row mb-4 admin-stats">
             <div class="col-md-3 mb-3">
                 <div class="card border-0 shadow-sm text-white bg-primary text-center p-4 rounded-3 h-100">
-                    <div class="display-4 mb-2">👥</div>
+                    <div class="display-4 mb-2">USR</div>
                     <div class="display-5 fw-bold"><?= count($users) ?></div>
                     <div class="fw-semibold">Total Users</div>
                     <small class="opacity-75">All registered</small>
@@ -33,7 +139,7 @@
             </div>
             <div class="col-md-3 mb-3">
                 <div class="card border-0 shadow-sm text-white bg-success text-center p-4 rounded-3 h-100">
-                    <div class="display-4 mb-2">✓</div>
+                    <div class="display-4 mb-2">ACT</div>
                     <div class="display-5 fw-bold"><?= count(array_filter($users, fn($u) => ($u['is_active'] ?? 1) == 1)) ?></div>
                     <div class="fw-semibold">Active</div>
                     <small class="opacity-75">Can log in</small>
@@ -41,14 +147,14 @@
             </div>
             <div class="col-md-3 mb-3">
                 <div class="card border-0 shadow-sm text-white bg-danger text-center p-4 rounded-3 h-100">
-                    <div class="display-4 mb-2">🔒</div>
+                    <div class="display-4 mb-2">INA</div>
                     <div class="display-5 fw-bold"><?= count(array_filter($users, fn($u) => ($u['is_active'] ?? 1) == 0)) ?></div>
                     <div class="fw-semibold">Inactive</div>
                     <small class="opacity-75">Deactivated</small>
                 </div>
             </div>            <div class="col-md-3 mb-3">
                 <div class="card border-0 shadow-sm text-white bg-warning text-center p-4 rounded-3 h-100">
-                    <div class="display-4 mb-2">🎓</div>
+                    <div class="display-4 mb-2">STD</div>
                     <div class="display-5 fw-bold"><?= count(array_filter($users, fn($u) => strtolower($u['role_name'] ?? '') === 'student' && ($u['is_active'] ?? 1) == 1)) ?></div>
                     <div class="fw-semibold">Students</div>
                     <small class="opacity-75">Active learners</small>
@@ -87,9 +193,9 @@
             <div class="col-12">
                 <div class="card border-0 shadow-sm rounded-3">
                     <div class="card-header bg-white border-0 pb-0">
-                        <div class="d-flex justify-content-between align-items-center">                            <h5 class="mb-0 fw-bold text-dark">⚡ User Management</h5>
+                        <div class="d-flex justify-content-between align-items-center">                            <h5 class="mb-0 fw-bold text-dark">User Management</h5>
                             <a href="<?= base_url('admin/manage_users?action=create') ?>" class="btn btn-success">
-                                ➕ Create New User
+                                Create New User
                             </a>
                         </div>
                     </div>
@@ -111,7 +217,7 @@
                                     <input type="text" 
                                            id="userSearchInput" 
                                            class="form-control border-start-0" 
-                                           placeholder="🔍 Search users by name, email, user code, student ID, employee ID, role, program, or department...">
+                                           placeholder="Search users by name, email, user code, student ID, employee ID, role, program, or department...">
                                     <button class="btn btn-outline-secondary" type="button" id="clearSearch">
                                         <i class="fas fa-times"></i> Clear
                                     </button>
@@ -136,7 +242,7 @@
             <div class="col-12">
                 <div class="card border-0 shadow-sm rounded-3 border-success">
                     <div class="card-header bg-success text-white border-0">
-                        <h5 class="mb-0">➕ Create New User</h5>
+                        <h5 class="mb-0">Create New User</h5>
                     </div>
                     <div class="card-body">                        <form method="post" action="<?= base_url('admin/manage_users?action=create') ?>">
                             <div class="row">
@@ -275,10 +381,10 @@
                             </div>
                             <div class="d-flex gap-2">
                                 <button type="submit" class="btn btn-success">
-                                    💾 Create User
+                                    Create User
                                 </button>
                                 <a href="<?= base_url('admin/manage_users') ?>" class="btn btn-outline-secondary">
-                                    ❌ Cancel
+                                    Cancel
                                 </a>
                             </div>
                         </form>
@@ -296,7 +402,7 @@
                         <?php 
                         $editUserFullName = trim(($editUser['first_name'] ?? '') . ' ' . ($editUser['middle_name'] ?? '') . ' ' . ($editUser['last_name'] ?? ''));
                         ?>
-                        <h5 class="mb-0">✏️ Edit User: <?= esc($editUserFullName) ?></h5>
+                        <h5 class="mb-0">Edit User: <?= esc($editUserFullName) ?></h5>
                     </div>
                     <div class="card-body">                        <form method="post" action="<?= base_url('admin/manage_users?action=edit&id=' . $editUser['id']) ?>">
                             <div class="row">
@@ -434,10 +540,10 @@
                             </div>
                             <div class="d-flex gap-2">
                                 <button type="submit" class="btn btn-warning">
-                                    💾 Update User
+                                    Update User
                                 </button>
                                 <a href="<?= base_url('admin/manage_users') ?>" class="btn btn-outline-secondary">
-                                    ❌ Cancel
+                                    Cancel
                                 </a>
                             </div>
                         </form>
@@ -454,7 +560,7 @@
                     <div class="card-header bg-white border-0 pb-3">
                         <div class="d-flex justify-content-between align-items-center">
                             <div>
-                                <h5 class="mb-0 fw-bold text-dark">👤 All Users</h5>
+                                <h5 class="mb-0 fw-bold text-dark">All Users</h5>
                                 <small class="text-muted">Manage all system users</small>
                             </div>
                             <div class="text-muted small">
@@ -522,26 +628,26 @@
                                             <td class="text-muted"><?= esc($user['email']) ?></td><td class="text-center">
                                                 <?php
                                                 $roleStyles = [
-                                                    'admin' => ['color' => 'danger', 'icon' => '👑'],
-                                                    'teacher' => ['color' => 'primary', 'icon' => '👨‍🏫'],
-                                                    'instructor' => ['color' => 'primary', 'icon' => '👨‍🏫'],
-                                                    'student' => ['color' => 'success', 'icon' => '🎓']
+                                                    'admin' => ['color' => 'danger'],
+                                                    'teacher' => ['color' => 'primary'],
+                                                    'instructor' => ['color' => 'primary'],
+                                                    'student' => ['color' => 'success']
                                                 ];
                                                 $userRole = strtolower($user['role_name'] ?? 'student');
-                                                $style = $roleStyles[$userRole] ?? ['color' => 'secondary', 'icon' => '👤'];
+                                                $style = $roleStyles[$userRole] ?? ['color' => 'secondary'];
                                                 ?>
                                                 <span class="badge bg-<?= $style['color'] ?> rounded-pill px-3 py-2">
-                                                    <?= $style['icon'] ?> <?= esc($user['role_name'] ?? 'User') ?>
+                                                    <?= esc($user['role_name'] ?? 'User') ?>
                                                 </span>
                                             </td>
                                             <td class="text-center">
                                                 <?php if ($isInactive): ?>
                                                     <span class="badge bg-danger rounded-pill px-3 py-2">
-                                                        🔒 Inactive
+                                                        Inactive
                                                     </span>
                                                 <?php else: ?>
                                                     <span class="badge bg-success rounded-pill px-3 py-2">
-                                                        ✓ Active
+                                                        Active
                                                     </span>
                                                 <?php endif; ?>
                                             </td>
@@ -562,19 +668,19 @@
                                                         <a href="<?= base_url('admin/manage_users?action=edit&id=' . $user['id']) ?>" 
                                                            class="btn btn-outline-warning btn-sm me-1" 
                                                            title="Edit User">
-                                                            ✏️
+                                                            <i class="fas fa-pen"></i>
                                                         </a>
                                                     <?php elseif ($isInactive): ?>
                                                         <button class="btn btn-outline-secondary btn-sm me-1" 
                                                                 disabled 
                                                                 title="Cannot edit inactive accounts">
-                                                            🔒
+                                                            <i class="fas fa-lock"></i>
                                                         </button>
                                                     <?php else: ?>
                                                         <button class="btn btn-outline-secondary btn-sm me-1" 
                                                                 disabled 
                                                                 title="Cannot edit own account">
-                                                            🔒
+                                                            <i class="fas fa-lock"></i>
                                                         </button>
                                                     <?php endif; ?>
                                                       
@@ -587,7 +693,7 @@
                                                            class="btn btn-outline-success btn-sm" 
                                                            onclick="return confirm('Are you sure you want to reactivate this user?\n\nUser: <?= esc($reactivateUserName) ?>\nEmail: <?= esc($user['email']) ?>\n\nThis user will be able to log in again.')"
                                                            title="Reactivate User">
-                                                            🔓
+                                                            <i class="fas fa-unlock"></i>
                                                         </a>
                                                     <?php elseif ($canDeactivate): ?>
                                                         <?php 
@@ -597,13 +703,13 @@
                                                            class="btn btn-outline-danger btn-sm" 
                                                            onclick="return confirm('Are you sure you want to deactivate this user?\n\nUser: <?= esc($deactivateUserName) ?>\nEmail: <?= esc($user['email']) ?>\n\nThis user will no longer be able to log in, but their data will be preserved.')"
                                                            title="Deactivate User">
-                                                            🔒
+                                                            <i class="fas fa-user-lock"></i>
                                                         </a>
                                                     <?php else: ?>
                                                         <button class="btn btn-outline-secondary btn-sm" 
                                                                 disabled 
                                                                 title="Cannot deactivate admin accounts or own account">
-                                                            🛡️
+                                                            <i class="fas fa-shield-alt"></i>
                                                         </button>
                                                     <?php endif; ?>                                                
                                                 </div>
@@ -620,7 +726,7 @@
                                         <tr id="noUsersRow">
                                             <td colspan="7" class="text-center py-5 text-muted">
                                                 <div class="mb-3">
-                                                    <span style="font-size: 3rem; opacity: 0.3;">👥</span>
+                                                    <i class="fas fa-users" style="font-size: 2.25rem; opacity: 0.3;"></i>
                                                 </div>
                                                 <p class="mb-0">No users found in the system.</p>
                                             </td>

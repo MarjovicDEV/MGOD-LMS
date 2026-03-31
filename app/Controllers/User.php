@@ -539,7 +539,8 @@ class User extends BaseController
             // Log activity
             $this->logActivity('user_deactivation', [
                 'name' => $userToDelete['first_name'] . ' ' . $userToDelete['last_name'],
-                'id'   => $userToDelete['id']
+                'id'   => $userToDelete['id'],
+                'role' => $this->normalizeRoleForActivity($userRole)
             ]);
 
             $this->session->setFlashdata('success', 'User account deactivated successfully! The user can no longer log in.');
@@ -587,7 +588,8 @@ class User extends BaseController
             // Log activity
             $this->logActivity('user_reactivation', [
                 'name' => $userToReactivate['first_name'] . ' ' . $userToReactivate['last_name'],
-                'id'   => $userToReactivate['id']
+                'id'   => $userToReactivate['id'],
+                'role' => $this->normalizeRoleForActivity($this->getRoleName($userToReactivate['role_id'] ?? null))
             ]);
 
             $this->session->setFlashdata('success', 'User account reactivated successfully! The user can now log in again.');
@@ -669,11 +671,32 @@ class User extends BaseController
         $year = date('Y');
         $random = rand(1000, 9999);
         return "{$prefix}-{$year}-{$random}";
-    }    /**
+    }
+
+    /**
+     * Normalize role labels used in activity badges.
+     */
+    private function normalizeRoleForActivity($role)
+    {
+        $normalizedRole = strtolower(trim((string) $role));
+
+        if ($normalizedRole === '') {
+            return 'system';
+        }
+
+        if ($normalizedRole === 'instructor') {
+            return 'teacher';
+        }
+
+        return $normalizedRole;
+    }
+
+    /**
      * Log user management activity
      */
     private function logActivity($type, $data)
-    {        $icons = [
+    {
+        $icons = [
             'user_creation'     => '➕',
             'user_update'       => '✏️',
             'user_deletion'     => '🗑️',
@@ -689,6 +712,8 @@ class User extends BaseController
             'user_reactivation' => 'User Account Reactivated'
         ];
 
+        $normalizedRole = $this->normalizeRoleForActivity($data['role'] ?? null);
+
         $activity = [
             'type'        => $type,
             'icon'        => $icons[$type] ?? '📝',
@@ -696,7 +721,7 @@ class User extends BaseController
             'description' => $this->getActivityDescription($type, $data),
             'time'        => date('Y-m-d H:i:s'),
             'user_name'   => $data['name'] ?? 'Unknown',
-            'user_role'   => $data['role'] ?? 'unknown',
+            'user_role'   => $normalizedRole,
             'created_by'  => $this->session->get('name')
         ];        
         $activityKey = match($type) {

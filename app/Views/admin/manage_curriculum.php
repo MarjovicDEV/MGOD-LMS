@@ -1,21 +1,126 @@
-<?= $this->include('templates/header') ?>
+﻿<?= $this->include('templates/header') ?>
+
+<style>
+    .lms-admin-view {
+        --brand-primary: #2563eb;
+        --brand-soft: #eef4ff;
+        --page-bg: #f8fafc;
+        --surface: #ffffff;
+        --surface-soft: #f8fbff;
+        --text-main: #0f172a;
+        --text-soft: #475569;
+        --border-soft: #dbe4ef;
+        background-color: var(--page-bg);
+        color: var(--text-main);
+    }
+
+    .lms-admin-view .card {
+        border: 1px solid var(--border-soft) !important;
+        border-radius: 12px;
+        background-color: var(--surface) !important;
+        box-shadow: 0 1px 2px rgba(15, 23, 42, 0.04) !important;
+    }
+
+    .lms-admin-view .admin-hero {
+        background-color: var(--surface-soft) !important;
+        color: var(--text-main) !important;
+        border: 1px solid var(--border-soft);
+    }
+
+    .lms-admin-view .admin-hero .opacity-75 {
+        opacity: 1 !important;
+        color: var(--text-soft) !important;
+    }
+
+    .lms-admin-view .admin-stats .card,
+    .lms-admin-view .card.text-white {
+        background-color: var(--surface) !important;
+        color: var(--text-main) !important;
+        border: 1px solid var(--border-soft) !important;
+    }
+
+    .lms-admin-view .admin-stats .display-4 {
+        display: none;
+    }
+
+    .lms-admin-view .admin-stats .display-5 {
+        font-size: 2rem;
+        margin-bottom: 0.35rem;
+    }
+
+    .lms-admin-view .card-header.bg-success,
+    .lms-admin-view .card-header.bg-warning,
+    .lms-admin-view .card-header.bg-primary,
+    .lms-admin-view .card-header.bg-info {
+        background-color: var(--surface-soft) !important;
+        color: var(--text-main) !important;
+        border-bottom: 1px solid var(--border-soft) !important;
+    }
+
+    .lms-admin-view .btn-success,
+    .lms-admin-view .btn-warning,
+    .lms-admin-view .btn-primary {
+        background-color: var(--brand-primary) !important;
+        border-color: var(--brand-primary) !important;
+        color: #ffffff !important;
+    }
+
+    .lms-admin-view .btn-light,
+    .lms-admin-view .btn-secondary,
+    .lms-admin-view .btn-outline-secondary {
+        background-color: #ffffff !important;
+        border-color: var(--border-soft) !important;
+        color: var(--text-main) !important;
+    }
+
+    .lms-admin-view .table thead th {
+        background-color: var(--surface-soft) !important;
+        color: var(--text-main) !important;
+        border-bottom: 1px solid var(--border-soft) !important;
+        font-size: 0.82rem;
+    }
+
+    .lms-admin-view .table tbody td {
+        font-size: 0.84rem;
+        color: var(--text-main);
+    }
+
+    .lms-admin-view .form-control,
+    .lms-admin-view .form-select,
+    .lms-admin-view .input-group-text {
+        border-color: var(--border-soft);
+        font-size: 0.86rem;
+    }
+
+    .lms-admin-view .form-control:focus,
+    .lms-admin-view .form-select:focus {
+        border-color: #93c5fd;
+        box-shadow: 0 0 0 0.2rem rgba(37, 99, 235, 0.12);
+    }
+
+    .lms-admin-view .text-muted,
+    .lms-admin-view small,
+    .lms-admin-view .form-text {
+        color: var(--text-soft) !important;
+    }
+</style>
 
 <!-- Manage Program Curriculum View - Admin only functionality for curriculum management -->
-<div class="bg-light min-vh-100">
+<div class="lms-admin-view min-vh-100">
     <div class="container py-4">
         <!-- Header Section -->
         <div class="row mb-4">
             <div class="col-12">
                 <div class="card border-0 shadow-sm rounded-3">
-                    <div class="card-body bg-primary text-white p-4 rounded-3">
+                    <div class="card-body bg-primary text-white p-4 rounded-3 admin-hero">
                         <div class="d-flex justify-content-between align-items-center">
                             <div>
-                                <h2 class="mb-2 fw-bold">📚 Manage Program Curriculum</h2>
+                                <h2 class="mb-2 fw-bold">Manage Program Curriculum</h2>
                                 <p class="mb-0 opacity-75">Add, edit, and manage courses in program curricula</p>
                             </div>
                             <div>
                                 <a href="<?= base_url('admin/dashboard') ?>" class="btn btn-light btn-sm">
-                                    ← Back to Dashboard
+                                    Back to Dashboard
                                 </a>
                             </div>
                         </div>
@@ -25,10 +130,9 @@
         </div>
 
         <!-- Curriculum Statistics Cards -->
-        <div class="row mb-4">
+        <div class="row mb-4 admin-stats">
             <div class="col-md-3 mb-3">
                 <div class="card border-0 shadow-sm text-white bg-info text-center p-4 rounded-3 h-100">
-                    <div class="display-4 mb-2">📋</div>
                     <div class="display-5 fw-bold"><?= count($curriculum) ?></div>
                     <div class="fw-semibold">Total Entries</div>
                     <small class="opacity-75">In curriculum</small>
@@ -36,7 +140,6 @@
             </div>
             <div class="col-md-3 mb-3">
                 <div class="card border-0 shadow-sm text-white bg-success text-center p-4 rounded-3 h-100">
-                    <div class="display-4 mb-2">✅</div>
                     <div class="display-5 fw-bold"><?= count(array_filter($curriculum, fn($c) => $c['is_active'] == 1)) ?></div>
                     <div class="fw-semibold">Active</div>
                     <small class="opacity-75">Currently available</small>
@@ -44,7 +147,6 @@
             </div>
             <div class="col-md-3 mb-3">
                 <div class="card border-0 shadow-sm text-white bg-warning text-center p-4 rounded-3 h-100">
-                    <div class="display-4 mb-2">📝</div>
                     <div class="display-5 fw-bold"><?= count(array_filter($curriculum, fn($c) => $c['is_active'] == 0)) ?></div>
                     <div class="fw-semibold">Inactive</div>
                     <small class="opacity-75">Not available</small>
@@ -52,7 +154,6 @@
             </div>
             <div class="col-md-3 mb-3">
                 <div class="card border-0 shadow-sm text-white bg-secondary text-center p-4 rounded-3 h-100">
-                    <div class="display-4 mb-2">🎓</div>
                     <div class="display-5 fw-bold"><?= count($programs) ?></div>
                     <div class="fw-semibold">Programs</div>
                     <small class="opacity-75">Available</small>
@@ -93,7 +194,7 @@
                 <div class="card border-0 shadow-sm rounded-3">
                     <div class="card-header bg-white border-0 pb-0">
                         <div class="d-flex justify-content-between align-items-center flex-wrap gap-2">
-                            <h5 class="mb-0 fw-bold text-dark">🔍 Filter & Actions</h5>
+                            <h5 class="mb-0 fw-bold text-dark">Filter & Actions</h5>
                             <div class="d-flex gap-2 align-items-center flex-wrap">
                                 <form method="get" action="<?= base_url('admin/manage_curriculum') ?>" class="d-flex gap-2">
                                     <select name="program_id" class="form-select form-select-sm" style="min-width: 250px;" onchange="this.form.submit()">
@@ -106,7 +207,7 @@
                                     </select>
                                 </form>
                                 <a href="<?= base_url('admin/manage_curriculum?action=create' . ($selectedProgramId ? '&program_id=' . $selectedProgramId : '')) ?>" class="btn btn-success btn-sm">
-                                    ➕ Add Course to Curriculum
+                                    Add Course to Curriculum
                                 </a>
                             </div>
                         </div>
@@ -121,7 +222,7 @@
             <div class="col-12">
                 <div class="card border-0 shadow-sm rounded-3 border-success">
                     <div class="card-header bg-success text-white border-0">
-                        <h5 class="mb-0">➕ Add Course to Program Curriculum</h5>
+                        <h5 class="mb-0">Add Course to Program Curriculum</h5>
                     </div>
                     <div class="card-body">
                         <form method="post" action="<?= base_url('admin/manage_curriculum?action=create') ?>">
@@ -233,10 +334,10 @@
 
                             <div class="d-flex gap-2">
                                 <button type="submit" class="btn btn-success">
-                                    💾 Add to Curriculum
+                                    Add to Curriculum
                                 </button>
                                 <a href="<?= base_url('admin/manage_curriculum' . ($selectedProgramId ? '?program_id=' . $selectedProgramId : '')) ?>" class="btn btn-outline-secondary">
-                                    ❌ Cancel
+                                    Cancel
                                 </a>
                             </div>
                         </form>
@@ -252,7 +353,7 @@
             <div class="col-12">
                 <div class="card border-0 shadow-sm rounded-3 border-warning">
                     <div class="card-header bg-warning text-dark border-0">
-                        <h5 class="mb-0">✏️ Edit Curriculum Entry</h5>
+                        <h5 class="mb-0">Edit Curriculum Entry</h5>
                     </div>
                     <div class="card-body">
                         <form method="post" action="<?= base_url('admin/manage_curriculum?action=edit&id=' . $editCurriculum['id']) ?>">
@@ -357,10 +458,10 @@
 
                             <div class="d-flex gap-2">
                                 <button type="submit" class="btn btn-warning text-dark">
-                                    💾 Update Curriculum Entry
+                                    Update Curriculum Entry
                                 </button>
                                 <a href="<?= base_url('admin/manage_curriculum' . ($selectedProgramId ? '?program_id=' . $selectedProgramId : '')) ?>" class="btn btn-outline-secondary">
-                                    ❌ Cancel
+                                    Cancel
                                 </a>
                             </div>
                         </form>
@@ -375,7 +476,7 @@
             <div class="col-12">
                 <div class="card border-0 shadow-sm rounded-3">
                     <div class="card-header bg-white border-0">
-                        <h5 class="mb-0 fw-bold">📋 Curriculum List</h5>
+                        <h5 class="mb-0 fw-bold">Curriculum List</h5>
                     </div>
                     <div class="card-body p-0">
                         <div class="table-responsive">
@@ -396,7 +497,6 @@
                                     <?php if (empty($curriculum)): ?>
                                         <tr>
                                             <td colspan="8" class="text-center text-muted py-4">
-                                                <div class="display-1">📭</div>
                                                 <p class="mb-0">No curriculum entries found. Add courses to get started!</p>
                                             </td>
                                         </tr>
@@ -441,7 +541,7 @@
                                                         <input type="hidden" name="program_id" value="<?= $selectedProgramId ?>">
                                                         <button type="submit" class="btn btn-sm <?= $entry['is_active'] ? 'btn-success' : 'btn-secondary' ?>" 
                                                                 onclick="return confirm('Toggle status?')">
-                                                            <?= $entry['is_active'] ? '✅ Active' : '❌ Inactive' ?>
+                                                            <?= $entry['is_active'] ? 'Active' : 'Inactive' ?>
                                                         </button>
                                                     </form>
                                                 </td>
@@ -449,7 +549,7 @@
                                                     <div class="btn-group btn-group-sm" role="group">
                                                         <a href="<?= base_url('admin/manage_curriculum?action=edit&id=' . $entry['id']) ?>" 
                                                            class="btn btn-outline-warning" title="Edit">
-                                                            ✏️
+                                                            
                                                         </a>
                                                         <form method="post" action="<?= base_url('admin/manage_curriculum') ?>" class="d-inline">
                                                             <?= csrf_field() ?>
@@ -458,7 +558,7 @@
                                                             <input type="hidden" name="program_id" value="<?= $selectedProgramId ?>">
                                                             <button type="submit" class="btn btn-outline-danger" title="Delete"
                                                                     onclick="return confirm('Are you sure you want to remove this course from the curriculum?')">
-                                                                🗑️
+                                                                
                                                             </button>
                                                         </form>
                                                     </div>
@@ -479,7 +579,7 @@
             <div class="col-12">
                 <div class="card border-0 shadow-sm rounded-3">
                     <div class="card-body">
-                        <h6 class="fw-bold mb-3">📖 Course Type Reference:</h6>
+                        <h6 class="fw-bold mb-3">Course Type Reference:</h6>
                         <div class="d-flex flex-wrap gap-2">
                             <span class="badge bg-danger">Major Course</span>
                             <span class="badge bg-warning text-dark">Minor Course</span>
@@ -506,3 +606,6 @@ $(document).ready(function() {
     });
 });
 </script>
+
+
+

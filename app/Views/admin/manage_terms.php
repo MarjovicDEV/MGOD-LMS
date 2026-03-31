@@ -1,21 +1,127 @@
 <?= $this->include('templates/header') ?>
 
+<style>
+    .lms-admin-view {
+        --brand-primary: #2563eb;
+        --brand-soft: #eef4ff;
+        --page-bg: #f8fafc;
+        --surface: #ffffff;
+        --surface-soft: #f8fbff;
+        --text-main: #0f172a;
+        --text-soft: #475569;
+        --border-soft: #dbe4ef;
+        background-color: var(--page-bg);
+        color: var(--text-main);
+    }
+
+    .lms-admin-view .card {
+        border: 1px solid var(--border-soft) !important;
+        border-radius: 12px;
+        background-color: var(--surface) !important;
+        box-shadow: 0 1px 2px rgba(15, 23, 42, 0.04) !important;
+    }
+
+    .lms-admin-view .admin-hero {
+        background-color: var(--surface-soft) !important;
+        color: var(--text-main) !important;
+        border: 1px solid var(--border-soft);
+    }
+
+    .lms-admin-view .admin-hero .opacity-75 {
+        opacity: 1 !important;
+        color: var(--text-soft) !important;
+    }
+
+    .lms-admin-view .admin-stats .card,
+    .lms-admin-view .card.text-white {
+        background-color: var(--surface) !important;
+        color: var(--text-main) !important;
+        border: 1px solid var(--border-soft) !important;
+    }
+
+    .lms-admin-view .admin-stats .display-4 {
+        display: none;
+    }
+
+    .lms-admin-view .admin-stats .display-5 {
+        font-size: 2rem;
+        margin-bottom: 0.35rem;
+    }
+
+    .lms-admin-view .card-header.bg-success,
+    .lms-admin-view .card-header.bg-warning,
+    .lms-admin-view .card-header.bg-primary,
+    .lms-admin-view .card-header.bg-info {
+        background-color: var(--surface-soft) !important;
+        color: var(--text-main) !important;
+        border-bottom: 1px solid var(--border-soft) !important;
+    }
+
+    .lms-admin-view .btn-success,
+    .lms-admin-view .btn-warning,
+    .lms-admin-view .btn-primary,
+    .lms-admin-view .btn-info {
+        background-color: var(--brand-primary) !important;
+        border-color: var(--brand-primary) !important;
+        color: #ffffff !important;
+    }
+
+    .lms-admin-view .btn-light,
+    .lms-admin-view .btn-secondary,
+    .lms-admin-view .btn-outline-secondary {
+        background-color: #ffffff !important;
+        border-color: var(--border-soft) !important;
+        color: var(--text-main) !important;
+    }
+
+    .lms-admin-view .table thead th {
+        background-color: var(--surface-soft) !important;
+        color: var(--text-main) !important;
+        border-bottom: 1px solid var(--border-soft) !important;
+        font-size: 0.82rem;
+    }
+
+    .lms-admin-view .table tbody td {
+        font-size: 0.84rem;
+        color: var(--text-main);
+    }
+
+    .lms-admin-view .form-control,
+    .lms-admin-view .form-select,
+    .lms-admin-view .input-group-text {
+        border-color: var(--border-soft);
+        font-size: 0.86rem;
+    }
+
+    .lms-admin-view .form-control:focus,
+    .lms-admin-view .form-select:focus {
+        border-color: #93c5fd;
+        box-shadow: 0 0 0 0.2rem rgba(37, 99, 235, 0.12);
+    }
+
+    .lms-admin-view .text-muted,
+    .lms-admin-view small,
+    .lms-admin-view .form-text {
+        color: var(--text-soft) !important;
+    }
+</style>
+
 <!-- Manage Terms View - Admin only functionality for term management -->
-<div class="bg-light min-vh-100">
+<div class="lms-admin-view min-vh-100">
     <div class="container py-4">
         <!-- Header Section -->
         <div class="row mb-4">
             <div class="col-12">
                 <div class="card border-0 shadow-sm rounded-3">
-                    <div class="card-body bg-primary text-white p-4 rounded-3">
+                    <div class="card-body bg-primary text-white p-4 rounded-3 admin-hero">
                         <div class="d-flex justify-content-between align-items-center">
                             <div>
-                                <h2 class="mb-2 fw-bold">📅 Manage Terms</h2>
+                                <h2 class="mb-2 fw-bold">Manage Terms</h2>
                                 <p class="mb-0 opacity-75">Create, edit, and manage academic terms in the system</p>
                             </div>
                             <div>
                                 <a href="<?= base_url('admin/dashboard') ?>" class="btn btn-light btn-sm">
-                                    ← Back to Dashboard
+                                    Back to Dashboard
                                 </a>
                             </div>
                         </div>
@@ -27,21 +133,21 @@
         <!-- Flash Messages -->
         <?php if (session()->getFlashdata('success')): ?>
             <div class="alert alert-success alert-dismissible fade show" role="alert">
-                <strong>✅ Success!</strong> <?= session()->getFlashdata('success') ?>
+                <strong>Success!</strong> <?= session()->getFlashdata('success') ?>
                 <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
             </div>
         <?php endif; ?>
 
         <?php if (session()->getFlashdata('error')): ?>
             <div class="alert alert-danger alert-dismissible fade show" role="alert">
-                <strong>❌ Error!</strong> <?= session()->getFlashdata('error') ?>
+                <strong>Error!</strong> <?= session()->getFlashdata('error') ?>
                 <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
             </div>
         <?php endif; ?>
 
         <?php if (session()->getFlashdata('errors')): ?>
             <div class="alert alert-danger alert-dismissible fade show" role="alert">
-                <strong>❌ Validation Errors:</strong>
+                <strong>Validation Errors:</strong>
                 <ul class="mb-0 mt-2">
                     <?php foreach (session()->getFlashdata('errors') as $error): ?>
                         <li><?= esc($error) ?></li>
@@ -52,10 +158,10 @@
         <?php endif; ?>
 
         <!-- Term Statistics Cards -->
-        <div class="row mb-4">
+        <div class="row mb-4 admin-stats">
             <div class="col-md-3 mb-3">
                 <div class="card border-0 shadow-sm text-white bg-primary text-center p-4 rounded-3 h-100">
-                    <div class="display-4 mb-2">📅</div>
+                    <div class="display-4 mb-2">TRM</div>
                     <div class="display-5 fw-bold"><?= $statistics['total'] ?></div>
                     <div class="fw-semibold">Total Terms</div>
                     <small class="opacity-75">In the system</small>
@@ -63,7 +169,7 @@
             </div>
             <div class="col-md-3 mb-3">
                 <div class="card border-0 shadow-sm text-white bg-success text-center p-4 rounded-3 h-100">
-                    <div class="display-4 mb-2">✅</div>
+                    <div class="display-4 mb-2">ACT</div>
                     <div class="display-5 fw-bold"><?= $statistics['active'] ?></div>
                     <div class="fw-semibold">Active</div>
                     <small class="opacity-75">Currently active</small>
@@ -71,7 +177,7 @@
             </div>
             <div class="col-md-3 mb-3">
                 <div class="card border-0 shadow-sm text-white bg-warning text-center p-4 rounded-3 h-100">
-                    <div class="display-4 mb-2">❌</div>
+                    <div class="display-4 mb-2">INA</div>
                     <div class="display-5 fw-bold"><?= $statistics['inactive'] ?></div>
                     <div class="fw-semibold">Inactive</div>
                     <small class="opacity-75">Deactivated</small>
@@ -79,7 +185,7 @@
             </div>
             <div class="col-md-3 mb-3">
                 <div class="card border-0 shadow-sm text-white bg-info text-center p-4 rounded-3 h-100">
-                    <div class="display-4 mb-2">⭐</div>
+                    <div class="display-4 mb-2">CUR</div>
                     <div class="display-5 fw-bold"><?= $statistics['current'] ?></div>
                     <div class="fw-semibold">Current Term</div>
                     <small class="opacity-75">Active now</small>
@@ -93,9 +199,9 @@
                 <div class="card border-0 shadow-sm rounded-3">
                     <div class="card-header bg-white border-0 pb-0">
                         <div class="d-flex justify-content-between align-items-center">
-                            <h5 class="mb-0 fw-bold text-dark">⚡ Term Management</h5>
+                            <h5 class="mb-0 fw-bold text-dark">Term Management</h5>
                             <a href="<?= base_url('admin/manage_terms?action=create') ?>" class="btn btn-success">
-                                ➕ Create New Term
+                                Create New Term
                             </a>
                         </div>
                     </div>
@@ -117,7 +223,7 @@
                                     <input type="text" 
                                            id="termSearchInput" 
                                            class="form-control border-start-0" 
-                                           placeholder="🔍 Search terms by name, academic year, or semester...">
+                                           placeholder="Search terms by name, academic year, or semester...">
                                     <button class="btn btn-outline-secondary" type="button" id="clearSearch">
                                         <i class="fas fa-times"></i> Clear
                                     </button>
@@ -142,7 +248,7 @@
             <div class="col-12">
                 <div class="card border-0 shadow-sm rounded-3 border-success">
                     <div class="card-header bg-success text-white border-0">
-                        <h5 class="mb-0">➕ Create New Term</h5>
+                        <h5 class="mb-0">Create New Term</h5>
                     </div>
                     <div class="card-body">
                         <form method="post" action="<?= base_url('admin/manage_terms?action=create') ?>">
@@ -240,12 +346,12 @@
                                 </div>
                             </div>
                             <div class="d-flex justify-content-end gap-2">
-                                <a href="<?= base_url('admin/manage_terms') ?>" class="btn btn-secondary">
-                                    ❌ Cancel
-                                </a>
                                 <button type="submit" class="btn btn-success">
-                                    ➕ Create Term
+                                    Create Term
                                 </button>
+                                <a href="<?= base_url('admin/manage_terms') ?>" class="btn btn-secondary">
+                                    Cancel
+                                </a>
                             </div>
                         </form>
                     </div>
@@ -260,7 +366,7 @@
             <div class="col-12">
                 <div class="card border-0 shadow-sm rounded-3 border-warning">
                     <div class="card-header bg-warning text-white border-0">
-                        <h5 class="mb-0">✏️ Edit Term</h5>
+                        <h5 class="mb-0">Edit Term</h5>
                     </div>
                     <div class="card-body">
                         <form method="post" action="<?= base_url('admin/manage_terms?action=edit&id=' . $editTerm['id']) ?>">
@@ -356,12 +462,12 @@
                                 </div>
                             </div>
                             <div class="d-flex justify-content-end gap-2">
-                                <a href="<?= base_url('admin/manage_terms') ?>" class="btn btn-secondary">
-                                    ❌ Cancel
-                                </a>
                                 <button type="submit" class="btn btn-warning text-white">
-                                    💾 Update Term
+                                    Update Term
                                 </button>
+                                <a href="<?= base_url('admin/manage_terms') ?>" class="btn btn-secondary">
+                                    Cancel
+                                </a>
                             </div>
                         </form>
                     </div>
@@ -376,7 +482,7 @@
                 <div class="card border-0 shadow-sm rounded-3">
                     <div class="card-header bg-white border-bottom py-3">
                         <div class="d-flex justify-content-between align-items-center">
-                            <h5 class="mb-0 fw-bold text-dark">📋 Terms List</h5>
+                            <h5 class="mb-0 fw-bold text-dark">Terms List</h5>
                             <div class="text-muted small">
                                 Total: <?= count($terms) ?> terms
                             </div>
@@ -424,7 +530,7 @@
                                             </td>
                                             <td class="text-center">
                                                 <?php if ($term['is_current'] == 1): ?>
-                                                    <span class="badge bg-info">⭐ Current</span>
+                                                    <span class="badge bg-info">Current</span>
                                                 <?php else: ?>
                                                     <a href="<?= base_url('admin/manage_terms?action=set_current&id=' . $term['id']) ?>" 
                                                        class="btn btn-sm btn-outline-info"
@@ -435,9 +541,9 @@
                                             </td>
                                             <td class="text-center">
                                                 <?php if ($term['is_active'] == 1): ?>
-                                                    <span class="badge bg-success">✅ Active</span>
+                                                    <span class="badge bg-success">Active</span>
                                                 <?php else: ?>
-                                                    <span class="badge bg-secondary">❌ Inactive</span>
+                                                    <span class="badge bg-secondary">Inactive</span>
                                                 <?php endif; ?>
                                             </td>
                                             <td class="text-center">
@@ -445,24 +551,24 @@
                                                     <a href="<?= base_url('admin/manage_terms?action=edit&id=' . $term['id']) ?>" 
                                                        class="btn btn-sm btn-warning text-white" 
                                                        title="Edit Term">
-                                                        ✏️
+                                                        <i class="fas fa-pen"></i>
                                                     </a>
                                                     <a href="<?= base_url('admin/manage_terms?action=toggle_status&id=' . $term['id']) ?>" 
                                                        class="btn btn-sm btn-info text-white" 
                                                        title="Toggle Status"
                                                        onclick="return confirm('Are you sure you want to change the status of this term?')">
-                                                        🔄
+                                                        <i class="fas fa-sync-alt"></i>
                                                     </a>
                                                     <?php if ($term['is_current'] != 1): ?>
                                                         <a href="<?= base_url('admin/manage_terms?action=delete&id=' . $term['id']) ?>" 
                                                            class="btn btn-sm btn-danger" 
                                                            title="Delete Term"
                                                            onclick="return confirm('Are you sure you want to delete this term? This action cannot be undone.')">
-                                                            🗑️
+                                                            <i class="fas fa-trash"></i>
                                                         </a>
                                                     <?php else: ?>
                                                         <button class="btn btn-sm btn-secondary" disabled title="Cannot delete current term">
-                                                            🔒
+                                                            <i class="fas fa-lock"></i>
                                                         </button>
                                                     <?php endif; ?>
                                                 </div>
@@ -479,7 +585,7 @@
                                     <?php else: ?>
                                         <tr id="noTermsRow">
                                             <td colspan="9" class="text-center py-5 text-muted">
-                                                <div class="display-1 mb-3">📅</div>
+                                                <i class="fas fa-calendar-alt mb-3" style="font-size: 2.5rem; opacity: 0.3;"></i>
                                                 <h5>No terms found</h5>
                                                 <p class="mb-0">Click the "Create New Term" button to add your first term.</p>
                                             </td>
@@ -527,7 +633,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 
                 // Update hint text
                 if (ayDateHint) {
-                    ayDateHint.innerHTML = '<strong class="text-success">✓ Valid date range:</strong> ' + 
+                    ayDateHint.innerHTML = '<strong class="text-success">Valid date range:</strong> ' + 
                                           formatDate(ayStartDate) + ' - ' + formatDate(ayEndDate);
                 }
             } else {

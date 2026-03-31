@@ -9,12 +9,12 @@ class Email extends BaseConfig
     /**
      * Default From Email Address
      */
-    public string $fromEmail  = env('email.fromEmail', 'default@email.com');
+    public string $fromEmail  = 'default@email.com';
     
     /**
      * Default From Name
      */
-    public string $fromName   = env('email.fromName', 'Default Name');
+    public string $fromName   = 'Default Name';
     
     public string $recipients = '';
 
@@ -44,13 +44,24 @@ class Email extends BaseConfig
      * SMTP Username
      * Your Gmail address
      */
-    public string $SMTPUser = env('email.SMTPUser', 'user@example.com');
+    public string $SMTPUser = 'user@example.com';
 
     /**
      * SMTP Password
      * Gmail App Password (NOT your regular Gmail password)
      */
-    public string $SMTPPass = env('email.SMTPPass', '');
+    public string $SMTPPass = '';
+
+    public function __construct()
+    {
+        parent::__construct();
+
+        // Runtime env lookups are valid here; property defaults must stay constant.
+        $this->fromEmail = (string) env('email.fromEmail', $this->fromEmail);
+        $this->fromName  = (string) env('email.fromName', $this->fromName);
+        $this->SMTPUser  = (string) env('email.SMTPUser', $this->SMTPUser);
+        $this->SMTPPass  = (string) env('email.SMTPPass', $this->SMTPPass);
+    }
 
     /**
      * SMTP Port

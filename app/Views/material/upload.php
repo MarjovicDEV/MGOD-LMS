@@ -1,13 +1,112 @@
 <?= $this->include('templates/header') ?>
 
+<style>
+    .lms-admin-view {
+        --brand-primary: #2563eb;
+        --brand-soft: #eef4ff;
+        --page-bg: #f8fafc;
+        --surface: #ffffff;
+        --surface-soft: #f8fbff;
+        --text-main: #0f172a;
+        --text-soft: #475569;
+        --border-soft: #dbe4ef;
+        --hover-soft: #f4f7fb;
+        background-color: var(--page-bg);
+        color: var(--text-main);
+    }
+
+    .lms-admin-view .card {
+        border: 1px solid var(--border-soft) !important;
+        border-radius: 12px;
+        background-color: var(--surface) !important;
+        box-shadow: 0 1px 2px rgba(15, 23, 42, 0.04) !important;
+    }
+
+    .lms-admin-view .admin-hero {
+        background-color: var(--surface-soft) !important;
+        color: var(--text-main) !important;
+        border: 1px solid var(--border-soft);
+    }
+
+    .lms-admin-view .admin-hero .opacity-75 {
+        opacity: 1 !important;
+        color: var(--text-soft) !important;
+    }
+
+    .lms-admin-view .admin-stats .display-5 {
+        font-size: 2rem;
+        margin-bottom: 0.35rem;
+    }
+
+    .lms-admin-view .card-header.bg-success,
+    .lms-admin-view .card-header.bg-warning,
+    .lms-admin-view .card-header.bg-primary,
+    .lms-admin-view .card-header.bg-info {
+        background-color: var(--surface-soft) !important;
+        color: var(--text-main) !important;
+        border-bottom: 1px solid var(--border-soft) !important;
+    }
+
+    .lms-admin-view .btn-success,
+    .lms-admin-view .btn-warning,
+    .lms-admin-view .btn-primary {
+        background-color: var(--brand-primary) !important;
+        border-color: var(--brand-primary) !important;
+        color: #ffffff !important;
+    }
+
+    .lms-admin-view .btn-light,
+    .lms-admin-view .btn-secondary,
+    .lms-admin-view .btn-outline-secondary {
+        background-color: #ffffff !important;
+        border-color: var(--border-soft) !important;
+        color: var(--text-main) !important;
+    }
+
+    .lms-admin-view .table thead th {
+        background-color: var(--surface-soft) !important;
+        color: var(--text-main) !important;
+        border-bottom: 1px solid var(--border-soft) !important;
+        font-size: 0.82rem;
+    }
+
+    .lms-admin-view .table tbody td {
+        font-size: 0.84rem;
+        color: var(--text-main);
+    }
+
+    .lms-admin-view .table-hover > tbody > tr:hover > * {
+        background-color: var(--hover-soft) !important;
+    }
+
+    .lms-admin-view .form-control,
+    .lms-admin-view .form-select,
+    .lms-admin-view .input-group-text {
+        border-color: var(--border-soft);
+        font-size: 0.86rem;
+    }
+
+    .lms-admin-view .form-control:focus,
+    .lms-admin-view .form-select:focus {
+        border-color: #93c5fd;
+        box-shadow: 0 0 0 0.2rem rgba(37, 99, 235, 0.12);
+    }
+
+    .lms-admin-view .text-muted,
+    .lms-admin-view small,
+    .lms-admin-view .form-text {
+        color: var(--text-soft) !important;
+    }
+</style>
+
 <!-- Material Upload View - File upload functionality for teachers and admins -->
-<div class="bg-light min-vh-100">
+<div class="lms-admin-view min-vh-100">
     <div class="container py-4">        
     <!-- Header Section -->
         <div class="row mb-4">
             <div class="col-12">
                 <div class="card border-0 shadow-sm rounded-3">
-                    <div class="card-body bg-success text-white p-4 rounded-3">
+                    <div class="card-body bg-success text-white p-4 rounded-3 admin-hero">
                         <div class="d-flex justify-content-between align-items-center flex-wrap">
                             <div class="mb-3 mb-md-0">
                                 <h2 class="mb-2 fw-bold">

@@ -1,21 +1,131 @@
 <?= $this->include('templates/header') ?>
 
+<style>
+    .lms-admin-view {
+        --brand-primary: #2563eb;
+        --brand-soft: #eef4ff;
+        --page-bg: #f8fafc;
+        --surface: #ffffff;
+        --surface-soft: #f8fbff;
+        --text-main: #0f172a;
+        --text-soft: #475569;
+        --border-soft: #dbe4ef;
+        --hover-soft: #f4f7fb;
+        background-color: var(--page-bg);
+        color: var(--text-main);
+    }
+
+    .lms-admin-view .card {
+        border: 1px solid var(--border-soft) !important;
+        border-radius: 12px;
+        background-color: var(--surface) !important;
+        box-shadow: 0 1px 2px rgba(15, 23, 42, 0.04) !important;
+    }
+
+    .lms-admin-view .admin-hero {
+        background-color: var(--surface-soft) !important;
+        color: var(--text-main) !important;
+        border: 1px solid var(--border-soft);
+    }
+
+    .lms-admin-view .admin-hero .opacity-75 {
+        opacity: 1 !important;
+        color: var(--text-soft) !important;
+    }
+
+    .lms-admin-view .admin-stats .card,
+    .lms-admin-view .card.text-white {
+        background-color: var(--surface) !important;
+        color: var(--text-main) !important;
+        border: 1px solid var(--border-soft) !important;
+    }
+
+    .lms-admin-view .admin-stats .display-4 {
+        display: none;
+    }
+
+    .lms-admin-view .admin-stats .display-5 {
+        font-size: 2rem;
+        margin-bottom: 0.35rem;
+    }
+
+    .lms-admin-view .card-header.bg-success,
+    .lms-admin-view .card-header.bg-warning,
+    .lms-admin-view .card-header.bg-primary,
+    .lms-admin-view .card-header.bg-info {
+        background-color: var(--surface-soft) !important;
+        color: var(--text-main) !important;
+        border-bottom: 1px solid var(--border-soft) !important;
+    }
+
+    .lms-admin-view .btn-success,
+    .lms-admin-view .btn-warning,
+    .lms-admin-view .btn-primary {
+        background-color: var(--brand-primary) !important;
+        border-color: var(--brand-primary) !important;
+        color: #ffffff !important;
+    }
+
+    .lms-admin-view .btn-light,
+    .lms-admin-view .btn-secondary,
+    .lms-admin-view .btn-outline-secondary {
+        background-color: #ffffff !important;
+        border-color: var(--border-soft) !important;
+        color: var(--text-main) !important;
+    }
+
+    .lms-admin-view .table thead th {
+        background-color: var(--surface-soft) !important;
+        color: var(--text-main) !important;
+        border-bottom: 1px solid var(--border-soft) !important;
+        font-size: 0.82rem;
+    }
+
+    .lms-admin-view .table tbody td {
+        font-size: 0.84rem;
+        color: var(--text-main);
+    }
+
+    .lms-admin-view .table-hover > tbody > tr:hover > * {
+        background-color: var(--hover-soft) !important;
+    }
+
+    .lms-admin-view .form-control,
+    .lms-admin-view .form-select,
+    .lms-admin-view .input-group-text {
+        border-color: var(--border-soft);
+        font-size: 0.86rem;
+    }
+
+    .lms-admin-view .form-control:focus,
+    .lms-admin-view .form-select:focus {
+        border-color: #93c5fd;
+        box-shadow: 0 0 0 0.2rem rgba(37, 99, 235, 0.12);
+    }
+
+    .lms-admin-view .text-muted,
+    .lms-admin-view small,
+    .lms-admin-view .form-text {
+        color: var(--text-soft) !important;
+    }
+</style>
+
 <!-- Manage Course Offerings View - Admin only functionality for course offering management -->
-<div class="bg-light min-vh-100">
+<div class="lms-admin-view min-vh-100">
     <div class="container py-4">
         <!-- Header Section -->
         <div class="row mb-4">
             <div class="col-12">
                 <div class="card border-0 shadow-sm rounded-3">
-                    <div class="card-body bg-primary text-white p-4 rounded-3">
+                    <div class="card-body bg-primary text-white p-4 rounded-3 admin-hero">
                         <div class="d-flex justify-content-between align-items-center">
                             <div>
-                                <h2 class="mb-2 fw-bold">📅 Manage Course Offerings</h2>
+                                <h2 class="mb-2 fw-bold">Manage Course Offerings</h2>
                                 <p class="mb-0 opacity-75">Create and manage course offerings for each term</p>
                             </div>
                             <div>
                                 <a href="<?= base_url('admin/dashboard') ?>" class="btn btn-light btn-sm">
-                                    ← Back to Dashboard
+                                    Back to Dashboard
                                 </a>
                             </div>
                         </div>
@@ -27,21 +137,21 @@
         <!-- Flash Messages -->
         <?php if (session()->getFlashdata('success')): ?>
             <div class="alert alert-success alert-dismissible fade show" role="alert">
-                <strong>✅ Success!</strong> <?= session()->getFlashdata('success') ?>
+                <strong>Success:</strong> <?= session()->getFlashdata('success') ?>
                 <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
             </div>
         <?php endif; ?>
 
         <?php if (session()->getFlashdata('error')): ?>
             <div class="alert alert-danger alert-dismissible fade show" role="alert">
-                <strong>❌ Error!</strong> <?= session()->getFlashdata('error') ?>
+                <strong>Error:</strong> <?= session()->getFlashdata('error') ?>
                 <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
             </div>
         <?php endif; ?>
 
         <?php if (session()->getFlashdata('errors')): ?>
             <div class="alert alert-danger alert-dismissible fade show" role="alert">
-                <strong>❌ Validation Errors:</strong>
+                <strong>Validation Errors:</strong>
                 <ul class="mb-0 mt-2">
                     <?php foreach (session()->getFlashdata('errors') as $error): ?>
                         <li><?= esc($error) ?></li>
@@ -52,10 +162,9 @@
         <?php endif; ?>
 
         <!-- Offering Statistics Cards -->
-        <div class="row mb-4">
+        <div class="row mb-4 admin-stats">
             <div class="col-md-3 mb-3">
                 <div class="card border-0 shadow-sm text-white bg-primary text-center p-4 rounded-3 h-100">
-                    <div class="display-4 mb-2">📚</div>
                     <div class="display-5 fw-bold"><?= $statistics['total'] ?></div>
                     <div class="fw-semibold">Total Offerings</div>
                     <small class="opacity-75">In the system</small>
@@ -63,7 +172,6 @@
             </div>
             <div class="col-md-3 mb-3">
                 <div class="card border-0 shadow-sm text-white bg-secondary text-center p-4 rounded-3 h-100">
-                    <div class="display-4 mb-2">📝</div>
                     <div class="display-5 fw-bold"><?= $statistics['draft'] ?></div>
                     <div class="fw-semibold">Draft</div>
                     <small class="opacity-75">Being prepared</small>
@@ -71,7 +179,6 @@
             </div>
             <div class="col-md-3 mb-3">
                 <div class="card border-0 shadow-sm text-white bg-success text-center p-4 rounded-3 h-100">
-                    <div class="display-4 mb-2">✅</div>
                     <div class="display-5 fw-bold"><?= $statistics['open'] ?></div>
                     <div class="fw-semibold">Open</div>
                     <small class="opacity-75">Accepting students</small>
@@ -79,7 +186,6 @@
             </div>
             <div class="col-md-3 mb-3">
                 <div class="card border-0 shadow-sm text-white bg-danger text-center p-4 rounded-3 h-100">
-                    <div class="display-4 mb-2">🔒</div>
                     <div class="display-5 fw-bold"><?= $statistics['closed'] ?></div>
                     <div class="fw-semibold">Closed</div>
                     <small class="opacity-75">Not accepting</small>
@@ -91,7 +197,9 @@
         <div class="row mb-4">
             <div class="col-12">
                 <div class="card border-0 shadow-sm rounded-3">
-                    <div class="card-body">                        <div class="row align-items-center">                            <div class="col-md-6 mb-3 mb-md-0">
+                    <div class="card-body">
+                        <div class="row align-items-center">
+                            <div class="col-md-6 mb-3 mb-md-0">
                                 <label for="termFilter" class="form-label fw-semibold mb-2">Filter by Term:</label>
                                 <select class="form-select" id="termFilter" onchange="filterByTerm(this.value)">
                                     <option value="">All Terms</option>
@@ -107,19 +215,22 @@
                             </div>
                             <div class="col-md-6 text-md-end">
                                 <a href="<?= base_url('admin/manage_offerings?action=create' . ($selectedTermId ? '&term_id=' . $selectedTermId : '')) ?>" class="btn btn-success">
-                                    ➕ Add Course Offering
+                                    Add Course Offering
                                 </a>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>        <!-- Selected Term Info -->
+        </div>
+
+        <!-- Selected Term Info -->
         <?php if ($selectedTerm): ?>
         <div class="row mb-4">
             <div class="col-12">
-                <div class="card border-0 shadow-sm rounded-3 border-primary">                    <div class="card-body bg-light">
-                        <h5 class="mb-2 fw-bold text-primary">📆 Selected Term:</h5>
+                <div class="card border-0 shadow-sm rounded-3 border-primary">
+                    <div class="card-body bg-light">
+                        <h5 class="mb-2 fw-bold text-primary">Selected Term</h5>
                         <h4 class="mb-1">
                             <?php if (!empty($selectedTerm['year_name'])): ?>
                                 <?= esc($selectedTerm['year_name']) ?> - <?= esc($selectedTerm['semester_name'] ?? '') ?>
@@ -145,7 +256,7 @@
             <div class="col-12">
                 <div class="card border-0 shadow-sm rounded-3 border-success">
                     <div class="card-header bg-success text-white border-0">
-                        <h5 class="mb-0">➕ Add Course Offering</h5>
+                        <h5 class="mb-0">Add Course Offering</h5>
                     </div>
                     <div class="card-body">
                         <form method="post" action="<?= base_url('admin/manage_offerings?action=create') ?>">
@@ -218,14 +329,16 @@
                                     <div class="mb-3">
                                         <label for="status" class="form-label fw-semibold">Status <span class="text-danger">*</span></label>
                                         <select class="form-select" id="status" name="status" required>
-                                            <option value="draft" <?= old('status') == 'draft' ? 'selected' : '' ?>>📝 Draft</option>
-                                            <option value="open" <?= old('status') == 'open' ? 'selected' : '' ?>>✅ Open</option>
-                                            <option value="closed" <?= old('status') == 'closed' ? 'selected' : '' ?>>🔒 Closed</option>
-                                            <option value="cancelled" <?= old('status') == 'cancelled' ? 'selected' : '' ?>>❌ Cancelled</option>
-                                            <option value="completed" <?= old('status') == 'completed' ? 'selected' : '' ?>>✔️ Completed</option>
+                                            <option value="draft" <?= old('status') == 'draft' ? 'selected' : '' ?>>Draft</option>
+                                            <option value="open" <?= old('status') == 'open' ? 'selected' : '' ?>>Open</option>
+                                            <option value="closed" <?= old('status') == 'closed' ? 'selected' : '' ?>>Closed</option>
+                                            <option value="cancelled" <?= old('status') == 'cancelled' ? 'selected' : '' ?>>Cancelled</option>
+                                            <option value="completed" <?= old('status') == 'completed' ? 'selected' : '' ?>>Completed</option>
                                         </select>
                                         <small class="text-muted">Current offering status</small>
-                                    </div>                                </div>                                <div class="col-md-4">
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
                                     <div class="mb-3">
                                         <label for="start_date" class="form-label fw-semibold">Start Date</label>
                                         <input type="date" class="form-control" id="start_date" name="start_date" 
@@ -246,12 +359,12 @@
                             </div>
 
                             <div class="d-flex justify-content-end gap-2">
+                                <button type="submit" class="btn btn-success">
+                                    Create Offering
+                                </button>
                                 <a href="<?= base_url('admin/manage_offerings' . ($selectedTermId ? '?term_id=' . $selectedTermId : '')) ?>" class="btn btn-secondary">
                                     Cancel
                                 </a>
-                                <button type="submit" class="btn btn-success">
-                                    ➕ Create Offering
-                                </button>
                             </div>
                         </form>
                     </div>
@@ -266,11 +379,12 @@
             <div class="col-12">
                 <div class="card border-0 shadow-sm rounded-3 border-warning">
                     <div class="card-header bg-warning text-dark border-0">
-                        <h5 class="mb-0">✏️ Edit Course Offering</h5>
+                        <h5 class="mb-0">Edit Course Offering</h5>
                     </div>
                     <div class="card-body">
                         <form method="post" action="<?= base_url('admin/manage_offerings?action=edit&id=' . $editOffering['id']) ?>">
-                            <?= csrf_field() ?>                            <!-- Display course and term info (non-editable) -->
+                            <?= csrf_field() ?>
+                            <!-- Display course and term info (non-editable) -->
                             <div class="alert alert-info mb-3">
                                 <strong>Course:</strong> <?= esc($course['course_code']) ?> - <?= esc($course['title']) ?><br>
                                 <strong>Term:</strong> 
@@ -282,7 +396,7 @@
                                     <?php if (!empty($term['start_date']) && !empty($term['end_date'])): ?>
                                         <br><strong>Term Period:</strong> <?= date('M d, Y', strtotime($term['start_date'])) ?> - <?= date('M d, Y', strtotime($term['end_date'])) ?>
                                     <?php else: ?>
-                                        <br><small class="text-warning">⚠️ Term dates not set - please set dates in Term management</small>
+                                        <br><small class="text-warning">Term dates are not set. Please configure them in Term Management.</small>
                                     <?php endif; ?>
                                 <?php else: ?>
                                     <span class="text-danger">Term data not found</span>
@@ -322,14 +436,15 @@
                                     <div class="mb-3">
                                         <label for="status" class="form-label fw-semibold">Status <span class="text-danger">*</span></label>
                                         <select class="form-select" id="status" name="status" required>
-                                            <option value="draft" <?= old('status', $editOffering['status']) == 'draft' ? 'selected' : '' ?>>📝 Draft</option>
-                                            <option value="open" <?= old('status', $editOffering['status']) == 'open' ? 'selected' : '' ?>>✅ Open</option>
-                                            <option value="closed" <?= old('status', $editOffering['status']) == 'closed' ? 'selected' : '' ?>>🔒 Closed</option>
-                                            <option value="cancelled" <?= old('status', $editOffering['status']) == 'cancelled' ? 'selected' : '' ?>>❌ Cancelled</option>
-                                            <option value="completed" <?= old('status', $editOffering['status']) == 'completed' ? 'selected' : '' ?>>✔️ Completed</option>
+                                            <option value="draft" <?= old('status', $editOffering['status']) == 'draft' ? 'selected' : '' ?>>Draft</option>
+                                            <option value="open" <?= old('status', $editOffering['status']) == 'open' ? 'selected' : '' ?>>Open</option>
+                                            <option value="closed" <?= old('status', $editOffering['status']) == 'closed' ? 'selected' : '' ?>>Closed</option>
+                                            <option value="cancelled" <?= old('status', $editOffering['status']) == 'cancelled' ? 'selected' : '' ?>>Cancelled</option>
+                                            <option value="completed" <?= old('status', $editOffering['status']) == 'completed' ? 'selected' : '' ?>>Completed</option>
                                         </select>
                                     </div>
-                                </div>                                <div class="col-md-4">
+                                </div>
+                                <div class="col-md-4">
                                     <div class="mb-3">
                                         <label for="edit_start_date" class="form-label fw-semibold">Start Date</label>
                                         <input type="date" class="form-control" id="edit_start_date" name="start_date" 
@@ -364,12 +479,12 @@
                             </div>
 
                             <div class="d-flex justify-content-end gap-2">
+                                <button type="submit" class="btn btn-warning">
+                                    Update Offering
+                                </button>
                                 <a href="<?= base_url('admin/manage_offerings?term_id=' . $editOffering['term_id']) ?>" class="btn btn-secondary">
                                     Cancel
                                 </a>
-                                <button type="submit" class="btn btn-warning">
-                                    💾 Update Offering
-                                </button>
                             </div>
                         </form>
                     </div>
@@ -383,13 +498,12 @@
             <div class="col-12">
                 <div class="card border-0 shadow-sm rounded-3">
                     <div class="card-header bg-white border-bottom py-3">
-                        <h5 class="mb-0 fw-bold">📋 Course Offerings List</h5>
+                        <h5 class="mb-0 fw-bold">Course Offerings List</h5>
                         <small class="text-muted">Total: <?= count($offerings) ?> offering(s)</small>
                     </div>
                     <div class="card-body p-0">
                         <?php if (empty($offerings)): ?>
                             <div class="text-center py-5">
-                                <div class="display-1 mb-3">📭</div>
                                 <h4 class="text-muted">No Course Offerings Found</h4>
                             </div>
                         <?php else: ?>
@@ -460,7 +574,8 @@
                                                     <?php else: ?>
                                                         <span class="text-muted">-</span>
                                                     <?php endif; ?>
-                                                </td>                                                <td class="py-3 text-end px-4">
+                                                </td>
+                                                <td class="py-3 text-end px-4">
                                                     <div class="btn-group btn-group-sm">
                                                         <!-- Course Materials Button -->
                                                         <a href="<?= base_url('admin/course/' . $offering['id'] . '/upload') ?>" 
@@ -473,18 +588,18 @@
                                                            class="btn btn-outline-primary" 
                                                            title="Toggle Status"
                                                            onclick="return confirm('Change status to next state?')">
-                                                            🔄
+                                                            <i class="fas fa-sync-alt"></i>
                                                         </a>
                                                         <a href="<?= base_url('admin/manage_offerings?action=edit&id=' . $offering['id']) ?>" 
                                                            class="btn btn-outline-warning" 
                                                            title="Edit">
-                                                            ✏️
+                                                            <i class="fas fa-edit"></i>
                                                         </a>
                                                         <a href="<?= base_url('admin/manage_offerings?action=delete&id=' . $offering['id']) ?>" 
                                                            class="btn btn-outline-danger" 
                                                            title="Delete"
                                                            onclick="return confirm('Are you sure you want to delete this offering?\n\nCourse: <?= esc($offering['course_code']) ?>\nTerm: <?= esc($offering['term_name']) ?>\nSection: <?= esc($offering['section']) ?>')">
-                                                            🗑️
+                                                            <i class="fas fa-trash-alt"></i>
                                                         </a>
                                                     </div>
                                                 </td>
@@ -569,7 +684,7 @@ function showDateValidationError(inputElement, message) {
     // Add new error message
     const errorDiv = document.createElement('div');
     errorDiv.className = 'invalid-feedback d-block';
-    errorDiv.innerHTML = '<strong>⚠️ ' + message + '</strong>';
+    errorDiv.innerHTML = '<strong>' + message + '</strong>';
     inputElement.parentElement.appendChild(errorDiv);
 }
 
@@ -675,12 +790,13 @@ document.addEventListener('DOMContentLoaded', function() {
                     isValid = false;
                     errors.push('End Date year does not match Academic Year');
                 }
-                  if (!isValid) {
+
+                if (!isValid) {
                     e.preventDefault();
                     e.stopPropagation();
                     const academicYears = getAcademicYears(currentYearCode);
                     const yearsList = academicYears.join(' or ');
-                    alert(`⚠️ Validation Error!\n\nThe dates you entered do not match the Academic Year ${currentYearCode}.\n\nPlease use dates from year ${yearsList} only.\n\nErrors:\n- ${errors.join('\n- ')}`);
+                    alert(`Validation Error\n\nThe dates you entered do not match the Academic Year ${currentYearCode}.\n\nPlease use dates from year ${yearsList} only.\n\nErrors:\n- ${errors.join('\n- ')}`);
                     return false;
                 }
                 
@@ -694,7 +810,7 @@ document.addEventListener('DOMContentLoaded', function() {
                     if (hasOfferingDates && !termHasDates) {
                         e.preventDefault();
                         e.stopPropagation();
-                        alert(`⚠️ Term Dates Required!\n\nThe selected term does not have start/end dates set.\n\nPlease either:\n1. Clear the offering dates (leave them empty), OR\n2. Set term dates first in Term Management\n\nTerm: ${termData.term_name}\nAcademic Year: ${termData.academic_year || 'N/A'}`);
+                        alert(`Term Dates Required\n\nThe selected term does not have start/end dates set.\n\nPlease either:\n1. Clear the offering dates (leave them empty), OR\n2. Set term dates first in Term Management\n\nTerm: ${termData.term_name}\nAcademic Year: ${termData.academic_year || 'N/A'}`);
                         return false;
                     }
                 }
@@ -705,7 +821,7 @@ document.addEventListener('DOMContentLoaded', function() {
     // Setup validation for create form
     if (termSelect && startDateInput && endDateInput) {
         setupDateValidation(termSelect, startDateInput, endDateInput);
-          termSelect.addEventListener('change', function() {
+                termSelect.addEventListener('change', function() {
             const termId = this.value;
             
             if (termId && termsData[termId]) {
@@ -721,7 +837,7 @@ document.addEventListener('DOMContentLoaded', function() {
                         warningDiv = document.createElement('div');
                         warningDiv.id = 'term-date-warning';
                         warningDiv.className = 'alert alert-warning mt-3';
-                        warningDiv.innerHTML = `<strong>⚠️ Warning:</strong> The selected term does not have start/end dates set. You should leave the offering dates empty, or set term dates first in <a href="${'<?= base_url("admin/manage_terms") ?>'}" target="_blank">Term Management</a>.`;
+                        warningDiv.innerHTML = `<strong>Warning:</strong> The selected term does not have start/end dates set. You should leave the offering dates empty, or set term dates first in <a href="${'<?= base_url("admin/manage_terms") ?>'}" target="_blank">Term Management</a>.`;
                         termSelect.parentElement.parentElement.appendChild(warningDiv);
                     }
                     // Disable date inputs if term has no dates
@@ -729,8 +845,8 @@ document.addEventListener('DOMContentLoaded', function() {
                     endDateInput.disabled = true;
                     startDateInput.value = '';
                     endDateInput.value = '';
-                    startDateInput.parentElement.querySelector('.text-muted').innerHTML = '<span class="text-warning">⚠️ Term dates must be set first</span>';
-                    endDateInput.parentElement.querySelector('.text-muted').innerHTML = '<span class="text-warning">⚠️ Term dates must be set first</span>';
+                    startDateInput.parentElement.querySelector('.text-muted').innerHTML = '<span class="text-warning">Term dates must be set first</span>';
+                    endDateInput.parentElement.querySelector('.text-muted').innerHTML = '<span class="text-warning">Term dates must be set first</span>';
                 } else {
                     // Remove warning if it exists
                     if (warningDiv) {
@@ -833,7 +949,8 @@ document.addEventListener('DOMContentLoaded', function() {
                 editEndDateInput.addEventListener('change', function() {
                     validateEditDateInput(this, 'End Date');
                 });
-                  // Validate on form submit
+
+                                // Validate on form submit
                 editForm.addEventListener('submit', function(e) {
                     let isValid = true;
                     const errors = [];
@@ -855,7 +972,7 @@ document.addEventListener('DOMContentLoaded', function() {
                         e.stopPropagation();
                         const academicYears = getAcademicYears(currentYearCode);
                         const yearsList = academicYears.join(' or ');
-                        alert(`⚠️ Validation Error!\n\nThe dates you entered do not match the Academic Year ${currentYearCode}.\n\nPlease use dates from year ${yearsList} only.\n\nErrors:\n- ${errors.join('\n- ')}`);
+                        alert(`Validation Error\n\nThe dates you entered do not match the Academic Year ${currentYearCode}.\n\nPlease use dates from year ${yearsList} only.\n\nErrors:\n- ${errors.join('\n- ')}`);
                         return false;
                     }
                 });

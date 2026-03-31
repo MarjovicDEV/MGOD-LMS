@@ -1,21 +1,121 @@
-<?= $this->include('templates/header') ?>
+﻿<?= $this->include('templates/header') ?>
+
+<style>
+    .lms-admin-view {
+        --brand-primary: #2563eb;
+        --brand-soft: #eef4ff;
+        --page-bg: #f8fafc;
+        --surface: #ffffff;
+        --surface-soft: #f8fbff;
+        --text-main: #0f172a;
+        --text-soft: #475569;
+        --border-soft: #dbe4ef;
+        --hover-soft: #f4f7fb;
+        background-color: var(--page-bg);
+        color: var(--text-main);
+
+    }
+
+    .lms-admin-view .card {
+        border: 1px solid var(--border-soft) !important;
+        border-radius: 12px;
+        background-color: var(--surface) !important;
+        box-shadow: 0 1px 2px rgba(15, 23, 42, 0.04) !important;
+    }
+
+    .lms-admin-view .admin-hero {
+        background-color: var(--surface-soft) !important;
+        color: var(--text-main) !important;
+        border: 1px solid var(--border-soft);
+    }
+
+    .lms-admin-view .admin-hero .opacity-75 {
+        opacity: 1 !important;
+        color: var(--text-soft) !important;
+    }
+
+    .lms-admin-view .admin-stats .display-5 {
+        font-size: 2rem;
+        margin-bottom: 0.35rem;
+    }
+
+    .lms-admin-view .card-header.bg-success,
+    .lms-admin-view .card-header.bg-warning,
+    .lms-admin-view .card-header.bg-primary,
+    .lms-admin-view .card-header.bg-info {
+        background-color: var(--surface-soft) !important;
+        color: var(--text-main) !important;
+        border-bottom: 1px solid var(--border-soft) !important;
+    }
+
+    .lms-admin-view .btn-success,
+    .lms-admin-view .btn-warning,
+    .lms-admin-view .btn-primary {
+        background-color: var(--brand-primary) !important;
+        border-color: var(--brand-primary) !important;
+        color: #ffffff !important;
+    }
+
+    .lms-admin-view .btn-light,
+    .lms-admin-view .btn-secondary,
+    .lms-admin-view .btn-outline-secondary {
+        background-color: #ffffff !important;
+        border-color: var(--border-soft) !important;
+        color: var(--text-main) !important;
+    }
+
+    .lms-admin-view .table thead th {
+        background-color: var(--surface-soft) !important;
+        color: var(--text-main) !important;
+        border-bottom: 1px solid var(--border-soft) !important;
+        font-size: 0.82rem;
+    }
+
+    .lms-admin-view .table tbody td {
+        font-size: 0.84rem;
+        color: var(--text-main);
+    }
+
+    .lms-admin-view .table-hover > tbody > tr:hover > * {
+        background-color: var(--hover-soft) !important;
+    }
+
+    .lms-admin-view .form-control,
+    .lms-admin-view .form-select,
+    .lms-admin-view .input-group-text {
+        border-color: var(--border-soft);
+        font-size: 0.86rem;
+    }
+
+    .lms-admin-view .form-control:focus,
+    .lms-admin-view .form-select:focus {
+        border-color: #93c5fd;
+        box-shadow: 0 0 0 0.2rem rgba(37, 99, 235, 0.12);
+    }
+
+    .lms-admin-view .text-muted,
+    .lms-admin-view small,
+    .lms-admin-view .form-text {
+        color: var(--text-soft) !important;
+    }
+</style>
 
 <!-- Manage Course Instructors View - Admin only functionality -->
-<div class="bg-light min-vh-100">
+<div class="lms-admin-view min-vh-100">
     <div class="container py-4">
         <!-- Header Section -->
         <div class="row mb-4">
             <div class="col-12">
                 <div class="card border-0 shadow-sm rounded-3">
-                    <div class="card-body bg-primary text-white p-4 rounded-3">
+                    <div class="card-body bg-primary text-white p-4 rounded-3 admin-hero">
                         <div class="d-flex justify-content-between align-items-center">
                             <div>
-                                <h2 class="mb-2 fw-bold">👨‍🏫 Manage Course Instructors</h2>
+                                <h2 class="mb-2 fw-bold">Manage Course Instructors</h2>
                                 <p class="mb-0 opacity-75">Assign and manage instructors for course offerings</p>
                             </div>
                             <div>
                                 <a href="<?= base_url('admin/dashboard') ?>" class="btn btn-light btn-sm">
-                                    ← Back to Dashboard
+                                    Back to Dashboard
                                 </a>
                             </div>
                         </div>
@@ -27,21 +127,21 @@
         <!-- Flash Messages -->
         <?php if (session()->getFlashdata('success')): ?>
             <div class="alert alert-success alert-dismissible fade show" role="alert">
-                <strong>✅ Success!</strong> <?= session()->getFlashdata('success') ?>
+                <strong>Success!</strong> <?= session()->getFlashdata('success') ?>
                 <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
             </div>
         <?php endif; ?>
 
         <?php if (session()->getFlashdata('error')): ?>
             <div class="alert alert-danger alert-dismissible fade show" role="alert">
-                <strong>❌ Error!</strong> <?= session()->getFlashdata('error') ?>
+                <strong>Error!</strong> <?= session()->getFlashdata('error') ?>
                 <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
             </div>
         <?php endif; ?>
 
         <?php if (session()->getFlashdata('errors')): ?>
             <div class="alert alert-danger alert-dismissible fade show" role="alert">
-                <strong>❌ Validation Errors:</strong>
+                <strong>Validation Errors:</strong>
                 <ul class="mb-0 mt-2">
                     <?php foreach (session()->getFlashdata('errors') as $error): ?>
                         <li><?= esc($error) ?></li>
@@ -58,7 +158,7 @@
                     <div class="card-header bg-white border-0 pb-0">
                         <div class="row align-items-center">
                             <div class="col-md-6">
-                                <h5 class="mb-3 fw-bold text-dark">🎯 Select Course Offering</h5>
+                                <h5 class="mb-3 fw-bold text-dark"> Select Course Offering</h5>
                                 <select class="form-select" id="offeringFilter" onchange="filterByOffering(this.value)">
                                     <option value="">-- Select Course Offering --</option>
                                     <?php foreach ($offerings as $offering): ?>
@@ -72,11 +172,11 @@
                             <div class="col-md-6 text-md-end mt-3 mt-md-0">
                                 <?php if ($selectedOfferingId): ?>
                                     <a href="<?= base_url('admin/manage_course_instructors?action=assign&offering_id=' . $selectedOfferingId) ?>" class="btn btn-success">
-                                        ➕ Assign Instructor
+                                        Assign Instructor
                                     </a>
                                 <?php else: ?>
                                     <button class="btn btn-success" disabled title="Please select a course offering first">
-                                        ➕ Assign Instructor
+                                        Assign Instructor
                                     </button>
                                 <?php endif; ?>
                             </div>
@@ -92,7 +192,7 @@
             <div class="col-12">
                 <div class="card border-0 shadow-sm rounded-3 border-info">
                     <div class="card-body bg-light">
-                        <h5 class="mb-2 fw-bold text-info">📚 Selected Course:</h5>
+                        <h5 class="mb-2 fw-bold text-info">Selected Course:</h5>
                         <h4 class="mb-1"><?= esc($selectedOffering['course_code']) ?> - <?= esc($selectedOffering['title']) ?></h4>
                         <p class="text-muted mb-0">
                             <strong>Section:</strong> <?= esc($selectedOffering['section'] ?: 'No Section') ?> | 
@@ -112,7 +212,7 @@
             <div class="col-12">
                 <div class="card border-0 shadow-sm rounded-3 border-success">
                     <div class="card-header bg-success text-white border-0">
-                        <h5 class="mb-0">➕ Assign Instructor to Course</h5>
+                        <h5 class="mb-0">Assign Instructor to Course</h5>
                     </div>
                     <div class="card-body">
                         <?php if (!empty($availableInstructors)): ?>
@@ -152,12 +252,12 @@
                             </div>
 
                             <div class="d-flex justify-content-end gap-2">
+                                <button type="submit" class="btn btn-success">
+                                    Assign Instructor
+                                </button>
                                 <a href="<?= base_url('admin/manage_course_instructors?offering_id=' . $selectedOfferingId) ?>" class="btn btn-secondary">
                                     Cancel
                                 </a>
-                                <button type="submit" class="btn btn-success">
-                                    ➕ Assign Instructor
-                                </button>
                             </div>
                         </form>
                         <?php else: ?>
@@ -179,7 +279,7 @@
                 <div class="card border-0 shadow-sm rounded-3">
                     <div class="card-header bg-white border-bottom py-3">
                         <div class="d-flex justify-content-between align-items-center">
-                            <h5 class="mb-0 fw-bold text-dark">👨‍🏫 Assigned Instructors</h5>
+                            <h5 class="mb-0 fw-bold text-dark">Assigned Instructors</h5>
                             <div class="text-muted small">
                                 <?php if ($selectedOffering): ?>
                                     Total: <?= count($assignments) ?> instructor(s)
@@ -216,7 +316,7 @@
                                                     <?= esc($assignment['first_name'] . ' ' . $assignment['last_name']) ?>
                                                 </strong>
                                                 <?php if ($assignment['is_primary']): ?>
-                                                    <span class="badge bg-warning text-dark ms-2">⭐ Primary</span>
+                                                    <span class="badge bg-warning text-dark ms-2">Primary</span>
                                                 <?php endif; ?>
                                             </td>
                                             <td>
@@ -249,7 +349,7 @@
                                                    class="btn btn-sm btn-danger" 
                                                    title="Remove Instructor"
                                                    onclick="return confirm('Are you sure you want to remove this instructor? This action cannot be undone.')">
-                                                    🗑️ Remove
+                                                     Remove
                                                 </a>
                                             </td>
                                         </tr>
@@ -257,7 +357,7 @@
                                     <?php else: ?>
                                         <tr>
                                             <td colspan="8" class="text-center py-5 text-muted">
-                                                <div class="display-1 mb-3">👨‍🏫</div>
+                                                <div class="display-1 mb-3"><i class="fas fa-user-tie text-muted"></i></div>
                                                 <p class="mb-0">
                                                     <?php if ($selectedOffering): ?>
                                                         No instructors assigned yet. Click "Assign Instructor" to add one.
@@ -287,3 +387,6 @@ function filterByOffering(offeringId) {
     }
 }
 </script>
+
+
+

@@ -1,21 +1,121 @@
-<?= $this->include('templates/header') ?>
+﻿<?= $this->include('templates/header') ?>
+
+<style>
+    .lms-admin-view {
+        --brand-primary: #2563eb;
+        --brand-soft: #eef4ff;
+        --page-bg: #f8fafc;
+        --surface: #ffffff;
+        --surface-soft: #f8fbff;
+        --text-main: #0f172a;
+        --text-soft: #475569;
+        --border-soft: #dbe4ef;
+        --hover-soft: #f4f7fb;
+        background-color: var(--page-bg);
+        color: var(--text-main);
+
+    }
+
+    .lms-admin-view .card {
+        border: 1px solid var(--border-soft) !important;
+        border-radius: 12px;
+        background-color: var(--surface) !important;
+        box-shadow: 0 1px 2px rgba(15, 23, 42, 0.04) !important;
+    }
+
+    .lms-admin-view .admin-hero {
+        background-color: var(--surface-soft) !important;
+        color: var(--text-main) !important;
+        border: 1px solid var(--border-soft);
+    }
+
+    .lms-admin-view .admin-hero .opacity-75 {
+        opacity: 1 !important;
+        color: var(--text-soft) !important;
+    }
+
+    .lms-admin-view .admin-stats .display-5 {
+        font-size: 2rem;
+        margin-bottom: 0.35rem;
+    }
+
+    .lms-admin-view .card-header.bg-success,
+    .lms-admin-view .card-header.bg-warning,
+    .lms-admin-view .card-header.bg-primary,
+    .lms-admin-view .card-header.bg-info {
+        background-color: var(--surface-soft) !important;
+        color: var(--text-main) !important;
+        border-bottom: 1px solid var(--border-soft) !important;
+    }
+
+    .lms-admin-view .btn-success,
+    .lms-admin-view .btn-warning,
+    .lms-admin-view .btn-primary {
+        background-color: var(--brand-primary) !important;
+        border-color: var(--brand-primary) !important;
+        color: #ffffff !important;
+    }
+
+    .lms-admin-view .btn-light,
+    .lms-admin-view .btn-secondary,
+    .lms-admin-view .btn-outline-secondary {
+        background-color: #ffffff !important;
+        border-color: var(--border-soft) !important;
+        color: var(--text-main) !important;
+    }
+
+    .lms-admin-view .table thead th {
+        background-color: var(--surface-soft) !important;
+        color: var(--text-main) !important;
+        border-bottom: 1px solid var(--border-soft) !important;
+        font-size: 0.82rem;
+    }
+
+    .lms-admin-view .table tbody td {
+        font-size: 0.84rem;
+        color: var(--text-main);
+    }
+
+    .lms-admin-view .table-hover > tbody > tr:hover > * {
+        background-color: var(--hover-soft) !important;
+    }
+
+    .lms-admin-view .form-control,
+    .lms-admin-view .form-select,
+    .lms-admin-view .input-group-text {
+        border-color: var(--border-soft);
+        font-size: 0.86rem;
+    }
+
+    .lms-admin-view .form-control:focus,
+    .lms-admin-view .form-select:focus {
+        border-color: #93c5fd;
+        box-shadow: 0 0 0 0.2rem rgba(37, 99, 235, 0.12);
+    }
+
+    .lms-admin-view .text-muted,
+    .lms-admin-view small,
+    .lms-admin-view .form-text {
+        color: var(--text-soft) !important;
+    }
+</style>
 
 <!-- Manage Course Schedules View - Admin only functionality -->
-<div class="bg-light min-vh-100">
+<div class="lms-admin-view min-vh-100">
     <div class="container py-4">
         <!-- Header Section -->
         <div class="row mb-4">
             <div class="col-12">
                 <div class="card border-0 shadow-sm rounded-3">
-                    <div class="card-body bg-primary text-white p-4 rounded-3">
+                    <div class="card-body bg-primary text-white p-4 rounded-3 admin-hero">
                         <div class="d-flex justify-content-between align-items-center">
                             <div>
-                                <h2 class="mb-2 fw-bold">🕐 Manage Course Schedules</h2>
+                                <h2 class="mb-2 fw-bold">Manage Course Schedules</h2>
                                 <p class="mb-0 opacity-75">Create and manage class schedules for course offerings</p>
                             </div>
                             <div>
                                 <a href="<?= base_url('admin/dashboard') ?>" class="btn btn-light btn-sm">
-                                    ← Back to Dashboard
+                                    Back to Dashboard
                                 </a>
                             </div>
                         </div>
@@ -25,14 +125,14 @@
         </div>        
         <?php if (session()->getFlashdata('success')): ?>
             <div class="alert alert-success alert-dismissible fade show" role="alert">
-                <strong>✅ Success!</strong> <?= session()->getFlashdata('success') ?>
+                <strong>Success!</strong> <?= session()->getFlashdata('success') ?>
                 <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
             </div>
         <?php endif; ?>
 
         <?php if (session()->getFlashdata('warning')): ?>
             <div class="alert alert-warning alert-dismissible fade show" role="alert">
-                <strong>⚠️ Warning!</strong><br>
+                <strong>Warning!</strong><br>
                 <?= session()->getFlashdata('warning') ?>
                 <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
             </div>
@@ -40,7 +140,7 @@
 
         <?php if (session()->getFlashdata('info')): ?>
             <div class="alert alert-info alert-dismissible fade show" role="alert">
-                <strong>ℹ️ Info:</strong><br>
+                <strong>Info:</strong><br>
                 <?= session()->getFlashdata('info') ?>
                 <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
             </div>
@@ -48,14 +148,14 @@
 
         <?php if (session()->getFlashdata('error')): ?>
             <div class="alert alert-danger alert-dismissible fade show" role="alert">
-                <strong>❌ Error!</strong> <?= session()->getFlashdata('error') ?>
+                <strong>Error!</strong> <?= session()->getFlashdata('error') ?>
                 <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
             </div>
         <?php endif; ?>
 
         <?php if (session()->getFlashdata('errors')): ?>
             <div class="alert alert-danger alert-dismissible fade show" role="alert">
-                <strong>❌ Validation Errors:</strong>
+                <strong>Validation Errors:</strong>
                 <ul class="mb-0 mt-2">
                     <?php foreach (session()->getFlashdata('errors') as $error): ?>
                         <li><?= esc($error) ?></li>
@@ -72,7 +172,7 @@
                     <div class="card-header bg-white border-0 pb-0">
                         <div class="row align-items-center">
                             <div class="col-md-6">
-                                <h5 class="mb-3 fw-bold text-dark">🎯 Select Course Offering</h5>
+                                <h5 class="mb-3 fw-bold text-dark"> Select Course Offering</h5>
                                 <select class="form-select" id="offeringFilter" onchange="filterByOffering(this.value)">
                                     <option value="">-- All Course Offerings --</option>
                                     <?php foreach ($offerings as $offering): ?>
@@ -86,11 +186,11 @@
                             <div class="col-md-6 text-md-end mt-3 mt-md-0">
                                 <?php if ($selectedOfferingId): ?>
                                     <a href="<?= base_url('admin/manage_courses_schedule?action=create&offering_id=' . $selectedOfferingId) ?>" class="btn btn-success">
-                                        ➕ Add Schedule
+                                        Add Schedule
                                     </a>
                                 <?php else: ?>
                                     <button class="btn btn-success" disabled title="Please select a course offering first">
-                                        ➕ Add Schedule
+                                        Add Schedule
                                     </button>
                                 <?php endif; ?>
                             </div>
@@ -106,7 +206,7 @@
             <div class="col-12">
                 <div class="card border-0 shadow-sm rounded-3 border-info">
                     <div class="card-body bg-light">
-                        <h5 class="mb-2 fw-bold text-info">📚 Selected Course:</h5>
+                        <h5 class="mb-2 fw-bold text-info">Selected Course:</h5>
                         <h4 class="mb-1"><?= esc($selectedOffering['course_code']) ?> - <?= esc($selectedOffering['title']) ?></h4>
                         <p class="text-muted mb-0">
                             <strong>Section:</strong> <?= esc($selectedOffering['section'] ?: 'No Section') ?> | 
@@ -125,7 +225,7 @@
             <div class="col-12">
                 <div class="card border-0 shadow-sm rounded-3 border-success">
                     <div class="card-header bg-success text-white border-0">
-                        <h5 class="mb-0">➕ Add Course Schedule</h5>
+                        <h5 class="mb-0"> Add Course Schedule</h5>
                     </div>
                     <div class="card-body">
                         <form method="post" action="<?= base_url('admin/manage_courses_schedule?action=create') ?>">
@@ -187,12 +287,12 @@
                             </div>
 
                             <div class="d-flex justify-content-end gap-2">
+                                <button type="submit" class="btn btn-success">
+                                    Create Schedule
+                                </button>
                                 <a href="<?= base_url('admin/manage_courses_schedule?offering_id=' . $selectedOfferingId) ?>" class="btn btn-secondary">
                                     Cancel
                                 </a>
-                                <button type="submit" class="btn btn-success">
-                                    ➕ Create Schedule
-                                </button>
                             </div>
                         </form>
                     </div>
@@ -207,7 +307,7 @@
             <div class="col-12">
                 <div class="card border-0 shadow-sm rounded-3 border-warning">
                     <div class="card-header bg-warning text-dark border-0">
-                        <h5 class="mb-0">✏️ Edit Course Schedule</h5>
+                        <h5 class="mb-0">Edit Course Schedule</h5>
                     </div>
                     <div class="card-body">
                         <form method="post" action="<?= base_url('admin/manage_courses_schedule?action=edit&id=' . $editSchedule['id']) ?>">
@@ -262,12 +362,12 @@
                             </div>
 
                             <div class="d-flex justify-content-end gap-2">
+                                <button type="submit" class="btn btn-warning">
+                                    Update Schedule
+                                </button>
                                 <a href="<?= base_url('admin/manage_courses_schedule?offering_id=' . $editSchedule['course_offering_id']) ?>" class="btn btn-secondary">
                                     Cancel
                                 </a>
-                                <button type="submit" class="btn btn-warning">
-                                    💾 Update Schedule
-                                </button>
                             </div>
                         </form>
                     </div>
@@ -282,7 +382,7 @@
                 <div class="card border-0 shadow-sm rounded-3">
                     <div class="card-header bg-white border-bottom py-3">
                         <div class="d-flex justify-content-between align-items-center">
-                            <h5 class="mb-0 fw-bold text-dark">📋 Schedules List</h5>
+                            <h5 class="mb-0 fw-bold text-dark">Schedules List</h5>
                             <div class="text-muted small">
                                 <?php if ($selectedOffering): ?>
                                     Total: <?= count($schedules) ?> schedule(s)
@@ -323,9 +423,9 @@
                                             </td>
                                             <td>
                                                 <?php if (isset($schedule['session_type']) && $schedule['session_type'] === 'lab'): ?>
-                                                    <span class="badge bg-primary">🔬 Lab</span>
+                                                    <span class="badge bg-primary">Lab</span>
                                                 <?php else: ?>
-                                                    <span class="badge bg-warning text-dark">📚 Lecture</span>
+                                                    <span class="badge bg-warning text-dark">Lecture</span>
                                                 <?php endif; ?>
                                             </td>
                                             <td>
@@ -354,13 +454,13 @@
                                                     <a href="<?= base_url('admin/manage_courses_schedule?action=edit&id=' . $schedule['id']) ?>" 
                                                        class="btn btn-sm btn-warning text-white" 
                                                        title="Edit Schedule">
-                                                        ✏️
+                                                        
                                                     </a>
                                                     <a href="<?= base_url('admin/manage_courses_schedule?action=delete&id=' . $schedule['id']) ?>" 
                                                        class="btn btn-sm btn-danger" 
                                                        title="Delete Schedule"
                                                        onclick="return confirm('Are you sure you want to delete this schedule? This action cannot be undone.')">
-                                                        🗑️
+                                                        
                                                     </a>
                                                 </div>
                                             </td>
@@ -369,7 +469,6 @@
                                     <?php else: ?>
                                         <tr>
                                             <td colspan="8" class="text-center py-5 text-muted">
-                                                <div class="display-1 mb-3">🕐</div>
                                                 <h5>No schedules found</h5>
                                                 <p class="mb-0">
                                                     <?php if ($selectedOfferingId): ?>
@@ -400,3 +499,6 @@ function filterByOffering(offeringId) {
     }
 }
 </script>
+
+
+

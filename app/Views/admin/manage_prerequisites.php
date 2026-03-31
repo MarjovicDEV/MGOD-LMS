@@ -1,21 +1,131 @@
-<?= $this->include('templates/header') ?>
+﻿<?= $this->include('templates/header') ?>
+
+<style>
+    .lms-admin-view {
+        --brand-primary: #2563eb;
+        --brand-soft: #eef4ff;
+        --page-bg: #f8fafc;
+        --surface: #ffffff;
+        --surface-soft: #f8fbff;
+        --text-main: #0f172a;
+        --text-soft: #475569;
+        --border-soft: #dbe4ef;
+        --hover-soft: #f4f7fb;
+        background-color: var(--page-bg);
+        color: var(--text-main);
+    }
+
+    .lms-admin-view .card {
+        border: 1px solid var(--border-soft) !important;
+        border-radius: 12px;
+        background-color: var(--surface) !important;
+        box-shadow: 0 1px 2px rgba(15, 23, 42, 0.04) !important;
+    }
+
+    .lms-admin-view .admin-hero {
+        background-color: var(--surface-soft) !important;
+        color: var(--text-main) !important;
+        border: 1px solid var(--border-soft);
+    }
+
+    .lms-admin-view .admin-hero .opacity-75 {
+        opacity: 1 !important;
+        color: var(--text-soft) !important;
+    }
+
+    .lms-admin-view .admin-stats .card,
+    .lms-admin-view .card.text-white {
+        background-color: var(--surface) !important;
+        color: var(--text-main) !important;
+        border: 1px solid var(--border-soft) !important;
+    }
+
+    .lms-admin-view .admin-stats .display-4 {
+        display: none;
+    }
+
+    .lms-admin-view .admin-stats .display-5 {
+        font-size: 2rem;
+        margin-bottom: 0.35rem;
+    }
+
+    .lms-admin-view .card-header.bg-success,
+    .lms-admin-view .card-header.bg-warning,
+    .lms-admin-view .card-header.bg-primary,
+    .lms-admin-view .card-header.bg-info {
+        background-color: var(--surface-soft) !important;
+        color: var(--text-main) !important;
+        border-bottom: 1px solid var(--border-soft) !important;
+    }
+
+    .lms-admin-view .btn-success,
+    .lms-admin-view .btn-warning,
+    .lms-admin-view .btn-primary {
+        background-color: var(--brand-primary) !important;
+        border-color: var(--brand-primary) !important;
+        color: #ffffff !important;
+    }
+
+    .lms-admin-view .btn-light,
+    .lms-admin-view .btn-secondary,
+    .lms-admin-view .btn-outline-secondary {
+        background-color: #ffffff !important;
+        border-color: var(--border-soft) !important;
+        color: var(--text-main) !important;
+    }
+
+    .lms-admin-view .table thead th {
+        background-color: var(--surface-soft) !important;
+        color: var(--text-main) !important;
+        border-bottom: 1px solid var(--border-soft) !important;
+        font-size: 0.82rem;
+    }
+
+    .lms-admin-view .table tbody td {
+        font-size: 0.84rem;
+        color: var(--text-main);
+    }
+
+    .lms-admin-view .table-hover > tbody > tr:hover > * {
+        background-color: var(--hover-soft) !important;
+    }
+
+    .lms-admin-view .form-control,
+    .lms-admin-view .form-select,
+    .lms-admin-view .input-group-text {
+        border-color: var(--border-soft);
+        font-size: 0.86rem;
+    }
+
+    .lms-admin-view .form-control:focus,
+    .lms-admin-view .form-select:focus {
+        border-color: #93c5fd;
+        box-shadow: 0 0 0 0.2rem rgba(37, 99, 235, 0.12);
+    }
+
+    .lms-admin-view .text-muted,
+    .lms-admin-view small,
+    .lms-admin-view .form-text {
+        color: var(--text-soft) !important;
+    }
+</style>
 
 <!-- Manage Course Prerequisites View - Admin only functionality for prerequisite management -->
-<div class="bg-light min-vh-100">
+<div class="lms-admin-view min-vh-100">
     <div class="container py-4">
         <!-- Header Section -->
         <div class="row mb-4">
             <div class="col-12">
                 <div class="card border-0 shadow-sm rounded-3">
-                    <div class="card-body bg-primary text-white p-4 rounded-3">
+                    <div class="card-body bg-primary text-white p-4 rounded-3 admin-hero">
                         <div class="d-flex justify-content-between align-items-center">
                             <div>
-                                <h2 class="mb-2 fw-bold">🔗 Manage Course Prerequisites</h2>
+                                <h2 class="mb-2 fw-bold">Manage Course Prerequisites</h2>
                                 <p class="mb-0 opacity-75">Define prerequisite relationships between courses</p>
                             </div>
                             <div>
                                 <a href="<?= base_url('admin/dashboard') ?>" class="btn btn-light btn-sm">
-                                    ← Back to Dashboard
+                                    Back to Dashboard
                                 </a>
                             </div>
                         </div>
@@ -27,21 +137,21 @@
         <!-- Flash Messages -->
         <?php if (session()->getFlashdata('success')): ?>
             <div class="alert alert-success alert-dismissible fade show" role="alert">
-                <strong>✅ Success!</strong> <?= session()->getFlashdata('success') ?>
+                <strong>Success!</strong> <?= session()->getFlashdata('success') ?>
                 <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
             </div>
         <?php endif; ?>
 
         <?php if (session()->getFlashdata('error')): ?>
             <div class="alert alert-danger alert-dismissible fade show" role="alert">
-                <strong>❌ Error!</strong> <?= session()->getFlashdata('error') ?>
+                <strong>Error!</strong> <?= session()->getFlashdata('error') ?>
                 <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
             </div>
         <?php endif; ?>
 
         <?php if (session()->getFlashdata('errors')): ?>
             <div class="alert alert-danger alert-dismissible fade show" role="alert">
-                <strong>❌ Validation Errors:</strong>
+                <strong>Validation Errors:</strong>
                 <ul class="mb-0 mt-2">
                     <?php foreach (session()->getFlashdata('errors') as $error): ?>
                         <li><?= esc($error) ?></li>
@@ -52,10 +162,9 @@
         <?php endif; ?>
 
         <!-- Prerequisite Statistics Cards -->
-        <div class="row mb-4">
+        <div class="row mb-4 admin-stats">
             <div class="col-md-3 mb-3">
                 <div class="card border-0 shadow-sm text-white bg-primary text-center p-4 rounded-3 h-100">
-                    <div class="display-4 mb-2">🔗</div>
                     <div class="display-5 fw-bold"><?= $statistics['total'] ?></div>
                     <div class="fw-semibold">Total Prerequisites</div>
                     <small class="opacity-75">In the system</small>
@@ -63,7 +172,6 @@
             </div>
             <div class="col-md-3 mb-3">
                 <div class="card border-0 shadow-sm text-white bg-danger text-center p-4 rounded-3 h-100">
-                    <div class="display-4 mb-2">❗</div>
                     <div class="display-5 fw-bold"><?= $statistics['required'] ?></div>
                     <div class="fw-semibold">Required</div>
                     <small class="opacity-75">Must be completed</small>
@@ -71,7 +179,6 @@
             </div>
             <div class="col-md-3 mb-3">
                 <div class="card border-0 shadow-sm text-white bg-warning text-center p-4 rounded-3 h-100">
-                    <div class="display-4 mb-2">💡</div>
                     <div class="display-5 fw-bold"><?= $statistics['recommended'] ?></div>
                     <div class="fw-semibold">Recommended</div>
                     <small class="opacity-75">Suggested courses</small>
@@ -79,7 +186,6 @@
             </div>
             <div class="col-md-3 mb-3">
                 <div class="card border-0 shadow-sm text-white bg-info text-center p-4 rounded-3 h-100">
-                    <div class="display-4 mb-2">🔄</div>
                     <div class="display-5 fw-bold"><?= $statistics['corequisite'] ?></div>
                     <div class="fw-semibold">Corequisites</div>
                     <small class="opacity-75">Take together</small>
@@ -106,7 +212,7 @@
                             </div>
                             <div class="col-md-6 text-md-end">
                                 <a href="<?= base_url('admin/manage_prerequisites?action=create' . ($selectedCourseId ? '&course_id=' . $selectedCourseId : '')) ?>" class="btn btn-success">
-                                    ➕ Add Prerequisite
+                                    Add Prerequisite
                                 </a>
                             </div>
                         </div>
@@ -121,7 +227,7 @@
             <div class="col-12">
                 <div class="card border-0 shadow-sm rounded-3 border-primary">
                     <div class="card-body bg-light">
-                        <h5 class="mb-2 fw-bold text-primary">📚 Current Course:</h5>
+                        <h5 class="mb-2 fw-bold text-primary">Current Course:</h5>
                         <h4 class="mb-1"><?= esc($selectedCourse['course_code']) ?> - <?= esc($selectedCourse['title']) ?></h4>
                         <p class="text-muted mb-0">
                             <strong>Credits:</strong> <?= $selectedCourse['credits'] ?> | 
@@ -139,7 +245,7 @@
             <div class="col-12">
                 <div class="card border-0 shadow-sm rounded-3 border-success">
                     <div class="card-header bg-success text-white border-0">
-                        <h5 class="mb-0">➕ Add Course Prerequisite</h5>
+                        <h5 class="mb-0">Add Course Prerequisite</h5>
                     </div>
                     <div class="card-body">
                         <form method="post" action="<?= base_url('admin/manage_prerequisites?action=create') ?>">
@@ -196,18 +302,18 @@
                                     </div>
                                 </div>                            </div>
                             <div class="alert alert-info mb-3">
-                                <strong>ℹ️ Grading Scale:</strong> The system uses a 75-100 grading scale where 75 is the passing score. Set the minimum grade a student must achieve in the prerequisite course to enroll in the main course.
+                                <strong>Grading Scale:</strong> The system uses a 75-100 grading scale where 75 is the passing score. Set the minimum grade a student must achieve in the prerequisite course to enroll in the main course.
                             </div>
                             <div class="alert alert-warning mb-3">
-                                <strong>⚠️ Note:</strong> The system will automatically check for circular dependencies to prevent infinite prerequisite chains.
+                                <strong>Note:</strong> The system will automatically check for circular dependencies to prevent infinite prerequisite chains.
                             </div>
                             <div class="d-flex justify-content-end gap-2">
-                                <a href="<?= base_url('admin/manage_prerequisites' . ($selectedCourseId ? '?course_id=' . $selectedCourseId : '')) ?>" class="btn btn-secondary">
-                                    ❌ Cancel
-                                </a>
                                 <button type="submit" class="btn btn-success">
-                                    ➕ Add Prerequisite
+                                    Add Prerequisite
                                 </button>
+                                <a href="<?= base_url('admin/manage_prerequisites' . ($selectedCourseId ? '?course_id=' . $selectedCourseId : '')) ?>" class="btn btn-secondary">
+                                    Cancel
+                                </a>
                             </div>
                         </form>
                     </div>
@@ -222,7 +328,7 @@
             <div class="col-12">
                 <div class="card border-0 shadow-sm rounded-3 border-warning">
                     <div class="card-header bg-warning text-white border-0">
-                        <h5 class="mb-0">✏️ Edit Prerequisite</h5>
+                        <h5 class="mb-0">Edit Prerequisite</h5>
                     </div>
                     <div class="card-body">
                         <div class="alert alert-info mb-3">
@@ -254,12 +360,12 @@
                                 </div>
                             </div>
                             <div class="d-flex justify-content-end gap-2">
-                                <a href="<?= base_url('admin/manage_prerequisites?course_id=' . $editPrerequisite['course_id']) ?>" class="btn btn-secondary">
-                                    ❌ Cancel
-                                </a>
                                 <button type="submit" class="btn btn-warning text-white">
-                                    💾 Update Prerequisite
+                                    Update Prerequisite
                                 </button>
+                                <a href="<?= base_url('admin/manage_prerequisites?course_id=' . $editPrerequisite['course_id']) ?>" class="btn btn-secondary">
+                                    Cancel
+                                </a>
                             </div>
                         </form>
                     </div>
@@ -274,7 +380,7 @@
                 <div class="card border-0 shadow-sm rounded-3">
                     <div class="card-header bg-white border-bottom py-3">
                         <div class="d-flex justify-content-between align-items-center">
-                            <h5 class="mb-0 fw-bold text-dark">📋 Prerequisites List</h5>
+                            <h5 class="mb-0 fw-bold text-dark">Prerequisites List</h5>
                             <div class="text-muted small">
                                 Total: <?= count($prerequisites) ?> prerequisites
                             </div>
@@ -287,7 +393,7 @@
                                     <tr>
                                         <th class="fw-semibold border-0 text-center">ID</th>
                                         <th class="fw-semibold border-0">Course</th>
-                                        <th class="fw-semibold border-0">⬅️ Prerequisite Course</th>
+                                        <th class="fw-semibold border-0">Prerequisite Course</th>
                                         <th class="fw-semibold border-0 text-center">Type</th>
                                         <th class="fw-semibold border-0 text-center">Min. Grade</th>
                                         <th class="fw-semibold border-0 text-center">Actions</th>
@@ -310,11 +416,11 @@
                                             </td>
                                             <td class="text-center">
                                                 <?php if ($prereq['prerequisite_type'] == 'required'): ?>
-                                                    <span class="badge bg-danger">❗ Required</span>
+                                                    <span class="badge bg-danger">Required</span>
                                                 <?php elseif ($prereq['prerequisite_type'] == 'recommended'): ?>
-                                                    <span class="badge bg-warning">💡 Recommended</span>
+                                                    <span class="badge bg-warning">Recommended</span>
                                                 <?php else: ?>
-                                                    <span class="badge bg-info">🔄 Corequisite</span>
+                                                    <span class="badge bg-info">Corequisite</span>
                                                 <?php endif; ?>
                                             </td>                                            <td class="text-center">
                                                 <?= $prereq['minimum_grade'] ? number_format($prereq['minimum_grade'], 0) : '<span class="text-muted">N/A</span>' ?>
@@ -324,13 +430,13 @@
                                                     <a href="<?= base_url('admin/manage_prerequisites?action=edit&id=' . $prereq['id']) ?>" 
                                                        class="btn btn-sm btn-warning text-white" 
                                                        title="Edit Prerequisite">
-                                                        ✏️
+                                                        
                                                     </a>
                                                     <a href="<?= base_url('admin/manage_prerequisites?action=delete&id=' . $prereq['id']) ?>" 
                                                        class="btn btn-sm btn-danger" 
                                                        title="Delete Prerequisite"
                                                        onclick="return confirm('Are you sure you want to delete this prerequisite relationship? This action cannot be undone.')">
-                                                        🗑️
+                                                        
                                                     </a>
                                                 </div>
                                             </td>
@@ -339,7 +445,6 @@
                                     <?php else: ?>
                                         <tr>
                                             <td colspan="6" class="text-center py-5 text-muted">
-                                                <div class="display-1 mb-3">🔗</div>
                                                 <h5>No prerequisites found</h5>
                                                 <p class="mb-0">
                                                     <?php if ($selectedCourseId): ?>
@@ -381,7 +486,7 @@ document.addEventListener('DOMContentLoaded', function() {
             if (courseId && prerequisiteCourseId) {
                 if (courseId.value === prerequisiteCourseId.value && courseId.value !== '') {
                     e.preventDefault();
-                    alert('❌ Error: A course cannot be its own prerequisite.\n\nPlease select a different prerequisite course.');
+                    alert('Error: A course cannot be its own prerequisite.\n\nPlease select a different prerequisite course.');
                     prerequisiteCourseId.focus();
                     return false;
                 }
@@ -420,3 +525,6 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 });
 </script>
+
+
+

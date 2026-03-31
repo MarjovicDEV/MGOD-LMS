@@ -451,12 +451,17 @@ class Auth extends BaseController
                     ->join('roles', 'roles.id = users.role_id', 'left')
                     ->orderBy('users.created_at', 'DESC')
                     ->limit(10)
-                    ->findAll();                // Prepare recent activities for display
+                    ->findAll();
+
+                // Prepare recent activities for display
                 $recentActivities = [];
                 foreach ($recentUsers as $user) {
                     // Add user registration activity
                     $userName = esc($user['first_name'] . ' ' . $user['last_name']);
-                    $roleName = $user['role_name'] ?? 'User';
+                    $roleName = strtolower(trim((string) ($user['role_name'] ?? 'user')));
+                    if ($roleName === 'instructor') {
+                        $roleName = 'teacher';
+                    }
                     
                     $recentActivities[] = [
                         'type' => 'user_registration',
@@ -472,10 +477,17 @@ class Auth extends BaseController
                 $creationActivities = $this->session->get('creation_activities') ?? [];
                 $updateActivities = $this->session->get('update_activities') ?? [];
                 $deletionActivities = $this->session->get('deletion_activities') ?? [];
+                $reactivationActivities = $this->session->get('reactivation_activities') ?? [];
                 $assignmentActivities = $this->session->get('assignment_activities') ?? [];
                 
                 // Merge all admin activities
-                $adminActivities = array_merge($creationActivities, $updateActivities, $deletionActivities, $assignmentActivities);
+                $adminActivities = array_merge(
+                    $creationActivities,
+                    $updateActivities,
+                    $deletionActivities,
+                    $reactivationActivities,
+                    $assignmentActivities
+                );
                 
                 // Add admin activities to recent activities
                 foreach ($adminActivities as $adminActivity) {
@@ -486,7 +498,9 @@ class Auth extends BaseController
                 usort($recentActivities, function($a, $b) {
                     return strtotime($b['time']) - strtotime($a['time']);
                 });
-                $recentActivities = array_slice($recentActivities, 0, 8);                $dashboardData = array_merge($baseData, [
+                $recentActivities = array_slice($recentActivities, 0, 8);
+
+                $dashboardData = array_merge($baseData, [
                     'title' => 'Admin Dashboard - MGOD LMS',
                     'totalUsers' => $totalUsers,
                     'totalAdmins' => $totalAdmins,

@@ -1,21 +1,126 @@
 <?= $this->include('templates/header') ?>
 
+<style>
+    .lms-admin-view {
+        --brand-primary: #2563eb;
+        --brand-soft: #eef4ff;
+        --page-bg: #f8fafc;
+        --surface: #ffffff;
+        --surface-soft: #f8fbff;
+        --text-main: #0f172a;
+        --text-soft: #475569;
+        --border-soft: #dbe4ef;
+        background-color: var(--page-bg);
+        color: var(--text-main);
+    }
+
+    .lms-admin-view .card {
+        border: 1px solid var(--border-soft) !important;
+        border-radius: 12px;
+        background-color: var(--surface) !important;
+        box-shadow: 0 1px 2px rgba(15, 23, 42, 0.04) !important;
+    }
+
+    .lms-admin-view .admin-hero {
+        background-color: var(--surface-soft) !important;
+        color: var(--text-main) !important;
+        border: 1px solid var(--border-soft);
+    }
+
+    .lms-admin-view .admin-hero .opacity-75 {
+        opacity: 1 !important;
+        color: var(--text-soft) !important;
+    }
+
+    .lms-admin-view .admin-stats .card,
+    .lms-admin-view .card.text-white {
+        background-color: var(--surface) !important;
+        color: var(--text-main) !important;
+        border: 1px solid var(--border-soft) !important;
+    }
+
+    .lms-admin-view .admin-stats .display-4 {
+        display: none;
+    }
+
+    .lms-admin-view .admin-stats .display-5 {
+        font-size: 2rem;
+        margin-bottom: 0.35rem;
+    }
+
+    .lms-admin-view .card-header.bg-success,
+    .lms-admin-view .card-header.bg-warning,
+    .lms-admin-view .card-header.bg-primary,
+    .lms-admin-view .card-header.bg-info {
+        background-color: var(--surface-soft) !important;
+        color: var(--text-main) !important;
+        border-bottom: 1px solid var(--border-soft) !important;
+    }
+
+    .lms-admin-view .btn-success,
+    .lms-admin-view .btn-warning,
+    .lms-admin-view .btn-primary {
+        background-color: var(--brand-primary) !important;
+        border-color: var(--brand-primary) !important;
+        color: #ffffff !important;
+    }
+
+    .lms-admin-view .btn-light,
+    .lms-admin-view .btn-secondary,
+    .lms-admin-view .btn-outline-secondary {
+        background-color: #ffffff !important;
+        border-color: var(--border-soft) !important;
+        color: var(--text-main) !important;
+    }
+
+    .lms-admin-view .table thead th {
+        background-color: var(--surface-soft) !important;
+        color: var(--text-main) !important;
+        border-bottom: 1px solid var(--border-soft) !important;
+        font-size: 0.82rem;
+    }
+
+    .lms-admin-view .table tbody td {
+        font-size: 0.84rem;
+        color: var(--text-main);
+    }
+
+    .lms-admin-view .form-control,
+    .lms-admin-view .form-select,
+    .lms-admin-view .input-group-text {
+        border-color: var(--border-soft);
+        font-size: 0.86rem;
+    }
+
+    .lms-admin-view .form-control:focus,
+    .lms-admin-view .form-select:focus {
+        border-color: #93c5fd;
+        box-shadow: 0 0 0 0.2rem rgba(37, 99, 235, 0.12);
+    }
+
+    .lms-admin-view .text-muted,
+    .lms-admin-view small,
+    .lms-admin-view .form-text {
+        color: var(--text-soft) !important;
+    }
+</style>
+
 <!-- Manage Departments View - Admin only functionality for department management -->
-<div class="bg-light min-vh-100">
+<div class="lms-admin-view min-vh-100">
     <div class="container py-4">
         <!-- Header Section -->
         <div class="row mb-4">
             <div class="col-12">
                 <div class="card border-0 shadow-sm rounded-3">
-                    <div class="card-body bg-primary text-white p-4 rounded-3">
+                    <div class="card-body bg-primary text-white p-4 rounded-3 admin-hero">
                         <div class="d-flex justify-content-between align-items-center">
                             <div>
-                                <h2 class="mb-2 fw-bold">🏢 Manage Departments</h2>
+                                <h2 class="mb-2 fw-bold">Manage Departments</h2>
                                 <p class="mb-0 opacity-75">Create, edit, and manage academic departments in the system</p>
                             </div>
                             <div>
                                 <a href="<?= base_url('admin/dashboard') ?>" class="btn btn-light btn-sm">
-                                    ← Back to Dashboard
+                                    Back to Dashboard
                                 </a>
                             </div>
                         </div>
@@ -25,10 +130,10 @@
         </div>
 
         <!-- Department Statistics Cards -->
-        <div class="row mb-4">
+        <div class="row mb-4 admin-stats">
             <div class="col-md-3 mb-3">
                 <div class="card border-0 shadow-sm text-white bg-primary text-center p-4 rounded-3 h-100">
-                    <div class="display-4 mb-2">🏢</div>
+                    <div class="display-4 mb-2">DEP</div>
                     <div class="display-5 fw-bold"><?= count($departments) ?></div>
                     <div class="fw-semibold">Total Departments</div>
                     <small class="opacity-75">In the system</small>
@@ -36,7 +141,7 @@
             </div>
             <div class="col-md-3 mb-3">
                 <div class="card border-0 shadow-sm text-white bg-success text-center p-4 rounded-3 h-100">
-                    <div class="display-4 mb-2">✅</div>
+                    <div class="display-4 mb-2">ACT</div>
                     <div class="display-5 fw-bold"><?= count(array_filter($departments, fn($d) => $d['is_active'] == 1)) ?></div>
                     <div class="fw-semibold">Active</div>
                     <small class="opacity-75">Currently active</small>
@@ -44,7 +149,7 @@
             </div>
             <div class="col-md-3 mb-3">
                 <div class="card border-0 shadow-sm text-white bg-warning text-center p-4 rounded-3 h-100">
-                    <div class="display-4 mb-2">❌</div>
+                    <div class="display-4 mb-2">INA</div>
                     <div class="display-5 fw-bold"><?= count(array_filter($departments, fn($d) => $d['is_active'] == 0)) ?></div>
                     <div class="fw-semibold">Inactive</div>
                     <small class="opacity-75">Deactivated</small>
@@ -52,7 +157,7 @@
             </div>
             <div class="col-md-3 mb-3">
                 <div class="card border-0 shadow-sm text-white bg-info text-center p-4 rounded-3 h-100">
-                    <div class="display-4 mb-2">👨‍💼</div>
+                    <div class="display-4 mb-2">HD</div>
                     <div class="display-5 fw-bold"><?= count(array_filter($departments, fn($d) => !empty($d['head_user_id']))) ?></div>
                     <div class="fw-semibold">With Heads</div>
                     <small class="opacity-75">Assigned heads</small>
@@ -93,9 +198,9 @@
                 <div class="card border-0 shadow-sm rounded-3">
                     <div class="card-header bg-white border-0 pb-0">
                         <div class="d-flex justify-content-between align-items-center">
-                            <h5 class="mb-0 fw-bold text-dark">⚡ Department Management</h5>
+                            <h5 class="mb-0 fw-bold text-dark">Department Management</h5>
                             <a href="<?= base_url('admin/manage_departments?action=create') ?>" class="btn btn-success">
-                                ➕ Create New Department
+                                Create New Department
                             </a>
                         </div>
                     </div>
@@ -117,7 +222,7 @@
                                     <input type="text" 
                                            id="departmentSearchInput" 
                                            class="form-control border-start-0" 
-                                           placeholder="🔍 Search departments by code, name, description, or head...">
+                                           placeholder="Search departments by code, name, description, or head...">
                                     <button class="btn btn-outline-secondary" type="button" id="clearSearch">
                                         <i class="fas fa-times"></i> Clear
                                     </button>
@@ -142,7 +247,7 @@
             <div class="col-12">
                 <div class="card border-0 shadow-sm rounded-3 border-success">
                     <div class="card-header bg-success text-white border-0">
-                        <h5 class="mb-0">➕ Create New Department</h5>
+                        <h5 class="mb-0">Create New Department</h5>
                     </div>
                     <div class="card-body">
                         <form method="post" action="<?= base_url('admin/manage_departments?action=create') ?>">
@@ -196,12 +301,12 @@
                                 </div>
                             </div>
                             <div class="d-flex justify-content-end gap-2">
-                                <a href="<?= base_url('admin/manage_departments') ?>" class="btn btn-secondary">
-                                    ❌ Cancel
-                                </a>
                                 <button type="submit" class="btn btn-success">
-                                    ✅ Create Department
+                                    Create Department
                                 </button>
+                                <a href="<?= base_url('admin/manage_departments') ?>" class="btn btn-secondary">
+                                    Cancel
+                                </a>
                             </div>
                         </form>
                     </div>
@@ -216,7 +321,7 @@
             <div class="col-12">
                 <div class="card border-0 shadow-sm rounded-3 border-warning">
                     <div class="card-header bg-warning text-white border-0">
-                        <h5 class="mb-0">✏️ Edit Department: <?= esc($editDepartment['department_name']) ?></h5>
+                        <h5 class="mb-0">Edit Department: <?= esc($editDepartment['department_name']) ?></h5>
                     </div>
                     <div class="card-body">
                         <form method="post" action="<?= base_url('admin/manage_departments?action=edit&id=' . $editDepartment['id']) ?>">
@@ -268,12 +373,12 @@
                                 </div>
                             </div>
                             <div class="d-flex justify-content-end gap-2">
-                                <a href="<?= base_url('admin/manage_departments') ?>" class="btn btn-secondary">
-                                    ❌ Cancel
-                                </a>
                                 <button type="submit" class="btn btn-warning text-white">
-                                    💾 Update Department
+                                    Update Department
                                 </button>
+                                <a href="<?= base_url('admin/manage_departments') ?>" class="btn btn-secondary">
+                                    Cancel
+                                </a>
                             </div>
                         </form>
                     </div>
@@ -288,7 +393,7 @@
                 <div class="card border-0 shadow-sm rounded-3">
                     <div class="card-header bg-white border-bottom py-3">
                         <div class="d-flex justify-content-between align-items-center">
-                            <h5 class="mb-0 fw-bold text-dark">📋 Departments List</h5>
+                            <h5 class="mb-0 fw-bold text-dark">Departments List</h5>
                             <div class="text-muted small">
                                 Total: <?= count($departments) ?> departments
                             </div>
@@ -344,9 +449,9 @@
                                             </td>
                                             <td class="text-center">
                                                 <?php if ($department['is_active']): ?>
-                                                    <span class="badge bg-success">✅ Active</span>
+                                                    <span class="badge bg-success">Active</span>
                                                 <?php else: ?>
-                                                    <span class="badge bg-danger">❌ Inactive</span>
+                                                    <span class="badge bg-danger">Inactive</span>
                                                 <?php endif; ?>
                                             </td>
                                             <td class="text-center">
@@ -355,7 +460,7 @@
                                                     <a href="<?= base_url('admin/manage_departments?action=edit&id=' . $department['id']) ?>" 
                                                        class="btn btn-outline-warning btn-sm" 
                                                        title="Edit Department">
-                                                        ✏️
+                                                        <i class="fas fa-pen"></i>
                                                     </a>
                                                     
                                                     <!-- Toggle Status Button -->
@@ -363,7 +468,7 @@
                                                        class="btn btn-outline-<?= $department['is_active'] ? 'secondary' : 'success' ?> btn-sm" 
                                                        onclick="return confirm('Are you sure you want to <?= $department['is_active'] ? 'deactivate' : 'activate' ?> this department?')"
                                                        title="<?= $department['is_active'] ? 'Deactivate' : 'Activate' ?> Department">
-                                                        <?= $department['is_active'] ? '🔒' : '🔓' ?>
+                                                        <?= $department['is_active'] ? '<i class="fas fa-lock"></i>' : '<i class="fas fa-unlock"></i>' ?>
                                                     </a>
                                                     
                                                     <!-- Deactivate Button (Soft Delete) -->
@@ -372,7 +477,7 @@
                                                        class="btn btn-outline-danger btn-sm" 
                                                        onclick="return confirm('Are you sure you want to deactivate this department?\n\nDepartment: <?= esc($department['department_name']) ?>\n\nNote: This will only deactivate the department, not permanently delete it.')"
                                                        title="Deactivate Department">
-                                                        ⛔ Deactivate
+                                                        Deactivate
                                                     </a>
                                                     <?php endif; ?>
                                                 </div>
@@ -389,7 +494,7 @@
                                         <tr id="noDepartmentsRow">
                                             <td colspan="7" class="text-center py-5">
                                                 <div class="text-muted">
-                                                    <div class="display-1 mb-3">🏢</div>
+                                                    <i class="fas fa-building mb-3" style="font-size: 2.5rem; opacity: 0.3;"></i>
                                                     <h5>No departments found</h5>
                                                     <p>Start by creating a new department using the button above.</p>
                                                 </div>

@@ -16,13 +16,154 @@
           integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" 
           crossorigin="anonymous">
     <style>
-        .navbar-nav .nav-link.active {
-            background-color: rgba(255, 255, 255, 0.2);
-            border-radius: 8px;
-            color: #fff !important;
+        :root {
+            --brand-primary: #2563eb;
+            --brand-soft: #eff6ff;
+            --surface-base: #eff6ff;
+            --surface-light: #f8fafc;
+            --text-dark: #0f172a;
+            --text-muted: #475569;
+            --border-soft: #d9e5fb;
+            --hover-soft: #f1f5f9;
         }
-        .navbar-nav .nav-link.active:hover {
-            background-color: rgba(255, 255, 255, 0.3);
+
+        html,
+        body {
+            font-size: 18px;
+        }
+
+        body {
+            background-color: var(--surface-light) !important;
+            color: var(--text-dark);
+        }
+
+        .lms-navbar {
+            background-color: var(--surface-base) !important;
+            border-bottom: 1px solid var(--border-soft);
+        }
+
+        .lms-navbar .navbar-brand {
+            color: var(--text-dark) !important;
+            font-size: 1.45rem !important;
+            letter-spacing: 0.2px;
+        }
+
+        .lms-navbar .nav-link,
+        .lms-navbar .nav-link,
+        .lms-navbar .navbar-toggler {
+            color: var(--text-dark) !important;
+        }
+
+        .lms-navbar .nav-link {
+            border-radius: 8px;
+            font-size: 0.875rem;
+            padding-top: 0.45rem;
+            padding-bottom: 0.45rem;
+            transition: background-color 0.2s ease, color 0.2s ease;
+        }
+
+        .lms-navbar .nav-link:hover,
+        .lms-navbar .nav-link:focus {
+            background-color: var(--hover-soft);
+            color: var(--text-dark) !important;
+        }
+
+        .lms-navbar .navbar-nav .nav-link.active {
+            background-color: var(--brand-soft);
+            color: var(--brand-primary) !important;
+        }
+
+        .lms-navbar .dropdown-menu {
+            background-color: #ffffff;
+            border: 1px solid var(--border-soft);
+            border-radius: 12px;
+            box-shadow: 0 8px 24px rgba(15, 23, 42, 0.08);
+        }
+
+        .lms-navbar .dropdown-item {
+            color: var(--text-dark);
+            font-size: 0.85rem;
+            padding: 0.5rem 0.9rem;
+        }
+
+        .lms-navbar .dropdown-item:hover,
+        .lms-navbar .dropdown-item:focus {
+            background-color: var(--hover-soft);
+            color: var(--text-dark);
+        }
+
+        .lms-navbar .dropdown-item.active,
+        .lms-navbar .dropdown-item:active {
+            background-color: var(--brand-soft);
+            color: var(--brand-primary);
+        }
+
+        .role-chip {
+            background-color: var(--brand-soft) !important;
+            color: var(--brand-primary) !important;
+            border: 1px solid #bfdbfe;
+            font-size: 0.78rem;
+            font-weight: 700;
+        }
+
+        .avatar-chip {
+            background-color: var(--brand-soft) !important;
+            color: var(--brand-primary) !important;
+            font-size: 0.72rem;
+            font-weight: 700;
+        }
+
+        .lms-navbar .navbar-toggler {
+            border-color: rgba(15, 23, 42, 0.16) !important;
+        }
+
+        .lms-navbar .navbar-toggler-icon {
+            filter: none;
+        }
+
+        .lms-navbar #notificationBadge {
+            background-color: var(--brand-primary) !important;
+            color: #ffffff !important;
+        }
+
+        .lms-navbar .btn-outline-light {
+            color: var(--brand-primary) !important;
+            border-color: #bfdbfe !important;
+            background-color: #ffffff;
+            font-size: 0.84rem;
+        }
+
+        .lms-navbar .btn-outline-light:hover,
+        .lms-navbar .btn-outline-light:focus {
+            color: var(--brand-primary) !important;
+            background-color: var(--brand-soft) !important;
+            border-color: #93c5fd !important;
+        }
+
+        .lms-navbar .dropdown-item i {
+            display: none;
+        }
+
+        .lms-navbar #notificationsList i {
+            display: none;
+        }
+
+        .lms-navbar #notificationsList .alert {
+            background-color: #ffffff !important;
+            border-left: 3px solid var(--brand-primary) !important;
+            color: var(--text-dark);
+        }
+
+        .lms-navbar #notificationsList .btn-primary {
+            background-color: var(--brand-primary);
+            border-color: var(--brand-primary);
+            font-size: 0.78rem;
+        }
+
+        .lms-navbar #notificationsList .btn-outline-secondary {
+            color: var(--text-muted);
+            border-color: var(--border-soft);
+            font-size: 0.78rem;
         }
     </style>
 </head>
@@ -37,12 +178,12 @@
     $currentUri = uri_string();
     ?>
     
-    <nav class="navbar navbar-expand-lg navbar-dark bg-primary shadow-sm">
+    <nav class="navbar navbar-expand-lg navbar-light lms-navbar shadow-sm">
         <div class="container">            
             <a class="navbar-brand fw-bold fs-4" href="<?= $isLoggedIn ? base_url($userRole . '/dashboard') : base_url() ?>">
-                📚 MGOD LMS
+                MGOD LMS
                 <?php if ($isLoggedIn): ?>
-                    <span class="badge bg-light text-primary ms-2 rounded-pill">
+                    <span class="badge role-chip ms-2 rounded-pill">
                         <?= ucfirst($userRole) ?>
                     </span>
                 <?php endif; ?>
@@ -52,8 +193,8 @@
                 <span class="navbar-toggler-icon"></span>
             </button>
             
-            <div class="collapse navbar-collapse" id="navbarNav">                  
-                <ul class="navbar-nav me-auto">
+            <div class="collapse navbar-collapse justify-content-end" id="navbarNav">                  
+                <ul class="navbar-nav align-items-lg-center ms-auto">
                     <?php if ($isLoggedIn): ?>                       
                          <li class="nav-item">
                             <?php
@@ -62,7 +203,7 @@
                             $isDashboardActive = (strpos($currentUri, $userRole . '/dashboard') !== false) || ($currentUri === 'dashboard');
                             ?>
                             <a class="nav-link px-3 fw-bold <?= $isDashboardActive ? 'active' : '' ?>" href="<?= $dashboardUrl ?>">
-                                🏠 Dashboard
+                                Dashboard
                             </a>
                         </li>
                         
@@ -77,7 +218,7 @@
                                    role="button" 
                                    data-bs-toggle="dropdown" 
                                    aria-expanded="false">
-                                    👥 Users
+                                    Users
                                 </a>
                                 <ul class="dropdown-menu shadow" aria-labelledby="usersDropdown">
                                     <li>
@@ -108,7 +249,7 @@
                                    role="button" 
                                    data-bs-toggle="dropdown" 
                                    aria-expanded="false">
-                                    📚 Courses
+                                    Courses
                                 </a>
                                 <ul class="dropdown-menu shadow" aria-labelledby="coursesDropdown">
                                     <li>
@@ -122,7 +263,8 @@
                                            href="<?= base_url('admin/manage_prerequisites') ?>">
                                             <i class="fas fa-link me-2"></i>Manage Courses Prerequisite
                                         </a>
-                                    </li>                                    <li>
+                                    </li>                                    
+                                    <li>
                                         <a class="dropdown-item <?= (strpos($currentUri, 'admin/manage_offerings') !== false) ? 'active fw-bold' : '' ?>" 
                                            href="<?= base_url('admin/manage_offerings') ?>">
                                             <i class="fas fa-calendar-check me-2"></i>Manage Course Offerings
@@ -158,7 +300,7 @@
                                    role="button" 
                                    data-bs-toggle="dropdown" 
                                    aria-expanded="false">
-                                    🎓 Enrollments
+                                    Enrollments
                                 </a>
                                 <ul class="dropdown-menu shadow" aria-labelledby="enrollmentsDropdown">
                                     <li>
@@ -190,7 +332,7 @@
                                    role="button" 
                                    data-bs-toggle="dropdown" 
                                    aria-expanded="false">
-                                    📋 Assignments
+                                    Assignments
                                 </a>
                                 <ul class="dropdown-menu shadow" aria-labelledby="assignmentsDropdown">
                                     <li>
@@ -235,7 +377,7 @@
                                    role="button" 
                                    data-bs-toggle="dropdown" 
                                    aria-expanded="false">
-                                    📚 Courses
+                                    Courses
                                 </a>                                
                                 <ul class="dropdown-menu shadow" aria-labelledby="teacherCoursesDropdown">
                                     <li>
@@ -261,7 +403,7 @@
                                    role="button" 
                                    data-bs-toggle="dropdown" 
                                    aria-expanded="false">
-                                    🎓 Enrollment
+                                    Enrollment
                                 </a>
                                 <ul class="dropdown-menu shadow" aria-labelledby="teacherEnrollmentDropdown">
                                     <li>
@@ -286,7 +428,7 @@
                                    role="button" 
                                    data-bs-toggle="dropdown" 
                                    aria-expanded="false">
-                                    📝 Assignments
+                                    Assignments
                                 </a>
                                 <ul class="dropdown-menu shadow" aria-labelledby="teacherAssignmentsDropdown">
                                     <li>
@@ -307,7 +449,7 @@
                             <li class="nav-item">
                                 <a class="nav-link px-3 fw-bold <?= (strpos($currentUri, 'teacher/gradebook') !== false) ? 'active' : '' ?>" 
                                    href="<?= base_url('teacher/gradebook') ?>">
-                                    📊 Gradebook
+                                    Gradebook
                                 </a>
                             </li>
 
@@ -321,7 +463,7 @@
                                    role="button" 
                                    data-bs-toggle="dropdown" 
                                    aria-expanded="false">
-                                    📚 My Courses
+                                    My Courses
                                 </a>
                                 <ul class="dropdown-menu dropdown-menu-end shadow" aria-labelledby="studentCoursesDropdown">
                                     <li>
@@ -340,34 +482,34 @@
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link px-3 fw-bold <?= (strpos($currentUri, 'student/assignments') !== false) ? 'active' : '' ?>" href="<?= base_url('student/assignments') ?>">
-                                    📝 Assignments
+                                    Assignments
                                 </a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link px-3 fw-bold <?= (strpos($currentUri, 'student/grades') !== false) ? 'active' : '' ?>" href="<?= base_url('student/grades') ?>">
-                                    📊 Grades
+                                    Grades
                                 </a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link px-3 fw-bold <?= (strpos($currentUri, 'student/schedule') !== false) ? 'active' : '' ?>" href="<?= base_url('student/schedule') ?>">
-                                    📅 Schedule
+                                    Schedule
                                 </a>
                             </li>
                         <?php endif; ?>
                     <?php else: ?>
                         <!-- Public Navigation -->
                         <li class="nav-item">
-                            <a class="nav-link px-3 fw-bold" href="<?= base_url() ?>">🏠 Home</a>
+                            <a class="nav-link px-3 fw-bold" href="<?= base_url() ?>">Home</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link px-3 fw-bold" href="<?= base_url('about') ?>">ℹ️ About</a>
+                            <a class="nav-link px-3 fw-bold" href="<?= base_url('about') ?>">About</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link px-3 fw-bold" href="<?= base_url('contact') ?>">📞 Contact</a>
+                            <a class="nav-link px-3 fw-bold" href="<?= base_url('contact') ?>">Contact</a>
                         </li>
                     <?php endif; ?>
                 </ul>                
-                <ul class="navbar-nav">
+                <ul class="navbar-nav align-items-lg-center ms-lg-3">
                     <?php if ($isLoggedIn): ?>
                         <!-- Notifications Dropdown with jQuery/Bootstrap Integration -->
                         <li class="nav-item dropdown me-3">
@@ -394,7 +536,7 @@
                         <!-- Logged In User Menu -->
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle d-flex align-items-center fw-bold" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                <span class="badge bg-light text-primary me-2 rounded-circle" style="width: 30px; height: 30px; display: flex; align-items: center; justify-content: center;">
+                                <span class="badge avatar-chip me-2 rounded-circle" style="width: 30px; height: 30px; display: flex; align-items: center; justify-content: center;">
                                     <?= strtoupper(substr($session->get('name'), 0, 1)) ?>
                                 </span>
                                 <?= esc($session->get('name')) ?>
@@ -408,22 +550,22 @@
                                     </h6>
                                 </li>
                                 <li><hr class="dropdown-divider"></li>
-                                <li><a class="dropdown-item fw-semibold" href="#">👤 Profile</a></li>
-                                <li><a class="dropdown-item fw-semibold" href="#">⚙️ Settings</a></li>
+                                <li><a class="dropdown-item fw-semibold" href="#">Profile</a></li>
+                                <li><a class="dropdown-item fw-semibold" href="#">Settings</a></li>
                                 <li><hr class="dropdown-divider"></li>
-                                <li><a class="dropdown-item text-danger fw-bold" href="<?= base_url('logout') ?>">🚪 Logout</a></li>
+                                <li><a class="dropdown-item text-danger fw-bold" href="<?= base_url('logout') ?>">Logout</a></li>
                             </ul>
                         </li>
                     <?php else: ?>
                         <!-- Public User Menu -->
                         <li class="nav-item">
                             <a class="nav-link fw-bold px-3" href="<?= base_url('login') ?>">
-                                🔑 Login
+                                Login
                             </a>
                         </li>
                         <li class="nav-item">
                             <a class="btn btn-outline-light rounded-pill ms-2 px-3 fw-bold" href="<?= base_url('register') ?>">
-                                📝 Register
+                                Register
                             </a>
                         </li>
                     <?php endif; ?>

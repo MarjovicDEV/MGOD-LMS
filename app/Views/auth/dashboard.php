@@ -1,8 +1,260 @@
 <?= $this->include('templates/header') ?>
 
+<style>
+    .lms-dashboard {
+        --brand-primary: #2563eb;
+        --brand-soft: #eef4ff;
+        --dashboard-bg: #f8fafc;
+        --text-main: #0f172a;
+        --text-soft: #475569;
+        --surface-soft: #ffffff;
+        --border-soft: #dbe4ef;
+        --hover-soft: #eef2f7;
+        background-color: var(--dashboard-bg);
+        color: var(--text-main);
+        /* font-size: 16px; */
+    }
+
+    .lms-dashboard h1,
+    .lms-dashboard h2,
+    .lms-dashboard h3,
+    .lms-dashboard h4,
+    .lms-dashboard h5,
+    .lms-dashboard h6,
+    .lms-dashboard p,
+    .lms-dashboard .card-title,
+    .lms-dashboard .card-text,
+    .lms-dashboard .fw-bold,
+    .lms-dashboard .fw-semibold {
+        color: var(--text-main);
+        letter-spacing: -0.01em;
+    }
+
+    .lms-dashboard h2 {
+        font-size: 1.875rem;
+    }
+
+    .lms-dashboard h5 {
+        font-size: 1.125rem;
+    }
+
+    .lms-dashboard h6 {
+        font-size: 0.95rem;
+    }
+
+    .lms-dashboard p {
+        font-size: 0.98rem;
+    }
+
+    .lms-dashboard small,
+    .lms-dashboard .text-muted {
+        color: var(--text-soft) !important;
+    }
+
+    .lms-dashboard .text-white {
+        color: var(--text-main) !important;
+    }
+
+    .lms-dashboard i,
+    .lms-dashboard .display-4 {
+        display: none !important;
+    }
+
+    .lms-dashboard .card {
+        border-radius: 12px;
+        border: 1px solid var(--border-soft) !important;
+        background-color: var(--surface-soft);
+        box-shadow: 0 1px 2px rgba(15, 23, 42, 0.04);
+    }
+
+    .lms-dashboard .card-header {
+        border-bottom: 1px solid var(--border-soft);
+        background-color: var(--surface-soft);
+    }
+
+    .lms-dashboard .card-body.bg-primary {
+        background-color: var(--surface-soft) !important;
+        border: 1px solid var(--border-soft);
+    }
+
+    .lms-dashboard .card.text-white {
+        background-color: var(--surface-soft) !important;
+        color: var(--text-main) !important;
+        border: 1px solid var(--border-soft) !important;
+    }
+
+    .lms-dashboard .card.text-white::before {
+        content: none;
+    }
+
+    .lms-dashboard .card.text-white small {
+        color: var(--text-soft) !important;
+    }
+
+    .lms-dashboard .display-5 {
+        font-size: 2.25rem;
+        line-height: 1;
+        margin-bottom: 0.35rem;
+    }
+
+    .lms-dashboard .card.text-white.bg-primary,
+    .lms-dashboard .card.text-white.bg-success,
+    .lms-dashboard .card.text-white.bg-info,
+    .lms-dashboard .card.text-white.bg-warning,
+    .lms-dashboard .card.text-white.bg-danger,
+    .lms-dashboard .card.text-white.bg-secondary,
+    .lms-dashboard .badge.bg-primary,
+    .lms-dashboard .badge.bg-success,
+    .lms-dashboard .badge.bg-info,
+    .lms-dashboard .badge.bg-warning,
+    .lms-dashboard .badge.bg-danger,
+    .lms-dashboard .badge.bg-secondary {
+        background-color: var(--surface-soft) !important;
+        border-color: var(--border-soft) !important;
+        color: var(--text-main) !important;
+    }
+
+    .lms-dashboard .bg-success.bg-opacity-10 {
+        background-color: #ecfdf3 !important;
+        border: 1px solid #d1f2de;
+    }
+
+    .lms-dashboard .bg-warning.bg-opacity-10 {
+        background-color: #fff8e8 !important;
+        border: 1px solid #fae8bd;
+    }
+
+    .lms-dashboard .bg-info.bg-opacity-10 {
+        background-color: #eef6ff !important;
+        border: 1px solid #d7e8ff;
+    }
+
+    .lms-dashboard .bg-primary.bg-opacity-10 {
+        background-color: #eef4ff !important;
+        border: 1px solid #d7e5ff;
+    }
+
+    .lms-dashboard .bg-danger.bg-opacity-10,
+    .lms-dashboard .bg-secondary.bg-opacity-10 {
+        background-color: #f5f7fb !important;
+        border: 1px solid #e5ebf3;
+    }
+
+    .lms-dashboard .progress-bar {
+        background-color: var(--brand-primary) !important;
+    }
+
+    .lms-dashboard .text-primary,
+    .lms-dashboard .text-info {
+        color: #1d4ed8 !important;
+    }
+
+    .lms-dashboard .text-success {
+        color: #15803d !important;
+    }
+
+    .lms-dashboard .text-warning {
+        color: #b45309 !important;
+    }
+
+    .lms-dashboard .text-danger {
+        color: #b91c1c !important;
+    }
+
+    .lms-dashboard .btn-primary {
+        background-color: var(--brand-primary) !important;
+        border-color: var(--brand-primary) !important;
+        color: #ffffff !important;
+        font-size: 0.85rem;
+        font-weight: 600;
+    }
+
+    .lms-dashboard .btn-primary:hover,
+    .lms-dashboard .btn-primary:focus {
+        background-color: #1d4ed8 !important;
+        border-color: #1d4ed8 !important;
+        color: #ffffff !important;
+    }
+
+    .lms-dashboard .btn-outline-primary,
+    .lms-dashboard .btn-outline-success,
+    .lms-dashboard .btn-outline-info,
+    .lms-dashboard .btn-outline-warning,
+    .lms-dashboard .btn-outline-danger,
+    .lms-dashboard .btn-outline-secondary {
+        color: var(--text-soft) !important;
+        border-color: var(--border-soft) !important;
+        background-color: var(--surface-soft);
+        font-size: 0.85rem;
+    }
+
+    .lms-dashboard .btn-outline-primary:hover,
+    .lms-dashboard .btn-outline-success:hover,
+    .lms-dashboard .btn-outline-info:hover,
+    .lms-dashboard .btn-outline-warning:hover,
+    .lms-dashboard .btn-outline-danger:hover,
+    .lms-dashboard .btn-outline-secondary:hover {
+        color: var(--text-main) !important;
+        background-color: var(--hover-soft) !important;
+        border-color: var(--text-soft) !important;
+    }
+
+    .lms-dashboard .border-warning,
+    .lms-dashboard .border-success,
+    .lms-dashboard .border-info,
+    .lms-dashboard .border-danger,
+    .lms-dashboard .border-primary {
+        border-color: var(--border-soft) !important;
+    }
+
+    .lms-dashboard .card {
+        border-radius: 12px;
+        border: 1px solid var(--border-soft);
+        background-color: var(--surface-soft);
+    }
+
+    .lms-dashboard .card-header {
+        border-bottom: 1px solid var(--border-soft);
+        background-color: var(--surface-soft);
+    }
+
+    .lms-dashboard .alert-success,
+    .lms-dashboard .alert-info,
+    .lms-dashboard .alert-warning,
+    .lms-dashboard .alert-danger {
+        background-color: var(--surface-soft);
+        border-color: var(--border-soft);
+        color: var(--text-main);
+    }
+
+    .lms-dashboard .bg-light {
+        background-color: var(--surface-soft) !important;
+        color: var(--text-main) !important;
+    }
+
+    .lms-dashboard .opacity-75 {
+        opacity: 1 !important;
+        color: var(--text-soft) !important;
+    }
+
+    @media (max-width: 768px) {
+        .lms-dashboard {
+            font-size: 13px;
+        }
+
+        .lms-dashboard h2 {
+            font-size: 1.5rem;
+        }
+
+        .lms-dashboard .display-5 {
+            font-size: 1.8rem;
+        }
+    }
+</style>
+
 <!-- Unified Dashboard View - This single file handles all user roles (Admin, Teacher, Student) -->
 <!-- Uses conditional PHP statements to show different content based on user's role -->
-<div class="bg-light min-vh-100">
+<div class="lms-dashboard min-vh-100">
     <div class="container py-4">
         
         <!-- Dynamic Header Section - Changes based on user role -->
@@ -12,19 +264,19 @@
                     <div class="card-body bg-primary text-white p-4 rounded-3">
                         <!-- Admin Header -->
                         <?php if ($user['role'] === 'admin'): ?>
-                            <h2 class="mb-2 fw-bold">📊 Admin Dashboard</h2>
+                            <h2 class="mb-2 fw-bold">Admin Dashboard</h2>
                             <p class="mb-0 opacity-75">Welcome back, <?= esc($user['name']) ?>! Manage your learning management system with powerful tools.</p>
                         <!-- Teacher Header -->
                         <?php elseif ($user['role'] === 'teacher'): ?>
-                            <h2 class="mb-2 fw-bold">👨‍🏫 Teacher Dashboard</h2>
+                            <h2 class="mb-2 fw-bold">Teacher Dashboard</h2>
                             <p class="mb-0 opacity-75">Welcome back, <?= esc($user['name']) ?>! Manage your courses and students with ease.</p>
                         <!-- Student Header -->
                         <?php elseif ($user['role'] === 'student'): ?>
-                            <h2 class="mb-2 fw-bold">🎓 Student Dashboard</h2>
+                            <h2 class="mb-2 fw-bold">Student Dashboard</h2>
                             <p class="mb-0 opacity-75">Welcome back, <?= esc($user['name']) ?>! Continue your learning journey and achieve your goals.</p>
                         <!-- Default Header for unknown roles -->
                         <?php else: ?>
-                            <h2 class="mb-2 fw-bold">🏠 Dashboard</h2>
+                            <h2 class="mb-2 fw-bold">Dashboard</h2>
                             <p class="mb-0 opacity-75">Welcome back, <?= esc($user['name']) ?>!</p>
                         <?php endif; ?>
                     </div>
@@ -39,7 +291,7 @@
             <?php if ($user['role'] === 'admin'): ?>
                 <div class="col-md-3 mb-3">
                     <div class="card border-0 shadow-sm text-white bg-primary text-center p-4 rounded-3 h-100">
-                        <div class="display-4 mb-2">👥</div>
+                        <div class="display-4 mb-2"></div>
                         <div class="display-5 fw-bold"><?= $totalUsers ?></div>
                         <div class="fw-semibold">Total Users</div>
                         <small class="opacity-75">Active in system</small>
@@ -47,7 +299,7 @@
                 </div>                
                 <div class="col-md-3 mb-3">
                     <div class="card border-0 shadow-sm text-white bg-success text-center p-4 rounded-3 h-100">
-                        <div class="display-4 mb-2">📚</div>
+                        <div class="display-4 mb-2"></div>
                         <div class="display-5 fw-bold"><?= $totalCourses ?? '0' ?></div>
                         <div class="fw-semibold">Total Courses</div>
                         <small class="opacity-75"><?= ($activeCourses ?? '0') ?> active, <?= ($draftCourses ?? '0') ?> draft</small>
@@ -55,7 +307,7 @@
                 </div>
                 <div class="col-md-3 mb-3">
                     <div class="card border-0 shadow-sm text-white bg-info text-center p-4 rounded-3 h-100">
-                        <div class="display-4 mb-2">👨‍🏫</div>
+                        <div class="display-4 mb-2"></div>
                         <div class="display-5 fw-bold"><?= $totalTeachers ?></div>
                         <div class="fw-semibold">Teachers</div>
                         <small class="opacity-75">Creating content</small>
@@ -63,7 +315,7 @@
                 </div>
                 <div class="col-md-3 mb-3">
                     <div class="card border-0 shadow-sm text-white bg-warning text-center p-4 rounded-3 h-100">
-                        <div class="display-4 mb-2">🎓</div>
+                        <div class="display-4 mb-2"></div>
                         <div class="display-5 fw-bold"><?= $totalStudents ?></div>
                         <div class="fw-semibold">Students</div>
                         <small class="opacity-75">Learning actively</small>
@@ -73,7 +325,7 @@
             <?php elseif ($user['role'] === 'teacher'): ?>
                 <div class="col-md-3 mb-3">
                     <div class="card border-0 shadow-sm text-white bg-primary text-center p-4 rounded-3 h-100">
-                        <div class="display-4 mb-2">📚</div>
+                        <div class="display-4 mb-2"></div>
                         <div class="display-5 fw-bold"><?= $totalCourses ?? '0' ?></div>
                         <div class="fw-semibold">My Courses</div>
                         <small class="opacity-75"><?= ($activeCourses ?? '0') ?> active courses</small>
@@ -81,7 +333,7 @@
                 </div>
                 <div class="col-md-3 mb-3">
                     <div class="card border-0 shadow-sm text-white bg-success text-center p-4 rounded-3 h-100">
-                        <div class="display-4 mb-2">👥</div>
+                        <div class="display-4 mb-2"></div>
                         <div class="display-5 fw-bold"><?= $totalStudents ?? '0' ?></div>
                         <div class="fw-semibold">My Students</div>
                         <small class="opacity-75">Enrolled in my courses</small>
@@ -89,7 +341,7 @@
                 </div>
                 <div class="col-md-3 mb-3">
                     <div class="card border-0 shadow-sm text-white bg-info text-center p-4 rounded-3 h-100">
-                        <div class="display-4 mb-2">📝</div>
+                        <div class="display-4 mb-2"></div>
                         <div class="display-5 fw-bold"><?= $pendingAssignments ?? '0' ?></div>
                         <div class="fw-semibold">Pending</div>
                         <small class="opacity-75">To be graded</small>
@@ -97,7 +349,7 @@
                 </div>
                 <div class="col-md-3 mb-3">
                     <div class="card border-0 shadow-sm text-white bg-warning text-center p-4 rounded-3 h-100">
-                        <div class="display-4 mb-2">📊</div>
+                        <div class="display-4 mb-2"></div>
                         <div class="display-5 fw-bold"><?= $averageGrade ?? '0' ?>%</div>
                         <div class="fw-semibold">Avg Grade</div>
                         <small class="opacity-75">Class average</small>
@@ -108,7 +360,7 @@
             <?php elseif ($user['role'] === 'student'): ?>
                 <div class="col-md-3 mb-3">
                     <div class="card border-0 shadow-sm text-white bg-primary text-center p-4 rounded-3 h-100">
-                        <div class="display-4 mb-2">📚</div>
+                        <div class="display-4 mb-2"></div>
                         <div class="display-5 fw-bold"><?= $enrolledCourses ?? '0' ?></div>
                         <div class="fw-semibold">Enrolled Courses</div>
                         <small class="opacity-75">Active learning paths</small>
@@ -116,7 +368,7 @@
                 </div>
                 <div class="col-md-3 mb-3">
                     <div class="card border-0 shadow-sm text-white bg-success text-center p-4 rounded-3 h-100">
-                        <div class="display-4 mb-2">✅</div>
+                        <div class="display-4 mb-2"></div>
                         <div class="display-5 fw-bold"><?= $completedAssignments ?? '0' ?></div>
                         <div class="fw-semibold">Completed</div>
                         <small class="opacity-75">Assignments finished</small>
@@ -124,7 +376,7 @@
                 </div>
                 <div class="col-md-3 mb-3">
                     <div class="card border-0 shadow-sm text-white bg-warning text-center p-4 rounded-3 h-100">
-                        <div class="display-4 mb-2">⏰</div>
+                        <div class="display-4 mb-2"></div>
                         <div class="display-5 fw-bold"><?= $pendingAssignments ?? '0' ?></div>
                         <div class="fw-semibold">Pending</div>
                         <small class="opacity-75">Awaiting completion</small>
@@ -132,7 +384,7 @@
                 </div>
                 <div class="col-md-3 mb-3">
                     <div class="card border-0 shadow-sm text-white bg-info text-center p-4 rounded-3 h-100">
-                        <div class="display-4 mb-2">📊</div>
+                        <div class="display-4 mb-2"></div>
                         <div class="display-5 fw-bold"><?= $averageGrade ?? '0' ?>%</div>
                         <div class="fw-semibold">Average Grade</div>
                         <small class="opacity-75">Overall performance</small>
@@ -148,7 +400,7 @@
                 <div class="col-md-6 mb-4">
                     <div class="card border-0 shadow-sm rounded-3 h-100">
                         <div class="card-header bg-white border-0 pb-0">
-                            <h5 class="mb-0 fw-bold text-dark">📚 Course Overview</h5>
+                            <h5 class="mb-0 fw-bold text-dark">Course Overview</h5>
                             <small class="text-muted">Course distribution by status</small>
                         </div>
                         <div class="card-body pt-3">
@@ -156,7 +408,7 @@
                                 <div class="col-6">
                                     <div class="d-flex align-items-center p-3 bg-success bg-opacity-10 rounded-3">
                                         <div class="me-3">
-                                            <span class="badge bg-success rounded-circle p-2">✅</span>
+
                                         </div>
                                         <div>
                                             <div class="fw-bold text-success"><?= $activeCourses ?? '0' ?></div>
@@ -167,7 +419,6 @@
                                 <div class="col-6">
                                     <div class="d-flex align-items-center p-3 bg-warning bg-opacity-10 rounded-3">
                                         <div class="me-3">
-                                            <span class="badge bg-warning rounded-circle p-2">📝</span>
                                         </div>
                                         <div>
                                             <div class="fw-bold text-warning"><?= $draftCourses ?? '0' ?></div>
@@ -178,7 +429,7 @@
                                 <div class="col-6">
                                     <div class="d-flex align-items-center p-3 bg-info bg-opacity-10 rounded-3">
                                         <div class="me-3">
-                                            <span class="badge bg-info rounded-circle p-2">🎯</span>
+                                            
                                         </div>
                                         <div>
                                             <div class="fw-bold text-info"><?= $completedCourses ?? '0' ?></div>
@@ -189,29 +440,13 @@
                                 <div class="col-6">
                                     <div class="d-flex align-items-center p-3 bg-primary bg-opacity-10 rounded-3">
                                         <div class="me-3">
-                                            <span class="badge bg-primary rounded-circle p-2">📚</span>
-                                        </div>                                        <div>
+                                            
+                                        </div>                                        
+                                        <div>
                                             <div class="fw-bold text-primary"><?= $totalCourses ?? '0' ?></div>
                                             <small class="text-muted">Total Courses</small>
                                         </div>
                                     </div>
-                                </div>
-                            </div>
-                            
-                            <!-- Quick Actions for Admin -->
-                            <div class="mt-4">
-                                <h6 class="fw-semibold mb-3">🚀 Quick Actions</h6>
-                                <div class="d-flex flex-wrap gap-2">
-                                    <a href="<?= base_url('admin/manage_courses') ?>" class="btn btn-outline-primary btn-sm">
-                                        <i class="fas fa-book me-1"></i>Manage Courses
-                                    </a>
-                                    <a href="<?= base_url('admin/manage_users') ?>" class="btn btn-outline-info btn-sm">
-                                        <i class="fas fa-users me-1"></i>Manage Users
-                                    </a>
-                                    <a href="<?= base_url('admin/manage_courses') ?>" class="btn btn-outline-success btn-sm" 
-                                       title="Go to Manage Courses to upload materials for any course">
-                                        <i class="fas fa-upload me-1"></i>Upload Materials
-                                    </a>
                                 </div>
                             </div>
                         </div>
@@ -222,7 +457,7 @@
                 <div class="col-md-6 mb-4">
                     <div class="card border-0 shadow-sm rounded-3 h-100">
                         <div class="card-header bg-white border-0 pb-0">
-                            <h5 class="mb-0 fw-bold text-dark">⏰ Recent Activity</h5>
+                            <h5 class="mb-0 fw-bold text-dark">Recent Activity</h5>
                             <small class="text-muted">Latest system activities</small>
                         </div>
                         <div class="card-body pt-3">
@@ -265,6 +500,8 @@
                                                     'user_creation' => 'info',          // Blue for admin-created users
                                                     'user_update' => 'warning',         // Yellow for updates
                                                     'user_deletion' => 'danger',        // Red for deletions
+                                                    'user_deactivation' => 'danger',    // Red for deactivation
+                                                    'user_reactivation' => 'success',   // Green for reactivation
                                                     'course_creation' => 'primary',     // Blue for course creation
                                                     'course_update' => 'warning',       // Yellow for course updates  
                                                     'course_deletion' => 'danger',      // Red for course deletions
@@ -290,6 +527,8 @@
                                                             'user_creation' => 'User Created',
                                                             'user_update' => 'User Updated',
                                                             'user_deletion' => 'User Deleted',
+                                                            'user_deactivation' => 'User Deactivated',
+                                                            'user_reactivation' => 'User Reactivated',
                                                             'course_creation' => 'Course Created',
                                                             'course_update' => 'Course Updated',
                                                             'course_deletion' => 'Course Deleted',
@@ -327,7 +566,7 @@
                             <?php else: ?>
                                 <div class="text-center py-4 text-muted">
                                     <div class="mb-3">
-                                        <span style="font-size: 3rem; opacity: 0.3;">⏰</span>
+                                        <span style="font-size: 3rem; opacity: 0.3;">-</span>
                                     </div>
                                     <p class="mb-0">No recent activities to display</p>
                                     <small>User activities will appear here as they occur</small>
@@ -343,7 +582,7 @@
                     <div class="card border-0 shadow-sm rounded-3 h-100">
                         <div class="card-header bg-white border-0 pb-0">
                             <div class="d-flex justify-content-between align-items-center">                                <div>
-                                    <h5 class="mb-0 fw-bold text-dark">📚 Course Management</h5>
+                                    <h5 class="mb-0 fw-bold text-dark">Course Management</h5>
                                     <small class="text-muted">View and manage your assigned courses</small>
                                 </div>
                                 <a href="<?= base_url('teacher/courses') ?>" class="btn btn-primary btn-sm">
@@ -385,7 +624,7 @@
                             </div>
                               <!-- Quick Actions -->
                             <div class="mt-4">
-                                <h6 class="fw-semibold mb-3">🚀 Quick Actions</h6>
+                                <h6 class="fw-semibold mb-3">Quick Actions</h6>
                                 <div class="d-flex flex-wrap gap-2">                                    
                                     <a href="<?= base_url('teacher/courses') ?>" class="btn btn-outline-primary btn-sm">
                                         <i class="fas fa-book me-1"></i>View My Courses
@@ -401,7 +640,7 @@
                     <div class="card border-0 shadow-sm border-warning">
                         <div class="card-body p-4">
                             <h3 class="mb-3 fw-bold text-warning">
-                                <i class="fas fa-user-clock me-2"></i>Pending Student Enrollments
+                                Pending Student Enrollments
                             </h3>
                             <p class="text-muted mb-3">Students requesting to enroll in your courses:</p>
                             <div id="teacherPendingApprovalsList">
@@ -434,7 +673,7 @@
                         <div class="card-header bg-white border-0 pb-0">
                             <div class="d-flex justify-content-between align-items-center">
                                 <div>
-                                    <h5 class="mb-0 fw-bold text-dark">📖 My Enrolled Courses</h5>
+                                    <h5 class="mb-0 fw-bold text-dark">My Enrolled Courses</h5>
                                     <small class="text-muted">Continue your learning journey</small>
                                 </div>
                                 <a href="<?= base_url('student/courses') ?>" class="btn btn-primary btn-sm">
@@ -455,11 +694,11 @@
                                                     </div>
                                                     <p class="text-muted small mb-2">
                                                         <?= esc($course['course_code'] ?? '') ?> 
-                                                        <?php if (!empty($course['section'])): ?>• Section <?= esc($course['section']) ?><?php endif; ?>
-                                                        <?php if (!empty($course['instructor_name'])): ?>• <?= esc($course['instructor_name']) ?><?php endif; ?>
+                                                        <?php if (!empty($course['section'])): ?> | Section <?= esc($course['section']) ?><?php endif; ?>
+                                                        <?php if (!empty($course['instructor_name'])): ?> | <?= esc($course['instructor_name']) ?><?php endif; ?>
                                                     </p>
                                                     <p class="card-text text-muted small mb-3">
-                                                        <?= esc($course['term_name'] ?? '') ?> • <?= esc($course['semester_name'] ?? '') ?> <?= esc($course['academic_year'] ?? '') ?>
+                                                        <?= esc($course['term_name'] ?? '') ?> | <?= esc($course['semester_name'] ?? '') ?> <?= esc($course['academic_year'] ?? '') ?>
                                                     </p>
                                                     
                                                     <!-- Progress Bar -->
@@ -487,7 +726,7 @@
                             <?php else: ?>
                                 <div class="text-center py-4">
                                     <div class="mb-3">
-                                        <span style="font-size: 3rem; opacity: 0.3;">📚</span>
+                                        <span style="font-size: 3rem; opacity: 0.3;">-</span>
                                     </div>
                                     <p class="mb-0">No enrolled courses yet</p>
                                     <small class="text-muted">Browse available courses below to start learning!</small>
@@ -501,7 +740,7 @@
                 <div class="col-12 mb-4">
                     <div class="card border-0 shadow-sm rounded-3">
                         <div class="card-header bg-white border-0 pb-0">
-                            <h5 class="mb-0 fw-bold text-dark">🎯 Available Courses</h5>
+                            <h5 class="mb-0 fw-bold text-dark">Available Courses</h5>
                             <small class="text-muted">Courses from your program curriculum</small>
                         </div>
                         <div class="card-body pt-3">
@@ -533,8 +772,8 @@
                                                     </div>
                                                     <p class="text-muted small mb-2">
                                                         <?= esc($course['course_code'] ?? '') ?> 
-                                                        <?php if (!empty($course['section'])): ?>• Sec <?= esc($course['section']) ?><?php endif; ?>
-                                                        • <?= esc($course['instructor_name'] ?? 'TBA') ?>
+                                                        <?php if (!empty($course['section'])): ?> | Sec <?= esc($course['section']) ?><?php endif; ?>
+                                                        | <?= esc($course['instructor_name'] ?? 'TBA') ?>
                                                     </p>
                                                     <p class="card-text text-muted small mb-3"><?= esc(substr($course['description'] ?? '', 0, 80)) ?>...</p>
                                                     
@@ -591,7 +830,7 @@
                                 </div>                            <?php else: ?>
                                 <div class="text-center py-4">
                                     <div class="mb-3">
-                                        <span style="font-size: 3rem; opacity: 0.3;">🎯</span>
+                                        <span style="font-size: 3rem; opacity: 0.3;">-</span>
                                     </div>
                                     <p class="mb-2 fw-bold">No available courses at the moment</p>
                                     <small class="text-muted d-block mb-2">
@@ -602,7 +841,6 @@
                                         <?php endif; ?>
                                     </small>
                                     <small class="text-muted">
-                                        <i class="fas fa-info-circle"></i> 
                                         Course offerings are based on your program: <strong><?= esc($studentInfo['program_name'] ?? 'Not Assigned') ?></strong>
                                     </small>
                                 </div>
@@ -615,7 +853,7 @@
                 <div class="col-md-6 mb-4">
                     <div class="card border-0 shadow-sm rounded-3 h-100">
                         <div class="card-header bg-white border-0 pb-0">
-                            <h5 class="mb-0 fw-bold text-dark">⏰ Upcoming Deadlines</h5>
+                            <h5 class="mb-0 fw-bold text-dark">Upcoming Deadlines</h5>
                             <small class="text-muted">Don't miss these important dates</small>
                         </div>
                         <div class="card-body pt-3">
@@ -627,7 +865,7 @@
                 <div class="col-md-6 mb-4">
                     <div class="card border-0 shadow-sm rounded-3 h-100">
                         <div class="card-header bg-white border-0 pb-0">
-                            <h5 class="mb-0 fw-bold text-dark">🏆 Recent Grades & Feedback</h5>
+                            <h5 class="mb-0 fw-bold text-dark">Recent Grades and Feedback</h5>
                             <small class="text-muted">Your latest academic performance</small>
                         </div>
                         <div class="card-body pt-3">
@@ -788,7 +1026,7 @@ function showTeacherAlert(message, type) {
         window.RESPOND_URL = '<?= base_url('/enrollment/respond') ?>';
 
         document.addEventListener('DOMContentLoaded', function() {
-        console.log('🚀 Dashboard enrollment script loaded - v4.3');
+        console.log('Dashboard enrollment script loaded - v4.3');
         
         // Initialize after a short delay to ensure everything is loaded
         setTimeout(initializeEnrollment, 500);
@@ -835,13 +1073,13 @@ function showTeacherAlert(message, type) {
                 
                 // Prevent duplicate enrollment attempts
                 if (enrollmentInProgress.has(courseId)) {
-                    console.log('⚠️ Enrollment already in progress for course:', courseId);
+                    console.log('Enrollment already in progress for course:', courseId);
                     return;
                 }
                 
                 // Mark enrollment as in progress
                 enrollmentInProgress.add(courseId);
-                console.log('🔄 Starting enrollment for course:', courseId);
+                console.log('Starting enrollment for course:', courseId);
 
                 // Disable button and show loading state
                 originalButton.disabled = true;
@@ -866,20 +1104,20 @@ function showTeacherAlert(message, type) {
                     }
                 })
                 .then(response => {
-                    console.log('📦 Response status:', response.status);
+                    console.log('Response status:', response.status);
                     return response.json();
                 })
                 .then(data => {
-                    console.log('📦 Response data:', data);
+                    console.log('Response data:', data);
                     
                     // Update CSRF token if provided in response
                     if (data.csrf_hash) {
                         document.querySelector('meta[name="csrf-hash"]').setAttribute('content', data.csrf_hash);
-                        console.log('🔐 CSRF token updated');
+                        console.log('CSRF token updated');
                     }
                     
                     if (data.success) {
-                        console.log('✅ Enrollment successful!');
+                        console.log('Enrollment successful!');
                         
                         // Success: Show success modal and update UI
                         modalTitle.textContent = 'Enrollment Successful!';
@@ -896,19 +1134,19 @@ function showTeacherAlert(message, type) {
                                     <div class="card-body py-2">
                                         <div class="row text-start">
                                             <div class="col-6 mb-2">
-                                                <small class="text-muted">📅 Enrollment Date</small>
+                                                <small class="text-muted">Enrollment Date</small>
                                                 <div class="fw-bold">${data.data.enrollment_date_formatted || 'N/A'}</div>
                                             </div>
                                             <div class="col-6 mb-2">
-                                                <small class="text-muted">📚 Section</small>
+                                                <small class="text-muted">Section</small>
                                                 <div class="fw-bold">${data.data.section || 'N/A'}</div>
                                             </div>
                                             <div class="col-6 mb-2">
-                                                <small class="text-muted">📖 Credits</small>
+                                                <small class="text-muted">Credits</small>
                                                 <div class="fw-bold">${data.data.credits || 'N/A'}</div>
                                             </div>
                                             <div class="col-6 mb-2">
-                                                <small class="text-muted">🎓 Term</small>
+                                                <small class="text-muted">Term</small>
                                                 <div class="fw-bold">${data.data.term || 'N/A'}</div>
                                             </div>
                                         </div>
@@ -943,7 +1181,7 @@ function showTeacherAlert(message, type) {
                             `;
                             
                             // Add a subtle visual indicator
-                            courseCard.style.border = '2px solid #198754';
+                            courseCard.style.border = '2px solid #d8dbe1';
                             courseCard.style.borderRadius = '0.375rem';
                         }
                         
@@ -952,7 +1190,7 @@ function showTeacherAlert(message, type) {
                         
                     } else {
                         // Error: Show error modal
-                        console.log('❌ Enrollment failed:', data.error_code);
+                        console.log('Enrollment failed:', data.error_code);
                         console.log('Error message:', data.message);
                         
                         try {
@@ -961,7 +1199,7 @@ function showTeacherAlert(message, type) {
                             
                             // Handle specific error types
                             if (data.error_code === 'ALREADY_ENROLLED') {
-                                console.log('⚠️ Handling ALREADY_ENROLLED error');
+                                console.log('Handling ALREADY_ENROLLED error');
                                 
                                 modalBody.innerHTML = `
                                     <div class="text-center">
@@ -982,7 +1220,7 @@ function showTeacherAlert(message, type) {
                                 originalButton.innerHTML = '<i class="fas fa-check-circle me-1"></i>Already Enrolled';
                                 
                             } else if (data.error_code === 'PREREQUISITES_NOT_MET') {
-                                console.log('🔒 Handling PREREQUISITES_NOT_MET error');
+                                console.log('Handling PREREQUISITES_NOT_MET error');
                                 console.log('Missing prerequisites:', data.missing_prerequisites);
                                 
                                 // Build prerequisite list with detailed information
@@ -1022,7 +1260,7 @@ function showTeacherAlert(message, type) {
                                         <div class="mb-3">
                                             <i class="fas fa-lock text-danger" style="font-size: 3rem;"></i>
                                         </div>
-                                        <h5 class="text-danger">⚠️ Prerequisites Not Met</h5>
+                                        <h5 class="text-danger">Prerequisites Not Met</h5>
                                         <p class="text-muted mb-2">You cannot enroll in <strong>${courseTitle}</strong> yet.</p>
                                         ${prereqList}
                                         <div class="alert alert-info mt-3 mb-0 text-start">
@@ -1037,7 +1275,7 @@ function showTeacherAlert(message, type) {
                                     </div>
                                 `;
                                 
-                                console.log('🎭 Showing prerequisite modal');
+                                console.log('Showing prerequisite modal');
                                 enrollmentModal.show();
                                 
                                 // Update button to locked state (don't allow retry for prerequisites)
@@ -1058,7 +1296,7 @@ function showTeacherAlert(message, type) {
                                 }
                                 
                             } else if (data.error_code === 'OFFERING_FULL') {
-                                console.log('⚠️ Handling OFFERING_FULL error');
+                                console.log('Handling OFFERING_FULL error');
                                 
                                 modalBody.innerHTML = `
                                     <div class="text-center">
@@ -1079,7 +1317,7 @@ function showTeacherAlert(message, type) {
                                 
                             } else {
                                 // Generic error handler with more details if available
-                                console.log('⚠️ Handling generic error:', data.error_code);
+                                console.log('Handling generic error:', data.error_code);
                                 
                                 let errorDetails = '';
                                 if (data.error_code) {
@@ -1106,7 +1344,7 @@ function showTeacherAlert(message, type) {
                             }
                             
                         } catch (error) {
-                            console.error('💥 Error in error handling:', error);
+                            console.error('Error in error handling:', error);
                             console.error('Stack trace:', error.stack);
                             
                             // Fallback error display
@@ -1128,7 +1366,7 @@ function showTeacherAlert(message, type) {
                     }
                 })
                 .catch(error => {
-                    console.error('💥 Network/Fetch error:', error);
+                    console.error('Network/Fetch error:', error);
                     
                     // Network or other error
                     modalTitle.textContent = 'Connection Error';
@@ -1151,18 +1389,18 @@ function showTeacherAlert(message, type) {
                 .finally(() => {
                     // Always remove from in-progress set
                     enrollmentInProgress.delete(courseId);
-                    console.log('🏁 Enrollment process completed for course:', courseId);
+                    console.log('Enrollment process completed for course:', courseId);
                     
                     // Safety net: ensure button is never stuck in loading state
                     if (originalButton && originalButton.innerHTML && originalButton.innerHTML.includes('Enrolling')) {
-                        console.log('⚠️ Safety net triggered - button still in loading state!');
+                        console.log('Safety net triggered - button still in loading state!');
                         originalButton.disabled = false;
                         originalButton.innerHTML = '<i class="fas fa-plus-circle me-1"></i>Enroll in Course';
                     }
                 });
             });
         });
-        console.log('✅ Enrollment handlers attached to', enrollButtons.length, 'buttons');
+        console.log('Enrollment handlers attached to', enrollButtons.length, 'buttons');
         
         // Load pending enrollments
         loadPendingEnrollments();
@@ -1204,7 +1442,7 @@ function showTeacherAlert(message, type) {
                             </h6>
                             <p class="text-muted mb-1">
                                 <small>
-                                    Section ${enrollment.section} • ${enrollment.term_name} • ${enrollment.academic_year}
+                                    Section ${enrollment.section} | ${enrollment.term_name} | ${enrollment.academic_year}
                                     <br>
                                     <i class="fas fa-user me-1"></i>Enrolled by: ${enrollment.enrolled_by_name}
                                 </small>
