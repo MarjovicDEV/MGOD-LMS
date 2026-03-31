@@ -18,10 +18,7 @@ class CourseSeeder extends Seeder
                 'course_code' => 'CS101',
                 'category_id' => 1, // Computer Science
                 'credits' => 3,
-                'max_students' => 30,
-                'start_date' => '2025-08-20',
-                'end_date' => '2026-01-15',
-                'status' => 'active',
+                'is_active' => 1,
                 'created_at' => date('Y-m-d H:i:s'),
                 'updated_at' => date('Y-m-d H:i:s'),
             ],            [
@@ -30,11 +27,7 @@ class CourseSeeder extends Seeder
                 'course_code' => 'WEB101',
                 'category_id' => 2, // Web Development
                 'credits' => 4,
-                'duration_weeks' => 22,
-                'max_students' => 25,
-                'start_date' => '2025-08-25',
-                'end_date' => '2026-01-20',
-                'status' => 'active',
+                'is_active' => 1,
                 'created_at' => date('Y-m-d H:i:s'),
                 'updated_at' => date('Y-m-d H:i:s'),
             ],
@@ -44,11 +37,7 @@ class CourseSeeder extends Seeder
                 'course_code' => 'DB201',
                 'category_id' => 1, // Computer Science
                 'credits' => 3,
-                'duration_weeks' => 22,
-                'max_students' => 20,
-                'start_date' => '2025-09-01',
-                'end_date' => '2026-01-30',
-                'status' => 'active',
+                'is_active' => 1,
                 'created_at' => date('Y-m-d H:i:s'),
                 'updated_at' => date('Y-m-d H:i:s'),
             ],
@@ -58,11 +47,7 @@ class CourseSeeder extends Seeder
                 'course_code' => 'CS201',
                 'category_id' => 1, // Computer Science
                 'credits' => 4,
-                'duration_weeks' => 22,
-                'max_students' => 35,
-                'start_date' => '2026-01-15',
-                'end_date' => '2026-06-15',
-                'status' => 'active',
+                'is_active' => 1,
                 'created_at' => date('Y-m-d H:i:s'),
                 'updated_at' => date('Y-m-d H:i:s'),
             ],
@@ -72,11 +57,7 @@ class CourseSeeder extends Seeder
                 'course_code' => 'SE301',
                 'category_id' => 1, // Computer Science
                 'credits' => 3,
-                'duration_weeks' => 22,
-                'max_students' => 30,
-                'start_date' => '2026-01-20',
-                'end_date' => '2026-06-20',
-                'status' => 'active',
+                'is_active' => 1,
                 'created_at' => date('Y-m-d H:i:s'),
                 'updated_at' => date('Y-m-d H:i:s'),
             ]

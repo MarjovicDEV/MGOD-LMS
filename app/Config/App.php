@@ -11,7 +11,7 @@ class App extends BaseConfig
         parent::__construct();
         
         if (isset($_SERVER['HTTP_HOST'])) {
-            $this->baseURL = 'http://' . $_SERVER['HTTP_HOST'] . '/ITE311-ALEJADO/';
+            $this->baseURL = 'http://' . $_SERVER['HTTP_HOST'] . '/MGOD-LMS/';
      }
     }
     
@@ -25,7 +25,7 @@ class App extends BaseConfig
      *
      * E.g., http://example.com/
      */
-    public string $baseURL = 'http://localhost/ITE311-ALEJADO/';
+    public string $baseURL = 'http://localhost/MGOD-LMS/';
 
     /**
      * Allowed Hostnames in the Site URL other than the hostname in the baseURL.
