@@ -165,18 +165,67 @@
             border-color: var(--border-soft);
             font-size: 0.78rem;
         }
+
+        .lms-role-view {
+            --rv-surface: #ffffff;
+            --rv-surface-soft: #f8fbff;
+            --rv-border: #dbe4ef;
+            --rv-text: #0f172a;
+            --rv-text-soft: #475569;
+            --rv-hover: #f4f7fb;
+            background-color: #f8fafc;
+            color: var(--rv-text);
+        }
+
+        .lms-role-view .role-hero {
+            background-color: var(--rv-surface-soft) !important;
+            border: 1px solid var(--rv-border);
+        }
+
+        .lms-role-view .role-stats .card,
+        .lms-role-view .role-section-card {
+            border: 1px solid var(--rv-border) !important;
+            background: var(--rv-surface) !important;
+        }
+
+        .lms-role-view .role-action-bar {
+            border: 1px solid var(--rv-border);
+            background: var(--rv-surface);
+        }
+
+        .lms-role-view .role-empty-state {
+            border: 1px dashed var(--rv-border);
+            background: var(--rv-surface-soft);
+        }
+
+        body.role-admin {
+            --rv-accent: #2563eb;
+        }
+
+        body.role-student {
+            --rv-accent: #0ea5e9;
+        }
+
+        body.role-teacher {
+            --rv-accent: #059669;
+        }
     </style>
 </head>
-<body class="bg-light">    
-    <?php 
-    $session = \Config\Services::session();
-    $userRole = $session->get('role');
-    $isLoggedIn = $session->get('isLoggedIn');
-    
-    $request = \Config\Services::request();
-    $currentAction = $request->getGet('action');
-    $currentUri = uri_string();
-    ?>
+<?php
+$session = \Config\Services::session();
+$userRole = $session->get('role');
+$isLoggedIn = $session->get('isLoggedIn');
+$allowedRoles = ['admin', 'teacher', 'student'];
+$normalizedRole = strtolower((string) $userRole);
+$roleClass = ($isLoggedIn && in_array($normalizedRole, $allowedRoles, true))
+    ? 'role-' . $normalizedRole
+    : 'role-guest';
+
+$request = \Config\Services::request();
+$currentAction = $request->getGet('action');
+$currentUri = uri_string();
+?>
+<body class="bg-light <?= esc($roleClass, 'attr') ?>">
     
     <nav class="navbar navbar-expand-lg navbar-light lms-navbar shadow-sm">
         <div class="container">            

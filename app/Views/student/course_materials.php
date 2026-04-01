@@ -1,13 +1,13 @@
 <?= $this->include('templates/header') ?>
 
 <!-- Student Course Materials View - Shows all materials for a specific course -->
-<div class="bg-light min-vh-100">
+<div class="lms-role-view min-vh-100 student-course-materials-page">
     <div class="container py-4">
         <!-- Header Section -->
         <div class="row mb-4">
             <div class="col-12">
                 <div class="card border-0 shadow-sm rounded-3">
-                    <div class="card-body bg-primary text-white p-4 rounded-3">
+                    <div class="card-body bg-primary text-white p-4 rounded-3 role-hero">
                         <div class="d-flex justify-content-between align-items-center flex-wrap">
                             <div class="mb-2 mb-md-0">
                                 <div class="d-flex align-items-center mb-2">
@@ -36,7 +36,7 @@
         <!-- Course Info Section -->
         <div class="row mb-4">
             <div class="col-md-8">
-                <div class="card border-0 shadow-sm">
+                <div class="card border-0 shadow-sm role-section-card">
                     <div class="card-body">
                         <h5 class="card-title mb-3">
                             <i class="fas fa-info-circle text-primary me-2"></i>Course Information
@@ -83,7 +83,7 @@
                 </div>
             </div>
             <div class="col-md-4">
-                <div class="card border-0 shadow-sm h-100">
+                <div class="card border-0 shadow-sm h-100 role-section-card">
                     <div class="card-body text-center">
                         <i class="fas fa-chart-line fa-3x text-primary mb-3"></i>
                         <h6 class="text-muted mb-2">Course Progress</h6>
@@ -105,7 +105,7 @@
         <!-- Materials List Section -->
         <div class="row">
             <div class="col-12">
-                <div class="card border-0 shadow-sm">
+                <div class="card border-0 shadow-sm role-section-card">
                     <div class="card-header bg-white border-0 pt-4 pb-3">
                         <div class="d-flex justify-content-between align-items-center">
                             <h5 class="mb-0 fw-bold">
@@ -261,7 +261,7 @@
 
                         <?php else: ?>
                             <!-- No Materials -->
-                            <div class="text-center py-5">
+                            <div class="text-center py-5 role-empty-state rounded-3">
                                 <i class="fas fa-inbox fa-4x text-muted mb-3"></i>
                                 <h5 class="text-muted">No Materials Available</h5>
                                 <p class="text-muted">Your instructor hasn't uploaded any materials yet. Check back later!</p>

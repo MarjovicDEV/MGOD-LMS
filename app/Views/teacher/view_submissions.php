@@ -1,7 +1,7 @@
 <?= $this->include('templates/header') ?>
 
 <!-- Teacher View Submissions -->
-<div class="bg-light min-vh-100">
+<div class="lms-role-view min-vh-100 teacher-submissions-page">
     <div class="container py-4">
         <!-- Breadcrumb -->
         <nav aria-label="breadcrumb" class="mb-3">
@@ -15,7 +15,7 @@
         <div class="row mb-4">
             <div class="col-12">
                 <div class="card border-0 shadow-sm rounded-3">
-                    <div class="card-body bg-primary text-white p-4 rounded-3">
+                    <div class="card-body bg-primary text-white p-4 rounded-3 role-hero">
                         <div class="d-flex justify-content-between align-items-center">
                             <div>
                                 <h3 class="mb-1 fw-bold"><i class="fas fa-clipboard-check me-2"></i><?= esc($assignment['title']) ?></h3>
@@ -44,7 +44,7 @@
         <!-- Assignment Details Card -->
         <div class="row mb-4">
             <div class="col-12">
-                <div class="card border-0 shadow-sm rounded-3">
+                <div class="card border-0 shadow-sm rounded-3 role-section-card">
                     <div class="card-header bg-white border-0 py-3">
                         <h5 class="mb-0 fw-bold">📋 Assignment Details</h5>
                     </div>
@@ -71,7 +71,7 @@
         </div>
 
         <!-- Statistics Cards -->
-        <div class="row mb-4 g-4">
+        <div class="row mb-4 g-4 role-stats">
             <div class="col-lg-3 col-md-6">
                 <div class="card border-0 shadow-sm text-white bg-primary text-center p-4 rounded-3 h-100">
                     <div class="display-4 mb-2">👥</div>
@@ -107,7 +107,7 @@
         </div>
 
         <!-- Submissions Tabs -->
-        <div class="card border-0 shadow-sm rounded-3 mb-4">
+        <div class="card border-0 shadow-sm rounded-3 mb-4 role-section-card">
             <div class="card-header bg-white border-0 py-3">
                 <ul class="nav nav-pills" id="submissionTabs" role="tablist">
                     <li class="nav-item" role="presentation">
@@ -126,7 +126,7 @@
                 <div class="tab-content" id="submissionTabsContent">
                     <div class="tab-pane fade show active" id="submitted" role="tabpanel">
                             <?php if (empty($submissions)): ?>
-                                <div class="text-center py-5">
+                                <div class="text-center py-5 role-empty-state rounded-3">
                                     <i class="fas fa-inbox text-muted" style="font-size: 4rem;"></i>
                                     <p class="text-muted mt-3">No submissions yet.</p>
                                 </div>
@@ -194,7 +194,7 @@
 
                     <div class="tab-pane fade" id="not-submitted" role="tabpanel">
                         <?php if (empty($notSubmitted)): ?>
-                            <div class="text-center py-5">
+                            <div class="text-center py-5 role-empty-state rounded-3">
                                 <i class="fas fa-check-double text-success" style="font-size: 4rem;"></i>
                                 <p class="text-muted mt-3">All students have submitted!</p>
                             </div>

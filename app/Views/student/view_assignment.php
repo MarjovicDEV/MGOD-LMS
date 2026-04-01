@@ -7,7 +7,7 @@ $isOverdue = $dueDate < $now;
 ?>
 
 <!-- Student View Assignment -->
-<div class="bg-light min-vh-100">
+<div class="lms-role-view min-vh-100 student-view-assignment-page">
     <div class="container py-4">
         <!-- Breadcrumb -->
         <nav aria-label="breadcrumb" class="mb-3">
@@ -36,7 +36,7 @@ $isOverdue = $dueDate < $now;
         <div class="row mb-4">
             <div class="col-12">
                 <div class="card border-0 shadow-sm rounded-3">
-                    <div class="card-body bg-primary text-white p-4 rounded-3">
+                    <div class="card-body bg-primary text-white p-4 rounded-3 role-hero">
                         <div class="d-flex justify-content-between align-items-center">
                             <div>
                                 <h3 class="mb-1 fw-bold"><i class="fas fa-clipboard-list me-2"></i><?= esc($assignment['title']) ?></h3>
@@ -63,7 +63,7 @@ $isOverdue = $dueDate < $now;
         <!-- Assignment Details Card -->
         <div class="row mb-4">
             <div class="col-12">
-                <div class="card border-0 shadow-sm rounded-3">
+                <div class="card border-0 shadow-sm rounded-3 role-section-card">
                     <div class="card-header bg-white border-0 py-3">
                         <h5 class="mb-0 fw-bold">📋 Assignment Details</h5>
                     </div>
@@ -218,7 +218,7 @@ $isOverdue = $dueDate < $now;
             $showFile = in_array($submissionType, ['file', 'both']);
             ?>
             <?php if (!$isOverdue || $assignment['allow_late_submission']): ?>
-                <div class="card border-0 shadow-sm rounded-3 mb-4">
+                <div class="card border-0 shadow-sm rounded-3 mb-4 role-section-card">
                     <div class="card-header bg-info text-white py-3 rounded-top">
                         <h5 class="mb-0 fw-bold"><i class="fas fa-upload me-2"></i>Submit Assignment</h5>
                     </div>

@@ -1,13 +1,13 @@
 <?= $this->include('templates/header') ?>
 
 <!-- Teacher Enrolled Students View -->
-<div class="bg-light min-vh-100">
+<div class="lms-role-view min-vh-100 teacher-enrolled-students-page">
     <div class="container py-4">
         <!-- Header Section -->
         <div class="row mb-4">
             <div class="col-12">
                 <div class="card border-0 shadow-sm rounded-3">
-                    <div class="card-body bg-success text-white p-4 rounded-3">
+                    <div class="card-body bg-success text-white p-4 rounded-3 role-hero">
                         <div class="d-flex justify-content-between align-items-center">
                             <div>
                                 <h3 class="mb-1 fw-bold">📋 Enrolled Students</h3>
@@ -44,7 +44,7 @@
         <!-- Pending Approvals Section -->
         <div class="row mb-4" id="pendingApprovalsSection" style="display: none;">
             <div class="col-12">
-                <div class="card border-0 shadow-sm border-warning">
+                <div class="card border-0 shadow-sm border-warning role-section-card">
                     <div class="card-body p-4">
                         <h3 class="mb-3 fw-bold text-warning">
                             <i class="fas fa-clock me-2"></i>Pending Enrollment Approvals
@@ -59,7 +59,7 @@
         </div>
 
         <!-- Statistics Cards -->
-        <div class="row mb-4">
+        <div class="row mb-4 role-stats">
             <div class="col-md-4 mb-3">
                 <div class="card border-0 shadow-sm text-white bg-primary text-center p-4 rounded-3 h-100">
                     <div class="display-4 mb-2">👥</div>
@@ -93,7 +93,7 @@
         <!-- Filter Section -->
         <div class="row mb-4">
             <div class="col-12">
-                <div class="card border-0 shadow-sm rounded-3">
+                <div class="card border-0 shadow-sm rounded-3 role-action-bar">
                     <div class="card-header bg-white border-0 py-3">
                         <h5 class="mb-0 fw-bold">🔍 Filter Students</h5>
                     </div>
@@ -140,13 +140,13 @@
         <!-- Enrolled Students Table -->
         <div class="row">
             <div class="col-12">
-                <div class="card border-0 shadow-sm rounded-3">
+                <div class="card border-0 shadow-sm rounded-3 role-section-card">
                     <div class="card-header bg-white border-0 py-3">
                         <h5 class="mb-0 fw-bold">📝 Enrollment Records</h5>
                     </div>
                     <div class="card-body p-0">
                         <?php if (empty($enrolledStudents)): ?>
-                            <div class="text-center py-5">
+                            <div class="text-center py-5 role-empty-state rounded-3">
                                 <i class="fas fa-inbox fa-4x text-muted mb-3"></i>
                                 <h5 class="text-muted">No Enrollment Records Found</h5>
                                 <p class="text-muted mb-3">
