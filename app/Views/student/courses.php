@@ -10,7 +10,7 @@
                     <div class="card-body bg-primary text-white p-4 rounded-3 role-hero">
                         <div class="d-flex justify-content-between align-items-center">
                             <div>
-                                <h2 class="mb-2 fw-bold">📚 My Courses</h2>
+                                <h2 class="mb-2 fw-bold">My Courses</h2>
                                 <p class="mb-0 opacity-75">View your enrolled courses, track progress, and discover new learning opportunities</p>
                             </div>
                             <div>

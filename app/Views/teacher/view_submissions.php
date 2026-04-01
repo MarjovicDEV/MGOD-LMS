@@ -1,7 +1,7 @@
 <?= $this->include('templates/header') ?>
 
 <!-- Teacher View Submissions -->
-<div class="lms-role-view min-vh-100 teacher-submissions-page">
+<div class="lms-dashboard lms-role-view min-vh-100 teacher-submissions-page">
     <div class="container py-4">
         <!-- Breadcrumb -->
         <nav aria-label="breadcrumb" class="mb-3">
@@ -46,7 +46,7 @@
             <div class="col-12">
                 <div class="card border-0 shadow-sm rounded-3 role-section-card">
                     <div class="card-header bg-white border-0 py-3">
-                        <h5 class="mb-0 fw-bold">📋 Assignment Details</h5>
+                        <h5 class="mb-0 fw-bold">Assignment Details</h5>
                     </div>
                     <div class="card-body">
                         <div class="row">

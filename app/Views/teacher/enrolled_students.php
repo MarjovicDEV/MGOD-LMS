@@ -1,7 +1,7 @@
 <?= $this->include('templates/header') ?>
 
 <!-- Teacher Enrolled Students View -->
-<div class="lms-role-view min-vh-100 teacher-enrolled-students-page">
+<div class="lms-dashboard lms-role-view min-vh-100 teacher-enrolled-students-page">
     <div class="container py-4">
         <!-- Header Section -->
         <div class="row mb-4">
@@ -10,7 +10,7 @@
                     <div class="card-body bg-success text-white p-4 rounded-3 role-hero">
                         <div class="d-flex justify-content-between align-items-center">
                             <div>
-                                <h3 class="mb-1 fw-bold">📋 Enrolled Students</h3>
+                                <h3 class="mb-1 fw-bold">Enrolled Students</h3>
                                 <p class="mb-0 opacity-75">View students enrolled in your courses</p>
                             </div>
                             <div>

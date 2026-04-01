@@ -1,7 +1,7 @@
 <?= $this->include('templates/header') ?>
 
 <!-- Teacher Courses View - Shows courses assigned by admin -->
-<div class="lms-role-view min-vh-100 teacher-courses-page">
+<div class="lms-dashboard lms-role-view min-vh-100 teacher-courses-page">
     <div class="container py-4">
         <!-- Header Section -->
         <div class="row mb-4">
@@ -10,7 +10,7 @@
                     <div class="card-body bg-primary text-white p-4 rounded-3 role-hero">
                         <div class="d-flex justify-content-between align-items-center">
                             <div>
-                                <h3 class="mb-1 fw-bold">📚 Courses I Teach</h3>
+                                <h3 class="mb-1 fw-bold">Courses I Teach</h3>
                                 <p class="mb-0 opacity-75">Courses assigned to me by the administrator</p>
                             </div>
                             <div class="text-end">
@@ -26,7 +26,6 @@
         <div class="row mb-4 role-stats">
             <div class="col-md-4 mb-3">
                 <div class="card border-0 shadow-sm text-white bg-primary text-center p-4 rounded-3 h-100">
-                    <div class="display-4 mb-2">📖</div>
                     <div class="display-5 fw-bold"><?= count($assignedCourses) ?></div>
                     <div class="fw-semibold">Total Courses</div>
                     <small class="opacity-75">Assigned to me</small>
@@ -42,7 +41,6 @@
             </div>
             <div class="col-md-4 mb-3">
                 <div class="card border-0 shadow-sm text-white bg-info text-center p-4 rounded-3 h-100">
-                    <div class="display-4 mb-2">⭐</div>
                     <div class="display-5 fw-bold"><?= count(array_filter($assignedCourses, fn($c) => $c['is_primary'] == 1)) ?></div>
                     <div class="fw-semibold">Primary Instructor</div>
                     <small class="opacity-75">Lead courses</small>
@@ -107,7 +105,7 @@
                     <div class="card-header bg-white border-0 pb-3">
                         <div class="d-flex justify-content-between align-items-center">
                             <div>
-                                <h5 class="mb-0 fw-bold text-dark">📋 My Assigned Courses</h5>
+                                <h5 class="mb-0 fw-bold text-dark">My Assigned Courses</h5>
                                 <small class="text-muted">Courses I'm currently teaching</small>
                             </div>
                             <div class="text-muted small">
