@@ -1,7 +1,7 @@
 <?= $this->include('templates/header') ?>
 
 <!-- Assignment Detail View -->
-<div class="lms-role-view min-vh-100 student-assignment-detail-page">
+<div class="lms-dashboard lms-role-view min-vh-100 student-assignment-detail-page">
     <div class="container py-4">
         <!-- Back Button -->
         <div class="mb-3">

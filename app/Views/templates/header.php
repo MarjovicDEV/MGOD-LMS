@@ -209,6 +209,251 @@
         body.role-teacher {
             --rv-accent: #059669;
         }
+
+        /* ========================================
+           LMS Dashboard Styling - Clean Minimal Design
+           Applied to: Student pages for consistent UX
+           ======================================== */
+        .lms-dashboard {
+            --brand-primary: #2563eb;
+            --brand-soft: #eef4ff;
+            --dashboard-bg: #f8fafc;
+            --text-main: #0f172a;
+            --text-soft: #475569;
+            --surface-soft: #ffffff;
+            --border-soft: #dbe4ef;
+            --hover-soft: #eef2f7;
+            background-color: var(--dashboard-bg);
+            color: var(--text-main);
+        }
+
+        .lms-dashboard h1,
+        .lms-dashboard h2,
+        .lms-dashboard h3,
+        .lms-dashboard h4,
+        .lms-dashboard h5,
+        .lms-dashboard h6,
+        .lms-dashboard p,
+        .lms-dashboard .card-title,
+        .lms-dashboard .card-text,
+        .lms-dashboard .fw-bold,
+        .lms-dashboard .fw-semibold {
+            color: var(--text-main);
+            letter-spacing: -0.01em;
+        }
+
+        .lms-dashboard h2 {
+            font-size: 1.875rem;
+        }
+
+        .lms-dashboard h5 {
+            font-size: 1.125rem;
+        }
+
+        .lms-dashboard h6 {
+            font-size: 0.95rem;
+        }
+
+        .lms-dashboard p {
+            font-size: 0.98rem;
+        }
+
+        .lms-dashboard small,
+        .lms-dashboard .text-muted {
+            color: var(--text-soft) !important;
+        }
+
+        .lms-dashboard .text-white {
+            color: var(--text-main) !important;
+        }
+
+        /* Hide all icons and emoji display elements */
+        .lms-dashboard i,
+        .lms-dashboard .display-4 {
+            display: none !important;
+        }
+
+        .lms-dashboard .card {
+            border-radius: 12px;
+            border: 1px solid var(--border-soft) !important;
+            background-color: var(--surface-soft);
+            box-shadow: 0 1px 2px rgba(15, 23, 42, 0.04);
+        }
+
+        .lms-dashboard .card-header {
+            border-bottom: 1px solid var(--border-soft);
+            background-color: var(--surface-soft);
+        }
+
+        .lms-dashboard .card-body.bg-primary {
+            background-color: var(--surface-soft) !important;
+            border: 1px solid var(--border-soft);
+        }
+
+        .lms-dashboard .card.text-white {
+            background-color: var(--surface-soft) !important;
+            color: var(--text-main) !important;
+            border: 1px solid var(--border-soft) !important;
+        }
+
+        .lms-dashboard .card.text-white::before {
+            content: none;
+        }
+
+        .lms-dashboard .card.text-white small {
+            color: var(--text-soft) !important;
+        }
+
+        .lms-dashboard .display-5 {
+            font-size: 2.25rem;
+            line-height: 1;
+            margin-bottom: 0.35rem;
+        }
+
+        /* Neutralize all Bootstrap color classes to soft professional tones */
+        .lms-dashboard .card.text-white.bg-primary,
+        .lms-dashboard .card.text-white.bg-success,
+        .lms-dashboard .card.text-white.bg-info,
+        .lms-dashboard .card.text-white.bg-warning,
+        .lms-dashboard .card.text-white.bg-danger,
+        .lms-dashboard .card.text-white.bg-secondary,
+        .lms-dashboard .badge.bg-primary,
+        .lms-dashboard .badge.bg-success,
+        .lms-dashboard .badge.bg-info,
+        .lms-dashboard .badge.bg-warning,
+        .lms-dashboard .badge.bg-danger,
+        .lms-dashboard .badge.bg-secondary {
+            background-color: var(--surface-soft) !important;
+            border-color: var(--border-soft) !important;
+            color: var(--text-main) !important;
+        }
+
+        .lms-dashboard .bg-success.bg-opacity-10 {
+            background-color: #ecfdf3 !important;
+            border: 1px solid #d1f2de;
+        }
+
+        .lms-dashboard .bg-warning.bg-opacity-10 {
+            background-color: #fff8e8 !important;
+            border: 1px solid #fae8bd;
+        }
+
+        .lms-dashboard .bg-info.bg-opacity-10 {
+            background-color: #eef6ff !important;
+            border: 1px solid #d7e8ff;
+        }
+
+        .lms-dashboard .bg-primary.bg-opacity-10 {
+            background-color: #eef4ff !important;
+            border: 1px solid #d7e5ff;
+        }
+
+        .lms-dashboard .bg-danger.bg-opacity-10,
+        .lms-dashboard .bg-secondary.bg-opacity-10 {
+            background-color: #f5f7fb !important;
+            border: 1px solid #e5ebf3;
+        }
+
+        .lms-dashboard .progress-bar {
+            background-color: var(--brand-primary) !important;
+        }
+
+        .lms-dashboard .text-primary,
+        .lms-dashboard .text-info {
+            color: #1d4ed8 !important;
+        }
+
+        .lms-dashboard .text-success {
+            color: #15803d !important;
+        }
+
+        .lms-dashboard .text-warning {
+            color: #b45309 !important;
+        }
+
+        .lms-dashboard .text-danger {
+            color: #b91c1c !important;
+        }
+
+        .lms-dashboard .btn-primary {
+            background-color: var(--brand-primary) !important;
+            border-color: var(--brand-primary) !important;
+            color: #ffffff !important;
+            font-size: 0.85rem;
+            font-weight: 600;
+        }
+
+        .lms-dashboard .btn-primary:hover,
+        .lms-dashboard .btn-primary:focus {
+            background-color: #1d4ed8 !important;
+            border-color: #1d4ed8 !important;
+            color: #ffffff !important;
+        }
+
+        .lms-dashboard .btn-outline-primary,
+        .lms-dashboard .btn-outline-success,
+        .lms-dashboard .btn-outline-info,
+        .lms-dashboard .btn-outline-warning,
+        .lms-dashboard .btn-outline-danger,
+        .lms-dashboard .btn-outline-secondary {
+            color: var(--text-soft) !important;
+            border-color: var(--border-soft) !important;
+            background-color: var(--surface-soft);
+            font-size: 0.85rem;
+        }
+
+        .lms-dashboard .btn-outline-primary:hover,
+        .lms-dashboard .btn-outline-success:hover,
+        .lms-dashboard .btn-outline-info:hover,
+        .lms-dashboard .btn-outline-warning:hover,
+        .lms-dashboard .btn-outline-danger:hover,
+        .lms-dashboard .btn-outline-secondary:hover {
+            color: var(--text-main) !important;
+            background-color: var(--hover-soft) !important;
+            border-color: var(--text-soft) !important;
+        }
+
+        .lms-dashboard .border-warning,
+        .lms-dashboard .border-success,
+        .lms-dashboard .border-info,
+        .lms-dashboard .border-danger,
+        .lms-dashboard .border-primary {
+            border-color: var(--border-soft) !important;
+        }
+
+        .lms-dashboard .alert-success,
+        .lms-dashboard .alert-info,
+        .lms-dashboard .alert-warning,
+        .lms-dashboard .alert-danger {
+            background-color: var(--surface-soft);
+            border-color: var(--border-soft);
+            color: var(--text-main);
+        }
+
+        .lms-dashboard .bg-light {
+            background-color: var(--surface-soft) !important;
+            color: var(--text-main) !important;
+        }
+
+        .lms-dashboard .opacity-75 {
+            opacity: 1 !important;
+            color: var(--text-soft) !important;
+        }
+
+        /* Responsive adjustments for mobile/tablet */
+        @media (max-width: 768px) {
+            .lms-dashboard {
+                font-size: 13px;
+            }
+
+            .lms-dashboard h2 {
+                font-size: 1.5rem;
+            }
+
+            .lms-dashboard .display-5 {
+                font-size: 1.8rem;
+            }
+        }
     </style>
 </head>
 <?php

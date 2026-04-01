@@ -67,7 +67,7 @@
         }
 </style>
 
-<div class="lms-role-view min-vh-100 student-materials-page">
+<div class="lms-dashboard lms-role-view min-vh-100 student-materials-page">
     <div class="container-fluid py-4">
         <!-- Page Header -->
         <div class="row mb-4">

@@ -7,7 +7,7 @@ $isOverdue = $dueDate < $now;
 ?>
 
 <!-- Student View Assignment -->
-<div class="lms-role-view min-vh-100 student-view-assignment-page">
+<div class="lms-dashboard lms-role-view min-vh-100 student-view-assignment-page">
     <div class="container py-4">
         <!-- Breadcrumb -->
         <nav aria-label="breadcrumb" class="mb-3">
