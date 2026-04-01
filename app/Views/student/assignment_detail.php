@@ -1,7 +1,7 @@
 <?= $this->include('templates/header') ?>
 
 <!-- Assignment Detail View -->
-<div class="bg-light min-vh-100">
+<div class="lms-role-view min-vh-100 student-assignment-detail-page">
     <div class="container py-4">
         <!-- Back Button -->
         <div class="mb-3">
@@ -11,7 +11,7 @@
         </div>
 
         <!-- Assignment Card -->
-        <div class="card border-0 shadow-sm rounded-3 mb-4">
+        <div class="card border-0 shadow-sm rounded-3 mb-4 role-section-card">
             <div class="card-header bg-white border-0 py-3">
                 <div class="d-flex justify-content-between align-items-start">
                     <div>
@@ -89,7 +89,7 @@
                 <?php if ($assignment['instructions']): ?>
                     <div class="mb-4">
                         <h5 class="fw-bold">Instructions</h5>
-                        <div class="bg-light p-3 rounded">
+                        <div class="bg-light p-3 rounded role-section-card">
                             <?= nl2br(esc($assignment['instructions'])) ?>
                         </div>
                     </div>
@@ -201,7 +201,7 @@
 
                 <!-- Submission Form -->
                 <?php if ($isAvailable && (!$submission || $submission['status'] !== 'graded')): ?>
-                    <div class="card border-primary">
+                <div class="card border-primary role-section-card">
                         <div class="card-header bg-primary text-white">
                             <h6 class="mb-0">
                                 <?= $submission ? 'Update Submission' : 'Submit Assignment' ?>

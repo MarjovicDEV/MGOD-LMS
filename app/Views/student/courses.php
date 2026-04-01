@@ -1,13 +1,13 @@
 <?= $this->include('templates/header') ?>
 
 <!-- Student My Courses View - Shows enrolled courses and available courses -->
-<div class="bg-light min-vh-100">
+<div class="lms-role-view min-vh-100 student-courses-page">
     <div class="container py-4">
         <!-- Header Section -->
         <div class="row mb-4">
             <div class="col-12">
                 <div class="card border-0 shadow-sm rounded-3">
-                    <div class="card-body bg-primary text-white p-4 rounded-3">
+                    <div class="card-body bg-primary text-white p-4 rounded-3 role-hero">
                         <div class="d-flex justify-content-between align-items-center">
                             <div>
                                 <h2 class="mb-2 fw-bold">📚 My Courses</h2>
@@ -23,7 +23,7 @@
                 </div>
             </div>
         </div>        <!-- Course Statistics Cards -->
-        <div class="row mb-4 g-4">
+        <div class="row mb-4 g-4 role-stats">
             <!-- Enrolled Courses -->
             <div class="col-lg-3 col-md-6">
                 <div class="card border-0 shadow-sm text-white bg-primary text-center p-4 rounded-3 h-100">
@@ -77,7 +77,7 @@
         <!-- Search Box -->
         <div class="row mb-3">
             <div class="col-12">
-                <div class="card border-0 shadow-sm rounded-3">
+                <div class="card border-0 shadow-sm rounded-3 role-action-bar">
                     <div class="card-body p-3">
                         <div class="input-group">
                             <span class="input-group-text bg-white border-end-0">
@@ -120,7 +120,7 @@
         <!-- Tab Header -->
         <div class="row mb-4">
             <div class="col-12">
-                <div class="card border-0 shadow-sm">
+                <div class="card border-0 shadow-sm role-section-card">
                     <div class="card-body p-4">
                         <h3 class="mb-0 fw-bold">
                             <i class="fas fa-book-reader me-2 text-primary"></i>My Enrolled Courses
@@ -521,134 +521,137 @@
 
 <style>
 /* Course Card Styling */
-.course-card {
+.student-courses-page .course-card {
     transition: transform 0.2s ease, box-shadow 0.2s ease;
     cursor: default;
     border-radius: 12px !important;
 }
 
-.course-card:hover {
+.student-courses-page .course-card:hover {
     transform: translateY(-4px);
     box-shadow: 0 12px 30px rgba(0,0,0,0.15) !important;
 }
 
 /* Course Type Indicators */
-.enrolled-course {
+.student-courses-page .enrolled-course {
     border-left: 4px solid #198754;
 }
 
 /* Progress Bar Styling */
-.progress {
+.student-courses-page .progress {
     border-radius: 10px;
     height: 8px;
 }
 
-.progress-bar {
+.student-courses-page .progress-bar {
     border-radius: 10px;
 }
 
 /* Button Groups */
-.btn-group .btn {
+.student-courses-page .btn-group .btn {
     flex: 1;
 }
 
 /* Alert Styling */
-.alert-success {
+.student-courses-page .alert-success {
     border: none;
     background-color: rgba(25, 135, 84, 0.1);
     border-radius: 8px;
 }
 
 /* Card Enhancements */
-.card {
+.student-courses-page .card {
     border-radius: 12px;
     overflow: hidden;
 }
 
-.card-body {
+.student-courses-page .card-body {
     padding: 1.25rem;
 }
 
 /* Button Hover Effects */
-.btn:hover {
+.student-courses-page .btn:hover {
     transition: all 0.2s ease;
 }
 
 /* Statistics Cards */
-.bg-primary, .bg-success, .bg-info, .bg-warning {
+.student-courses-page .bg-primary,
+.student-courses-page .bg-success,
+.student-courses-page .bg-info,
+.student-courses-page .bg-warning {
     border-radius: 12px !important;
 }
 
 /* Responsive Adjustments */
 @media (max-width: 768px) {
-    .course-card {
+    .student-courses-page .course-card {
         margin-bottom: 1rem;
     }
     
-    .display-4 {
+    .student-courses-page .display-4 {
         font-size: 2.5rem;
     }
     
-    .display-5 {
+    .student-courses-page .display-5 {
         font-size: 2rem;
     }
 }
 
 /* Loading State for Buttons */
-.btn[disabled] {
+.student-courses-page .btn[disabled] {
     opacity: 0.7;
     cursor: not-allowed;
 }
 
 /* Enhanced Shadows and Depth */
-.shadow-sm {
+.student-courses-page .shadow-sm {
     box-shadow: 0 2px 8px rgba(0,0,0,0.08) !important;
 }
 
-.rounded-3 {
+.student-courses-page .rounded-3 {
     border-radius: 12px !important;
 }
 
 /* Custom Badge Styling */
-.badge {
+.student-courses-page .badge {
     font-size: 0.75em;
     padding: 0.375rem 0.75rem;
     border-radius: 6px;
 }
 
 /* Materials Toggle Button */
-.materials-toggle {
+.student-courses-page .materials-toggle {
     position: relative;
     transition: all 0.3s ease;
 }
 
-.materials-toggle:hover {
+.student-courses-page .materials-toggle:hover {
     transform: translateY(-1px);
 }
 
-.materials-toggle .badge {
+.student-courses-page .materials-toggle .badge {
     font-size: 0.7em;
     padding: 0.2rem 0.4rem;
 }
 
 /* Materials Collapse Animation */
-.collapse {
+.student-courses-page .collapse {
     transition: all 0.35s ease;
 }
 
 /* File List Styling */
-.list-group-item {
+.student-courses-page .list-group-item {
     border-left: 3px solid transparent;
     transition: all 0.2s ease;
 }
 
-.list-group-item:hover {
+.student-courses-page .list-group-item:hover {
     border-left-color: #0d6efd;
     background-color: rgba(13, 110, 253, 0.05);
 }
 
 /* File Icons */
-.badge.rounded-circle {
+.student-courses-page .badge.rounded-circle {
     width: 40px;
     height: 40px;
     display: flex;
@@ -658,16 +661,16 @@
 }
 
 /* Purple color for audio files */
-.bg-purple {
+.student-courses-page .bg-purple {
     background-color: #6f42c1 !important;
 }
 
 /* Download Button Animation */
-.btn-group .btn {
+.student-courses-page .btn-group .btn {
     transition: all 0.2s ease;
 }
 
-.btn-group .btn:hover {
+.student-courses-page .btn-group .btn:hover {
     transform: scale(1.05);
 }
 </style>

@@ -1,13 +1,13 @@
 <?= $this->include('templates/header') ?>
 
 <!-- Teacher Enroll Student View -->
-<div class="bg-light min-vh-100">
+<div class="lms-role-view min-vh-100 teacher-enroll-student-page">
     <div class="container py-4">
         <!-- Header Section -->
         <div class="row mb-4">
             <div class="col-12">
                 <div class="card border-0 shadow-sm rounded-3">
-                    <div class="card-body bg-primary text-white p-4 rounded-3">
+                    <div class="card-body bg-primary text-white p-4 rounded-3 role-hero">
                         <div class="d-flex justify-content-between align-items-center">
                             <div>
                                 <h3 class="mb-1 fw-bold">👥 Enroll a Student</h3>
@@ -57,7 +57,7 @@
         <div class="row">
             <!-- Course Selection -->
             <div class="col-12 mb-4">
-                <div class="card border-0 shadow-sm rounded-3">
+                <div class="card border-0 shadow-sm rounded-3 role-section-card">
                     <div class="card-header bg-white border-0 py-3">
                         <h5 class="mb-0 fw-bold">📖 Select Course Offering</h5>
                     </div>
@@ -116,7 +116,7 @@
             </div>            <!-- Enrollment Form -->
             <?php if ($selectedCourseId && !empty($students)): ?>
                 <div class="col-12">
-                    <div class="card border-0 shadow-sm rounded-3">
+                    <div class="card border-0 shadow-sm rounded-3 role-section-card">
                         <div class="card-header bg-white border-0 py-3">
                             <div class="d-flex justify-content-between align-items-center">
                                 <h5 class="mb-0 fw-bold">👥 Enroll Students</h5>
@@ -266,7 +266,7 @@
                 </div>
             <?php elseif ($selectedCourseId && empty($students)): ?>
                 <div class="col-12">
-                    <div class="card border-0 shadow-sm rounded-3">
+                    <div class="card border-0 shadow-sm rounded-3 role-section-card">
                         <div class="card-body text-center py-5">
                             <i class="fas fa-users-slash fa-4x text-muted mb-3"></i>
                             <h5 class="text-muted">No Eligible Students Found</h5>
@@ -279,7 +279,7 @@
                 </div>
             <?php elseif (!$selectedCourseId && !empty($assignedCourses)): ?>
                 <div class="col-12">
-                    <div class="card border-0 shadow-sm rounded-3">
+                    <div class="card border-0 shadow-sm rounded-3 role-section-card">
                         <div class="card-body text-center py-5">
                             <i class="fas fa-hand-pointer fa-4x text-primary mb-3"></i>
                             <h5 class="text-muted">Select a Course Offering</h5>

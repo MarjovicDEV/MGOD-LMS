@@ -1,13 +1,13 @@
 <?= $this->include('templates/header') ?>
 
 <!-- Teacher Courses View - Shows courses assigned by admin -->
-<div class="bg-light min-vh-100">
+<div class="lms-role-view min-vh-100 teacher-courses-page">
     <div class="container py-4">
         <!-- Header Section -->
         <div class="row mb-4">
             <div class="col-12">
                 <div class="card border-0 shadow-sm rounded-3">
-                    <div class="card-body bg-primary text-white p-4 rounded-3">
+                    <div class="card-body bg-primary text-white p-4 rounded-3 role-hero">
                         <div class="d-flex justify-content-between align-items-center">
                             <div>
                                 <h3 class="mb-1 fw-bold">📚 Courses I Teach</h3>
@@ -23,7 +23,7 @@
         </div>
 
         <!-- Statistics Cards -->
-        <div class="row mb-4">
+        <div class="row mb-4 role-stats">
             <div class="col-md-4 mb-3">
                 <div class="card border-0 shadow-sm text-white bg-primary text-center p-4 rounded-3 h-100">
                     <div class="display-4 mb-2">📖</div>
@@ -69,7 +69,7 @@
         <?php if (!empty($assignedCourses)): ?>
         <div class="row mb-3">
             <div class="col-12">
-                <div class="card border-0 shadow-sm rounded-3">
+                <div class="card border-0 shadow-sm rounded-3 role-action-bar">
                     <div class="card-body">
                         <div class="row align-items-center">
                             <div class="col-md-8">
@@ -103,7 +103,7 @@
         <!-- Courses List -->
         <div class="row mb-4">
             <div class="col-12">
-                <div class="card border-0 shadow-sm rounded-3">
+                <div class="card border-0 shadow-sm rounded-3 role-section-card">
                     <div class="card-header bg-white border-0 pb-3">
                         <div class="d-flex justify-content-between align-items-center">
                             <div>
@@ -794,30 +794,30 @@ $(document).ready(function() {
 </script>
 
 <style>
-.hover-shadow {
+.teacher-courses-page .hover-shadow {
     transition: all 0.3s ease;
 }
 
-.hover-shadow:hover {
+.teacher-courses-page .hover-shadow:hover {
     transform: translateY(-5px);
     box-shadow: 0 0.5rem 1.5rem rgba(0, 0, 0, 0.15) !important;
 }
 
-.student-list::-webkit-scrollbar {
+.teacher-courses-page .student-list::-webkit-scrollbar {
     width: 6px;
 }
 
-.student-list::-webkit-scrollbar-track {
+.teacher-courses-page .student-list::-webkit-scrollbar-track {
     background: #f1f1f1;
     border-radius: 10px;
 }
 
-.student-list::-webkit-scrollbar-thumb {
+.teacher-courses-page .student-list::-webkit-scrollbar-thumb {
     background: #888;
     border-radius: 10px;
 }
 
-.student-list::-webkit-scrollbar-thumb:hover {
+.teacher-courses-page .student-list::-webkit-scrollbar-thumb:hover {
     background: #555;
 }
 </style>

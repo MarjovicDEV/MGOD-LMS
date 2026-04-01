@@ -1,13 +1,13 @@
 <?= $this->include('templates/header') ?>
 
 <!-- Student Assignments View -->
-<div class="bg-light min-vh-100">
+<div class="lms-role-view min-vh-100 student-assignments-page">
     <div class="container py-4">
         <!-- Header Section -->
         <div class="row mb-4">
             <div class="col-12">
                 <div class="card border-0 shadow-sm rounded-3">
-                    <div class="card-body bg-primary text-white p-4 rounded-3">
+                    <div class="card-body bg-primary text-white p-4 rounded-3 role-hero">
                         <div class="d-flex justify-content-between align-items-center">
                             <div>
                                 <h3 class="mb-1 fw-bold"><i class="fas fa-tasks me-2"></i>My Assignments</h3>
@@ -25,7 +25,7 @@
         </div>
 
         <!-- Statistics Cards -->
-        <div class="row mb-4 g-4">
+        <div class="row mb-4 g-4 role-stats">
             <div class="col-lg-3 col-md-6">
                 <div class="card border-0 shadow-sm text-white bg-primary text-center p-4 rounded-3 h-100">
                     <div class="display-4 mb-2">📝</div>
@@ -61,7 +61,7 @@
         </div>
 
         <!-- Assignments Tabs Card -->
-        <div class="card border-0 shadow-sm rounded-3">
+        <div class="card border-0 shadow-sm rounded-3 role-section-card">
             <div class="card-header bg-white border-0 py-3">
                 <ul class="nav nav-pills" id="assignmentTabs" role="tablist">
                 <li class="nav-item" role="presentation">
@@ -91,7 +91,7 @@
                     <!-- Upcoming Assignments -->
                     <div class="tab-pane fade show active" id="upcoming" role="tabpanel">
                         <?php if (empty($upcoming)): ?>
-                            <div class="text-center py-5">
+                            <div class="text-center py-5 role-empty-state rounded-3">
                                 <i class="fas fa-check-double text-success" style="font-size: 4rem;"></i>
                                 <p class="text-muted mt-3">No upcoming assignments. You're all caught up!</p>
                             </div>
@@ -130,7 +130,7 @@
                 <!-- Overdue Assignments -->
                 <div class="tab-pane fade" id="overdue" role="tabpanel">
                     <?php if (empty($overdue)): ?>
-                        <div class="card shadow-sm">
+                        <div class="card shadow-sm role-empty-state">
                             <div class="card-body text-center py-5">
                                 <i class="fas fa-smile text-success" style="font-size: 4rem;"></i>
                                 <p class="text-muted mt-3">No overdue assignments!</p>
@@ -182,7 +182,7 @@
                 <!-- Submitted Assignments -->
                 <div class="tab-pane fade" id="submitted" role="tabpanel">
                     <?php if (empty($submitted)): ?>
-                        <div class="card shadow-sm">
+                        <div class="card shadow-sm role-empty-state">
                             <div class="card-body text-center py-5">
                                 <i class="fas fa-inbox text-muted" style="font-size: 4rem;"></i>
                                 <p class="text-muted mt-3">No submitted assignments pending grading.</p>
@@ -225,7 +225,7 @@
                 <!-- Graded Assignments -->
                 <div class="tab-pane fade" id="graded" role="tabpanel">
                     <?php if (empty($graded)): ?>
-                        <div class="card shadow-sm">
+                        <div class="card shadow-sm role-empty-state">
                             <div class="card-body text-center py-5">
                                 <i class="fas fa-clipboard-list text-muted" style="font-size: 4rem;"></i>
                                 <p class="text-muted mt-3">No graded assignments yet.</p>

@@ -1,13 +1,13 @@
 <?= $this->include('templates/header') ?>
 
 <!-- Teacher Manage Assignments View -->
-<div class="bg-light min-vh-100">
+<div class="lms-role-view min-vh-100 teacher-assignments-page">
     <div class="container py-4">
         <!-- Header Section -->
         <div class="row mb-4">
             <div class="col-12">
                 <div class="card border-0 shadow-sm rounded-3">
-                    <div class="card-body bg-primary text-white p-4 rounded-3">
+                    <div class="card-body bg-primary text-white p-4 rounded-3 role-hero">
                         <div class="d-flex justify-content-between align-items-center">
                             <div>
                                 <h3 class="mb-1 fw-bold"><i class="fas fa-tasks me-2"></i>Manage Assignments</h3>
@@ -40,7 +40,7 @@
         <?php endif; ?>
 
         <!-- Statistics Cards -->
-        <div class="row mb-4 g-4">
+        <div class="row mb-4 g-4 role-stats">
             <div class="col-lg-3 col-md-6">
                 <div class="card border-0 shadow-sm text-white bg-primary text-center p-4 rounded-3 h-100">
                     <div class="display-4 mb-2">📝</div>
@@ -76,13 +76,13 @@
         </div>
 
         <!-- Assignments Table Card -->
-        <div class="card border-0 shadow-sm rounded-3">
+        <div class="card border-0 shadow-sm rounded-3 role-section-card">
             <div class="card-header bg-white border-0 py-3">
                 <h5 class="mb-0 fw-bold">📋 Assignment List</h5>
             </div>
             <div class="card-body">
                     <?php if (empty($assignments)): ?>
-                        <div class="text-center py-5">
+                        <div class="text-center py-5 role-empty-state rounded-3">
                             <i class="fas fa-clipboard-list text-muted" style="font-size: 4rem;"></i>
                             <p class="text-muted mt-3">No assignments created yet. Click "Create New Assignment" to get started.</p>
                         </div>
