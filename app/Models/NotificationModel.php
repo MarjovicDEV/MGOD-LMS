@@ -6,6 +6,8 @@ use CodeIgniter\Model;
 
 class NotificationModel extends Model
 {
+    public const TYPE_GRADE_POSTED = 'grade_posted';
+
     protected $table            = 'notifications';
     protected $primaryKey       = 'id';
     protected $useAutoIncrement = true;
@@ -141,7 +143,24 @@ class NotificationModel extends Model
             'is_read'   => 0,
             'is_hidden' => 0
         ]);
-    }    /**
+    }
+
+    /**
+     * Create grade-posted notification for user.
+     * Note: type, referenceId, referenceType are compatibility parameters and are not stored.
+     */
+    public function createGradePostedNotification(int $userId, string $message, ?int $referenceId = null, ?string $referenceType = null)
+    {
+        return $this->createNotification(
+            $userId,
+            $message,
+            self::TYPE_GRADE_POSTED,
+            $referenceId,
+            $referenceType
+        );
+    }
+
+    /**
      * Create notification for multiple users
      * Note: type, referenceId, referenceType parameters are kept for backward compatibility but not stored
      */

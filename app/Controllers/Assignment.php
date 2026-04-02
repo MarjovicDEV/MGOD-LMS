@@ -458,10 +458,9 @@ class Assignment extends BaseController
                 
                 $message = "{$gradeEmoji} Your submission for '{$submission['assignment_title']}' has been graded. Score: {$score}/{$assignment['max_score']} ({$percentage}%)";
                 
-                $this->notificationModel->createNotification(
+                $this->notificationModel->createGradePostedNotification(
                     $student['user_id'],
                     $message,
-                    'grade',
                     $submission['assignment_id'],
                     'assignment'
                 );

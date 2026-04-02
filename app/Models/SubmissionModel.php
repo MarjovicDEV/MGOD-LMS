@@ -2,7 +2,9 @@
 
 namespace App\Models;
 
+use App\Libraries\GradeCalculator;
 use CodeIgniter\Model;
+use Throwable;
 
 class SubmissionModel extends Model
 {
@@ -60,6 +62,7 @@ class SubmissionModel extends Model
     // Callbacks
     protected $allowCallbacks = true;
     protected $beforeInsert   = ['setSubmittedDate'];
+    protected $afterUpdate    = ['triggerGradebookRecalculation'];
 
     /**
      * Set submitted_at when status is submitted
@@ -71,6 +74,48 @@ class SubmissionModel extends Model
                 $data['data']['submitted_at'] = date('Y-m-d H:i:s');
             }
         }
+        return $data;
+    }
+
+    /**
+     * Trigger gradebook recalculation after grading updates.
+     */
+    protected function triggerGradebookRecalculation(array $data)
+    {
+        try {
+            $id = $data['id'][0] ?? $data['id'] ?? null;
+            if (!$id) {
+                return $data;
+            }
+
+            $submission = $this->find($id);
+            if (!$submission || empty($submission['enrollment_id'])) {
+                return $data;
+            }
+
+            $updatedData = $data['data'] ?? [];
+            $gradingFields = ['score', 'status', 'graded_at', 'graded_by'];
+            $hasGradingUpdate = !empty(array_intersect($gradingFields, array_keys($updatedData)));
+            $isGraded = (($submission['status'] ?? null) === 'graded');
+
+            if (!$hasGradingUpdate && !$isGraded) {
+                return $data;
+            }
+
+            if ($isGraded) {
+                (new GradeCalculator())->recalculateEnrollmentGrades((int) $submission['enrollment_id']);
+            }
+        } catch (Throwable $e) {
+            log_message(
+                'error',
+                'SubmissionModel grade recalculation failed for submission {submissionId}: {error}',
+                [
+                    'submissionId' => $data['id'][0] ?? $data['id'] ?? 'unknown',
+                    'error'        => $e->getMessage(),
+                ]
+            );
+        }
+
         return $data;
     }
 
