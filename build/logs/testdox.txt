@@ -1,0 +1,3 @@
+Assignment Controller Enrollment Join
+ [x] Assignment controller uses students to reach user record
+

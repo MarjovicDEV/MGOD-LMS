@@ -152,7 +152,8 @@ class SubmissionModel extends Model
             ')
             ->join('assignments a', 'a.id = submissions.assignment_id')
             ->join('enrollments e', 'e.id = submissions.enrollment_id')
-            ->join('users u', 'u.id = e.student_id')
+            ->join('students s', 's.id = e.student_id')
+            ->join('users u', 'u.id = s.user_id')
             ->join('users g', 'g.id = submissions.graded_by', 'left')
             ->join('course_offerings co', 'co.id = a.course_offering_id')
             ->join('courses c', 'c.id = co.course_id')
@@ -164,8 +165,10 @@ class SubmissionModel extends Model
      */
     public function getStudentSubmission($assignmentId, $studentId)
     {
-        return $this->where('assignment_id', $assignmentId)
-                    ->where('student_id', $studentId)
+        return $this->select('submissions.*')
+                    ->join('enrollments e', 'e.id = submissions.enrollment_id')
+                    ->where('submissions.assignment_id', $assignmentId)
+                    ->where('e.student_id', $studentId)
                     ->orderBy('submitted_at', 'DESC')
                     ->first();
     }
@@ -177,10 +180,12 @@ class SubmissionModel extends Model
     {
         return $this->select('
                 submissions.*,
-                u.name as student_name,
+                CONCAT(u.first_name, " ", COALESCE(u.middle_name, ""), " ", u.last_name) as student_name,
                 u.user_code as student_code
             ')
-            ->join('users u', 'u.id = submissions.student_id')
+            ->join('enrollments e', 'e.id = submissions.enrollment_id')
+            ->join('students s', 's.id = e.student_id')
+            ->join('users u', 'u.id = s.user_id')
             ->where('submissions.assignment_id', $assignmentId)
             ->orderBy('submissions.submitted_at', 'DESC')
             ->findAll();
@@ -195,13 +200,15 @@ class SubmissionModel extends Model
                 submissions.*,
                 a.title as assignment_title,
                 a.max_score,
-                u.name as student_name,
+                CONCAT(u.first_name, " ", COALESCE(u.middle_name, ""), " ", u.last_name) as student_name,
                 c.course_code,
                 c.title as course_title,
                 co.section
             ')
             ->join('assignments a', 'a.id = submissions.assignment_id')
-            ->join('users u', 'u.id = submissions.student_id')
+            ->join('enrollments e', 'e.id = submissions.enrollment_id')
+            ->join('students s', 's.id = e.student_id')
+            ->join('users u', 'u.id = s.user_id')
             ->join('course_offerings co', 'co.id = a.course_offering_id')
             ->join('courses c', 'c.id = co.course_id')
             ->where('submissions.status', 'submitted');
@@ -243,7 +250,8 @@ class SubmissionModel extends Model
             ')
             ->join('assignments a', 'a.id = submissions.assignment_id')
             ->join('assignment_types at', 'at.id = a.assignment_type_id', 'left')
-            ->where('submissions.student_id', $studentId)
+            ->join('enrollments e', 'e.id = submissions.enrollment_id')
+            ->where('e.student_id', $studentId)
             ->where('a.course_offering_id', $courseOfferingId)
             ->orderBy('a.due_date', 'DESC')
             ->findAll();
@@ -280,7 +288,8 @@ class SubmissionModel extends Model
                 AVG(score) as average_score
             ')
             ->join('assignments a', 'a.id = submissions.assignment_id')
-            ->where('submissions.student_id', $studentId);
+            ->join('enrollments e', 'e.id = submissions.enrollment_id')
+            ->where('e.student_id', $studentId);
         
         if ($courseOfferingId) {
             $builder->where('a.course_offering_id', $courseOfferingId);
@@ -296,11 +305,13 @@ class SubmissionModel extends Model
     {
         return $this->select('
                 submissions.*,
-                u.name as student_name,
+                CONCAT(u.first_name, " ", COALESCE(u.middle_name, ""), " ", u.last_name) as student_name,
                 a.due_date
             ')
             ->join('assignments a', 'a.id = submissions.assignment_id')
-            ->join('users u', 'u.id = submissions.student_id')
+            ->join('enrollments e', 'e.id = submissions.enrollment_id')
+            ->join('students s', 's.id = e.student_id')
+            ->join('users u', 'u.id = s.user_id')
             ->where('submissions.assignment_id', $assignmentId)
             ->where('submissions.submitted_at > a.due_date')
             ->findAll();
@@ -311,11 +322,46 @@ class SubmissionModel extends Model
      */
     public function submitAssignment($assignmentId, $studentId, $data)
     {
-        $existing = $this->getStudentSubmission($assignmentId, $studentId);
+        $assignment = $this->db->table('assignments')
+            ->select('course_offering_id')
+            ->where('id', $assignmentId)
+            ->get()
+            ->getRowArray();
+
+        if (!$assignment || empty($assignment['course_offering_id'])) {
+            log_message(
+                'warning',
+                'SubmissionModel submitAssignment skipped: assignment {assignmentId} not found or has no course offering',
+                ['assignmentId' => $assignmentId]
+            );
+            return false;
+        }
+
+        $enrollment = $this->db->table('enrollments')
+            ->select('id')
+            ->where('student_id', $studentId)
+            ->where('course_offering_id', $assignment['course_offering_id'])
+            ->where('enrollment_status', 'enrolled')
+            ->get()
+            ->getRowArray();
+
+        if (!$enrollment || empty($enrollment['id'])) {
+            log_message(
+                'warning',
+                'SubmissionModel submitAssignment skipped: no enrollment for student {studentId} in assignment {assignmentId}',
+                ['studentId' => $studentId, 'assignmentId' => $assignmentId]
+            );
+            return false;
+        }
+
+        $existing = $this->where('assignment_id', $assignmentId)
+            ->where('enrollment_id', $enrollment['id'])
+            ->orderBy('submitted_at', 'DESC')
+            ->first();
         
         $submissionData = [
             'assignment_id'   => $assignmentId,
-            'student_id'      => $studentId,
+            'enrollment_id'   => $enrollment['id'],
             'submission_text' => $data['submission_text'] ?? null,
             'file_path'       => $data['file_path'] ?? null,
             'submitted_at'    => date('Y-m-d H:i:s'),

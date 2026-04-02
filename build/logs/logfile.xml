@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites>
+  <testsuite name="C:\xampp\htdocs\MGOD-LMS\phpunit.xml.dist" tests="1" assertions="4" errors="0" failures="0" skipped="0" time="0.058860">
+    <testsuite name="App" tests="1" assertions="4" errors="0" failures="0" skipped="0" time="0.058860">
+      <testsuite name="AssignmentControllerEnrollmentJoinTest" file="C:\xampp\htdocs\MGOD-LMS\tests\unit\AssignmentControllerEnrollmentJoinTest.php" tests="1" assertions="4" errors="0" failures="0" skipped="0" time="0.058860">
+        <testcase name="testAssignmentControllerUsesStudentsToReachUserRecord" file="C:\xampp\htdocs\MGOD-LMS\tests\unit\AssignmentControllerEnrollmentJoinTest.php" line="10" class="AssignmentControllerEnrollmentJoinTest" classname="AssignmentControllerEnrollmentJoinTest" assertions="4" time="0.058860"/>
+      </testsuite>
+    </testsuite>
+  </testsuite>
+</testsuites>
