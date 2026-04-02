@@ -438,7 +438,9 @@
                                                     <!-- Edit Button -->
                                                     <a href="<?= base_url('admin/manage_assignment_types?action=edit&id=' . $type['id']) ?>" 
                                                        class="btn btn-outline-warning" 
-                                                       title="Edit Assignment Type">
+                                                       title="Edit Assignment Type"
+                                                       data-bs-toggle="tooltip"
+                                                       data-bs-placement="top">
                                                         <i class="fas fa-pen"></i>
                                                     </a>
                                                     
@@ -450,7 +452,9 @@
                                                     <a href="<?= base_url('admin/manage_assignment_types?action=toggle_status&id=' . $type['id']) ?>" 
                                                        class="btn <?= $toggleClass ?>" 
                                                        onclick="return confirm('Are you sure you want to <?= strtolower($toggleText) ?> this assignment type?')"
-                                                       title="<?= $toggleText ?> Assignment Type">
+                                                       title="Activate/Deactivate Assignment Type"
+                                                       data-bs-toggle="tooltip"
+                                                       data-bs-placement="top">
                                                         <i class="fas fa-power-off"></i>
                                                     </a>
                                                     
@@ -458,7 +462,9 @@
                                                     <a href="<?= base_url('admin/manage_assignment_types?action=delete&id=' . $type['id']) ?>" 
                                                        class="btn btn-outline-danger" 
                                                        onclick="return confirm('Are you sure you want to delete this assignment type?\n\nType: <?= esc($type['type_name']) ?>\n\nThis action cannot be undone!')"
-                                                       title="Delete Assignment Type">
+                                                       title="Delete Assignment Type"
+                                                       data-bs-toggle="tooltip"
+                                                       data-bs-placement="top">
                                                         <i class="fas fa-trash"></i>
                                                     </a>
                                                 </div>
