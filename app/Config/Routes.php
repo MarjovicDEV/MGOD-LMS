@@ -168,3 +168,29 @@ $routes->post('/admin/search/programs', 'Program::search');
 $routes->get('/admin/search/users', 'User::search');
 $routes->post('/admin/search/users', 'User::search');
 $routes->get('student/search/courses', 'Auth::searchStudentCourses');
+
+// =============================================================================
+// GRADEBOOK ROUTES
+// =============================================================================
+
+// Gradebook Routes - Student
+$routes->get('student/gradebook', 'Gradebook::studentIndex');
+$routes->get('student/gradebook/course/(:num)', 'Gradebook::courseDetails/$1');
+$routes->get('student/gradebook/export/pdf/(:num)', 'Gradebook::exportPDF/$1');
+$routes->get('student/gradebook/export/excel/(:num)', 'Gradebook::exportExcel/$1');
+
+// Gradebook Routes - Teacher
+$routes->get('teacher/gradebook', 'Gradebook::teacherIndex');
+$routes->get('teacher/gradebook/entry/(:num)', 'Gradebook::gradeEntry/$1');
+$routes->post('teacher/gradebook/bulk-update', 'Gradebook::bulkUpdate');
+$routes->get('teacher/gradebook/import/(:num)', 'Gradebook::csvImportForm/$1');
+$routes->post('teacher/gradebook/import/(:num)', 'Gradebook::csvImportProcess/$1');
+$routes->post('teacher/gradebook/override/(:num)', 'Gradebook::saveOverride/$1');
+$routes->get('teacher/gradebook/export/(:num)', 'Gradebook::exportClassGrades/$1');
+
+// Gradebook Routes - Admin
+$routes->get('admin/gradebook/analytics', 'Gradebook::analytics');
+$routes->get('admin/gradebook/audit', 'Gradebook::auditTrail');
+$routes->get('admin/gradebook/overview', 'Gradebook::systemOverview');
+$routes->get('admin/gradebook/student-grades/(:num)', 'Gradebook::getStudentGrades/$1');
+$routes->post('admin/gradebook/recalculate/(:num)', 'Gradebook::recalculateCourseGrades/$1');
