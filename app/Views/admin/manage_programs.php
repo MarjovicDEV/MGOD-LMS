@@ -608,6 +608,9 @@
                                                         <input type="hidden" name="action" value="toggle_status">
                                                         <input type="hidden" name="program_id" value="<?= $program['id'] ?>">
                                                         <button type="submit" class="btn btn-sm <?= $program['is_active'] ? 'btn-success' : 'btn-secondary' ?>" 
+                                                                title="Activate/Deactivate Program"
+                                                                data-bs-toggle="tooltip"
+                                                                data-bs-placement="top"
                                                                 onclick="return confirm('Toggle program status?')">
                                                             <?= $program['is_active'] ? 'Active' : 'Inactive' ?>
                                                         </button>
@@ -615,14 +618,14 @@
                                                 </td>
                                                 <td class="text-center">
                                                     <div class="btn-group" role="group">
-                                                        <a href="<?= base_url('admin/manage_programs?action=edit&id=' . $program['id']) ?>" class="btn btn-sm btn-primary">
+                                                        <a href="<?= base_url('admin/manage_programs?action=edit&id=' . $program['id']) ?>" class="btn btn-sm btn-primary" title="Edit Program Details" data-bs-toggle="tooltip" data-bs-placement="top">
                                                              Edit
                                                         </a>
                                                         <form method="post" action="<?= base_url('admin/manage_programs') ?>" class="d-inline">
                                                             <?= csrf_field() ?>
                                                             <input type="hidden" name="action" value="delete">
                                                             <input type="hidden" name="program_id" value="<?= $program['id'] ?>">
-                                                            <button type="submit" class="btn btn-sm btn-danger"
+                                                            <button type="submit" class="btn btn-sm btn-danger" title="Delete Program" data-bs-toggle="tooltip" data-bs-placement="top"
                                                                     onclick="return confirm('Are you sure you want to delete this program? This action may fail if there are dependencies.')">
                                                                  Delete
                                                             </button>
