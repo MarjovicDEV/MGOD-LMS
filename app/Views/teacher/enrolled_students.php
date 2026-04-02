@@ -253,9 +253,11 @@
                                                 </td>
                                                 <td>
                                                     <button type="button" 
-                                                            class="btn btn-sm btn-info" 
+                                                            class="btn btn-sm btn-outline-primary" 
+                                                            title="View Enrollment Details" 
                                                             data-bs-toggle="modal" 
-                                                            data-bs-target="#viewModal<?= $enrollment['enrollment_id'] ?>">
+                                                            data-bs-target="#viewModal<?= $enrollment['enrollment_id'] ?>"
+                                                            data-bs-placement="top">
                                                         <i class="fas fa-eye"></i>
                                                     </button>
                                                 </td>
