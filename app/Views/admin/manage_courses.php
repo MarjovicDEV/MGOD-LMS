@@ -651,11 +651,15 @@
                                                 <td class="text-center">
                                                     <div class="btn-group btn-group-sm" role="group">
                                                         <a href="<?= base_url('admin/manage_courses?action=edit&id=' . $course['id']) ?>" 
-                                                           class="btn btn-outline-warning" title="Edit">
+                                                           class="btn btn-outline-warning" title="Edit Course Details"
+                                                           data-bs-toggle="tooltip"
+                                                           data-bs-placement="top">
                                                             
                                                         </a>
                                                         <a href="<?= base_url('admin/manage_courses?action=delete&id=' . $course['id']) ?>" 
-                                                           class="btn btn-outline-danger" title="Delete"
+                                                           class="btn btn-outline-danger" title="Delete Course"
+                                                           data-bs-toggle="tooltip"
+                                                           data-bs-placement="top"
                                                            onclick="return confirm('Are you sure you want to delete this course?')">
                                                             
                                                         </a>
