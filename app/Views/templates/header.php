@@ -658,7 +658,37 @@ $currentUri = uri_string();
                                 </ul>
                             </li>
 
-                            
+                            <!-- Gradebook Dropdown (Admin) -->
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle px-3 fw-bold <?= (strpos($currentUri, 'admin/gradebook') !== false) ? 'active' : '' ?>" 
+                                   href="#" 
+                                   id="adminGradebookDropdown" 
+                                   role="button" 
+                                   data-bs-toggle="dropdown" 
+                                   aria-expanded="false">
+                                    Gradebook
+                                </a>
+                                <ul class="dropdown-menu shadow" aria-labelledby="adminGradebookDropdown">
+                                    <li>
+                                        <a class="dropdown-item <?= (strpos($currentUri, 'admin/gradebook/overview') !== false) ? 'active fw-bold' : '' ?>" 
+                                           href="<?= base_url('admin/gradebook/overview') ?>">
+                                            <i class="fas fa-tachometer-alt me-2"></i>System Overview
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a class="dropdown-item <?= (strpos($currentUri, 'admin/gradebook/analytics') !== false) ? 'active fw-bold' : '' ?>" 
+                                           href="<?= base_url('admin/gradebook/analytics') ?>">
+                                            <i class="fas fa-chart-line me-2"></i>Grade Analytics
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a class="dropdown-item <?= (strpos($currentUri, 'admin/gradebook/audit') !== false) ? 'active fw-bold' : '' ?>" 
+                                           href="<?= base_url('admin/gradebook/audit') ?>">
+                                            <i class="fas fa-history me-2"></i>Audit Trail
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
                             
                             <?php elseif ($userRole === 'teacher'): ?>
                             <!-- Teacher Navigation -->
@@ -779,10 +809,30 @@ $currentUri = uri_string();
                                     Assignments
                                 </a>
                             </li>
-                            <li class="nav-item">
-                                <a class="nav-link px-3 fw-bold <?= (strpos($currentUri, 'student/grades') !== false) ? 'active' : '' ?>" href="<?= base_url('student/grades') ?>">
+                            <!-- Grades Dropdown (Student) -->
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle px-3 fw-bold <?= (strpos($currentUri, 'student/grades') !== false || strpos($currentUri, 'student/gradebook') !== false) ? 'active' : '' ?>" 
+                                   href="#" 
+                                   id="studentGradesDropdown" 
+                                   role="button" 
+                                   data-bs-toggle="dropdown" 
+                                   aria-expanded="false">
                                     Grades
                                 </a>
+                                <ul class="dropdown-menu shadow" aria-labelledby="studentGradesDropdown">
+                                    <li>
+                                        <a class="dropdown-item <?= (strpos($currentUri, 'student/grades') !== false && strpos($currentUri, 'gradebook') === false) ? 'active fw-bold' : '' ?>" 
+                                           href="<?= base_url('student/grades') ?>">
+                                            <i class="fas fa-chart-bar me-2"></i>Grade Summary
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a class="dropdown-item <?= (strpos($currentUri, 'student/gradebook') !== false) ? 'active fw-bold' : '' ?>" 
+                                           href="<?= base_url('student/gradebook') ?>">
+                                            <i class="fas fa-book-open me-2"></i>Detailed Gradebook
+                                        </a>
+                                    </li>
+                                </ul>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link px-3 fw-bold <?= (strpos($currentUri, 'student/schedule') !== false) ? 'active' : '' ?>" href="<?= base_url('student/schedule') ?>">
