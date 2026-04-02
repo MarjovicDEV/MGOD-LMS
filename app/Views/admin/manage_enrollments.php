@@ -615,7 +615,9 @@
                                                 <td class="text-center">
                                                     <div class="btn-group btn-group-sm" role="group">
                                                         <a href="<?= base_url('admin/manage_enrollments?action=edit&id=' . $enrollment['id'] . ($selectedTermId ? '&term_id=' . $selectedTermId : '')) ?>" 
-                                                           class="btn btn-outline-warning" title="Edit">
+                                                           class="btn btn-outline-warning" title="Edit Enrollment Details"
+                                                           data-bs-toggle="tooltip"
+                                                           data-bs-placement="top">
                                                             
                                                         </a>
                                                         
@@ -651,7 +653,9 @@
                                                             <input type="hidden" name="action" value="delete">
                                                             <input type="hidden" name="enrollment_id" value="<?= $enrollment['id'] ?>">
                                                             <input type="hidden" name="term_id" value="<?= $selectedTermId ?>">
-                                                            <button type="submit" class="btn btn-outline-danger btn-sm" title="Delete"
+                                                            <button type="submit" class="btn btn-outline-danger btn-sm" title="Delete Enrollment"
+                                                                    data-bs-toggle="tooltip"
+                                                                    data-bs-placement="top"
                                                                     onclick="return confirm('Are you sure you want to delete this enrollment?')">
                                                                 
                                                             </button>
