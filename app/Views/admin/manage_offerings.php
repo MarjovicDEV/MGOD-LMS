@@ -592,12 +592,16 @@
                                                         </a>
                                                         <a href="<?= base_url('admin/manage_offerings?action=edit&id=' . $offering['id']) ?>" 
                                                            class="btn btn-outline-warning" 
-                                                           title="Edit">
+                                                           title="Edit Course Offering Details"
+                                                           data-bs-toggle="tooltip"
+                                                           data-bs-placement="top">
                                                             <i class="fas fa-edit"></i>
                                                         </a>
                                                         <a href="<?= base_url('admin/manage_offerings?action=delete&id=' . $offering['id']) ?>" 
                                                            class="btn btn-outline-danger" 
-                                                           title="Delete"
+                                                           title="Delete Course Offering"
+                                                           data-bs-toggle="tooltip"
+                                                           data-bs-placement="top"
                                                            onclick="return confirm('Are you sure you want to delete this offering?\n\nCourse: <?= esc($offering['course_code']) ?>\nTerm: <?= esc($offering['term_name']) ?>\nSection: <?= esc($offering['section']) ?>')">
                                                             <i class="fas fa-trash-alt"></i>
                                                         </a>
