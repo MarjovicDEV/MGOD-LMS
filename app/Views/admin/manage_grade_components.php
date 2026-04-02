@@ -524,17 +524,25 @@
                                                 <td class="text-center">
                                                     <div class="btn-group btn-group-sm" role="group">
                                                         <a href="<?= base_url('admin/manage_grade_components?action=edit&id=' . $component['id']) ?>" 
-                                                           class="btn btn-outline-warning" title="Edit">
+                                                           class="btn btn-outline-warning" 
+                                                           title="Edit Grade Component"
+                                                           data-bs-toggle="tooltip"
+                                                           data-bs-placement="top">
                                                             <i class="fas fa-pen"></i>
                                                         </a>
                                                         <a href="<?= base_url('admin/manage_grade_components?action=toggle_status&id=' . $component['id']) ?>" 
                                                            class="btn btn-outline-<?= $component['is_active'] == 1 ? 'secondary' : 'success' ?>" 
-                                                           title="<?= $component['is_active'] == 1 ? 'Deactivate' : 'Activate' ?>"
+                                                           title="Activate/Deactivate Grade Component"
+                                                           data-bs-toggle="tooltip"
+                                                           data-bs-placement="top"
                                                            onclick="return confirm('Are you sure you want to <?= $component['is_active'] == 1 ? 'deactivate' : 'activate' ?> this grade component?')">
                                                             <i class="fas fa-power-off"></i>
                                                         </a>
                                                         <a href="<?= base_url('admin/manage_grade_components?action=delete&id=' . $component['id']) ?>" 
-                                                           class="btn btn-outline-danger" title="Delete"
+                                                           class="btn btn-outline-danger" 
+                                                           title="Delete Grade Component"
+                                                           data-bs-toggle="tooltip"
+                                                           data-bs-placement="top"
                                                            onclick="return confirm('Are you sure you want to delete this grade component? This action cannot be undone.')">
                                                             <i class="fas fa-trash"></i>
                                                         </a>
