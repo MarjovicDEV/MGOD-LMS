@@ -692,9 +692,11 @@ class Gradebook extends BaseController
             ->get()
             ->getResultArray();
 
-        $instructors = $this->db->table('users')
-            ->where('role', 'teacher')
-            ->orderBy('last_name', 'ASC')
+        $instructors = $this->db->table('users u')
+            ->select('u.id, u.first_name, u.middle_name, u.last_name, u.email')
+            ->join('roles r', 'r.id = u.role_id')
+            ->where('r.role_name', 'teacher')
+            ->orderBy('u.last_name', 'ASC')
             ->get()
             ->getResultArray();
 

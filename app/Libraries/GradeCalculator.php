@@ -154,26 +154,10 @@ class GradeCalculator
             return ['success' => false, 'message' => 'Enrollment not found'];
         }
 
-        $courseOfferingId = $enrollment['course_offering_id'];
-
-        // Get course offering details to find term
-        $courseOffering = $this->db->table('course_offerings')
-            ->where('id', $courseOfferingId)
-            ->get()
-            ->getRowArray();
-
-        if (!$courseOffering) {
-            return ['success' => false, 'message' => 'Course offering not found'];
-        }
-
-        // Get grading periods for this term
-        $gradingPeriods = $this->gradingPeriodModel
-            ->where('term_id', $courseOffering['term_id'])
-            ->orderBy('period_order', 'ASC')
-            ->findAll();
+        $gradingPeriods = $this->resolveGradingPeriodsForEnrollment((int) $enrollmentId);
 
         if (empty($gradingPeriods)) {
-            return ['success' => false, 'message' => 'No grading periods configured'];
+            return ['success' => false, 'message' => 'No grading periods configured for enrollment ' . (int) $enrollmentId];
         }
 
         $finalGrade = 0.00;
@@ -223,18 +207,16 @@ class GradeCalculator
             return ['success' => false, 'message' => 'Enrollment not found'];
         }
 
-        $courseOfferingId = $enrollment['course_offering_id'];
+        $gradingPeriods = $this->resolveGradingPeriodsForEnrollment((int) $enrollmentId);
 
-        // Get course offering to find term
-        $courseOffering = $this->db->table('course_offerings')
-            ->where('id', $courseOfferingId)
-            ->get()
-            ->getRowArray();
-
-        // Get grading periods
-        $gradingPeriods = $this->gradingPeriodModel
-            ->where('term_id', $courseOffering['term_id'])
-            ->findAll();
+        if (empty($gradingPeriods)) {
+            log_message(
+                'error',
+                'GradeCalculator recalculation failed: no grading periods resolved for enrollment {enrollmentId}',
+                ['enrollmentId' => (int) $enrollmentId]
+            );
+            return ['success' => false, 'message' => 'No grading periods configured for enrollment ' . (int) $enrollmentId];
+        }
 
         // Recalculate each period
         foreach ($gradingPeriods as $period) {
@@ -292,5 +274,65 @@ class GradeCalculator
         }
 
         return $breakdown;
+    }
+
+    private function resolveGradingPeriodsForEnrollment(int $enrollmentId): array
+    {
+        $enrollment = $this->enrollmentModel->find($enrollmentId);
+        if (!$enrollment || empty($enrollment['course_offering_id'])) {
+            return [];
+        }
+
+        $courseOffering = $this->db->table('course_offerings')
+            ->select('id, term_id')
+            ->where('id', (int) $enrollment['course_offering_id'])
+            ->get()
+            ->getRowArray();
+
+        if (!$courseOffering) {
+            return [];
+        }
+
+        // Primary path: resolve by term_id when present.
+        if (!empty($courseOffering['term_id'])) {
+            $byTerm = $this->gradingPeriodModel
+                ->where('term_id', (int) $courseOffering['term_id'])
+                ->orderBy('period_order', 'ASC')
+                ->findAll();
+
+            if (!empty($byTerm)) {
+                return $byTerm;
+            }
+        }
+
+        // Fallback 1: resolve periods used by assignments in this offering.
+        $byAssignments = $this->db->table('grading_periods gp')
+            ->distinct()
+            ->select('gp.*')
+            ->join('assignments a', 'a.grading_period_id = gp.id')
+            ->where('a.course_offering_id', (int) $enrollment['course_offering_id'])
+            ->where('a.grading_period_id IS NOT NULL')
+            ->orderBy('gp.period_order', 'ASC')
+            ->orderBy('gp.id', 'ASC')
+            ->get()
+            ->getResultArray();
+
+        if (!empty($byAssignments)) {
+            return $byAssignments;
+        }
+
+        // Fallback 2: resolve periods already present in gradebook entries.
+        $byGradebook = $this->db->table('grading_periods gp')
+            ->distinct()
+            ->select('gp.*')
+            ->join('gradebook_entries ge', 'ge.grading_period_id = gp.id')
+            ->where('ge.enrollment_id', (int) $enrollmentId)
+            ->where('ge.grading_period_id IS NOT NULL')
+            ->orderBy('gp.period_order', 'ASC')
+            ->orderBy('gp.id', 'ASC')
+            ->get()
+            ->getResultArray();
+
+        return $byGradebook ?: [];
     }
 }
