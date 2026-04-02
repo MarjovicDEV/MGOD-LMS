@@ -966,10 +966,18 @@ function displayPendingEnrollments(enrollments) {
                             </p>
                         </div>
                         <div class="col-md-4 text-end">
-                            <button class="btn btn-success btn-sm me-2" onclick="respondToEnrollment(${enrollment.enrollment_id}, 'accept')">
+                            <button class="btn btn-outline-success btn-sm me-2"
+                                    title="Accept enrollment"
+                                    data-bs-toggle="tooltip"
+                                    data-bs-placement="top"
+                                    onclick="respondToEnrollment(${enrollment.enrollment_id}, 'accept')">
                                 <i class="fas fa-check me-1"></i>Accept
                             </button>
-                            <button class="btn btn-danger btn-sm" onclick="respondToEnrollment(${enrollment.enrollment_id}, 'reject')">
+                            <button class="btn btn-outline-warning btn-sm"
+                                    title="Reject enrollment"
+                                    data-bs-toggle="tooltip"
+                                    data-bs-placement="top"
+                                    onclick="respondToEnrollment(${enrollment.enrollment_id}, 'reject')">
                                 <i class="fas fa-times me-1"></i>Reject
                             </button>
                         </div>
