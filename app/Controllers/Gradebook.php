@@ -549,4 +549,259 @@ class Gradebook extends BaseController
             ->setHeader('Content-Disposition', 'attachment; filename="' . $result['filename'] . '"')
             ->setBody($result['csv']);
     }
+
+    //=================================================================
+    // ADMIN METHODS
+    //=================================================================
+
+    /**
+     * Admin grade analytics dashboard with filters and statistics
+     */
+    public function analytics()
+    {
+        if (!$this->session->get('isLoggedIn') || $this->session->get('role') !== 'admin') {
+            return redirect()->to(base_url('login'))->with('error', 'Unauthorized access');
+        }
+
+        // Get filter parameters
+        $termId = $this->request->getGet('term_id');
+        $courseId = $this->request->getGet('course_id');
+
+        // Get terms for filter
+        $terms = $this->db->table('terms t')
+            ->select('t.*, ay.year_name, s.semester_name')
+            ->join('academic_years ay', 'ay.id = t.academic_year_id')
+            ->join('semesters s', 's.id = t.semester_id')
+            ->orderBy('t.created_at', 'DESC')
+            ->get()
+            ->getResultArray();
+
+        // Get courses for filter
+        $courses = $this->db->table('courses')
+            ->orderBy('course_code', 'ASC')
+            ->get()
+            ->getResultArray();
+
+        // Build query for grade statistics
+        $builder = $this->db->table('gradebook_entries ge')
+            ->select('ge.final_grade, ge.grade_status, 
+                      c.course_code, c.title as course_title,
+                      co.section, t.term_name')
+            ->join('enrollments e', 'e.id = ge.enrollment_id')
+            ->join('course_offerings co', 'co.id = e.course_offering_id')
+            ->join('courses c', 'c.id = co.course_id')
+            ->join('terms t', 't.id = co.term_id')
+            ->where('ge.grading_period_id', null); // Only final grades
+
+        if ($termId) {
+            $builder->where('co.term_id', $termId);
+        }
+
+        if ($courseId) {
+            $builder->where('co.course_id', $courseId);
+        }
+
+        $grades = $builder->get()->getResultArray();
+
+        // Calculate statistics
+        $stats = [
+            'total_students' => count($grades),
+            'average_grade' => 0,
+            'passing_count' => 0,
+            'failing_count' => 0,
+            'incomplete_count' => 0,
+            'distribution' => [
+                '90-100' => 0,
+                '80-89' => 0,
+                '75-79' => 0,
+                'Below 75' => 0
+            ]
+        ];
+
+        $gradeSum = 0;
+        foreach ($grades as $grade) {
+            if ($grade['grade_status'] !== 'calculated') {
+                $stats['incomplete_count']++;
+                continue;
+            }
+
+            $finalGrade = $grade['final_grade'];
+            $gradeSum += $finalGrade;
+
+            if ($finalGrade >= 75) {
+                $stats['passing_count']++;
+            } else {
+                $stats['failing_count']++;
+            }
+
+            if ($finalGrade >= 90) {
+                $stats['distribution']['90-100']++;
+            } elseif ($finalGrade >= 80) {
+                $stats['distribution']['80-89']++;
+            } elseif ($finalGrade >= 75) {
+                $stats['distribution']['75-79']++;
+            } else {
+                $stats['distribution']['Below 75']++;
+            }
+        }
+
+        if ($stats['total_students'] > 0) {
+            $stats['average_grade'] = $gradeSum / $stats['total_students'];
+        }
+
+        $data = [
+            'title' => 'Grade Analytics',
+            'terms' => $terms,
+            'courses' => $courses,
+            'stats' => $stats,
+            'selected_term' => $termId,
+            'selected_course' => $courseId
+        ];
+
+        return view('admin/gradebook_analytics', $data);
+    }
+
+    /**
+     * Admin audit trail - shows all grade changes with filters
+     */
+    public function auditTrail()
+    {
+        if (!$this->session->get('isLoggedIn') || $this->session->get('role') !== 'admin') {
+            return redirect()->to(base_url('login'))->with('error', 'Unauthorized access');
+        }
+
+        // Get filter parameters
+        $filters = [
+            'course_offering_id' => $this->request->getGet('course_offering_id'),
+            'student_id' => $this->request->getGet('student_id'),
+            'changed_by' => $this->request->getGet('changed_by'),
+            'change_type' => $this->request->getGet('change_type'),
+            'date_from' => $this->request->getGet('date_from'),
+            'date_to' => $this->request->getGet('date_to')
+        ];
+
+        // Get audit trail
+        $auditTrail = $this->gradeHistoryModel->getAuditTrail($filters);
+
+        // Get filter options
+        $courses = $this->db->table('course_offerings co')
+            ->select('co.id, c.course_code, co.section, t.term_name')
+            ->join('courses c', 'c.id = co.course_id')
+            ->join('terms t', 't.id = co.term_id')
+            ->orderBy('t.created_at', 'DESC')
+            ->get()
+            ->getResultArray();
+
+        $instructors = $this->db->table('users')
+            ->where('role', 'teacher')
+            ->orderBy('last_name', 'ASC')
+            ->get()
+            ->getResultArray();
+
+        $data = [
+            'title' => 'Grade Change Audit Trail',
+            'audit_trail' => $auditTrail,
+            'courses' => $courses,
+            'instructors' => $instructors,
+            'filters' => $filters
+        ];
+
+        return view('admin/gradebook_audit', $data);
+    }
+
+    /**
+     * Admin system-wide gradebook overview - grouped by department
+     */
+    public function systemOverview()
+    {
+        if (!$this->session->get('isLoggedIn') || $this->session->get('role') !== 'admin') {
+            return redirect()->to(base_url('login'))->with('error', 'Unauthorized access');
+        }
+
+        $termId = $this->request->getGet('term_id');
+
+        // Get terms
+        $terms = $this->db->table('terms t')
+            ->select('t.*, ay.year_name, s.semester_name')
+            ->join('academic_years ay', 'ay.id = t.academic_year_id')
+            ->join('semesters s', 's.id = t.semester_id')
+            ->orderBy('t.created_at', 'DESC')
+            ->get()
+            ->getResultArray();
+
+        // If no term selected, use most recent
+        if (!$termId && !empty($terms)) {
+            $termId = $terms[0]['id'];
+        }
+
+        // Get course offerings for selected term
+        $courseOfferings = $this->db->table('course_offerings co')
+            ->select('co.*, c.course_code, c.title, d.department_name,
+                      COUNT(DISTINCT e.id) as student_count')
+            ->join('courses c', 'c.id = co.course_id')
+            ->join('departments d', 'd.id = c.department_id', 'left')
+            ->join('enrollments e', 'e.course_offering_id = co.id AND e.enrollment_status = "enrolled"', 'left')
+            ->where('co.term_id', $termId)
+            ->groupBy('co.id')
+            ->orderBy('d.department_name', 'ASC')
+            ->orderBy('c.course_code', 'ASC')
+            ->get()
+            ->getResultArray();
+
+        // Group by department
+        $departmentData = [];
+        foreach ($courseOfferings as $offering) {
+            $dept = $offering['department_name'] ?? 'No Department';
+            if (!isset($departmentData[$dept])) {
+                $departmentData[$dept] = [];
+            }
+            $departmentData[$dept][] = $offering;
+        }
+
+        $data = [
+            'title' => 'System-Wide Gradebook',
+            'terms' => $terms,
+            'selected_term' => $termId,
+            'department_data' => $departmentData
+        ];
+
+        return view('admin/gradebook_overview', $data);
+    }
+
+    /**
+     * Get student grades for admin view (AJAX)
+     */
+    public function getStudentGrades($enrollmentId)
+    {
+        if (!$this->session->get('isLoggedIn') || $this->session->get('role') !== 'admin') {
+            return $this->response->setJSON(['success' => false, 'message' => 'Unauthorized']);
+        }
+
+        $grades = $this->gradebookEntryModel->getStudentCourseGrades($enrollmentId);
+        $finalGrade = $this->gradebookEntryModel->getFinalGrade($enrollmentId);
+
+        return $this->response->setJSON([
+            'success' => true,
+            'grades' => $grades,
+            'final_grade' => $finalGrade
+        ]);
+    }
+
+    /**
+     * Recalculate all grades for a course (admin function)
+     */
+    public function recalculateCourseGrades($courseOfferingId)
+    {
+        if (!$this->session->get('isLoggedIn') || $this->session->get('role') !== 'admin') {
+            return redirect()->to(base_url('login'))->with('error', 'Unauthorized access');
+        }
+
+        $result = $this->gradeCalculator->recalculateCourseGrades($courseOfferingId);
+
+        if ($result['success']) {
+            return redirect()->back()->with('success', $result['message']);
+        } else {
+            return redirect()->back()->with('error', $result['message']);
+        }
+    }
 }
