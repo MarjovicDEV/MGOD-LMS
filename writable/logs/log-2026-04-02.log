@@ -180,3 +180,94 @@ Stack trace:
 #19 {main}
 ERROR - 2026-04-02 15:49:15 --> SubmissionModel grade recalculation failed for submission 30: Undefined array key "term_id"
 ERROR - 2026-04-02 15:49:40 --> SubmissionModel grade recalculation failed for submission 30: Undefined array key "term_id"
+ERROR - 2026-04-02 16:11:22 --> SubmissionModel grade recalculation failed for submission 30: Undefined array key "term_id"
+ERROR - 2026-04-02 16:21:43 --> SubmissionModel grade recalculation failed for submission 30: Undefined array key "term_id"
+CRITICAL - 2026-04-02 16:24:02 --> CodeIgniter\View\Exceptions\ViewException: Invalid file: "templates/student_template.php"
+[Method: GET, Route: student/gradebook]
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 39.
+ 1 SYSTEMPATH\View\View.php(214): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('templates/student_template.php')
+ 2 SYSTEMPATH\View\View.php(242): CodeIgniter\View\View->render('templates/student_template', [], true)
+ 3 SYSTEMPATH\Common.php(1167): CodeIgniter\View\View->render('student/gradebook', [], true)
+ 4 APPPATH\Controllers\Gradebook.php(86): view('student/gradebook', [...])
+ 5 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Gradebook->studentIndex()
+ 6 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Gradebook))
+ 7 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH\index.php(204): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ERROR - 2026-04-02 16:25:15 --> mysqli_sql_exception: Unknown column 'role' in 'where clause' in C:\xampp\htdocs\MGOD-LMS\system\Database\MySQLi\Connection.php:327
+Stack trace:
+#0 C:\xampp\htdocs\MGOD-LMS\system\Database\MySQLi\Connection.php(327): mysqli->query('SELECT *\nFROM `...', 0)
+#1 C:\xampp\htdocs\MGOD-LMS\system\Database\BaseConnection.php(729): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *\nFROM `...')
+#2 C:\xampp\htdocs\MGOD-LMS\system\Database\BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *\nFROM `...')
+#3 C:\xampp\htdocs\MGOD-LMS\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 C:\xampp\htdocs\MGOD-LMS\app\Controllers\Gradebook.php(698): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\MGOD-LMS\system\CodeIgniter.php(933): App\Controllers\Gradebook->auditTrail()
+#6 C:\xampp\htdocs\MGOD-LMS\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Gradebook))
+#7 C:\xampp\htdocs\MGOD-LMS\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\MGOD-LMS\system\Boot.php(363): CodeIgniter\CodeIgniter->run()
+#9 C:\xampp\htdocs\MGOD-LMS\system\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#10 C:\xampp\htdocs\MGOD-LMS\index.php(204): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#11 {main}
+CRITICAL - 2026-04-02 16:25:15 --> CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'role' in 'where clause'
+[Method: GET, Route: admin/gradebook/audit]
+in SYSTEMPATH\Database\BaseConnection.php on line 684.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `users`
+WHERE `role` = :role:
+ORDER BY `last_name` ASC', [...], false)
+ 2 APPPATH\Controllers\Gradebook.php(698): CodeIgniter\Database\BaseBuilder->get()
+ 3 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Gradebook->auditTrail()
+ 4 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Gradebook))
+ 5 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 8 FCPATH\index.php(204): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2026-04-02 16:25:15 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'role' in 'where clause'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 332.
+ 1 SYSTEMPATH\Database\BaseConnection.php(729): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *
+FROM `users`
+WHERE `role` = \'teacher\'
+ORDER BY `last_name` ASC')
+ 2 SYSTEMPATH\Database\BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *
+FROM `users`
+WHERE `role` = \'teacher\'
+ORDER BY `last_name` ASC')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `users`
+WHERE `role` = :role:
+ORDER BY `last_name` ASC', [...], false)
+ 4 APPPATH\Controllers\Gradebook.php(698): CodeIgniter\Database\BaseBuilder->get()
+ 5 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Gradebook->auditTrail()
+ 6 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Gradebook))
+ 7 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH\index.php(204): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2026-04-02 16:25:15 --> [Caused by] mysqli_sql_exception: Unknown column 'role' in 'where clause'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 327.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(327): mysqli->query('SELECT *
+FROM `users`
+WHERE `role` = \'teacher\'
+ORDER BY `last_name` ASC', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(729): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *
+FROM `users`
+WHERE `role` = \'teacher\'
+ORDER BY `last_name` ASC')
+ 3 SYSTEMPATH\Database\BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *
+FROM `users`
+WHERE `role` = \'teacher\'
+ORDER BY `last_name` ASC')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `users`
+WHERE `role` = :role:
+ORDER BY `last_name` ASC', [...], false)
+ 5 APPPATH\Controllers\Gradebook.php(698): CodeIgniter\Database\BaseBuilder->get()
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Gradebook->auditTrail()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Gradebook))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(204): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ERROR - 2026-04-02 16:29:10 --> SubmissionModel grade recalculation failed for submission 30: Undefined array key "term_id"
+ERROR - 2026-04-02 16:45:51 --> SubmissionModel grade recalculation failed for submission 30: Undefined array key "term_id"

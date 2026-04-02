@@ -1,3 +1,19 @@
 Assignment Controller Enrollment Join
  [x] Assignment controller uses students to reach user record
 
+Example Database
+ [x] Model find all
+ [x] Soft delete leaves row
+
+Example Session
+ [x] Session simple
+
+Health
+ [x] Is defined app path
+ [x] Base url has been set
+
+Submission Model Enrollment Join
+ [x] Student submission queries use enrollment link
+ [x] Student stats and late submissions use enrollment link
+ [x] Submit assignment resolves enrollment from student and course
+

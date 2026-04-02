@@ -1,9 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <testsuites>
-  <testsuite name="C:\xampp\htdocs\MGOD-LMS\phpunit.xml.dist" tests="1" assertions="4" errors="0" failures="0" skipped="0" time="0.058860">
-    <testsuite name="App" tests="1" assertions="4" errors="0" failures="0" skipped="0" time="0.058860">
-      <testsuite name="AssignmentControllerEnrollmentJoinTest" file="C:\xampp\htdocs\MGOD-LMS\tests\unit\AssignmentControllerEnrollmentJoinTest.php" tests="1" assertions="4" errors="0" failures="0" skipped="0" time="0.058860">
-        <testcase name="testAssignmentControllerUsesStudentsToReachUserRecord" file="C:\xampp\htdocs\MGOD-LMS\tests\unit\AssignmentControllerEnrollmentJoinTest.php" line="10" class="AssignmentControllerEnrollmentJoinTest" classname="AssignmentControllerEnrollmentJoinTest" assertions="4" time="0.058860"/>
+  <testsuite name="C:\xampp\htdocs\MGOD-LMS\phpunit.xml.dist" tests="9" assertions="27" errors="0" failures="0" skipped="0" time="0.194683">
+    <testsuite name="App" tests="9" assertions="27" errors="0" failures="0" skipped="0" time="0.194683">
+      <testsuite name="ExampleDatabaseTest" file="C:\xampp\htdocs\MGOD-LMS\tests\database\ExampleDatabaseTest.php" tests="2" assertions="3" errors="0" failures="0" skipped="0" time="0.133810">
+        <testcase name="testModelFindAll" file="C:\xampp\htdocs\MGOD-LMS\tests\database\ExampleDatabaseTest.php" line="17" class="ExampleDatabaseTest" classname="ExampleDatabaseTest" assertions="1" time="0.108088"/>
+        <testcase name="testSoftDeleteLeavesRow" file="C:\xampp\htdocs\MGOD-LMS\tests\database\ExampleDatabaseTest.php" line="28" class="ExampleDatabaseTest" classname="ExampleDatabaseTest" assertions="2" time="0.025723"/>
+      </testsuite>
+      <testsuite name="ExampleSessionTest" file="C:\xampp\htdocs\MGOD-LMS\tests\session\ExampleSessionTest.php" tests="1" assertions="1" errors="0" failures="0" skipped="0" time="0.002557">
+        <testcase name="testSessionSimple" file="C:\xampp\htdocs\MGOD-LMS\tests\session\ExampleSessionTest.php" line="10" class="ExampleSessionTest" classname="ExampleSessionTest" assertions="1" time="0.002557"/>
+      </testsuite>
+      <testsuite name="AssignmentControllerEnrollmentJoinTest" file="C:\xampp\htdocs\MGOD-LMS\tests\unit\AssignmentControllerEnrollmentJoinTest.php" tests="1" assertions="4" errors="0" failures="0" skipped="0" time="0.006582">
+        <testcase name="testAssignmentControllerUsesStudentsToReachUserRecord" file="C:\xampp\htdocs\MGOD-LMS\tests\unit\AssignmentControllerEnrollmentJoinTest.php" line="10" class="AssignmentControllerEnrollmentJoinTest" classname="AssignmentControllerEnrollmentJoinTest" assertions="4" time="0.006582"/>
+      </testsuite>
+      <testsuite name="HealthTest" file="C:\xampp\htdocs\MGOD-LMS\tests\unit\HealthTest.php" tests="2" assertions="3" errors="0" failures="0" skipped="0" time="0.027561">
+        <testcase name="testIsDefinedAppPath" file="C:\xampp\htdocs\MGOD-LMS\tests\unit\HealthTest.php" line="12" class="HealthTest" classname="HealthTest" assertions="1" time="0.002481"/>
+        <testcase name="testBaseUrlHasBeenSet" file="C:\xampp\htdocs\MGOD-LMS\tests\unit\HealthTest.php" line="17" class="HealthTest" classname="HealthTest" assertions="2" time="0.025079"/>
+      </testsuite>
+      <testsuite name="SubmissionModelEnrollmentJoinTest" file="C:\xampp\htdocs\MGOD-LMS\tests\unit\SubmissionModelEnrollmentJoinTest.php" tests="3" assertions="16" errors="0" failures="0" skipped="0" time="0.024173">
+        <testcase name="testStudentSubmissionQueriesUseEnrollmentLink" file="C:\xampp\htdocs\MGOD-LMS\tests\unit\SubmissionModelEnrollmentJoinTest.php" line="24" class="SubmissionModelEnrollmentJoinTest" classname="SubmissionModelEnrollmentJoinTest" assertions="9" time="0.006294"/>
+        <testcase name="testStudentStatsAndLateSubmissionsUseEnrollmentLink" file="C:\xampp\htdocs\MGOD-LMS\tests\unit\SubmissionModelEnrollmentJoinTest.php" line="48" class="SubmissionModelEnrollmentJoinTest" classname="SubmissionModelEnrollmentJoinTest" assertions="4" time="0.003692"/>
+        <testcase name="testSubmitAssignmentResolvesEnrollmentFromStudentAndCourse" file="C:\xampp\htdocs\MGOD-LMS\tests\unit\SubmissionModelEnrollmentJoinTest.php" line="61" class="SubmissionModelEnrollmentJoinTest" classname="SubmissionModelEnrollmentJoinTest" assertions="3" time="0.014186"/>
       </testsuite>
     </testsuite>
   </testsuite>
