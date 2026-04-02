@@ -98,7 +98,7 @@
                                         <th>Max Score</th>
                                         <th>Submissions</th>
                                         <th>Status</th>
-                                        <th>Actions</th>
+                                        <th class="text-center" style="width: 150px;">Actions</th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -139,21 +139,43 @@
                                                     <span class="badge bg-warning">Draft</span>
                                                 <?php endif; ?>
                                             </td>
-                                            <td>
-                                                <div class="btn-group btn-group-sm" role="group">
-                                                    <button class="btn btn-outline-info" 
-                                                            onclick="editAssignment(<?= htmlspecialchars(json_encode($assignment), ENT_QUOTES, 'UTF-8') ?>)"
-                                                            title="Edit">
+                                                                                        <td class="text-center">
+                                                <div class="btn-group btn-group-sm" role="group" aria-label="Assignment Actions">
+                                                    <a href="<?= base_url('teacher/submissions?assignment_id=' . $assignment['id']) ?>" 
+                                                       class="btn btn-outline-primary" 
+                                                       title="View Assignment Details"
+                                                       data-bs-toggle="tooltip"
+                                                       data-bs-placement="top">
+                                                        <i class="fas fa-eye"></i>
+                                                    </a>
+                                                    <button type="button" 
+                                                            class="btn btn-outline-secondary" 
+                                                            title="Edit Assignment"
+                                                            data-bs-toggle="tooltip"
+                                                            data-bs-placement="top"
+                                                            onclick="editAssignment(<?= htmlspecialchars(json_encode($assignment), ENT_QUOTES, 'UTF-8') ?>)">
                                                         <i class="fas fa-edit"></i>
                                                     </button>
-                                                    <?php if (!$assignment['is_published']): ?>
-                                                        <button class="btn btn-outline-success" 
-                                                                onclick="publishAssignment(<?= $assignment['id'] ?>)"
-                                                                title="Publish">
-                                                            <i class="fas fa-paper-plane"></i>
-                                                        </button>
+                                                    <?php if (empty($assignment['submission_count']) || $assignment['submission_count'] == 0): ?>
+                                                    <a href="<?= base_url('teacher/assignments') ?>" 
+                                                       class="btn btn-outline-danger" 
+                                                       title="Delete Assignment"
+                                                       data-bs-toggle="tooltip"
+                                                       data-bs-placement="top"
+                                                       onclick="deleteAssignment(<?= $assignment['id'] ?>); return false;">
+                                                        <i class="fas fa-trash"></i>
+                                                    </a>
+                                                    <?php else: ?>
+                                                    <button type="button" 
+                                                            class="btn btn-outline-danger" 
+                                                            title="Cannot delete: has submissions"
+                                                            data-bs-toggle="tooltip"
+                                                            data-bs-placement="top"
+                                                            disabled>
+                                                        <i class="fas fa-trash"></i>
+                                                    </button>
                                                     <?php endif; ?>
-                                                                                                    </div>
+                                                </div>
                                             </td>
                                         </tr>
                                     <?php endforeach; ?>
@@ -564,6 +586,13 @@ function publishAssignment(id) {
     if (confirm('Are you sure you want to publish this assignment? Students will be notified.')) {
         document.getElementById('publish_assignment_id').value = id;
         document.getElementById('publishForm').submit();
+    }
+}
+
+function deleteAssignment(id) {
+    if (confirm('Are you sure you want to delete this assignment? This action cannot be undone.')) {
+        document.getElementById('delete_assignment_id').value = id;
+        document.getElementById('deleteForm').submit();
     }
 }
 </script>
