@@ -459,7 +459,9 @@
                                                     <!-- Edit Button -->
                                                     <a href="<?= base_url('admin/manage_departments?action=edit&id=' . $department['id']) ?>" 
                                                        class="btn btn-outline-warning btn-sm" 
-                                                       title="Edit Department">
+                                                       title="Edit Department Details"
+                                                       data-bs-toggle="tooltip"
+                                                       data-bs-placement="top">
                                                         <i class="fas fa-pen"></i>
                                                     </a>
                                                     
@@ -467,7 +469,9 @@
                                                     <a href="<?= base_url('admin/manage_departments?action=toggle_status&id=' . $department['id']) ?>" 
                                                        class="btn btn-outline-<?= $department['is_active'] ? 'secondary' : 'success' ?> btn-sm" 
                                                        onclick="return confirm('Are you sure you want to <?= $department['is_active'] ? 'deactivate' : 'activate' ?> this department?')"
-                                                       title="<?= $department['is_active'] ? 'Deactivate' : 'Activate' ?> Department">
+                                                       title="<?= $department['is_active'] ? 'Deactivate Department' : 'Activate Department' ?>"
+                                                       data-bs-toggle="tooltip"
+                                                       data-bs-placement="top">
                                                         <?= $department['is_active'] ? '<i class="fas fa-lock"></i>' : '<i class="fas fa-unlock"></i>' ?>
                                                     </a>
                                                     
@@ -476,7 +480,9 @@
                                                     <a href="<?= base_url('admin/manage_departments?action=delete&id=' . $department['id']) ?>" 
                                                        class="btn btn-outline-danger btn-sm" 
                                                        onclick="return confirm('Are you sure you want to deactivate this department?\n\nDepartment: <?= esc($department['department_name']) ?>\n\nNote: This will only deactivate the department, not permanently delete it.')"
-                                                       title="Deactivate Department">
+                                                       title="Delete Department"
+                                                       data-bs-toggle="tooltip"
+                                                       data-bs-placement="top">
                                                         Deactivate
                                                     </a>
                                                     <?php endif; ?>
