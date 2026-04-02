@@ -116,8 +116,12 @@
                                                 <i class="fas fa-star me-1"></i>
                                                 <strong>Max Score:</strong> <?= esc($assignment['max_score']) ?>
                                             </p>
-                                            <a href="<?= base_url('student/assignment/' . $assignment['id']) ?>" class="btn btn-primary btn-sm">
-                                                <i class="fas fa-eye me-1"></i>View & Submit
+                                            <a href="<?= base_url('student/assignment/' . $assignment['id']) ?>" 
+                                               class="btn btn-sm btn-outline-primary" 
+                                               title="View Assignment Details"
+                                               data-bs-toggle="tooltip"
+                                               data-bs-placement="top">
+                                                <i class="fas fa-eye me-1"></i>View Details
                                             </a>
                                         </div>
                                     </div>
@@ -158,8 +162,12 @@
                                                 <strong>Max Score:</strong> <?= esc($assignment['max_score']) ?>
                                             </p>
                                             <?php if ($assignment['allow_late_submission']): ?>
-                                                <a href="<?= base_url('student/assignment/' . $assignment['id']) ?>" class="btn btn-warning btn-sm">
-                                                    <i class="fas fa-exclamation-triangle me-1"></i>Submit Late
+                                                <a href="<?= base_url('student/assignment/' . $assignment['id']) ?>" 
+                                                   class="btn btn-sm btn-outline-success" 
+                                                   title="Submit Assignment Late"
+                                                   data-bs-toggle="tooltip"
+                                                   data-bs-placement="top">
+                                                    <i class="fas fa-upload me-1"></i>Submit Late
                                                 </a>
                                                 <?php if ($assignment['late_penalty_percentage'] > 0): ?>
                                                     <small class="text-muted d-block mt-2">
@@ -167,7 +175,11 @@
                                                     </small>
                                                 <?php endif; ?>
                                             <?php else: ?>
-                                                <button class="btn btn-secondary btn-sm" disabled>
+                                                <button class="btn btn-sm btn-outline-secondary" 
+                                                        title="Late submission not allowed"
+                                                        data-bs-toggle="tooltip"
+                                                        data-bs-placement="top"
+                                                        disabled>
                                                     <i class="fas fa-lock me-1"></i>Late Submission Not Allowed
                                                 </button>
                                             <?php endif; ?>
@@ -211,7 +223,11 @@
                                                     <strong>Late Submission</strong>
                                                 </p>
                                             <?php endif; ?>
-                                            <a href="<?= base_url('student/assignment/' . $assignment['id']) ?>" class="btn btn-info btn-sm">
+                                            <a href="<?= base_url('student/assignment/' . $assignment['id']) ?>" 
+                                               class="btn btn-sm btn-outline-primary" 
+                                               title="View Assignment Details"
+                                               data-bs-toggle="tooltip"
+                                               data-bs-placement="top">
                                                 <i class="fas fa-eye me-1"></i>View Details
                                             </a>
                                         </div>
@@ -262,7 +278,11 @@
                                                     <span class="ms-2 text-muted">(<?= number_format($percentage, 1) ?>%)</span>
                                                 </div>
                                             </div>
-                                            <a href="<?= base_url('student/assignment/' . $assignment['id']) ?>" class="btn btn-success btn-sm">
+                                            <a href="<?= base_url('student/assignment/' . $assignment['id']) ?>" 
+                                               class="btn btn-sm btn-outline-primary" 
+                                               title="View Assignment Feedback"
+                                               data-bs-toggle="tooltip"
+                                               data-bs-placement="top">
                                                 <i class="fas fa-eye me-1"></i>View Feedback
                                             </a>
                                         </div>
