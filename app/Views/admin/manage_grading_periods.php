@@ -543,7 +543,9 @@
                                                     <!-- Edit Button -->
                                                     <a href="<?= base_url('admin/manage_grading_periods?action=edit&id=' . $period['id']) ?>" 
                                                        class="btn btn-outline-warning" 
-                                                       title="Edit Grading Period">
+                                                       title="Edit Grading Period Details"
+                                                       data-bs-toggle="tooltip"
+                                                       data-bs-placement="top">
                                                         <i class="fas fa-pen"></i>
                                                     </a>
                                                     
@@ -555,7 +557,9 @@
                                                     <a href="<?= base_url('admin/manage_grading_periods?action=toggle_status&id=' . $period['id']) ?>" 
                                                        class="btn <?= $toggleClass ?>" 
                                                        onclick="return confirm('Are you sure you want to <?= strtolower($toggleText) ?> this grading period?')"
-                                                       title="<?= $toggleText ?> Grading Period">
+                                                       title="Activate/Deactivate Grading Period"
+                                                       data-bs-toggle="tooltip"
+                                                       data-bs-placement="top">
                                                         <i class="fas fa-power-off"></i>
                                                     </a>
                                                     
@@ -563,7 +567,9 @@
                                                     <a href="<?= base_url('admin/manage_grading_periods?action=delete&id=' . $period['id']) ?>" 
                                                        class="btn btn-outline-danger" 
                                                        onclick="return confirm('Are you sure you want to delete this grading period?\n\nPeriod: <?= esc($period['period_name']) ?>\n\nThis action cannot be undone!')"
-                                                       title="Delete Grading Period">
+                                                       title="Delete Grading Period"
+                                                       data-bs-toggle="tooltip"
+                                                       data-bs-placement="top">
                                                         <i class="fas fa-trash"></i>
                                                     </a>
                                                 </div>
