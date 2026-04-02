@@ -1220,5 +1220,19 @@ $currentUri = uri_string();
         }
     </script>
     <?php endif; ?>
+    <!-- Initialize Bootstrap Tooltips Globally -->
+    <script>
+    document.addEventListener('DOMContentLoaded', function() {
+        // Initialize all tooltips on page load
+        var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'));
+        var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
+            return new bootstrap.Tooltip(tooltipTriggerEl, {
+                trigger: 'hover focus',
+                delay: { show: 500, hide: 100 },
+                placement: 'top'
+            });
+        });
+    });
+    </script>
 </body>
 </html>
