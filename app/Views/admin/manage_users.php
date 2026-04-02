@@ -667,7 +667,9 @@
                                                      <?php if ($canEdit): ?>
                                                         <a href="<?= base_url('admin/manage_users?action=edit&id=' . $user['id']) ?>" 
                                                            class="btn btn-outline-warning btn-sm me-1" 
-                                                           title="Edit User">
+                                                           title="Edit User Details"
+                                                           data-bs-toggle="tooltip"
+                                                           data-bs-placement="top">
                                                             <i class="fas fa-pen"></i>
                                                         </a>
                                                     <?php elseif ($isInactive): ?>
@@ -692,7 +694,9 @@
                                                          <a href="<?= base_url('admin/manage_users?action=reactivate&id=' . $user['id']) ?>" 
                                                            class="btn btn-outline-success btn-sm" 
                                                            onclick="return confirm('Are you sure you want to reactivate this user?\n\nUser: <?= esc($reactivateUserName) ?>\nEmail: <?= esc($user['email']) ?>\n\nThis user will be able to log in again.')"
-                                                           title="Reactivate User">
+                                                           title="Activate User Account"
+                                                           data-bs-toggle="tooltip"
+                                                           data-bs-placement="top">
                                                             <i class="fas fa-unlock"></i>
                                                         </a>
                                                     <?php elseif ($canDeactivate): ?>
@@ -702,13 +706,17 @@
                                                          <a href="<?= base_url('admin/manage_users?action=delete&id=' . $user['id']) ?>" 
                                                            class="btn btn-outline-danger btn-sm" 
                                                            onclick="return confirm('Are you sure you want to deactivate this user?\n\nUser: <?= esc($deactivateUserName) ?>\nEmail: <?= esc($user['email']) ?>\n\nThis user will no longer be able to log in, but their data will be preserved.')"
-                                                           title="Deactivate User">
+                                                           title="Deactivate User Account"
+                                                           data-bs-toggle="tooltip"
+                                                           data-bs-placement="top">
                                                             <i class="fas fa-user-lock"></i>
                                                         </a>
                                                     <?php else: ?>
                                                         <button class="btn btn-outline-secondary btn-sm" 
                                                                 disabled 
-                                                                title="Cannot deactivate admin accounts or own account">
+                                                                title="Cannot deactivate: admin user or self"
+                                                                data-bs-toggle="tooltip"
+                                                                data-bs-placement="top">
                                                             <i class="fas fa-shield-alt"></i>
                                                         </button>
                                                     <?php endif; ?>                                                
