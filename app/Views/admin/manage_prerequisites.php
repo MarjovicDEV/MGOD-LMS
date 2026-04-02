@@ -429,14 +429,18 @@
                                                 <div class="btn-group" role="group">
                                                     <a href="<?= base_url('admin/manage_prerequisites?action=edit&id=' . $prereq['id']) ?>" 
                                                        class="btn btn-sm btn-warning text-white" 
-                                                       title="Edit Prerequisite">
-                                                        
+                                                       title="Edit Prerequisite Requirement"
+                                                       data-bs-toggle="tooltip"
+                                                       data-bs-placement="top">
+                                                        <i class="fas fa-pen"></i>
                                                     </a>
                                                     <a href="<?= base_url('admin/manage_prerequisites?action=delete&id=' . $prereq['id']) ?>" 
                                                        class="btn btn-sm btn-danger" 
                                                        title="Delete Prerequisite"
+                                                       data-bs-toggle="tooltip"
+                                                       data-bs-placement="top"
                                                        onclick="return confirm('Are you sure you want to delete this prerequisite relationship? This action cannot be undone.')">
-                                                        
+                                                        <i class="fas fa-trash"></i>
                                                     </a>
                                                 </div>
                                             </td>
