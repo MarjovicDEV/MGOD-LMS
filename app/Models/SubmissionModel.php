@@ -85,26 +85,41 @@ class SubmissionModel extends Model
         try {
             $id = $data['id'][0] ?? $data['id'] ?? null;
             if (!$id) {
+                log_message(
+                    'warning',
+                    'SubmissionModel grade recalculation skipped: missing submission id in callback payload'
+                );
                 return $data;
             }
 
             $submission = $this->find($id);
-            if (!$submission || empty($submission['enrollment_id'])) {
+            if (!$submission) {
+                log_message(
+                    'warning',
+                    'SubmissionModel grade recalculation skipped: submission {submissionId} not found after update',
+                    ['submissionId' => $id]
+                );
+                return $data;
+            }
+
+            if (empty($submission['enrollment_id'])) {
+                log_message(
+                    'warning',
+                    'SubmissionModel grade recalculation skipped: submission {submissionId} has no enrollment_id',
+                    ['submissionId' => $id]
+                );
                 return $data;
             }
 
             $updatedData = $data['data'] ?? [];
             $gradingFields = ['score', 'status', 'graded_at', 'graded_by'];
             $hasGradingUpdate = !empty(array_intersect($gradingFields, array_keys($updatedData)));
-            $isGraded = (($submission['status'] ?? null) === 'graded');
 
-            if (!$hasGradingUpdate && !$isGraded) {
+            if (!$hasGradingUpdate) {
                 return $data;
             }
 
-            if ($isGraded) {
-                (new GradeCalculator())->recalculateEnrollmentGrades((int) $submission['enrollment_id']);
-            }
+            (new GradeCalculator())->recalculateEnrollmentGrades((int) $submission['enrollment_id']);
         } catch (Throwable $e) {
             log_message(
                 'error',
