@@ -453,12 +453,16 @@
                                                 <div class="btn-group" role="group">
                                                     <a href="<?= base_url('admin/manage_courses_schedule?action=edit&id=' . $schedule['id']) ?>" 
                                                        class="btn btn-sm btn-warning text-white" 
-                                                       title="Edit Schedule">
+                                                       title="Edit Schedule Details"
+                                                       data-bs-toggle="tooltip"
+                                                       data-bs-placement="top">
                                                         
                                                     </a>
                                                     <a href="<?= base_url('admin/manage_courses_schedule?action=delete&id=' . $schedule['id']) ?>" 
                                                        class="btn btn-sm btn-danger" 
-                                                       title="Delete Schedule"
+                                                       title="Delete Schedule Entry"
+                                                       data-bs-toggle="tooltip"
+                                                       data-bs-placement="top"
                                                        onclick="return confirm('Are you sure you want to delete this schedule? This action cannot be undone.')">
                                                         
                                                     </a>
