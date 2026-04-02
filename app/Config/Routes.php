@@ -174,23 +174,23 @@ $routes->get('student/search/courses', 'Auth::searchStudentCourses');
 // =============================================================================
 
 // Gradebook Routes - Student
-$routes->get('student/gradebook', 'Gradebook::studentIndex');
-$routes->get('student/gradebook/course/(:num)', 'Gradebook::courseDetails/$1');
-$routes->get('student/gradebook/export/pdf/(:num)', 'Gradebook::exportPDF/$1');
-$routes->get('student/gradebook/export/excel/(:num)', 'Gradebook::exportExcel/$1');
+$routes->get('student/gradebook', 'Gradebook::studentIndex', ['filter' => 'auth']);
+$routes->get('student/gradebook/course/(:num)', 'Gradebook::courseDetails/$1', ['filter' => 'auth']);
+$routes->get('student/gradebook/export/pdf/(:num)', 'Gradebook::exportPDF/$1', ['filter' => 'auth']);
+$routes->get('student/gradebook/export/excel/(:num)', 'Gradebook::exportExcel/$1', ['filter' => 'auth']);
 
 // Gradebook Routes - Teacher
-$routes->get('teacher/gradebook', 'Gradebook::teacherIndex');
-$routes->get('teacher/gradebook/entry/(:num)', 'Gradebook::gradeEntry/$1');
-$routes->post('teacher/gradebook/bulk-update', 'Gradebook::bulkUpdate');
-$routes->get('teacher/gradebook/import/(:num)', 'Gradebook::csvImportForm/$1');
-$routes->post('teacher/gradebook/import/(:num)', 'Gradebook::csvImportProcess/$1');
-$routes->post('teacher/gradebook/override/(:num)', 'Gradebook::saveOverride/$1');
-$routes->get('teacher/gradebook/export/(:num)', 'Gradebook::exportClassGrades/$1');
+$routes->get('teacher/gradebook', 'Gradebook::teacherIndex', ['filter' => 'auth']);
+$routes->get('teacher/gradebook/entry/(:num)', 'Gradebook::gradeEntry/$1', ['filter' => 'auth']);
+$routes->post('teacher/gradebook/bulk-update', 'Gradebook::bulkUpdate', ['filter' => 'auth']);
+$routes->get('teacher/gradebook/import/(:num)', 'Gradebook::csvImportForm/$1', ['filter' => 'auth']);
+$routes->post('teacher/gradebook/import/(:num)', 'Gradebook::csvImportProcess/$1', ['filter' => 'auth']);
+$routes->post('teacher/gradebook/override/(:num)', 'Gradebook::saveOverride/$1', ['filter' => 'auth']);
+$routes->get('teacher/gradebook/export/(:num)', 'Gradebook::exportClassGrades/$1', ['filter' => 'auth']);
 
 // Gradebook Routes - Admin
-$routes->get('admin/gradebook/analytics', 'Gradebook::analytics');
-$routes->get('admin/gradebook/audit', 'Gradebook::auditTrail');
-$routes->get('admin/gradebook/overview', 'Gradebook::systemOverview');
-$routes->get('admin/gradebook/student-grades/(:num)', 'Gradebook::getStudentGrades/$1');
-$routes->post('admin/gradebook/recalculate/(:num)', 'Gradebook::recalculateCourseGrades/$1');
+$routes->get('admin/gradebook/analytics', 'Gradebook::analytics', ['filter' => 'auth']);
+$routes->get('admin/gradebook/audit', 'Gradebook::auditTrail', ['filter' => 'auth']);
+$routes->get('admin/gradebook/overview', 'Gradebook::systemOverview', ['filter' => 'auth']);
+$routes->get('admin/gradebook/student-grades/(:num)', 'Gradebook::getStudentGrades/$1', ['filter' => 'auth']);
+$routes->post('admin/gradebook/recalculate/(:num)', 'Gradebook::recalculateCourseGrades/$1', ['filter' => 'auth']);
