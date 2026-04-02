@@ -173,16 +173,24 @@
                                                         <?php endif; ?>
                                                     </td>
                                                     <td>
-                                                        <button class="btn btn-sm btn-primary" 
-                                                                onclick="viewSubmission(<?= htmlspecialchars(json_encode($submission), ENT_QUOTES, 'UTF-8') ?>)">
-                                                            <i class="fas fa-eye me-1"></i>View
-                                                        </button>
-                                                        <?php if ($submission['status'] !== 'graded'): ?>
-                                                            <button class="btn btn-sm btn-success" 
-                                                                    onclick="gradeSubmission(<?= $submission['id'] ?>, '<?= esc($submission['student_name']) ?>')">
-                                                                <i class="fas fa-star me-1"></i>Grade
-                                                            </button>
-                                                        <?php endif; ?>
+                                                        <div class="btn-group btn-group-sm" role="group" aria-label="Submission Actions">
+                                                            <a href="<?= base_url('teacher/view_submission/' . $submission['id']) ?>" 
+                                                               class="btn btn-sm btn-outline-primary" 
+                                                               title="View Submission Details"
+                                                               data-bs-toggle="tooltip"
+                                                               data-bs-placement="top">
+                                                                <i class="fas fa-eye"></i>
+                                                            </a>
+                                                            <?php if ($submission['status'] !== 'graded'): ?>
+                                                                <a href="<?= base_url('teacher/grade_submission/' . $submission['id']) ?>" 
+                                                                   class="btn btn-sm btn-outline-secondary" 
+                                                                   title="Grade Submission"
+                                                                   data-bs-toggle="tooltip"
+                                                                   data-bs-placement="top">
+                                                                    <i class="fas fa-edit"></i>
+                                                                </a>
+                                                            <?php endif; ?>
+                                                        </div>
                                                     </td>
                                                 </tr>
                                             <?php endforeach; ?>
