@@ -1512,4 +1512,474 @@ class Auth extends BaseController
             ]);
         }
     }
+
+    /**
+     * Student Grades Page - Display grades for all enrolled courses
+     * URL: /student/grades
+     * 
+     * @return mixed View or redirect
+     */
+    public function studentGrades()
+    {
+        // 1. AUTHENTICATION CHECK
+        if ($this->session->get('isLoggedIn') !== true) {
+            $this->session->setFlashdata('error', 'Please login to access this page.');
+            return redirect()->to(base_url('login'));
+        }
+
+        // 2. ROLE CHECK - Only students can access
+        if ($this->session->get('role') !== 'student') {
+            $this->session->setFlashdata('error', 'Access denied. This page is for students only.');
+            return redirect()->to(base_url('dashboard'));
+        }
+
+        $userID = $this->session->get('userID');
+
+        try {
+            // 3. GET STUDENT RECORD
+            $student = $this->studentModel->getStudentByUserId($userID);
+            
+            if (!$student) {
+                log_message('error', 'Student record not found for user ID: ' . $userID);
+                $this->session->setFlashdata('error', 'Student profile not found.');
+                return redirect()->to(base_url('dashboard'));
+            }
+
+            $studentId = $student['id'];
+            
+            // 4. GET ALL ENROLLED COURSES WITH GRADES
+            $enrollments = $this->enrollmentModel->getStudentEnrollments($studentId);
+            
+            // Initialize models
+            $gradebookEntryModel = new \App\Models\GradebookEntryModel();
+            
+            $coursesWithGrades = [];
+            $totalUnits = 0;
+            $totalGradePoints = 0;
+            $completedCourses = 0;
+            
+            foreach ($enrollments as $enrollment) {
+                // Get final grade for this enrollment
+                $finalGrade = $gradebookEntryModel->getFinalGrade($enrollment['id']);
+                
+                // Get period grades
+                $periodGrades = $gradebookEntryModel->getStudentCourseGrades($enrollment['id']);
+                
+                // Get instructor info
+                $instructor = $this->db->table('course_instructors ci')
+                    ->select('CONCAT(u.first_name, " ", u.last_name) as name')
+                    ->join('instructors i', 'i.id = ci.instructor_id')
+                    ->join('users u', 'u.id = i.user_id')
+                    ->where('ci.course_offering_id', $enrollment['course_offering_id'])
+                    ->limit(1)
+                    ->get()
+                    ->getRowArray();
+                
+                $gradeValue = $finalGrade['final_grade'] ?? 0;
+                $credits = $enrollment['credits'] ?? 0;
+                
+                // Calculate GPA contribution
+                if ($gradeValue > 0) {
+                    $totalUnits += $credits;
+                    $totalGradePoints += ($gradeValue * $credits);
+                    if ($enrollment['enrollment_status'] === 'completed' || $gradeValue >= 75) {
+                        $completedCourses++;
+                    }
+                }
+                
+                // Determine grade status and color
+                $gradeClass = 'secondary';
+                $gradeLabel = 'No Grade';
+                if ($gradeValue >= 90) {
+                    $gradeClass = 'success';
+                    $gradeLabel = 'Excellent';
+                } elseif ($gradeValue >= 80) {
+                    $gradeClass = 'primary';
+                    $gradeLabel = 'Very Good';
+                } elseif ($gradeValue >= 75) {
+                    $gradeClass = 'warning';
+                    $gradeLabel = 'Good';
+                } elseif ($gradeValue > 0) {
+                    $gradeClass = 'danger';
+                    $gradeLabel = 'Needs Improvement';
+                }
+                
+                $coursesWithGrades[] = [
+                    'enrollment' => $enrollment,
+                    'final_grade' => $finalGrade,
+                    'period_grades' => $periodGrades,
+                    'grade_value' => $gradeValue,
+                    'grade_class' => $gradeClass,
+                    'grade_label' => $gradeLabel,
+                    'instructor_name' => $instructor['name'] ?? 'TBA',
+                    'credits' => $credits
+                ];
+            }
+            
+            // Calculate GPA (if units exist)
+            $gpa = $totalUnits > 0 ? round($totalGradePoints / $totalUnits, 2) : 0;
+            
+            // 5. PREPARE VIEW DATA
+            $data = [
+                'title' => 'My Grades',
+                'courses' => $coursesWithGrades,
+                'student' => $student,
+                'totalCourses' => count($coursesWithGrades),
+                'completedCourses' => $completedCourses,
+                'totalUnits' => $totalUnits,
+                'gpa' => $gpa
+            ];
+
+            return view('student/grades', $data);
+
+        } catch (\Exception $e) {
+            log_message('error', 'Student grades error: ' . $e->getMessage());
+            log_message('error', 'Stack trace: ' . $e->getTraceAsString());
+            $this->session->setFlashdata('error', 'An error occurred while loading your grades.');
+            return redirect()->to(base_url('dashboard'));
+        }
+    }
+
+    /**
+     * Download all student grades as PDF
+     * URL: /student/grades/download
+     * 
+     * @return mixed PDF download or redirect
+     */
+    public function downloadStudentGrades()
+    {
+        // 1. AUTHENTICATION CHECK
+        if ($this->session->get('isLoggedIn') !== true) {
+            $this->session->setFlashdata('error', 'Please login to access this page.');
+            return redirect()->to(base_url('login'));
+        }
+
+        // 2. ROLE CHECK
+        if ($this->session->get('role') !== 'student') {
+            $this->session->setFlashdata('error', 'Access denied.');
+            return redirect()->to(base_url('dashboard'));
+        }
+
+        $userID = $this->session->get('userID');
+
+        try {
+            $student = $this->studentModel->getStudentByUserId($userID);
+            
+            if (!$student) {
+                $this->session->setFlashdata('error', 'Student profile not found.');
+                return redirect()->to(base_url('student/grades'));
+            }
+
+            $studentId = $student['id'];
+            $enrollments = $this->enrollmentModel->getStudentEnrollments($studentId);
+            $gradebookEntryModel = new \App\Models\GradebookEntryModel();
+            
+            // Get user details
+            $user = $this->userModel->find($userID);
+            $studentName = ($user['first_name'] ?? '') . ' ' . ($user['middle_name'] ?? '') . ' ' . ($user['last_name'] ?? '');
+            
+            // Build CSV content
+            $output = fopen('php://temp', 'r+');
+            
+            // Header info
+            fputcsv($output, ['MGOD LMS - Student Grade Report']);
+            fputcsv($output, ['Generated: ' . date('F d, Y h:i A')]);
+            fputcsv($output, ['Student: ' . trim($studentName)]);
+            fputcsv($output, ['Student ID: ' . ($student['student_id_number'] ?? 'N/A')]);
+            fputcsv($output, ['']);
+            
+            // Column headers
+            fputcsv($output, ['Course Code', 'Course Title', 'Section', 'Credits', 'Term', 'Final Grade', 'Status']);
+            
+            $totalUnits = 0;
+            $totalGradePoints = 0;
+            
+            foreach ($enrollments as $enrollment) {
+                $finalGrade = $gradebookEntryModel->getFinalGrade($enrollment['id']);
+                $gradeValue = $finalGrade['final_grade'] ?? 0;
+                $credits = $enrollment['credits'] ?? 0;
+                
+                if ($gradeValue > 0) {
+                    $totalUnits += $credits;
+                    $totalGradePoints += ($gradeValue * $credits);
+                }
+                
+                $status = $gradeValue >= 75 ? 'Passed' : ($gradeValue > 0 ? 'Failed' : 'In Progress');
+                
+                fputcsv($output, [
+                    $enrollment['course_code'],
+                    $enrollment['course_title'],
+                    $enrollment['section'],
+                    $credits,
+                    $enrollment['term_name'] . ' ' . $enrollment['academic_year'],
+                    $gradeValue > 0 ? number_format($gradeValue, 2) : 'N/A',
+                    $status
+                ]);
+            }
+            
+            // Summary
+            fputcsv($output, ['']);
+            fputcsv($output, ['SUMMARY']);
+            fputcsv($output, ['Total Courses:', count($enrollments)]);
+            fputcsv($output, ['Total Units:', $totalUnits]);
+            $gpa = $totalUnits > 0 ? round($totalGradePoints / $totalUnits, 2) : 0;
+            fputcsv($output, ['Weighted Average:', $gpa]);
+            
+            rewind($output);
+            $csv = stream_get_contents($output);
+            fclose($output);
+            
+            // Send as download
+            $filename = 'grades_' . ($student['student_id_number'] ?? 'student') . '_' . date('Ymd') . '.csv';
+            
+            return $this->response
+                ->setHeader('Content-Type', 'text/csv')
+                ->setHeader('Content-Disposition', 'attachment; filename="' . $filename . '"')
+                ->setBody($csv);
+
+        } catch (\Exception $e) {
+            log_message('error', 'Download grades error: ' . $e->getMessage());
+            $this->session->setFlashdata('error', 'An error occurred while generating the grade report.');
+            return redirect()->to(base_url('student/grades'));
+        }
+    }
+
+    /**
+     * Download individual course grade as PDF
+     * URL: /student/grades/download/{enrollmentId}
+     * 
+     * @param int $enrollmentId
+     * @return mixed PDF download or redirect
+     */
+    public function downloadCourseGrade($enrollmentId)
+    {
+        // 1. AUTHENTICATION CHECK
+        if ($this->session->get('isLoggedIn') !== true) {
+            $this->session->setFlashdata('error', 'Please login to access this page.');
+            return redirect()->to(base_url('login'));
+        }
+
+        // 2. ROLE CHECK
+        if ($this->session->get('role') !== 'student') {
+            $this->session->setFlashdata('error', 'Access denied.');
+            return redirect()->to(base_url('dashboard'));
+        }
+
+        $userID = $this->session->get('userID');
+
+        try {
+            $student = $this->studentModel->getStudentByUserId($userID);
+            
+            if (!$student) {
+                $this->session->setFlashdata('error', 'Student profile not found.');
+                return redirect()->to(base_url('student/grades'));
+            }
+
+            // Verify enrollment belongs to this student
+            $enrollment = $this->enrollmentModel->find($enrollmentId);
+            if (!$enrollment || $enrollment['student_id'] != $student['id']) {
+                $this->session->setFlashdata('error', 'Invalid enrollment.');
+                return redirect()->to(base_url('student/grades'));
+            }
+
+            // Get enrollment details
+            $enrollmentDetails = $this->enrollmentModel->getEnrollmentWithDetails($enrollmentId);
+            
+            $gradebookEntryModel = new \App\Models\GradebookEntryModel();
+            $finalGrade = $gradebookEntryModel->getFinalGrade($enrollmentId);
+            $periodGrades = $gradebookEntryModel->getStudentCourseGrades($enrollmentId);
+            
+            // Build CSV
+            $output = fopen('php://temp', 'r+');
+            
+            fputcsv($output, ['MGOD LMS - Course Grade Report']);
+            fputcsv($output, ['Generated: ' . date('F d, Y h:i A')]);
+            fputcsv($output, ['']);
+            fputcsv($output, ['Student: ' . $enrollmentDetails['first_name'] . ' ' . $enrollmentDetails['last_name']]);
+            fputcsv($output, ['Student ID: ' . $enrollmentDetails['student_id_number']]);
+            fputcsv($output, ['']);
+            fputcsv($output, ['Course: ' . $enrollmentDetails['course_code'] . ' - ' . $enrollmentDetails['course_title']]);
+            fputcsv($output, ['Section: ' . $enrollmentDetails['section']]);
+            fputcsv($output, ['Credits: ' . $enrollmentDetails['credits']]);
+            fputcsv($output, ['Term: ' . $enrollmentDetails['term_name'] . ' ' . $enrollmentDetails['academic_year']]);
+            fputcsv($output, ['']);
+            
+            // Period grades
+            fputcsv($output, ['GRADING PERIOD BREAKDOWN']);
+            fputcsv($output, ['Period', 'Weight', 'Grade']);
+            
+            foreach ($periodGrades as $period) {
+                if ($period['grading_period_id'] !== null) {
+                    fputcsv($output, [
+                        $period['period_name'] ?? 'Period',
+                        ($period['period_weight'] ?? 0) . '%',
+                        number_format($period['final_grade'] ?? 0, 2)
+                    ]);
+                }
+            }
+            
+            fputcsv($output, ['']);
+            fputcsv($output, ['FINAL GRADE', '', number_format($finalGrade['final_grade'] ?? 0, 2)]);
+            
+            rewind($output);
+            $csv = stream_get_contents($output);
+            fclose($output);
+            
+            $filename = 'grade_' . $enrollmentDetails['course_code'] . '_' . date('Ymd') . '.csv';
+            
+            return $this->response
+                ->setHeader('Content-Type', 'text/csv')
+                ->setHeader('Content-Disposition', 'attachment; filename="' . $filename . '"')
+                ->setBody($csv);
+
+        } catch (\Exception $e) {
+            log_message('error', 'Download course grade error: ' . $e->getMessage());
+            $this->session->setFlashdata('error', 'An error occurred while generating the grade report.');
+            return redirect()->to(base_url('student/grades'));
+        }
+    }
+
+    /**
+     * Student Schedule Page - Display course schedule for enrolled courses
+     * URL: /student/schedule
+     * 
+     * @return mixed View or redirect
+     */
+    public function studentSchedule()
+    {
+        // 1. AUTHENTICATION CHECK
+        if ($this->session->get('isLoggedIn') !== true) {
+            $this->session->setFlashdata('error', 'Please login to access this page.');
+            return redirect()->to(base_url('login'));
+        }
+
+        // 2. ROLE CHECK - Only students can access
+        if ($this->session->get('role') !== 'student') {
+            $this->session->setFlashdata('error', 'Access denied. This page is for students only.');
+            return redirect()->to(base_url('dashboard'));
+        }
+
+        $userID = $this->session->get('userID');
+
+        try {
+            // 3. GET STUDENT RECORD
+            $student = $this->studentModel->getStudentByUserId($userID);
+            
+            if (!$student) {
+                log_message('error', 'Student record not found for user ID: ' . $userID);
+                $this->session->setFlashdata('error', 'Student profile not found.');
+                return redirect()->to(base_url('dashboard'));
+            }
+
+            $studentId = $student['id'];
+            
+            // 4. GET ALL ENROLLED COURSES
+            $enrollments = $this->enrollmentModel->getStudentEnrollments($studentId);
+            
+            // 5. GET SCHEDULES FOR EACH ENROLLED COURSE
+            $courseScheduleModel = new \App\Models\CourseScheduleModel();
+            
+            $scheduleByDay = [
+                'Monday' => [],
+                'Tuesday' => [],
+                'Wednesday' => [],
+                'Thursday' => [],
+                'Friday' => [],
+                'Saturday' => [],
+                'Sunday' => []
+            ];
+            
+            $allSchedules = [];
+            
+            foreach ($enrollments as $enrollment) {
+                $offeringId = $enrollment['course_offering_id'];
+                
+                // Get schedules for this course offering
+                $schedules = $courseScheduleModel->getOfferingSchedules($offeringId);
+                
+                // Get instructor info
+                $instructor = $this->db->table('course_instructors ci')
+                    ->select('CONCAT(u.first_name, " ", u.last_name) as name')
+                    ->join('instructors i', 'i.id = ci.instructor_id')
+                    ->join('users u', 'u.id = i.user_id')
+                    ->where('ci.course_offering_id', $offeringId)
+                    ->limit(1)
+                    ->get()
+                    ->getRowArray();
+                
+                foreach ($schedules as $schedule) {
+                    $scheduleItem = [
+                        'course_code' => $enrollment['course_code'],
+                        'course_title' => $enrollment['course_title'],
+                        'section' => $enrollment['section'],
+                        'credits' => $enrollment['credits'],
+                        'session_type' => $schedule['session_type'],
+                        'day_of_week' => $schedule['day_of_week'],
+                        'start_time' => $schedule['start_time'],
+                        'end_time' => $schedule['end_time'],
+                        'start_time_formatted' => date('g:i A', strtotime($schedule['start_time'])),
+                        'end_time_formatted' => date('g:i A', strtotime($schedule['end_time'])),
+                        'room' => $schedule['room'] ?? 'TBA',
+                        'instructor_name' => $instructor['name'] ?? 'TBA',
+                        'term_name' => $enrollment['term_name'],
+                        'academic_year' => $enrollment['academic_year'],
+                        'semester_name' => $enrollment['semester_name']
+                    ];
+                    
+                    $dayOfWeek = $schedule['day_of_week'];
+                    if (isset($scheduleByDay[$dayOfWeek])) {
+                        $scheduleByDay[$dayOfWeek][] = $scheduleItem;
+                    }
+                    
+                    $allSchedules[] = $scheduleItem;
+                }
+            }
+            
+            // Sort schedules within each day by start time
+            foreach ($scheduleByDay as $day => &$daySchedules) {
+                usort($daySchedules, function($a, $b) {
+                    return strtotime($a['start_time']) - strtotime($b['start_time']);
+                });
+            }
+            
+            // Get current term info
+            $currentTerm = null;
+            if (!empty($enrollments)) {
+                $currentTerm = [
+                    'term_name' => $enrollments[0]['term_name'] ?? '',
+                    'academic_year' => $enrollments[0]['academic_year'] ?? '',
+                    'semester_name' => $enrollments[0]['semester_name'] ?? ''
+                ];
+            }
+            
+            // Calculate total class hours per week
+            $totalHoursPerWeek = 0;
+            foreach ($allSchedules as $schedule) {
+                $start = strtotime($schedule['start_time']);
+                $end = strtotime($schedule['end_time']);
+                $hours = ($end - $start) / 3600;
+                $totalHoursPerWeek += $hours;
+            }
+            
+            // 6. PREPARE VIEW DATA
+            $data = [
+                'title' => 'My Schedule',
+                'scheduleByDay' => $scheduleByDay,
+                'allSchedules' => $allSchedules,
+                'student' => $student,
+                'totalCourses' => count($enrollments),
+                'totalSchedules' => count($allSchedules),
+                'totalHoursPerWeek' => round($totalHoursPerWeek, 1),
+                'currentTerm' => $currentTerm
+            ];
+
+            return view('student/schedule', $data);
+
+        } catch (\Exception $e) {
+            log_message('error', 'Student schedule error: ' . $e->getMessage());
+            log_message('error', 'Stack trace: ' . $e->getTraceAsString());
+            $this->session->setFlashdata('error', 'An error occurred while loading your schedule.');
+            return redirect()->to(base_url('dashboard'));
+        }
+    }
 }

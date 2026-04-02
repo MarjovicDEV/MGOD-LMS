@@ -104,6 +104,12 @@ $routes->get(from: '/student/courses', to: 'Auth::studentCourses');
 $routes->get('/student/materials', 'Auth::studentMaterials');
 $routes->get('/student/course/(:num)/materials', 'Auth::studentCourseMaterials/$1');
 
+// Student grades and schedule routes
+$routes->get('/student/grades', 'Auth::studentGrades');
+$routes->get('/student/grades/download', 'Auth::downloadStudentGrades');
+$routes->get('/student/grades/download/(:num)', 'Auth::downloadCourseGrade/$1');
+$routes->get('/student/schedule', 'Auth::studentSchedule');
+
 // Material management routes
 $routes->get('/admin/course/(:num)/upload', 'Material::upload/$1');
 $routes->post('/admin/course/(:num)/upload', 'Material::upload/$1');
