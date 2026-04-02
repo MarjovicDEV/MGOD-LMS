@@ -334,6 +334,9 @@
                                                 <?php else: ?>
                                                     <a href="<?= base_url('admin/manage_course_instructors?action=set_primary&id=' . $assignment['id']) ?>" 
                                                        class="btn btn-sm btn-outline-warning"
+                                                       title="Set as Primary Instructor"
+                                                       data-bs-toggle="tooltip"
+                                                       data-bs-placement="top"
                                                        onclick="return confirm('Set this instructor as primary?')">
                                                         Set as Primary
                                                     </a>
@@ -347,7 +350,9 @@
                                             <td class="text-center">
                                                 <a href="<?= base_url('admin/manage_course_instructors?action=remove&id=' . $assignment['id']) ?>" 
                                                    class="btn btn-sm btn-danger" 
-                                                   title="Remove Instructor"
+                                                   title="Remove Instructor from Course"
+                                                   data-bs-toggle="tooltip"
+                                                   data-bs-placement="top"
                                                    onclick="return confirm('Are you sure you want to remove this instructor? This action cannot be undone.')">
                                                      Remove
                                                 </a>
