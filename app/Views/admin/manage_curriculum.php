@@ -548,7 +548,10 @@
                                                 <td class="text-center">
                                                     <div class="btn-group btn-group-sm" role="group">
                                                         <a href="<?= base_url('admin/manage_curriculum?action=edit&id=' . $entry['id']) ?>" 
-                                                           class="btn btn-outline-warning" title="Edit">
+                                                           class="btn btn-outline-warning" 
+                                                           title="Edit Curriculum Entry"
+                                                           data-bs-toggle="tooltip"
+                                                           data-bs-placement="top">
                                                             
                                                         </a>
                                                         <form method="post" action="<?= base_url('admin/manage_curriculum') ?>" class="d-inline">
@@ -556,7 +559,10 @@
                                                             <input type="hidden" name="action" value="delete">
                                                             <input type="hidden" name="curriculum_id" value="<?= $entry['id'] ?>">
                                                             <input type="hidden" name="program_id" value="<?= $selectedProgramId ?>">
-                                                            <button type="submit" class="btn btn-outline-danger" title="Delete"
+                                                            <button type="submit" class="btn btn-outline-danger" 
+                                                                    title="Delete Curriculum Entry"
+                                                                    data-bs-toggle="tooltip"
+                                                                    data-bs-placement="top"
                                                                     onclick="return confirm('Are you sure you want to remove this course from the curriculum?')">
                                                                 
                                                             </button>
