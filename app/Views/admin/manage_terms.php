@@ -550,12 +550,16 @@
                                                 <div class="btn-group" role="group">
                                                     <a href="<?= base_url('admin/manage_terms?action=edit&id=' . $term['id']) ?>" 
                                                        class="btn btn-sm btn-warning text-white" 
-                                                       title="Edit Term">
+                                                       title="Edit Term Details"
+                                                       data-bs-toggle="tooltip"
+                                                       data-bs-placement="top">
                                                         <i class="fas fa-pen"></i>
                                                     </a>
                                                     <a href="<?= base_url('admin/manage_terms?action=toggle_status&id=' . $term['id']) ?>" 
                                                        class="btn btn-sm btn-info text-white" 
-                                                       title="Toggle Status"
+                                                       title="Activate/Deactivate Term"
+                                                       data-bs-toggle="tooltip"
+                                                       data-bs-placement="top"
                                                        onclick="return confirm('Are you sure you want to change the status of this term?')">
                                                         <i class="fas fa-sync-alt"></i>
                                                     </a>
@@ -563,11 +567,13 @@
                                                         <a href="<?= base_url('admin/manage_terms?action=delete&id=' . $term['id']) ?>" 
                                                            class="btn btn-sm btn-danger" 
                                                            title="Delete Term"
+                                                           data-bs-toggle="tooltip"
+                                                           data-bs-placement="top"
                                                            onclick="return confirm('Are you sure you want to delete this term? This action cannot be undone.')">
                                                             <i class="fas fa-trash"></i>
                                                         </a>
                                                     <?php else: ?>
-                                                        <button class="btn btn-sm btn-secondary" disabled title="Cannot delete current term">
+                                                        <button class="btn btn-sm btn-secondary" disabled title="Cannot delete: current active term" data-bs-toggle="tooltip" data-bs-placement="top">
                                                             <i class="fas fa-lock"></i>
                                                         </button>
                                                     <?php endif; ?>
