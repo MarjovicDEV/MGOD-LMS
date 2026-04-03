@@ -3,7 +3,7 @@
         'name' => 'codeigniter4/framework',
         'pretty_version' => 'dev-main',
         'version' => 'dev-main',
-        'reference' => '5490a24320daf25ae8b370efc87ed9899203a481',
+        'reference' => '3d07366514a6e7c79e6072922d277da49e3db720',
         'type' => 'project',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
@@ -31,7 +31,7 @@
         'codeigniter4/framework' => array(
             'pretty_version' => 'dev-main',
             'version' => 'dev-main',
-            'reference' => '5490a24320daf25ae8b370efc87ed9899203a481',
+            'reference' => '3d07366514a6e7c79e6072922d277da49e3db720',
             'type' => 'project',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),
@@ -657,6 +657,15 @@
             'install_path' => __DIR__ . '/../symfony/string',
             'aliases' => array(),
             'dev_requirement' => true,
+        ),
+        'tecnickcom/tcpdf' => array(
+            'pretty_version' => '6.11.2',
+            'version' => '6.11.2.0',
+            'reference' => 'e1e2ade18e574e963473f53271591edd8c0033ec',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../tecnickcom/tcpdf',
+            'aliases' => array(),
+            'dev_requirement' => false,
         ),
         'theseer/tokenizer' => array(
             'pretty_version' => '1.3.1',

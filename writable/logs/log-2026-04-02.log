@@ -271,3 +271,31 @@ ORDER BY `last_name` ASC', [...], false)
 11 FCPATH\index.php(204): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
 ERROR - 2026-04-02 16:29:10 --> SubmissionModel grade recalculation failed for submission 30: Undefined array key "term_id"
 ERROR - 2026-04-02 16:45:51 --> SubmissionModel grade recalculation failed for submission 30: Undefined array key "term_id"
+ERROR - 2026-04-02 17:28:18 --> SubmissionModel grade recalculation failed for submission 30: Undefined array key "term_id"
+ERROR - 2026-04-02 17:29:04 --> SQLite3Exception: Unable to prepare statement: no such column: term_id in C:\xampp\htdocs\MGOD-LMS\system\Database\SQLite3\Connection.php:176
+Stack trace:
+#0 C:\xampp\htdocs\MGOD-LMS\system\Database\SQLite3\Connection.php(176): SQLite3->query('SELECT `id`, `t...')
+#1 C:\xampp\htdocs\MGOD-LMS\system\Database\BaseConnection.php(729): CodeIgniter\Database\SQLite3\Connection->execute('SELECT `id`, `t...')
+#2 C:\xampp\htdocs\MGOD-LMS\system\Database\BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `id`, `t...')
+#3 C:\xampp\htdocs\MGOD-LMS\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `id`, `t...', Array, false)
+#4 C:\xampp\htdocs\MGOD-LMS\app\Libraries\GradeCalculator.php(289): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\MGOD-LMS\app\Libraries\GradeCalculator.php(210): App\Libraries\GradeCalculator->resolveGradingPeriodsForEnrollment(40)
+#6 C:\xampp\htdocs\MGOD-LMS\app\Models\SubmissionModel.php(122): App\Libraries\GradeCalculator->recalculateEnrollmentGrades(40)
+#7 C:\xampp\htdocs\MGOD-LMS\system\BaseModel.php(1691): App\Models\SubmissionModel->triggerGradebookRecalculation(Array)
+#8 C:\xampp\htdocs\MGOD-LMS\system\BaseModel.php(1029): CodeIgniter\BaseModel->trigger('afterUpdate', Array)
+#9 C:\xampp\htdocs\MGOD-LMS\system\Model.php(860): CodeIgniter\BaseModel->update(Array, Array)
+#10 C:\xampp\htdocs\MGOD-LMS\app\Models\SubmissionModel.php(372): CodeIgniter\Model->update(30, Array)
+#11 C:\xampp\htdocs\MGOD-LMS\tests\unit\SubmissionModelEnrollmentJoinTest.php(65): App\Models\SubmissionModel->submitAssignment(20, 10, Array)
+#12 C:\xampp\htdocs\MGOD-LMS\vendor\phpunit\phpunit\src\Framework\TestCase.php(1667): SubmissionModelEnrollmentJoinTest->testSubmitAssignmentResolvesEnrollmentFromStudentAndCourse()
+#13 C:\xampp\htdocs\MGOD-LMS\vendor\phpunit\phpunit\src\Framework\TestCase.php(519): PHPUnit\Framework\TestCase->runTest()
+#14 C:\xampp\htdocs\MGOD-LMS\vendor\phpunit\phpunit\src\Framework\TestRunner\TestRunner.php(87): PHPUnit\Framework\TestCase->runBare()
+#15 C:\xampp\htdocs\MGOD-LMS\vendor\phpunit\phpunit\src\Framework\TestCase.php(365): PHPUnit\Framework\TestRunner->run(Object(SubmissionModelEnrollmentJoinTest))
+#16 C:\xampp\htdocs\MGOD-LMS\vendor\phpunit\phpunit\src\Framework\TestSuite.php(369): PHPUnit\Framework\TestCase->run()
+#17 C:\xampp\htdocs\MGOD-LMS\vendor\phpunit\phpunit\src\Framework\TestSuite.php(369): PHPUnit\Framework\TestSuite->run()
+#18 C:\xampp\htdocs\MGOD-LMS\vendor\phpunit\phpunit\src\Framework\TestSuite.php(369): PHPUnit\Framework\TestSuite->run()
+#19 C:\xampp\htdocs\MGOD-LMS\vendor\phpunit\phpunit\src\TextUI\TestRunner.php(64): PHPUnit\Framework\TestSuite->run()
+#20 C:\xampp\htdocs\MGOD-LMS\vendor\phpunit\phpunit\src\TextUI\Application.php(211): PHPUnit\TextUI\TestRunner->run(Object(PHPUnit\TextUI\Configuration\Configuration), Object(PHPUnit\Runner\ResultCache\DefaultResultCache), Object(PHPUnit\Framework\TestSuite))
+#21 C:\xampp\htdocs\MGOD-LMS\vendor\phpunit\phpunit\phpunit(104): PHPUnit\TextUI\Application->run(Array)
+#22 C:\xampp\htdocs\MGOD-LMS\vendor\bin\phpunit(122): include('C:\\xampp\\htdocs...')
+#23 {main}
+ERROR - 2026-04-02 17:29:04 --> SubmissionModel grade recalculation failed for submission 30: Unable to prepare statement: no such column: term_id

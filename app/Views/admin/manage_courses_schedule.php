@@ -456,7 +456,7 @@
                                                        title="Edit Schedule Details"
                                                        data-bs-toggle="tooltip"
                                                        data-bs-placement="top">
-                                                        
+                                                        <i class="fas fa-pen"></i>
                                                     </a>
                                                     <a href="<?= base_url('admin/manage_courses_schedule?action=delete&id=' . $schedule['id']) ?>" 
                                                        class="btn btn-sm btn-danger" 
@@ -464,7 +464,7 @@
                                                        data-bs-toggle="tooltip"
                                                        data-bs-placement="top"
                                                        onclick="return confirm('Are you sure you want to delete this schedule? This action cannot be undone.')">
-                                                        
+                                                        <i class="fas fa-trash"></i>
                                                     </a>
                                                 </div>
                                             </td>

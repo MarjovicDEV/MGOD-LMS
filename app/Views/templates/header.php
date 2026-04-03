@@ -267,10 +267,17 @@
             color: var(--text-main) !important;
         }
 
-        /* Hide all icons and emoji display elements */
-        .lms-dashboard i,
+        /* Hide emoji display elements but preserve button icons */
         .lms-dashboard .display-4 {
             display: none !important;
+        }
+        
+        /* Preserve icons in buttons and action elements */
+        .lms-dashboard .btn i,
+        .lms-dashboard .btn-group i,
+        .lms-dashboard a i,
+        .lms-dashboard button i {
+            display: inline-block !important;
         }
 
         .lms-dashboard .card {

@@ -52,28 +52,31 @@ class GradeCalculator
             ->where('is_active', 1)
             ->findAll();
 
-        if (empty($components)) {
-            return ['success' => false, 'message' => 'No grade components configured'];
-        }
-
         $periodGrade = 0.00;
         $totalWeight = 0.00;
 
-        foreach ($components as $component) {
-            $componentGrade = $this->calculateComponentGrade(
-                $enrollmentId,
-                $component['assignment_type_id'],
-                $gradingPeriodId
-            );
+        if (!empty($components)) {
+            // Use configured grade components with weights
+            foreach ($components as $component) {
+                $componentGrade = $this->calculateComponentGrade(
+                    $enrollmentId,
+                    $component['assignment_type_id'],
+                    $gradingPeriodId
+                );
 
-            $weightedGrade = $componentGrade * ($component['weight_percentage'] / 100);
-            $periodGrade += $weightedGrade;
-            $totalWeight += $component['weight_percentage'];
-        }
+                $weightedGrade = $componentGrade * ($component['weight_percentage'] / 100);
+                $periodGrade += $weightedGrade;
+                $totalWeight += $component['weight_percentage'];
+            }
 
-        // Normalize if total weight is not 100%
-        if ($totalWeight > 0 && abs($totalWeight - 100) > 0.01) {
-            $periodGrade = ($periodGrade / $totalWeight) * 100;
+            // Normalize if total weight is not 100%
+            if ($totalWeight > 0 && abs($totalWeight - 100) > 0.01) {
+                $periodGrade = ($periodGrade / $totalWeight) * 100;
+            }
+        } else {
+            // Fallback: Calculate directly from all submissions for this period
+            // when no grade components are configured
+            $periodGrade = $this->calculatePeriodGradeFromSubmissions($enrollmentId, $gradingPeriodId);
         }
 
         // Get or create gradebook entry
@@ -87,6 +90,49 @@ class GradeCalculator
             'grade' => round($periodGrade, 2),
             'entry_id' => $entry['id']
         ];
+    }
+
+    /**
+     * Calculate period grade directly from submissions when no grade components configured
+     * Returns simple average percentage of all graded submissions in the period
+     */
+    protected function calculatePeriodGradeFromSubmissions($enrollmentId, $gradingPeriodId)
+    {
+        $enrollment = $this->enrollmentModel->find($enrollmentId);
+        if (!$enrollment) {
+            return 0.00;
+        }
+
+        // Get all graded submissions for assignments in this period
+        $submissions = $this->db->table('submissions s')
+            ->select('s.score, a.max_score')
+            ->join('assignments a', 'a.id = s.assignment_id')
+            ->where('s.enrollment_id', $enrollmentId)
+            ->where('a.grading_period_id', $gradingPeriodId)
+            ->where('a.course_offering_id', $enrollment['course_offering_id'])
+            ->where('s.status', 'graded')
+            ->where('s.score IS NOT NULL')
+            ->where('a.is_active', 1)
+            ->get()
+            ->getResultArray();
+
+        if (empty($submissions)) {
+            return 0.00;
+        }
+
+        $totalScore = 0;
+        $totalMaxScore = 0;
+
+        foreach ($submissions as $sub) {
+            $totalScore += (float) $sub['score'];
+            $totalMaxScore += (float) $sub['max_score'];
+        }
+
+        if ($totalMaxScore > 0) {
+            return ($totalScore / $totalMaxScore) * 100;
+        }
+
+        return 0.00;
     }
 
     /**

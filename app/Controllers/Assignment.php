@@ -11,6 +11,7 @@ use App\Models\AssignmentTypeModel;
 use App\Models\GradingPeriodModel;
 use App\Models\EnrollmentModel;
 use App\Models\NotificationModel;
+use App\Libraries\GradeCalculator;
 use CodeIgniter\HTTP\ResponseInterface;
 
 class Assignment extends BaseController
@@ -23,6 +24,7 @@ class Assignment extends BaseController
     protected $gradingPeriodModel;
     protected $enrollmentModel;
     protected $notificationModel;
+    protected $gradeCalculator;
     
     public function __construct()
     {
@@ -34,6 +36,7 @@ class Assignment extends BaseController
         $this->gradingPeriodModel = new GradingPeriodModel();
         $this->enrollmentModel = new EnrollmentModel();
         $this->notificationModel = new NotificationModel();
+        $this->gradeCalculator = new GradeCalculator();
     }
 
     public function teacherAssignments()
@@ -447,6 +450,14 @@ class Assignment extends BaseController
         }        if ($this->submissionModel->gradeSubmission($submissionId, $score, $feedback, $userID)) {
             $enrollmentData = $this->enrollmentModel->find($submission['enrollment_id']);
             
+            // Recalculate gradebook entries for this student
+            try {
+                $this->gradeCalculator->recalculateEnrollmentGrades($submission['enrollment_id']);
+                log_message('info', "Recalculated gradebook for enrollment ID: {$submission['enrollment_id']} after grading submission");
+            } catch (\Exception $e) {
+                log_message('error', "Failed to recalculate gradebook for enrollment ID: {$submission['enrollment_id']} - " . $e->getMessage());
+            }
+            
             // Get student user_id from enrollment
             $db = \Config\Database::connect();
             $student = $db->table('students')
@@ -474,7 +485,7 @@ class Assignment extends BaseController
         }
 
         return $this->response->setJSON(['success' => false, 'message' => 'Failed to grade submission'])->setStatusCode(500);
-    }    
+    }
     /**
      * Notify all enrolled students when a new assignment is published
      */

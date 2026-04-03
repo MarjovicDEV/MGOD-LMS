@@ -654,14 +654,14 @@
                                                            class="btn btn-outline-warning" title="Edit Course Details"
                                                            data-bs-toggle="tooltip"
                                                            data-bs-placement="top">
-                                                            
+                                                            <i class="fas fa-pen"></i>
                                                         </a>
                                                         <a href="<?= base_url('admin/manage_courses?action=delete&id=' . $course['id']) ?>" 
                                                            class="btn btn-outline-danger" title="Delete Course"
                                                            data-bs-toggle="tooltip"
                                                            data-bs-placement="top"
                                                            onclick="return confirm('Are you sure you want to delete this course?')">
-                                                            
+                                                            <i class="fas fa-trash"></i>
                                                         </a>
                                                     </div>
                                                 </td>

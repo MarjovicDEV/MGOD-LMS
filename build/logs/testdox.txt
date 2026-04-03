@@ -8,6 +8,12 @@ Example Database
 Example Session
  [x] Session simple
 
+Grade Calculator Runtime Resilience
+ [x] Grade calculator uses central resolver in final and recalculate paths
+ [x] Grade calculator includes assignment and gradebook fallback queries
+ [x] Grade calculator returns explicit failure message when no periods resolved
+ [x] Gradebook audit trail does not query users role column
+
 Health
  [x] Is defined app path
  [x] Base url has been set

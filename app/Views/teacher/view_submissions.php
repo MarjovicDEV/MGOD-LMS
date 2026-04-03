@@ -174,21 +174,32 @@
                                                     </td>
                                                     <td>
                                                         <div class="btn-group btn-group-sm" role="group" aria-label="Submission Actions">
-                                                            <a href="<?= base_url('teacher/view_submission/' . $submission['id']) ?>" 
+                                                            <button type="button" 
                                                                class="btn btn-sm btn-outline-primary" 
                                                                title="View Submission Details"
                                                                data-bs-toggle="tooltip"
-                                                               data-bs-placement="top">
+                                                               data-bs-placement="top"
+                                                               onclick="viewSubmission(<?= htmlspecialchars(json_encode($submission), ENT_QUOTES, 'UTF-8') ?>)">
                                                                 <i class="fas fa-eye"></i>
-                                                            </a>
+                                                            </button>
                                                             <?php if ($submission['status'] !== 'graded'): ?>
-                                                                <a href="<?= base_url('teacher/grade_submission/' . $submission['id']) ?>" 
-                                                                   class="btn btn-sm btn-outline-secondary" 
+                                                                <button type="button" 
+                                                                   class="btn btn-sm btn-outline-success" 
                                                                    title="Grade Submission"
                                                                    data-bs-toggle="tooltip"
-                                                                   data-bs-placement="top">
+                                                                   data-bs-placement="top"
+                                                                   onclick="gradeSubmission(<?= $submission['id'] ?>, '<?= esc($submission['student_name']) ?>')">
+                                                                    <i class="fas fa-star"></i>
+                                                                </button>
+                                                            <?php else: ?>
+                                                                <button type="button" 
+                                                                   class="btn btn-sm btn-outline-warning" 
+                                                                   title="Re-grade Submission"
+                                                                   data-bs-toggle="tooltip"
+                                                                   data-bs-placement="top"
+                                                                   onclick="gradeSubmission(<?= $submission['id'] ?>, '<?= esc($submission['student_name']) ?>')">
                                                                     <i class="fas fa-edit"></i>
-                                                                </a>
+                                                                </button>
                                                             <?php endif; ?>
                                                         </div>
                                                     </td>

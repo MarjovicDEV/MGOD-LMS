@@ -618,13 +618,13 @@
                                                            class="btn btn-outline-warning" title="Edit Enrollment Details"
                                                            data-bs-toggle="tooltip"
                                                            data-bs-placement="top">
-                                                            
+                                                            <i class="fas fa-pen"></i>
                                                         </a>
                                                         
                                                         <!-- Quick Status Update Dropdown -->
                                                         <div class="btn-group btn-group-sm" role="group">
                                                             <button type="button" class="btn btn-outline-info dropdown-toggle" data-bs-toggle="dropdown" title="Quick Status Update">
-                                                                
+                                                                <i class="fas fa-exchange-alt"></i>
                                                             </button>
                                                             <ul class="dropdown-menu dropdown-menu-end">
                                                                 <li><h6 class="dropdown-header">Change Status</h6></li>
@@ -657,7 +657,7 @@
                                                                     data-bs-toggle="tooltip"
                                                                     data-bs-placement="top"
                                                                     onclick="return confirm('Are you sure you want to delete this enrollment?')">
-                                                                
+                                                                <i class="fas fa-trash"></i>
                                                             </button>
                                                         </form>
                                                     </div>

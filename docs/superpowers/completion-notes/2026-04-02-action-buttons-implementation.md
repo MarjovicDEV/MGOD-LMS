@@ -1,4 +1,4 @@
-# Action Button Standardization - Implementation Completion
+/# Action Button Standardization - Implementation Completion
 
 **Date:** 2026-04-02  
 **Implementation Plan:** `docs/superpowers/plans/2026-04-02-standardize-action-buttons.md`  

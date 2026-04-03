@@ -552,7 +552,7 @@
                                                            title="Edit Curriculum Entry"
                                                            data-bs-toggle="tooltip"
                                                            data-bs-placement="top">
-                                                            
+                                                            <i class="fas fa-pen"></i>
                                                         </a>
                                                         <form method="post" action="<?= base_url('admin/manage_curriculum') ?>" class="d-inline">
                                                             <?= csrf_field() ?>
@@ -564,7 +564,7 @@
                                                                     data-bs-toggle="tooltip"
                                                                     data-bs-placement="top"
                                                                     onclick="return confirm('Are you sure you want to remove this course from the curriculum?')">
-                                                                
+                                                                <i class="fas fa-trash"></i>
                                                             </button>
                                                         </form>
                                                     </div>
