@@ -456,9 +456,21 @@
 // Grading periods by term data
 const gradingPeriodsByTerm = <?= json_encode($gradingPeriodsByTerm) ?>;
 
+function formatLocalDateTimeForInput(dateValue) {
+    const rawValue = dateValue instanceof Date ? dateValue : String(dateValue).replace(' ', 'T');
+    const date = dateValue instanceof Date ? dateValue : new Date(rawValue);
+
+    if (Number.isNaN(date.getTime())) {
+        return '';
+    }
+
+    const pad = (value) => String(value).padStart(2, '0');
+    return `${date.getFullYear()}-${pad(date.getMonth() + 1)}-${pad(date.getDate())}T${pad(date.getHours())}:${pad(date.getMinutes())}`;
+}
+
 // Set minimum date for due date (cannot be past)
 const now = new Date();
-const minDateTime = now.toISOString().slice(0, 16);
+const minDateTime = formatLocalDateTimeForInput(now);
 document.getElementById('create_due_date').min = minDateTime;
 
 // Course selection - update grading periods based on term
@@ -552,18 +564,15 @@ function editAssignment(assignment) {
     document.getElementById('edit_max_score').value = assignment.max_score;
     
     if (assignment.due_date) {
-        const dueDate = new Date(assignment.due_date);
-        document.getElementById('edit_due_date').value = dueDate.toISOString().slice(0, 16);
+        document.getElementById('edit_due_date').value = formatLocalDateTimeForInput(assignment.due_date);
     }
     
     if (assignment.available_from) {
-        const availFrom = new Date(assignment.available_from);
-        document.getElementById('edit_available_from').value = availFrom.toISOString().slice(0, 16);
+        document.getElementById('edit_available_from').value = formatLocalDateTimeForInput(assignment.available_from);
     }
     
     if (assignment.available_until) {
-        const availUntil = new Date(assignment.available_until);
-        document.getElementById('edit_available_until').value = availUntil.toISOString().slice(0, 16);
+        document.getElementById('edit_available_until').value = formatLocalDateTimeForInput(assignment.available_until);
     }
     
     document.getElementById('edit_allow_late').checked = assignment.allow_late_submission == 1;
